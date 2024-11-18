@@ -12,6 +12,8 @@ theme:
     - content.code.copy
 extra_css:
   - stylesheets/extra.css
+plugins:
+  - projects
 nav:
   - index.md
   - get-started.md
