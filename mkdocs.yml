@@ -1,0 +1,42 @@
+site_name: "Google Play Games Services: Unreal Engine Plugin Documentation"
+theme:
+  name: material
+  logo: assets/google-play-games-services-icon.png
+  favicon: assets/google-play-games-services-icon.png
+  palette:
+    scheme: slate
+    primary: black
+    accent: custom
+  features:
+    - content.code.copy
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - attr_list
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.tabbed:
+      alternate_style: true
+nav:
+  - index.md
+  - get-started.md
+  - Google Play Console setup: 
+    - console/setup.md
+    - Manage project settings in Google Cloud: https://developer.android.com/games/pgs/console/cloud-platform
+    - Enable accounts for testing: https://developer.android.com/games/pgs/test
+    - Publish through Google Play Console: https://developer.android.com/games/pgs/console/publish
+  - ue-setup.md
+  - Add features:
+    - features/sign-in.md
+    - features/recall-api.md
+    - Anti-piracy: https://developer.android.com/games/pgs/android/anti-piracy
+    - features/achievements.md
+    - features/saved-games.md
+    - features/leaderboards.md
+    - features/events.md
+    - features/friends.md
+    - features/player-stats.md
