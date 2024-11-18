@@ -49,7 +49,7 @@ Assuming the user is signed in, request a session ID from the Games SDK on the g
 
 #### Step 2: Retrieve any available recall token
 
-Request for any associated recall token with the PGS user's account. If a token is present, [proceed to Step 3a and restore progress](#step-3a-if-token-is-present-restore-progress). Otherwise, if this is a new user and they have no token present, [proceed to Step 3b and store a new token]().
+Request for any associated recall token with the PGS user's account. If a token is present, [proceed to Step 3a and restore progress](#step-3a-if-token-is-present-restore-progress). Otherwise, if this is a new user and they have no token present, [proceed to Step 3b and store a new token](#step-3b-if-no-token-is-present-store-a-token).
 
 ![](https://developer.android.com/static/images/games/pgs/recall-flow-retrieve-token.png)
 

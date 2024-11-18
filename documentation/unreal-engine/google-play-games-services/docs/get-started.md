@@ -22,11 +22,12 @@ You must set up a Play Games Services in your game project and integrate the [Si
 ## Add additional features
 After you integrate sign-in, you can add additional Play Games Services features to your game. This involves setting up the feature in Play Console and then integrating it in your game project. See the following guides for details:
 
-* [__`Achievements`__]()
-* [__`Leaderboards`__]()
-* [__`Events`__]()
-* [__`Friends`__]()
-* [__`Saved Games`__]()
+* [__`Achievements`__](features/achievements.md)
+* [__`Leaderboards`__](features/leaderboards.md)
+* [__`Events`__](features/events.md)
+* [__`Friends`__](features/friends.md)
+* [__`Saved Games`__](features/saved-games.md)
+* [__`Player Stats`__](features/player-stats.md)
 
 ## Test and publish Play Games Services updates
-After you add Play Games Services features to your game project, you should test any updates you make to your Play Games Services project using the [test accounts]() that you setup when you configure Play Games Services. When you're satisfied with the changes, you can use Play Console to [publish]() them. This does not involve publishing your game, and only updates the Play Games Services project and services hosted by Google.
+After you add Play Games Services features to your game project, you should test any updates you make to your Play Games Services project using the [test accounts](console/setup.md#enable-testing) that you setup when you configure Play Games Services. When you're satisfied with the changes, you can use Play Console to [publish](https://developer.android.com/games/pgs/console/publish) them. This does not involve publishing your game, and only updates the Play Games Services project and services hosted by Google.

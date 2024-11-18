@@ -15,6 +15,7 @@ When you create a leaderboard, Play Games Services will take care of managing mo
 5.  In cases where there are a lot of scores to report, Play Games Services sends back only the data for the top leaderboard scores. You can also retrieve raw score data for the top scores or the scores adjacent to the player's.
 
 ### Multiple leaderboards
+
 Games can have multiple leaderboards, up to a maximum of 70. For example, a multi-level game might provide a different leaderboard for each level, and a racing game might have a separate leaderboard for each track.
 
 ### Leaderboard timeframes

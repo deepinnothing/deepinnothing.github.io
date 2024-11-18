@@ -42,3 +42,6 @@ nav:
     - features/events.md
     - features/friends.md
     - features/player-stats.md
+plugins: 
+  - search
+  - git-revision-date-localized

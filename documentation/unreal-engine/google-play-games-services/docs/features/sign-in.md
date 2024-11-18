@@ -12,7 +12,7 @@ Furthermore, the sign-in process offers a reliable identifier for cloud save sys
 *   Engage in the game across multiple devices, enabling seamless transitions between smartphones and Chromebooks.
 *   Uninstall and reinstall the game.
 
-Developers have the option of either using the player ID as a key for their own cloud save solution, or using the built-in [Saved Games service]().
+Developers have the option of either using the player ID as a key for their own cloud save solution, or using the built-in [Saved Games service](saved-games.md).
 
 Play Games Services (PGS) supports automatic sign-in, a zero-friction way to sign in players.
 
@@ -41,7 +41,7 @@ Play Games Services provides a gaming identity for Android players, but it doesn
 
 ### Player ID
 
-A player ID is an identifier for a Play Games Services player account. Your game can retrieve a player ID for any player that signs into your game using Play Games Services sign-in. Your game client, [backend game servers](#game-server-integration), and [cloud-save service]() can use the ID to securely access player data from Play Games Services.
+A player ID is an identifier for a Play Games Services player account. Your game can retrieve a player ID for any player that signs into your game using Play Games Services sign-in. Your game client, [backend game servers](#game-server-integration), and [cloud-save service](saved-games.md) can use the ID to securely access player data from Play Games Services.
 
 A player ID is consistent for a user when they play your game on multiple devices. However, it is not always consistent between games. For more information, see [next generation Player IDs](https://developer.android.com/games/pgs/next-gen-player-ids).
 
@@ -152,7 +152,7 @@ If you want to use the [REST APIs for Google Play Games services](https://develo
 1.  In the [Google Play Console](https://play.google.com/console/about/), select a game.
 2.  Go to __Play Games Services > Setup and management > Configuration__.
 3.  Select *Add credential* to be brought to the *Add credential* page. Select *Game server* as the credential type and continue onto the *Authorization* section.
-    1.  If your game server already has an OAuth client ID select it from the drop down menu. After saving your changes, move onto [the next section]().
+    1.  If your game server already has an OAuth client ID select it from the drop down menu. After saving your changes, move onto [the next section](#get-the-server-auth-code).
     2.  If you don't have an existing OAuth client ID for your game server, you can create one.
         1.  Click *Create OAuth client* and follow the *Create OAuth Client ID* link.
         2.  This will bring you to the Google Cloud Platform's *Create OAuth Client ID* page for your project associated with your game.
@@ -300,14 +300,14 @@ Want to get the signed-in player's ID and profile data? Call [__`Players.get`__]
 
 #### Friends
 
-See the [Friends]() guide for details.
+See the [Friends](friends.md) guide for details.
 
 *   To retrieve the player's list of friends, call [__`Players.list`__](https://developers.google.com/games/services/web/api/players/list) with __`friends_all`__ as the __`collection`__.
 *   To verify whether you have access to a friends list, call [__`Players.get`__]() with __`me`__ as the __`playerID`__, and view the [__`profileSettings.friendsListVisibility`__](https://developers.google.com/games/services/web/api/players#profileSettings.friendsListVisibility) field in the response.
 
 #### Achievements
 
-See the [Achievements]() guide for details.
+See the [Achievements](achievements.md) guide for details.
 
 *   To get a list of current achievements, call [__`AchievementDefinitions.list`__](https://developers.google.com/games/services/web/api/achievementDefinitions/list).
 *   Combine that with a call to [__`Achievements.list`__](https://developers.google.com/games/services/web/api/achievements/list) to find out which ones the player unlocked.
@@ -317,7 +317,7 @@ See the [Achievements]() guide for details.
 
 #### Leaderboards
 
-See the [Leaderboards]() guide for details.
+See the [Leaderboards](leaderboards.md) guide for details.
 
 *   Want to get a list of all scoreboards in the game? Make a call to [__`Leaderboards.list`__](https://developers.google.com/games/services/web/api/leaderboards/list).
 *   If a player is done with a game, you can submit their score to [__`Scores.submit`__](https://developers.google.com/games/services/web/api/scores/submit) and find out if it is a new high score.

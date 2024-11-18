@@ -83,7 +83,7 @@ In the wizard, choose whether you want to create an Android credential (if your 
     
     #### Set up credentials details
 
-    Ensure that the name in the __Name__ field matches the name of your game. Choose whether to enable [Anti-Piracy]().
+    Ensure that the name in the __Name__ field matches the name of your game. Choose whether to enable [Anti-Piracy](https://developer.android.com/games/pgs/android/anti-piracy).
 
     #### Set up authorization
 
@@ -141,7 +141,7 @@ In the wizard, choose whether you want to create an Android credential (if your 
 
 To ensure that Google Play Games Services is functioning correctly in your game, you should test your game services before publishing your game changes on Google Play.
 
-If your game is in an unpublished state, grant access to your testers by adding their user accounts to the allowlist. Otherwise, your testers will encounter OAuth and 404 errors when attempting to access Play Games Services endpoints, such as the [sign-in]() endpoint.
+If your game is in an unpublished state, grant access to your testers by adding their user accounts to the allowlist. Otherwise, your testers will encounter OAuth and 404 errors when attempting to access Play Games Services endpoints, such as the [sign-in](../features/sign-in.md) endpoint.
 
 Users with authorized test accounts will have access to your unpublished Play Games Services game project and can test that your configured Play Games Services are working correctly.
 
@@ -194,7 +194,7 @@ To avoid common setup mistakes, make sure to follow these recommendations when s
 
 4.  __Sign in with a tester account during development__
     
-    If you have not published your game setting changes in the Play Console, you might encounter errors during testing if you are not signed in with a whitelisted tester account. You should always enable your Play Console publisher account for testing. To learn how to manage tester accounts, see [Enabling accounts for testing]().
+    If you have not published your game setting changes in the Play Console, you might encounter errors during testing if you are not signed in with a whitelisted tester account. You should always enable your Play Console publisher account for testing. To learn how to manage tester accounts, see [Enabling accounts for testing](https://developer.android.com/games/pgs/console/publish#enable_accounts_for_testing).
 
 5.  __Publish the consent screen in Google Cloud Platform__
     
@@ -202,10 +202,10 @@ To avoid common setup mistakes, make sure to follow these recommendations when s
 
 7.  __At release, publish the Play Games Services settings first before you publish your game__
     
-    Developers might accidentally publish their app without publishing the corresponding Play Games Services settings for their app. This might cause players who are signing in with non-tester accounts to encounter errors since the app cannot reference the correct game settings. When releasing your game, remember to first publish your game settings by using the Publish Game option in the Play Console. To learn how to publish your changes, see [Publishing your game changes]().
+    Developers might accidentally publish their app without publishing the corresponding Play Games Services settings for their app. This might cause players who are signing in with non-tester accounts to encounter errors since the app cannot reference the correct game settings. When releasing your game, remember to first publish your game settings by using the Publish Game option in the Play Console. To learn how to publish your changes, see [Publishing your game changes](https://developer.android.com/games/pgs/console/publish#publish_game_changes).
 
 For additional tips, see the [Android troubleshooting guide](https://developer.android.com/games/pgs/android/troubleshooting).
 
 ## Next steps
 
-Once you complete the initial setup tasks described above, you can [enable Play Games Services features]() for your game, such as saved games, leaderboards, and achievements.
+Once you complete the initial setup tasks described above, you can [enable Play Games Services features](https://developer.android.com/games/pgs/console/enable-features) for your game, such as saved games, leaderboards, and achievements.
