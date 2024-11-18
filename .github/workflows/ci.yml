@@ -32,7 +32,7 @@ jobs:
       
       - name: Build Google Play Games Services
         run: |
-          cd documentation/unreal-engine/google-play-games-services
+          cd documentation
           mkdocs build
       
       - name: Deploy to GitHub Pages
