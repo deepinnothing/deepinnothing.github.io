@@ -25,4 +25,14 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material 
-      - run: mkdocs gh-deploy --force -d documentation/unreal-engine/play-games-services
+      - run: mkdocs build
+      - run: |
+          mkdir -p site/documentation/unreal-engine/play-games-services
+          mv site/* site/documentation/unreal-engine/play-games-services
+          mv site/documentation/unreal-engine/play-games-services/* site/
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: site
