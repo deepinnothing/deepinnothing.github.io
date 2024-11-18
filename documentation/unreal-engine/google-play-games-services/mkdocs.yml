@@ -12,8 +12,16 @@ theme:
     - content.code.copy
 extra_css:
   - stylesheets/extra.css
-plugins:
-  - projects
+markdown_extensions:
+  - attr_list
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.tabbed:
+      alternate_style: true
 nav:
   - index.md
   - get-started.md
