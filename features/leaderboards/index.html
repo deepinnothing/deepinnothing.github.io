@@ -1,0 +1,1431 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/play-games-services/features/leaderboards/">
+      
+      
+        <link rel="prev" href="../saved-games/">
+      
+      
+        <link rel="next" href="../events/">
+      
+      
+      <link rel="icon" href="../../assets/google-play-games-services-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Leaderboards - Google Play Games Services: Unreal Engine Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#leaderboards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Google Play Games Services: Unreal Engine Plugin Documentation" class="md-header__button md-logo" aria-label="Google Play Games Services: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/google-play-games-services-icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Google Play Games Services: Unreal Engine Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Leaderboards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Google Play Games Services: Unreal Engine Plugin Documentation" class="md-nav__button md-logo" aria-label="Google Play Games Services: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/google-play-games-services-icon.png" alt="logo">
+
+    </a>
+    Google Play Games Services: Unreal Engine Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Google Play Console setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Google Play Console setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../console/setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set up Google Play Games Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/console/cloud-platform" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage project settings in Google Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/test" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable accounts for testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/console/publish" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish through Google Play Console
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ue-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set up Unreal Engine project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Add features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Add features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sign-in/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sign-in
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recall-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recall API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/android/anti-piracy" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anti-piracy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../achievements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Achievements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saved-games/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Saved games
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Leaderboards
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Leaderboards
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understand-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand leaderboards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understand leaderboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple leaderboards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leaderboard-timeframes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leaderboard timeframes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-and-social-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public and social leaderboards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display leaderboards
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      The basics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order leaderboards
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#score-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Score formatting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Score formatting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translations-and-score-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translations and score formatting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#icon-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Icon guidelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a leaderboard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a leaderboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-leaderboard-for-a-new-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a leaderboard for a new game
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-leaderboard-for-a-published-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a leaderboard for a published game
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit a leaderboard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit a leaderboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undo-an-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undo an edit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete a leaderboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset a leaderboard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-translations-for-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add translations for leaderboards
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-leaderboard-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hide leaderboard scores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leaderboards-for-unreal-engine-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leaderboards for Unreal Engine games
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leaderboards for Unreal Engine games">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you begin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-the-players-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update the player's score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display a leaderboard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../friends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Friends
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player-stats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Player stats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understand-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand leaderboards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understand leaderboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple leaderboards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leaderboard-timeframes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leaderboard timeframes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-and-social-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public and social leaderboards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display leaderboards
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      The basics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order leaderboards
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#score-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Score formatting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Score formatting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translations-and-score-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Translations and score formatting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#icon-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Icon guidelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a leaderboard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a leaderboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-leaderboard-for-a-new-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a leaderboard for a new game
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-leaderboard-for-a-published-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a leaderboard for a published game
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit a leaderboard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit a leaderboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undo-an-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undo an edit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete a leaderboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset a leaderboard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-translations-for-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add translations for leaderboards
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-leaderboard-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hide leaderboard scores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leaderboards-for-unreal-engine-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leaderboards for Unreal Engine games
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leaderboards for Unreal Engine games">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you begin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-the-players-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update the player's score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-a-leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display a leaderboard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="leaderboards">Leaderboards</h1>
+<p>Leaderboards can be a fun way to drive competition among your players, both for your most hardcore fans (who will be fighting for the top spot in a public leaderboard) and for your more casual players (who will be interested in comparing their progress to their friends').</p>
+<p>To learn how to implement achievements in your Unreal Engine project, see <a href="#leaderboards-for-unreal-engine-games">Leaderboards for Unreal Engine games</a>.</p>
+<h2 id="understand-leaderboards">Understand leaderboards</h2>
+<p>When you create a leaderboard, Play Games Services will take care of managing most aspects of this leaderboard for you. The typical process works like this:</p>
+<ol>
+<li>At the end of a game (or at an appropriate moment that you've determined), the game submits the player's score to one or more leaderboards you've created for the game.</li>
+<li>Play Games Services checks if this score is better than the player's current leaderboard entry for the daily, weekly, or all-time score. If it is, Play Games Services updates the corresponding leaderboards with the new score.</li>
+<li>Play Games Services sends a score report back to the game client. This report tells the client whether this is a new daily, weekly, or all-time high score. If it isn't, Play Games Services will tell the client what the current daily, weekly, or all-time high score is for this player.</li>
+<li>To retrieve a player's results for a leaderboard, you can request a timeframe (daily, weekly, or all-time), and specify whether or not the user wants to see a social or public leaderboard. Play Games Services performs all the necessary filtering, and then sends the results back to the client.</li>
+<li>In cases where there are a lot of scores to report, Play Games Services sends back only the data for the top leaderboard scores. You can also retrieve raw score data for the top scores or the scores adjacent to the player's.</li>
+</ol>
+<h3 id="multiple-leaderboards">Multiple leaderboards</h3>
+<p>Games can have multiple leaderboards, up to a maximum of 70. For example, a multi-level game might provide a different leaderboard for each level, and a racing game might have a separate leaderboard for each track.</p>
+<h3 id="leaderboard-timeframes">Leaderboard timeframes</h3>
+<p>The Play Games SDK automatically creates daily, weekly, and all-time versions of every leaderboard that you create. There's no need for you to create separate leaderboards for each timeframe.</p>
+<p>Daily leaderboards reset at UTC-7 (that is, "midnight Pacific Daylight Time") all year long.</p>
+<p>Weekly leaderboards reset at midnight between Saturday and Sunday, in the same timezone as daily leaderboards (UTC-7).</p>
+<h3 id="public-and-social-leaderboards">Public and social leaderboards</h3>
+<p>The Play Games SDK can display two different versions of each leaderboard to the player:</p>
+<p>The <strong>social</strong> leaderboard is a leaderboard made up of people in the user's circles (or, more accurately, members of the circles that the user has chosen to share with your application) who have decided to share their gameplay activity to the user.</p>
+<p>The <strong>public</strong> leaderboard is a leaderboard made up of players who have chosen to share their gameplay activity publicly. If your player has not chosen to share their gameplay activity publicly, they won't appear in this leaderboard.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Social leaderboards will initially be empty until you publish the corresponding leaderboard by using Google Play Console. To learn how to publish your leaderboard, see <a href="https://developer.android.com/games/pgs/console/publish#publish_game_changes">Publishing your game changes</a>.</p>
+</div>
+<h3 id="display-leaderboards">Display leaderboards</h3>
+<p>In the mobile client libraries, the libraries take care of all the formatting and displaying of leaderboards. You can specify whether a player can see a specific leaderboard, or see a list of all of your leaderboards that they can choose from.</p>
+<p>You can also implement your own versions of the leaderboards by accessing the data directly from the client libraries.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Player names that you retrieve directly using the client libraries may contain Unicode characters (for example, if the name has non-English characters). If you are implementing your own version of a leaderboard UI that uses decorative fonts, make sure that your UI can display these names correctly.</p>
+</div>
+<h2 id="attributes">Attributes</h2>
+<p>To create and manage leaderboards, you'll want to be familiar with these leaderboard attributes:</p>
+<h3 id="the-basics">The basics</h3>
+<p>These basic elements are associated with every leaderboard:</p>
+<ul>
+<li><strong>ID</strong> is a unique string that Google Play Console will generate for you. You'll use this unique ID to refer to the leaderboard in your game clients.</li>
+<li><strong>Name</strong> is a short name of the leaderboard (for example, "High Scores" or "Level 3"). This can be up to 100 characters.</li>
+<li><strong>Icon</strong> is a square icon that will be associated with your leaderboard. For best practices when creating your leaderboard icons, see <a href="#icon-guidelines">Icon Guidelines</a>.</li>
+<li><strong>List order</strong> is the order in which the leaderboard will appear when a player views the leaderboards associated with your game.</li>
+<li><strong>Limits</strong> are optional values that define the lower and upper limits of scores that are allowed in the leaderboard. This can help you discard score submissions that are clearly fraudulent. You can also use <a href="https://developers.google.com/games/services/management/api/players/hide"><strong><code>Players.hide</code></strong></a> to hide players that you believe have submitted fraudulent scores from all leaderboards in your app.</li>
+</ul>
+<h3 id="order-leaderboards">Order leaderboards</h3>
+<p>Leaderboards can have one of two ordering types:</p>
+<ul>
+<li><strong>Larger is better</strong> leaderboards are the default. This is typically what you would see in most games where players earn points.</li>
+<li><strong>Smaller is better</strong> leaderboards are occasionally used in cases where a smaller score would be better. The most common examples of this type of leaderboard are in racing games, where the score represents the player's time to finish the race.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once a leaderboard is published, its ordering type ('Larger is better' or 'Smaller is better') is fixed and cannot be changed. You can still change a leaderboard's list order after it is published.</p>
+</div>
+<h2 id="score-formatting">Score formatting</h2>
+<p>While all scores are submitted to leaderboards and stored internally as long integers, Play Games Services can present them to the user in a number of different formats:</p>
+<ul>
+<li><strong>Numeric</strong> leaderboards present scores as numbers. These can be displayed as integers or as real numbers with a fixed number of decimal places. You submit the score as integers and the decimal point is inserted in the specified location. A score of <strong><code>314159</code></strong>, for example, would be displayed as <strong><code>3.14159</code></strong>, <strong><code>3141.59</code></strong>, or <strong><code>314159</code></strong>, depending on the decimal place you specified.</li>
+<li><strong>Time</strong> leaderboards present scores in hours / minutes / seconds / hundredths of a second format. You must submit scores as milliseconds, so <strong><code>66032</code></strong> would be interpreted as <strong><code>1:06.03</code></strong>.</li>
+<li><strong>Currency</strong> leaderboards present scores in a currency format. You submit scores as 1/1,000,000th of the main currency unit. For example, a score of <strong><code>19,950,000</code></strong> would be interpreted as <strong><code>$19.95</code></strong>, assuming you specified your currency as USD.</li>
+</ul>
+<p>Numeric leaderboards also support custom units. For instance, if your game measures high scores in meters, you can specify "meters" as the default unit for your leaderboard.</p>
+<h3 id="translations-and-score-formatting">Translations and score formatting</h3>
+<p>When the mobile client libraries request leaderboard data from Play Games Services, they specify a language and locale in which to display these scores. The <a href="https://developers.google.com/games/services/web/api/scores/list">REST API</a> lets you to specify a locale-based language as well. Play Games Services returns formatted leaderboard scores appropriate for that language and locale. These formatted scores will appear whether or not you have added <a href="https://developer.android.com/games/pgs/console/enable-features#add_translations">translations</a> for your leaderboard.</p>
+<p>For <strong>Numeric</strong> leaderboards, the number format is displayed differently per language. (For example, <strong><code>12,345.78</code></strong> in the US, and <strong><code>12 345,78</code></strong> in France.) If you are using custom units and have added <a href="https://developer.android.com/games/pgs/console/enable-features#add_translations">translations</a> to your game, you must supply translated units for every language you have added. The service then displays these translated units where appropriate.</p>
+<p>Depending on the language you choose, you might need to supply different versions of the names of your units. In English you'll need a version for one item, and another for everything else (for instance, "meter" and "meters"). In Polish, on the other hand, you would need to provide a version for one unit, a few units, many units, and everything else. To learn more about plural rules, see <a href="http://developer.android.com/guide/topics/resources/string-resource.html#Plurals">Quantity Strings(Plurals)</a>.</p>
+<p>For <strong>Time</strong> leaderboards, the time format is displayed according to the player's language and locale. This will mainly be noticeable if you are using fractions of a second or have an hours value with more than 3 digits (for example, <strong><code>4,815:16:23.42</code></strong> in the US and <strong><code>4.815:16:23,42</code></strong> in Germany).</p>
+<p>For <strong>Currency</strong> leaderboards, the currency format will be displayed according to the player's language and locale. However, you cannot change the unit of currency. For example, if you specify your currency in USD, the game will display <strong><code>$19.95</code></strong> in the US and <strong><code>19,95 $</code></strong> in France. But you cannot specify that your game shows dollars in the US and Euros in France.</p>
+<h2 id="icon-guidelines">Icon guidelines</h2>
+<p>Icons should be created as 512 x 512 PNG or JPEG files. Your icons will be scaled down in most game clients, so you should avoid creating icons with too much fine detail. You can submit icons with an alpha channel, and the transparency will be retained. The leaderboard icon will be shown against a darker gray background on Android devices, so choose an icon that can work well in this situation.</p>
+<p>The same icon is used in all locales, so we recommend against including any text or localized content in an icon.</p>
+<h2 id="create-a-leaderboard">Create a leaderboard</h2>
+<p>This section tells you how to create leaderboards for new or existing games.</p>
+<h3 id="create-a-leaderboard-for-a-new-game">Create a leaderboard for a new game</h3>
+<p>To create a leaderboard for a new and unpublished game, go to Google Play Console entry for your game, and navigate to <strong>Grow users &gt; Play Games Services &gt; Setup and management &gt; Leaderboards</strong>, then click the <strong>Create leaderboard</strong> button.</p>
+<figure>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/leaderboardAddNew.png" /></p>
+<figcaption>
+<p>The 'Add Leaderboard' button on the main Leaderboards Panel</p>
+</figcaption>
+</figure>
+<p>Then, simply fill out the information required for this leaderboard.</p>
+<figure>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/leaderboardSampleForm.png" /></p>
+<figcaption>
+<p>A filled-out form for the 'Best round' leaderboard.</p>
+</figcaption>
+</figure>
+<p>Click <strong>Save as draft</strong>, and your leaderboard will be available in the "Draft" state. Once you publish your game, all of your game's leaderboards are published with it.</p>
+<h3 id="create-a-leaderboard-for-a-published-game">Create a leaderboard for a published game</h3>
+<p>To create an additional leaderboard for a game that has already been published, follow the same steps as above. For more information on testing an updated version of a game, see <a href="https://developer.android.com/games/pgs/console/publish#publish_game_changes">Publishing Your Game Changes</a>.</p>
+<p>Once you've tested your leaderboard and are happy with it, you can republish your game with the new leaderboards, and they will be pushed out to the world.</p>
+<h2 id="edit-a-leaderboard">Edit a leaderboard</h2>
+<p>To edit a leaderboard that you've already created, click the leaderboard in the <strong>Leaderboards</strong> tab of Google Play Console. At this point, you will see the same form you used when first creating the leaderboard, and you will be able to edit any of the fields as you need.</p>
+<p>When you're done editing a leaderboard, click the <strong>Save as draft</strong> button. The newly edited leaderboard will be in the "Draft" state, which lets you to test it out.</p>
+<p>If it's working correctly, select <strong>Publish the changes</strong> from the box at the top of the leaderboard form, and you'll be able to republish your game, along with all your updated leaderboards, to the public.</p>
+<h3 id="undo-an-edit">Undo an edit</h3>
+<p>If you decide you don't like your newly-edited leaderboard and want to go back to the previous iteration, simply select <strong>Revert</strong> from the box at the top of the Leaderboard form. Your leaderboard reverts back to the already published version.</p>
+<h3 id="delete-a-leaderboard">Delete a leaderboard</h3>
+<p>You can delete leaderboards that are in the "Draft" state or that have been published. To delete a leaderboard in Google Play Console, go to the form for the leaderboard, and click <strong>Delete leaderboard</strong> at the top of the form.</p>
+<p>Alternatively, you can call <a href="https://developers.google.com/games/services/management/api/players/hide"><strong><code>Players.hide</code></strong></a> to hide a player's leaderboard in the app.</p>
+<h3 id="reset-a-leaderboard">Reset a leaderboard</h3>
+<p>You can only reset player progress data for your draft leaderboards.</p>
+<ul>
+<li>To reset leaderboards in Google Play Console, click <strong>Reset progress</strong> at the top of the form for that event.</li>
+<li>To reset leaderboard data programmatically, call the <a href="https://developers.google.com/games/services/management/api/scores">Management API Scores methods</a>.</li>
+</ul>
+<h2 id="add-translations-for-leaderboards">Add translations for leaderboards</h2>
+<p>You can specify your own translations for leaderboards that are associated with your game. Before you do so, first make sure to complete the steps described in <a href="https://developer.android.com/games/pgs/console/enable-features#add_translations">Adding translations for your game</a>. You must also have created one or more leaderboards for your game.</p>
+<p>To add your own translations for leaderboards, open the <strong>Leaderboards</strong> tab for your game in Google Play Console, then select an existing leaderboard. On the leaderboard details page, click the tab for a language that you previously added in the <strong>Game details</strong> tab. In the leaderboard details page for that language, edit the form with your translations for that leaderboard. Click <strong>Save</strong> to store your translated leaderboard details.</p>
+<h2 id="hide-leaderboard-scores">Hide leaderboard scores</h2>
+<p>Google Play Games Services provides a leaderboard tamper protection feature that checks for suspected tampered scores and hides them automatically. This feature is available for Android games only.</p>
+<p>Tamper protection is enabled by default for new leaderboards that you create for your Android game, but is disabled for existing leaderboards. To enable tamper protection for your existing leaderboards that are already published, follow these steps:</p>
+<ol>
+<li>In Google Play Console, open the <strong>Games services</strong> tab, then select your game from the list.</li>
+<li>Open the <strong>Leaderboards</strong> tab, then select the leaderboard instance for which you want to enable tamper protection.</li>
+<li>Turn the <strong>Enable leaderboard tamper protection</strong> option to ON.</li>
+<li>Click <strong>Save</strong> and continue.</li>
+<li>Publish your game.</li>
+</ol>
+<p>Once tamper protection is enabled for a leaderboard in Google Play Console, it may take up to 24 hours before this feature takes effect. Scores submitted before you enabled tamper protection are not retroactively hidden.</p>
+<p>In some situations, you may want to disable tamper protection (for example, if your game also runs on the web in addition to Android, and shares leaderboards across these platforms).</p>
+<h2 id="leaderboards-for-unreal-engine-games">Leaderboards for Unreal Engine games</h2>
+<p>This guide shows you how to use leaderboards APIs in Unreal Engine to create visual leaderboards, record a player's score, and compare the score against the player's score from previous game sessions.</p>
+<h3 id="before-you-begin">Before you begin</h3>
+<p>Before you start to code using the leaderboards API:</p>
+<ul>
+<li>Follow the instructions for installing and setting up your app to use Google Play Games Services in the <a href="../../ue-setup/">Set up Unreal Engine project</a> guide.</li>
+<li>Define the leaderboards that you want your game to display or update, by following the instructions in the <a href="#create-a-leaderboard">Google Play Console guide</a>.</li>
+<li>Familiarize yourself with the recommendations described in <a href="https://developer.android.com/games/pgs/quality#leaderboards">Quality Checklist</a>.</li>
+</ul>
+<h3 id="update-the-players-score">Update the player's score</h3>
+<p>When the player's score changes (for example, when the player finishes the game), your game can update their score on the leaderboard by calling <strong><code>UGMSGamesLeaderboardsClient::SubmitScore()</code></strong>, and passing in the leaderboard ID, the raw score value and an optional score tag.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardsClient.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">SubmitScore</span><span class="p">(</span><span class="n">LeaderboardID</span><span class="p">,</span><span class="w"> </span><span class="n">Score</span><span class="p">,</span><span class="w"> </span><span class="n">ScoreTag</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/SubmitLeaderboardScore.png" /></p>
+</div>
+</div>
+</div>
+<p>When making calls to update and load player scores, make sure to also follow these <a href="https://developer.android.com/games/pgs/quality">best practices</a> to avoid exceeding your API quota.</p>
+<h3 id="display-a-leaderboard">Display a leaderboard</h3>
+<p>To display leaderboard, call <strong><code>UGMSGamesLeaderboardsClient::ShowLeaderboardUI()</code></strong> and pass in the leaderboard ID and optional time span and collection parameters to display the default leaderboard user interface.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>A request code is used when the Leaderboard UI is shown or closed and can be changed in Project Settings. This code is primarily intended for debugging purposes. Unless you have a specific need to change it, it’s safe to leave the default value unchanged.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardsClient.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnShowLeaderboardUISuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnSuccessFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLeaderboardUIClosed</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnUIClosedFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnShowLeaderboardUIFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnFailureFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnShowLeaderboardUICanceled</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnCanceledFunction</span><span class="p">);</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">ShowLeaderboardUI</span><span class="p">(</span><span class="n">LeaderboardID</span><span class="p">,</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">,</span><span class="w"> </span><span class="n">Collection</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/ShowLeaderboardUI.png" /></p>
+</div>
+</div>
+</div>
+<p>An example of the default leaderboard UI is shown below.</p>
+<figure>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/leaderboard_android.png" /></p>
+<figcaption></figcaption>
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

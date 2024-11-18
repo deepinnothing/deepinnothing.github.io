@@ -1,0 +1,1605 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/play-games-services/features/recall-api/">
+      
+      
+        <link rel="prev" href="../sign-in/">
+      
+      
+        <link rel="next" href="../achievements/">
+      
+      
+      <link rel="icon" href="../../assets/google-play-games-services-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Recall API - Google Play Games Services: Unreal Engine Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#recall-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Google Play Games Services: Unreal Engine Plugin Documentation" class="md-header__button md-logo" aria-label="Google Play Games Services: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/google-play-games-services-icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Google Play Games Services: Unreal Engine Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Recall API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Google Play Games Services: Unreal Engine Plugin Documentation" class="md-nav__button md-logo" aria-label="Google Play Games Services: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/google-play-games-services-icon.png" alt="logo">
+
+    </a>
+    Google Play Games Services: Unreal Engine Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Google Play Console setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Google Play Console setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../console/setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set up Google Play Games Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/console/cloud-platform" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage project settings in Google Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/test" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable accounts for testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/console/publish" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish through Google Play Console
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ue-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set up Unreal Engine project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Add features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Add features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sign-in/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sign-in
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Recall API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Recall API
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cardinality-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cardinality rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-flows-for-storing-and-retrieving-the-recall-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical flows for storing and retrieving the recall tokens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical flows for storing and retrieving the recall tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-sign-in-the-pgs-user-and-retrieve-the-session-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Sign in the PGS User and retrieve the session ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-retrieve-any-available-recall-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Retrieve any available recall token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3a-if-token-is-present-restore-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3a: If token is present, restore progress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3b-if-no-token-is-present-store-a-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3b: If no token is present, store a token
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flows-for-users-without-a-pgs-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flows for users without a PGS profile
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flows for users without a PGS profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#store-a-token-and-persona-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store a token and persona pair
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch-a-game-on-a-new-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launch a game on a new device
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recall-api-for-unreal-engine-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recall API for Unreal Engine games
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recall API for Unreal Engine games">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#game-server-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game server setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Game server setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-set-up-your-play-games-services-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set up your Play Games Services project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-a-service-account-for-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Set up a service account for the game
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-download-server-side-java-library-for-playgamesservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Download server-side Java library for PlayGamesServices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-prepare-credentials-for-recall-api-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Prepare credentials for Recall API calls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-client-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game client setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-the-recall-api-within-your-game-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use the Recall API within your game server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use the Recall API within your game server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#store-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-scoped-recall-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game-scoped recall tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latest-recall-token-across-all-games-owned-by-developer-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latest recall token across all games owned by developer account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-recall-tokens-across-a-given-list-of-games-owned-by-the-developer-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      All recall tokens across a given list of games owned by the developer account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-recall-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete recall token
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-profileless-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable profileless mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional terms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/android/anti-piracy" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anti-piracy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../achievements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Achievements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saved-games/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Saved games
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leaderboards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leaderboards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../friends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Friends
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player-stats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Player stats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cardinality-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cardinality rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-flows-for-storing-and-retrieving-the-recall-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical flows for storing and retrieving the recall tokens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical flows for storing and retrieving the recall tokens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-sign-in-the-pgs-user-and-retrieve-the-session-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Sign in the PGS User and retrieve the session ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-retrieve-any-available-recall-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Retrieve any available recall token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3a-if-token-is-present-restore-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3a: If token is present, restore progress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3b-if-no-token-is-present-store-a-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3b: If no token is present, store a token
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flows-for-users-without-a-pgs-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flows for users without a PGS profile
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flows for users without a PGS profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#store-a-token-and-persona-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store a token and persona pair
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch-a-game-on-a-new-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launch a game on a new device
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recall-api-for-unreal-engine-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recall API for Unreal Engine games
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recall API for Unreal Engine games">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#game-server-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game server setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Game server setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-set-up-your-play-games-services-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set up your Play Games Services project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-a-service-account-for-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Set up a service account for the game
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-download-server-side-java-library-for-playgamesservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Download server-side Java library for PlayGamesServices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-prepare-credentials-for-recall-api-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Prepare credentials for Recall API calls
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-client-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game client setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-the-recall-api-within-your-game-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use the Recall API within your game server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use the Recall API within your game server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#store-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-scoped-recall-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game-scoped recall tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latest-recall-token-across-all-games-owned-by-developer-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latest recall token across all games owned by developer account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-recall-tokens-across-a-given-list-of-games-owned-by-the-developer-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      All recall tokens across a given list of games owned by the developer account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-recall-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete recall token
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-profileless-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable profileless mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional terms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="recall-api">Recall API</h1>
+<h2 id="overview">Overview</h2>
+<p>The Recall API lets games manage links between Google Play Games Services (PGS) users and their in-game accounts by storing <em>recall tokens</em> with Google servers. Here's a sample scenario of how the Recall API might be used.</p>
+<ol>
+<li>
+<p>A user is playing a game where the developer has an identity system to track user progress, and uses PGS in parallel with other authentication methods to log users into their game. In this example, a user is logged into their PGS account <em>Laura</em>, and creates an in-game account with the developer's identity system called <em>Racer94</em>. As the user plays the game, the developer's game server syncs their progress.</p>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/recall-overview-user-creates-account.png" /></p>
+</li>
+<li>
+<p>Separately, the developer saves a recall token with Google, which corresponds with the user's in-game account. Google automatically stores that recall token against the user's PGS profile.</p>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/recall-overview-game-server-stores-token.png" /></p>
+</li>
+<li>
+<p>The user now decides to play the game on <a href="../../">GPG on PC</a> for the first time. The user is automatically signed in with their PGS account, and the game client checks to see if there is any progress available for this PGS user. The game server then queries Google to see if there are any tokens for this PGS account. Since there are, Google sends back the recall token, and the game server uses that token to find the user's associated account Racer94, and restore their progress. Since signing in with PGS is a frictionless experience, the user's progress is restored by the app without the user needing to enter a username or password. Furthermore, the developer can use PGS sign-in with their existing identity system, and rely on Google to store the link between player progress and their PGS account.</p>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/recall-overview-game-server-resores-progress.png" /></p>
+</li>
+</ol>
+<p>As seen in the example earlier, there are two main actions which are performed by the Recall API:</p>
+<ul>
+<li><strong>Storing</strong> the token with Google when a user logs in with one of the in-game accounts.</li>
+<li><strong>Retrieving</strong> the token for a user in order to restore their in-game accounts.</li>
+</ul>
+<p>In addition to recall tokens, the Recall API also requires a stable identifier corresponding to the in-game account, known as <em>persona</em>, to enforce <a href="#cardinality-rules">cardinality constraints</a>. You might think of a persona as the label which represents the user's in-game account within the developer's identity system, and the recall token as a key which is used to restore the user's in-game account to the game. Persona and token values must not be reused across different <a href="../../console/setup/#add-your-game-to-the-play-console">PGS projects</a>. Also, while recall tokens may be changed over time, a persona should be stable according to the user's in-game account.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Strings used for recall tokens and personas must be opaque and not contain any sensitive or personally-identifiable information (including but not limited to name, email address, and demographics). Games must use robust encryption algorithms for generating recall tokens.</p>
+</div>
+<h3 id="cardinality-rules">Cardinality rules</h3>
+<p>The Recall API enforces a 1:1 relationship between PGS profiles and in-game accounts (referred to as <em>cardinality rules</em>), where one persona can only be linked to one PGS profile, and one PGS profile can only be linked to one persona. The persona is used as a stable identifier for an in-game account, since recall tokens may change over time.</p>
+<p>The persona linked to a PGS profile may also be changed over time (as different in-game accounts are linked to the PGS profile).</p>
+<h3 id="technical-flows-for-storing-and-retrieving-the-recall-tokens">Technical flows for storing and retrieving the recall tokens</h3>
+<p>This section covers the technical flow between the game client and servers with Google servers when storing and retrieving recall tokens.</p>
+<h4 id="step-1-sign-in-the-pgs-user-and-retrieve-the-session-id">Step 1: Sign in the PGS User and retrieve the session ID</h4>
+<p>The game initializes the PGS SDK and attempts to sign the user in with PGS.</p>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/recall-flow-user-pgs-signin.png" /></p>
+<p>Assuming the user is signed in, request a session ID from the Games SDK on the game client, and request an OAuth 2.0 token from Google's OAuth backend. The session ID and OAuth 2.0 tokens are used to communicate with the Google Games backend.</p>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/recall-flow-request-session-id-without-login.png" /></p>
+<h4 id="step-2-retrieve-any-available-recall-token">Step 2: Retrieve any available recall token</h4>
+<p>Request for any associated recall token with the PGS user's account. If a token is present, <a href="#step-3a-if-token-is-present-restore-progress">proceed to Step 3a and restore progress</a>. Otherwise, if this is a new user and they have no token present, <a href="">proceed to Step 3b and store a new token</a>.</p>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/recall-flow-retrieve-token.png" /></p>
+<h4 id="step-3a-if-token-is-present-restore-progress">Step 3a: If token is present, restore progress</h4>
+<p>If a token is present, retrieve and decrypt the token, and restore user data.</p>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/recall-flow-restore-data.png" /></p>
+<h4 id="step-3b-if-no-token-is-present-store-a-token">Step 3b: If no token is present, store a token</h4>
+<p>Since no token is present, no progress is restored. The user proceeds to sign in with the developer's identity system, or creates a new account if one does not exist. Note - this isn't signing in with PGS (which has been done already), but with a developer's identity system outside of PGS.</p>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/recall-flow-user-game-signin.png" /></p>
+<p>Create an encrypted recall token which encodes the user's in-game account, and send it to Google along with the session ID and OAuth 2.0 token. At this point, Google creates an association between the recall token which was sent, and the player's PGS account.</p>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/recall-flow-store-token.png" /></p>
+<h3 id="flows-for-users-without-a-pgs-profile">Flows for users without a PGS profile</h3>
+<p>You can store recall tokens for a user who hasn't created a PGS profile yet by using profileless mode. However, there are two important caveats:</p>
+<ul>
+<li>You can't retrieve tokens for a user who doesn't have a PGS profile. Profile creation is automatically prompted when the user tries to log into your game with Play Games Services on a second device.</li>
+<li>You must follow <a href="#additional-terms">additional guidelines</a> to ensure you have an appropriate notice describing the following items and obtaining the appropriate end-user consent:<ul>
+<li>Your sharing of the data with Google to enable the Play Games account linking feature.</li>
+<li>The availability of settings to manage this sharing, such as Play Games settings.</li>
+<li>The processing of such data under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="store-a-token-and-persona-pair">Store a token and persona pair</h4>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/recall-profileless-flow.png" /></p>
+<ol>
+<li>A user without a PGS profile opens a game that has profileless recall enabled.</li>
+<li>The Games SDK triggers an automatic sign-in, which fails because the user has no PGS profile.</li>
+<li>The Games SDK shows a snackbar that informs the user that the game has integration with Google. This snackbar is actionable—the user can disable recall until a profile is created.</li>
+<li>The game requests recall access. Note that PGS rejects recall access requests when there are PGS profiles on the device or when there are no Google Accounts on the device. In that case, the game should proceed without using PGS.</li>
+<li>After the user logs in with an in-game account, the game creates a token and persona pair for the user that corresponds to their in-game account. The game stores this pair with Google. The game might store more tokens later if the user logs into other in-game accounts.</li>
+</ol>
+<h4 id="launch-a-game-on-a-new-device">Launch a game on a new device</h4>
+<ol>
+<li>A user without a PGS profile opens a game that has profileless recall enabled on a device.</li>
+<li>The game records a profileless recall token as described in <a href="#store-a-token-and-persona-pair">Store a token and persona pair</a>.</li>
+<li>The user opens the same game on a different device that has the same account setup.</li>
+<li>The Games SDK triggers profile creation. The user can review and reject previously stored recall tokens. The user creates a PGS profile at this time.</li>
+<li>The automatic sign-in into PGS completes, and the game receives the authenticated status.</li>
+<li>The game retrieves recall tokens for the user as usual.</li>
+</ol>
+<h2 id="recall-api-for-unreal-engine-games">Recall API for Unreal Engine games</h2>
+<p>This section explains how to implement the Recall API within your game. It first covers setting up your game server and client to support the API, and then goes through how to store and retrieve tokens.</p>
+<h3 id="game-server-setup">Game server setup</h3>
+<p>Set up your game server to make Recall API calls to Google servers.</p>
+<h4 id="1-set-up-your-play-games-services-project">1. Set up your Play Games Services project</h4>
+<p>(If not already completed) Follow the instructions in <a href="../../console/setup/">Set up Google Play Games Services</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Recall tokens and personas are available on a per-PGS project basis. This means that tokens and personas are stored per-PGS project, and for separate PGS projects, there are separate collections of links between PGS profiles and personas. We recommend reviewing this documentation when determining how to set up your PGS projects.</p>
+</div>
+<h4 id="2-set-up-a-service-account-for-the-game">2. Set up a service account for the game</h4>
+<p>Follow the instructions on <a href="https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount">creating a service account</a>. At the end you should have a JSON file with service account credentials.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Recall API is a server-to-server API. Because of this, the Recall API uses service accounts to authenticate the game server, not regular 3-legged OAuth, which is used by other Games APIs to authenticate both game servers and end users.</p>
+</div>
+<h4 id="3-download-server-side-java-library-for-playgamesservices">3. Download server-side Java library for PlayGamesServices</h4>
+<p>Download the latest <a href="https://github.com/googleapis/google-api-java-client-services/tree/main/clients/google-api-services-games">google-api-services-games library</a> and upload this to your server.</p>
+<h4 id="4-prepare-credentials-for-recall-api-calls">4. Prepare credentials for Recall API calls</h4>
+<p>See <a href="https://developers.google.com/identity/protocols/oauth2/service-account#authorizingrequests">Preparing to make an authorized API call</a> for more context.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.client.googleapis.auth.oauth2.GoogleCredential</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.Games</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.GamesScopes</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+
+<span class="n">GoogleCredential</span><span class="w"> </span><span class="n">credential</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="n">GoogleCredential</span><span class="p">.</span><span class="na">fromStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">&quot;&lt;credentials&gt;.json&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="na">createScoped</span><span class="p">(</span><span class="n">Collections</span><span class="p">.</span><span class="na">singleton</span><span class="p">(</span><span class="n">GamesScopes</span><span class="p">.</span><span class="na">ANDROIDPUBLISHER</span><span class="p">));</span>
+
+<span class="n">Games</span><span class="w"> </span><span class="n">gamesApi</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Games</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="n">httpTransport</span><span class="p">,</span><span class="w"> </span><span class="n">JSON_FACTORY</span><span class="p">,</span><span class="w"> </span><span class="n">credential</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="game-client-setup">Game client setup</h3>
+<p>Set up your game client to retrieve the recall session IDs used by your server to communicate with Google servers.</p>
+<p>To communicate with Google's servers with the correct information, you need to request a Recall session ID from the client SDK, which you send to your game's server.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesRecallClient.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesRecallClient</span><span class="o">::</span><span class="n">OnRequestRecallAccessSuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnSuccessFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesRecallClient</span><span class="o">::</span><span class="n">OnRequestRecallAccessFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnFailureFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesRecallClient</span><span class="o">::</span><span class="n">OnRequestRecallAccessCanceled</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnCanceledFunction</span><span class="p">);</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesRecallClient</span><span class="o">::</span><span class="n">RequestRecallAccess</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/RequestRecallAccess.png" /></p>
+</div>
+</div>
+</div>
+<h3 id="use-the-recall-api-within-your-game-server">Use the Recall API within your game server</h3>
+<p>After configuring your server and client, you can send the <code>recallSessionID</code> from your game client to your game server and follow the guidance below to start using the Java API to store, retrieve or delete the Recall tokens server-side.</p>
+<h4 id="store-tokens">Store tokens</h4>
+<p>Users' persona and game token can be stored by using the <code>LinkPersonaRequest</code> object. You need to use the <code>GoogleCredential</code> to call Google APIs (See <a href="https://developers.google.com/identity/protocols/oauth2/service-account#callinganapi">Calling Google APIs</a> for context). Note that, per the <a href="#cardinality-rules">1:1 cardinality constraint</a>, you can only link one persona to one PGS profile at a time (and vice-versa).You should set the resolution policy in case this PGS profile already has been linked with another persona.</p>
+<p>Optionally, you may choose to set a TTL on the token, which declares how long the token is valid using a <a href="https://developers.google.com/protocol-buffers/docs/reference/java/com/google/protobuf/util/Durations">Durations</a> object. You may choose to set this using <code>SetTtl()</code> (as shown below), which sets the expiry date from the amount of time specified in the method, or <code>setExpireTime()</code>, which lets you set an exact time for when the tokens expire.</p>
+<p>You must encrypt the persona and game token, and they cannot contain personally identifiable information. Persona and token strings can be at most 256 characters long, and there can be at most 20 tokens or personas stored per player per game.</p>
+<p>Only one token can be stored per persona per player at a given time. Trying to store another token with the same persona overwrites the original token.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The encryption key used for encrypting tokens should be unique for each application. If the game is transferred to another developer, the encryption key must be passed to the new owner. The recall tokens can't be decrypted without the original encryption key.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Tokens created for <a href="#flows-for-users-without-a-pgs-profile">profileless users</a> have a default TTL of 30 days. Otherwise, for users with PGS profiles, tokens don't have a default TTL.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.Games.Recall.LinkPersona</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.LinkPersonaRequest</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.LinkPersonaResponse</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.protobuf.util.Durations</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+
+<span class="n">Games</span><span class="w"> </span><span class="n">gamesApi</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Games</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="n">httpTransport</span><span class="p">,</span><span class="w"> </span><span class="n">JSON_FACTORY</span><span class="p">,</span><span class="w"> </span><span class="n">credential</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
+
+<span class="n">String</span><span class="w"> </span><span class="n">recallSessionId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="c1">// recallSessionID from game client</span>
+<span class="n">String</span><span class="w"> </span><span class="n">persona</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="c1">// encrypted opaque string, stable for in-game account</span>
+<span class="n">String</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="c1">// encrypted opaque string encoding the progress line</span>
+
+<span class="n">LinkPersonaRequest</span><span class="w"> </span><span class="n">linkPersonaRequest</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="n">LinkPersonaRequest</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setSessionId</span><span class="p">(</span><span class="n">recallSessionId</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setPersona</span><span class="p">(</span><span class="n">persona</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setToken</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setCardinalityConstraint</span><span class="p">(</span><span class="n">ONE_PERSONA_TO_ONE_PLAYER</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setConflictingLinksResolutionPolicy</span><span class="p">(</span><span class="n">CREATE_NEW_LINK</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setTtl</span><span class="p">(</span><span class="n">Durations</span><span class="p">.</span><span class="na">fromDays</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span><span class="w"> </span><span class="c1">// Optionally set TTL for token</span>
+<span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+<span class="n">LinkPersonaResponse</span><span class="w"> </span><span class="n">linkPersonaResponse</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="n">gamesApi</span><span class="p">.</span><span class="na">recall</span><span class="p">().</span><span class="na">linkPersona</span><span class="p">(</span><span class="n">linkPersonaRequest</span><span class="p">).</span><span class="na">execute</span><span class="p">();</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">linkPersonaResponse</span><span class="p">.</span><span class="na">getState</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LINK_CREATED</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// success</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="retrieve-tokens">Retrieve tokens</h4>
+<p>There are three options to retrieve a token, based on your games' needs. You can request the following:</p>
+<ul>
+<li>The tokens associated with the current game, including game-scoped recall tokens.</li>
+<li>The last token stored across all games owned by the developer account.</li>
+<li>Given a list of games owned by the developer account, all the recall tokens associated with each game.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you request recall tokens, the API doesn't return strings that represent the persona.</p>
+</div>
+<h4 id="game-scoped-recall-tokens">Game-scoped recall tokens</h4>
+<p>To retrieve the recall tokens from the current game, get the <code>recallSessionId</code> from the client and pass it into the <code>retrieveTokens</code> API:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.Games</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.RetrievePlayerTokensResponse</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.RecallToken</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+
+<span class="n">String</span><span class="w"> </span><span class="n">recallSessionId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="c1">// recallSessionID from game client</span>
+
+<span class="n">RetrievePlayerTokensResponse</span><span class="w"> </span><span class="n">retrievePlayerTokensResponse</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="n">gamesApi</span><span class="p">.</span><span class="na">recall</span><span class="p">().</span><span class="na">retrieveTokens</span><span class="p">(</span><span class="n">recallSessionId</span><span class="p">).</span><span class="na">execute</span><span class="p">();</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">RecallToken</span><span class="w"> </span><span class="n">recallToken</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">retrievePlayerTokensResponse</span><span class="p">.</span><span class="na">getTokens</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">String</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="n">recallToken</span><span class="p">.</span><span class="na">getToken</span><span class="p">();</span>
+<span class="w">  </span><span class="c1">// Same string as was written in LinkPersona call</span>
+<span class="w">  </span><span class="c1">// decrypt and recover in-game account</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="latest-recall-token-across-all-games-owned-by-developer-account">Latest recall token across all games owned by developer account</h4>
+<p>To retrieve the most recent token stored across all games owned by the developer account in the Google Play Console, you need to get the <code>recallSessionId</code> from the client and pass it into the <code>lastTokenFromAllDeveloperGames</code> API, as shown in the following code snippet. As part of the response, you can inspect the <a href="https://developer.android.com/build/configure-app-module#set-application-id">Application ID</a> associated with this token.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.Games</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.RetrieveDeveloperGamesLastPlayerTokenResponse</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.GamePlayerToken</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.RecallToken</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+
+<span class="n">String</span><span class="w"> </span><span class="n">recallSessionId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="c1">// recallSessionID from game client</span>
+
+<span class="n">RetrieveDeveloperGamesLastPlayerTokenResponse</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">gamesApi</span><span class="p">.</span><span class="na">recall</span><span class="p">().</span><span class="na">lastTokenFromAllDeveloperGames</span><span class="p">(</span><span class="n">recallSessionId</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">execute</span><span class="p">();</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">hasGamePlayerToken</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">GamePlayerToken</span><span class="w"> </span><span class="n">gamePlayerToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">getGamePlayerToken</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// The ID of the application that the token is associated with.</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">applicationId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gamePlayerToken</span><span class="p">.</span><span class="na">getApplicationId</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Same string as was written in LinkPersona call.</span>
+<span class="w">    </span><span class="n">RecallToken</span><span class="w"> </span><span class="n">recallToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gamePlayerToken</span><span class="p">.</span><span class="na">getRecallToken</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Decrypt and recover in-game account.</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="all-recall-tokens-across-a-given-list-of-games-owned-by-the-developer-account">All recall tokens across a given list of games owned by the developer account</h4>
+<p>To retrieve all the tokens associated with a list of games which are owned by your developer account in the Google Play Console, get the <code>recallSessionId</code> from the client and pass it into the <code>gamesPlayerTokens</code> API. Supply a list of <a href="https://developer.android.com/build/configure-app-module#set-application-id">Application IDs</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.Games</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.RetrieveGamesPlayerTokensResponse</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.GamePlayerToken</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.RecallToken</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+
+<span class="n">String</span><span class="w"> </span><span class="n">recallSessionId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="c1">// recallSessionID from game client</span>
+
+<span class="c1">// Application IDs for which you would like to retrieve the recall tokens.</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">applicationIds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+
+<span class="n">RetrieveGamesPlayerTokensResponse</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span>
+<span class="n">gamesApiClient</span>
+<span class="w">        </span><span class="p">.</span><span class="na">recall</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">gamesPlayerTokens</span><span class="p">(</span><span class="n">recallSessionId</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">setApplicationIds</span><span class="p">(</span><span class="n">applicationIds</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">execute</span><span class="p">();</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">GamePlayerToken</span><span class="w"> </span><span class="n">gamePlayerToken</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">getGamePlayerTokens</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// The ID of the application that the token is associated with.</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">applicationId</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">gamePlayerToken</span><span class="p">.</span><span class="na">getApplicationId</span><span class="p">();</span>
+
+
+<span class="w">    </span><span class="c1">// Same string as was written in LinkPersona call.</span>
+<span class="w">    </span><span class="n">RecallToken</span><span class="w"> </span><span class="n">recallToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gamePlayerToken</span><span class="p">.</span><span class="na">getRecallToken</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Decrypt and recover in-game account.</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="delete-recall-token">Delete recall token</h4>
+<p>If needed, you can also delete the recall token with the following call:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.Games</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.UnlinkPersonaRequest</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.api.services.games.model.UnlinkPersonaResponse</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+
+<span class="n">String</span><span class="w"> </span><span class="n">recallSessionId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+<span class="n">String</span><span class="w"> </span><span class="n">persona</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+<span class="n">String</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+
+<span class="n">Games</span><span class="w"> </span><span class="n">gamesApi</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Games</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="n">httpTransport</span><span class="p">,</span><span class="w"> </span><span class="n">JSON_FACTORY</span><span class="p">,</span><span class="w"> </span><span class="n">credential</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
+
+<span class="n">UnlinkPersonaRequest</span><span class="w"> </span><span class="n">unlinkPersonaRequest</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="n">UnlinkPersonaRequest</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setSessionId</span><span class="p">(</span><span class="n">recallSessionId</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">setPersona</span><span class="p">(</span><span class="n">persona</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// .setToken(token) - alternatively set token, but not both</span>
+<span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+<span class="n">UnlinkPersonaResponse</span><span class="w"> </span><span class="n">unlinkPersonaResponse</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="n">gamesApi</span><span class="p">.</span><span class="na">recall</span><span class="p">().</span><span class="na">unlinkPersona</span><span class="p">(</span><span class="n">unlinkPersonaRequest</span><span class="p">).</span><span class="na">execute</span><span class="p">();</span>
+
+<span class="kt">boolean</span><span class="w"> </span><span class="n">unlinked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unlinkPersonaResponse</span><span class="p">.</span><span class="na">isUnlinked</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="enable-profileless-mode">Enable profileless mode</h3>
+<p>You can enable <a href="#flows-for-users-without-a-pgs-profile">limited Recall API functionality</a> for users that don't have PGS profiles by following these steps:</p>
+<ol>
+<li>
+<p>Enable profileless recall for your PGS game project in the Play Developer Console. </p>
+<p><img alt="Select the option labeled &quot;Turn on storage&quot;" src="https://developer.android.com/static/images/games/pgs/play-console-recall.png" /></p>
+</li>
+<li>
+<p>Review the <a href="#additional-terms">additional terms</a> described later in this section.</p>
+</li>
+<li>
+<p>Go to <strong>Project settings &gt; Plugins &gt; Google Play Games Services</strong> and set <strong><code>Enable Profileless Recall</code></strong> field to <strong><code>true</code></strong>.</p>
+<p><img alt="" src="../../assets/EnableProfilelessRecall.png" /></p>
+</li>
+</ol>
+<h3 id="additional-terms">Additional terms</h3>
+<p>In addition to being subject to the <a href="https://developers.google.com/games/services/terms">Play Games Services Terms of Service</a>, you agree that if you use the Recall API for users without a PGS profile, which enables sharing end user's data with Google without them having a Play Games Services profile, you must, prior to sharing such data with Google, provide the end user with appropriate notice describing the following:</p>
+<ol>
+<li>Your sharing of the data with Google to enable Play Games account linking feature.</li>
+<li>The availability of settings to manage such sharing such as those through Play Games settings.</li>
+<li>The processing of such data under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>, and obtain appropriate end user consent for such sharing that meets all applicable legal requirements.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

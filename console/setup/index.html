@@ -1,0 +1,1253 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/play-games-services/console/setup/">
+      
+      
+        <link rel="prev" href="../../get-started/">
+      
+      
+        <link rel="next" href="../../ue-setup/">
+      
+      
+      <link rel="icon" href="../../assets/google-play-games-services-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Set up Google Play Games Services - Google Play Games Services: Unreal Engine Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#set-up-google-play-games-services" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Google Play Games Services: Unreal Engine Plugin Documentation" class="md-header__button md-logo" aria-label="Google Play Games Services: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/google-play-games-services-icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Google Play Games Services: Unreal Engine Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Set up Google Play Games Services
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Google Play Games Services: Unreal Engine Plugin Documentation" class="md-nav__button md-logo" aria-label="Google Play Games Services: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/google-play-games-services-icon.png" alt="logo">
+
+    </a>
+    Google Play Games Services: Unreal Engine Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Google Play Console setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Google Play Console setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Set up Google Play Games Services
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Set up Google Play Games Services
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you start
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Before you start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-google-play-developer-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Google Play Developer account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-google-cloud-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Google Cloud project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-in-to-the-play-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sign in to the Play Console
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-your-game-to-the-play-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add your game to the Play Console
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-an-oauth-20-client-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate an OAuth 2.0 client ID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate an OAuth 2.0 client ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-oauth-consent-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure the OAuth consent screen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-credential" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a credential
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a credential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-credentials-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up credentials details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up authorization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-credentials-details_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up credentials details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-authorization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up authorization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avoid-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avoid common issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/console/cloud-platform" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage project settings in Google Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/test" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable accounts for testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/console/publish" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish through Google Play Console
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ue-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set up Unreal Engine project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Add features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Add features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/sign-in/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sign-in
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/recall-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recall API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/android/anti-piracy" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anti-piracy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/achievements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Achievements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/saved-games/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Saved games
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/leaderboards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leaderboards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/friends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Friends
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/player-stats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Player stats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you start
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Before you start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-google-play-developer-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Google Play Developer account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-google-cloud-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Google Cloud project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-in-to-the-play-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sign in to the Play Console
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-your-game-to-the-play-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add your game to the Play Console
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-an-oauth-20-client-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate an OAuth 2.0 client ID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate an OAuth 2.0 client ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-oauth-consent-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure the OAuth consent screen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-credential" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a credential
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a credential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-credentials-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up credentials details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up authorization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-credentials-details_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up credentials details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-authorization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up authorization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avoid-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avoid common issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="set-up-google-play-games-services">Set up Google Play Games Services</h1>
+<p>This page describes how to set up Google Play Games Services for your Android game using Google Play Console. The Play Console provides a centralized place for you to manage game services and configure the metadata used to authorize and authenticate your game.</p>
+<p>To add your game to Play Console, follow these general steps:</p>
+<ul>
+<li>Create a game project for your game and specify details such as the name and description of the game.</li>
+<li>Create and link the necessary credentials to authorize and authenticate your game to Google Play Games Services.</li>
+</ul>
+<h2 id="before-you-start">Before you start</h2>
+<p>Complete the following steps before you configure Google Play Games Services.</p>
+<h3 id="create-a-google-play-developer-account">Create a Google Play Developer account</h3>
+<ul>
+<li>You must have a Google Play Developer account set up in Play Console. For more information, see the <a href="https://support.google.com/googleplay/android-developer/answer/6112435">Register for a Google Play Developer account</a>.</li>
+<li>Grant edit permission: To edit Play Games Services settings in Play Console, your team must have permissions to manage Play Games Services. For more information, see <a href="https://support.google.com/googleplay/android-developer/answer/9844686">Add developer account users and manage permissions</a>.</li>
+</ul>
+<h3 id="create-a-google-cloud-project">Create a Google Cloud project</h3>
+<p>You must have set up a Google Cloud project. For more information, see</p>
+<ul>
+<li><a href="https://cloud.google.com/docs/get-started"><strong><code>Get started with Google Cloud</code></strong></a>.</li>
+<li><a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects#creating_a_project"><strong><code>Creating a project</code></strong></a>.</li>
+</ul>
+<p>To use Play Console, you must enable the APIs you plan to use with your project.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Console</label><label for="__tabbed_1_2">gcloud</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a class="md-button" href="https://console.cloud.google.com/apis/api/games.googleapis.com">Enable Google Play Games Services API</a></p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>gcloud services enable \
+   --project &quot;PROJECT&quot; \
+   &quot;games.googleapis.com&quot;
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="sign-in-to-the-play-console">Sign in to the Play Console</h2>
+<p>To sign in, go to <a href="https://play.google.com/apps/publish/">Google Play Console</a>. If you haven't registered for the Play Console before, you will be prompted to do so.</p>
+<h2 id="add-your-game-to-the-play-console">Add your game to the Play Console</h2>
+<p>To add your game, follow these steps:</p>
+<ol>
+<li>In Play Console, create an app and specify that it's a game. For more information, see <a href="https://support.google.com/googleplay/android-developer/answer/9859152">Create and set up your app</a>.</li>
+<li>Go to <strong>Grow users &gt; Play Games Services &gt; Setup and management &gt; Configuration</strong>.</li>
+<li>
+<p>Specify whether your game already uses Google APIs (such as Firebase). It is important that you choose the correct option; otherwise, your game may experience issues when using Google APIs. Here's the options:</p>
+<ul>
+<li><strong>No, my game doesn't use Google APIs</strong>: If you are creating a new game, or you have never set up a Google API for it, choose this option. Enter your game's name and then click <strong>Create</strong>.</li>
+<li><strong>Yes, my game already uses Google APIs</strong>: Choose this option if you have already set up a Google API for the Game. If this is the case, you will see a list of your projects from Google Cloud Console. Select your project from the list and then click <strong>Use</strong>.</li>
+<li><strong>Use an existing Play Games Services project</strong>: If you want to use an existing Play Games Services project, choose this option. You will see a list of existing Play Games Services projects for your account. Select your game project from the list and then click <strong>Use</strong>. This is not a typical choice, but you might do this if you are creating a new game in Play Console in order to change the package name, or if you have free and paid versions of your game with different package names.</li>
+</ul>
+<p>A Play Games Services game project is created, and a corresponding entry is created for you in the <a href="https://developers.google.com/games/services/console/console.developers.google.com/apis/api">Google Cloud Console</a>.</p>
+</li>
+<li>
+<p>In the <strong>Properties</strong> section, click <strong>Edit Properties</strong> to add information, such as the description, category, and graphic assets for your game. Here's some guidelines for coonfiguring the properties:</p>
+<ul>
+<li>Only the display name is required for testing. The other fields must be filled out before you can publish your game.</li>
+<li>The display name and description for your game should match what you set up in your game's Play Store listing.</li>
+<li>For guidelines on creating the graphic assets, see <a href="https://support.google.com/googleplay/android-developer/answer/9866151">Add preview assets to showcase your app</a> and the <a href="https://android-developers.blogspot.com/2011/10/android-market-featured-image.html">Google Play Featured-Image Guidelines</a>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="generate-an-oauth-20-client-id">Generate an OAuth 2.0 client ID</h2>
+<p>Your game must have an OAuth 2.0 client ID in order to be authenticated and authorized to call the Google Play Games Services. To set up a credential for Play Games Services, which is the association between a client ID and your game, use Google Cloud Platform to create the client ID. Then, use Google Play Console to add a credential, linking the client ID to your game.</p>
+<p>For more detailed instructions, see the following steps:</p>
+<h3 id="configure-the-oauth-consent-screen">Configure the OAuth consent screen</h3>
+<p>If you haven't yet configured the OAuth consent screen, the <strong>Credentials</strong> section will display a message prompting you to configure.
+<img alt="Configure OAuth Prompt" src="https://developer.android.com/static/images/games/pgs/pgs-configure-oauth-prompt.png" />
+Click <strong>Configure</strong>. This opens a dialog with further instructions and a deep link to the Google Cloud Platform.
+<img alt="Configure OAuth Instructions" src="https://developer.android.com/static/images/games/pgs/pgs-configure-oauth-instructions.png" />
+Make sure that the consent screen is available to everyone that the game is available to. The final list of scopes needs to include <code>games</code>, <code>games_lite</code>, and <code>drive.appdata</code>; none of these scopes will require app verification. We recommend publishing the consent screen immediately. If that is not possible, you can make the consent screen available to testers to allow them to sign-in to the game.</p>
+<p>If you have completed the setup of the OAuth consent screen, click <strong>Done</strong>. Google Play Console refreshes automatically, and if configuration was successful you will be able to create a credential:
+<img alt="Credentials" src="https://developer.android.com/static/images/games/pgs/pgs-credentials.png" /></p>
+<h3 id="create-a-credential">Create a credential</h3>
+<p>In order to authorize your game to communicate with Google Play Games Services, you must create a credential with an authorized OAuth2 client ID.</p>
+<p>In the <strong>Credentials</strong> section, click <strong>Add credential</strong>.</p>
+<p>In the wizard, choose whether you want to create an Android credential (if your game APK will authenticate the user and use Play Games Services APIs) or a game server credential (if your game server will use Play Games Services APIs). Follow the instructions specific to your desired credential type.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Android</label><label for="__tabbed_2_2">Game server</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<h4 id="set-up-credentials-details">Set up credentials details</h4>
+<p>Ensure that the name in the <strong>Name</strong> field matches the name of your game. Choose whether to enable <a href="">Anti-Piracy</a>.</p>
+<h4 id="set-up-authorization">Set up authorization</h4>
+<p>Next, choose an OAuth client ID to use for this game project. If you already have OAuth2 client IDs, you can choose one. However, you will usually create a new one. Click <strong>Create OAuth client</strong>. This opens a dialog with deep links and instructions for creating an OAuth Client ID in Google Cloud Platform.</p>
+<ol>
+<li>Select <strong>Android</strong> as the application type.</li>
+<li>Enter your game's name in the <strong>Name</strong> field.</li>
+<li>Enter your Android application's <a href="https://developer.android.com/guide/topics/manifest/manifest-element#package">package name</a> in the <strong>Package name</strong> field.</li>
+<li>
+<p>This step varies depending on whether you use the App Signing Key provided by Google or your own.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Google App Signing Key</label><label for="__tabbed_3_2">Own App Signing Key</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Copy the SHA-1 certificate fingerprint from the dialog with the instructions for creating an OAuth Client ID in Google Cloud Platform. If it was closed, you can find the SHA-1 certificate fingerprint in the <strong>Test and release &gt; Setup &gt; App Signing &gt; App signing key certificate</strong> section.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this case, the OAuth client will only work with the version downloaded from the Google Play Store. Google replaces the key specified in Unreal Engine's Project Settings with their own App Signing Key when uploaded to Play Console. To enable Google Play Games Services to work with Unreal Engine builds instead, you must use SHA-1 certificate fingerprint of the Upload Key.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Open a terminal and run the <a href="https://developer.android.com/studio/publish/app-signing">Keytool utility</a> to get the SHA1 fingerprints of the release and debug certificates.</li>
+<li>To get the certificate fingerprint, run the following command:
+    <code>keytool -list -keystore &lt;path-to-keystore&gt; -v</code></li>
+<li>The keytool utility prompts you to enter a password for the keystore. The keytool then prints the fingerprint to the terminal.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure to record the package name and signing certificate that you configured in this step. Using a different certificate or package name in your application will cause authentication failures.</p>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Paste the SHA1 fingerprint into the <strong>Signing certificate fingerprint (SHA1)</strong> field.</p>
+</li>
+<li>Click <strong>Create</strong>.</li>
+</ol>
+<p>For more information about OAuth 2.0 on Android, see <a href="https://developer.android.com/training/id-auth/authenticate">Authenticating to OAuth2 Services</a>.</p>
+<p>After you click <strong>Done</strong> in the dialog, the available Client IDs will refresh. Choose the credential you created from the drop-down menu and then click <strong>Save Changes</strong>. This creates the credential as a draft, enabling you to authenticate to Play Games Services in your game.</p>
+</div>
+<div class="tabbed-block">
+<h4 id="set-up-credentials-details_1">Set up credentials details</h4>
+<p>Ensure that the name in the <strong>Name</strong> field matches the name of your game.</p>
+<h4 id="set-up-authorization_1">Set up authorization</h4>
+<p>Next, choose an OAuth client ID to use for this game project. If you already have OAuth2 client IDs, you can choose one. However, you will usually create a new one. Click <strong>Create OAuth client</strong>. This opens a dialog with deep links and instructions for creating an OAuth Client ID in Google Cloud Platform.</p>
+<ol>
+<li>Select <strong>Web application</strong> as the application type.</li>
+<li>Enter your game's name in the <strong>Name</strong> field.</li>
+<li>Click <strong>Create</strong>.</li>
+</ol>
+<p>For more information about OAuth 2.0 on Android, see <a href="https://developer.android.com/training/id-auth/authenticate">Authenticating to OAuth2 Services</a>.</p>
+<p>After you click <strong>Done</strong> in the dialog, the available Client IDs will refresh. Choose the credential you created from the drop-down menu and then click <strong>Save Changes</strong>. This creates the credential as a draft, enabling you to authenticate to Play Games Services from your game server. For more information about using Play Games Services with your game server, see <a href="https://developer.android.com/games/pgs/android/server-access">Enabling Server-Side Access to Google Play Games Services</a>.</p>
+</div>
+</div>
+</div>
+<h2 id="enable-testing">Enable testing</h2>
+<p>To ensure that Google Play Games Services is functioning correctly in your game, you should test your game services before publishing your game changes on Google Play.</p>
+<p>If your game is in an unpublished state, grant access to your testers by adding their user accounts to the allowlist. Otherwise, your testers will encounter OAuth and 404 errors when attempting to access Play Games Services endpoints, such as the <a href="">sign-in</a> endpoint.</p>
+<p>Users with authorized test accounts will have access to your unpublished Play Games Services game project and can test that your configured Play Games Services are working correctly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember to add yourself as a tester, or the Play Games SDK will not work for your user account.</p>
+</div>
+<p>There are two ways to enable testers to use Play Games Services APIs for your game:</p>
+<ul>
+<li>At an individual level, by adding individual email addresses.</li>
+<li>At a group level, by enabling Play Games Services for a Play Console release track.</li>
+</ul>
+<p>To add individual testers to your game project:</p>
+<ol>
+<li>Open the <strong>Testers</strong> tab for your game in the Google Play Console (<strong>Grow users &gt; Play Games Services &gt; Setup and management &gt; Testers</strong>).</li>
+<li>Click the <strong>Add testers</strong> button.</li>
+<li>In the dialog that appears, enter the email addresses of the Google Accounts that you wish to add as testers (separated with commas or one email address per line).</li>
+<li>Click Add to save the users as testers. The tester accounts you added should be able to access Play Games Services within a couple of hours.
+<img alt="Console Add Testers" src="https://developer.android.com/static/images/games/pgs/consoleAddTesters.png" /></li>
+</ol>
+<p>To give testing access to a group, enable a release track to access Play Games Services:</p>
+<p>Google Play makes it easy to distribute pre-release versions of your app to controlled groups of trusted users with the release track features. See <a href="https://support.google.com/googleplay/android-developer/answer/9845334">Set up an open, closed, or internal test</a> on the Google Play Help website.</p>
+<p>You can grant access to test your game to all users who have access to test APKs on a given release track. This works the same as if you had added them to the tester list individually. To do this, follow these steps:</p>
+<ol>
+<li>Open the <strong>PGS Testers</strong> section (<strong>Grow users &gt; Play Games Services &gt; Setup and management &gt; Testers</strong>) and select the <strong>Release tracks</strong> tab. On this page, you can also see the list of tracks that are already enabled for Play Games Services testing.</li>
+<li>Click <strong>Add tracks</strong>.</li>
+<li>Select one or more tracks to enable for Play Games Services testing.</li>
+<li>Click <strong>Add Tracks</strong>.</li>
+</ol>
+<p>The selected release tracks will now appear on the list of tracks enabled for Play Games Services testing.</p>
+<p>This feature is only available if you have an Android app linked to your game in Google Play Console.</p>
+<h2 id="avoid-common-issues">Avoid common issues</h2>
+<p>To avoid common setup mistakes, make sure to follow these recommendations when setting up your game to use Google Play Games Services.</p>
+<ol>
+<li>
+<p><strong>Set up your game with the Play Console</strong></p>
+<p>If you created an Oauth 2.0 client ID for your app in the Google Cloud Console, Google Play Games Services will not know about the association between the game’s achievement and leaderboards and the client ID. To create this association, you must create a credential using the Oauth 2.0 client ID as described in <a href="#create-a-credential">Create a credential</a>.</p>
+</li>
+<li>
+<p><strong>Use the correct application ID in Android</strong></p>
+<p>The application ID is a required string resource that you must reference in your Android manifest. The application ID string consists only of the digits (typically 12 or more) at the beginning of the client ID provided by the Play Console. The application ID can be found at the top of the Configuration page and is labeled as Project ID below the name of your game.</p>
+</li>
+<li>
+<p><strong>Sign your APK with the correct certificate</strong></p>
+<p>When linking your Android app to your game in the Play Console, you must use exactly the same package name and certificate fingerprint that you used to publish your app, i.e. App Signing Key certificate. If there is a mismatch, calls to Google Play Games Services will fail. You can create two client IDs, one with the App Signing Key certificate fingerprint and another with the Upload Key certificate fingerprint, and use the same package name for both. To learn more about how to specify the signing certificate in the Play Console, see <a href="https://developer.android.com/tools/publishing/app-signing">Signing Your Applications</a>.</p>
+</li>
+<li>
+<p><strong>Sign in with a tester account during development</strong></p>
+<p>If you have not published your game setting changes in the Play Console, you might encounter errors during testing if you are not signed in with a whitelisted tester account. You should always enable your Play Console publisher account for testing. To learn how to manage tester accounts, see <a href="">Enabling accounts for testing</a>.</p>
+</li>
+<li>
+<p><strong>Publish the consent screen in Google Cloud Platform</strong></p>
+<p>Before publishing the app in the Play Console, publish the consent screen in Google Cloud Platform. Without this step, the public audience won’t be able to use any of the Play Games Services features.</p>
+</li>
+<li>
+<p><strong>At release, publish the Play Games Services settings first before you publish your game</strong></p>
+<p>Developers might accidentally publish their app without publishing the corresponding Play Games Services settings for their app. This might cause players who are signing in with non-tester accounts to encounter errors since the app cannot reference the correct game settings. When releasing your game, remember to first publish your game settings by using the Publish Game option in the Play Console. To learn how to publish your changes, see <a href="">Publishing your game changes</a>.</p>
+</li>
+</ol>
+<p>For additional tips, see the <a href="https://developer.android.com/games/pgs/android/troubleshooting">Android troubleshooting guide</a>.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Once you complete the initial setup tasks described above, you can <a href="">enable Play Games Services features</a> for your game, such as saved games, leaderboards, and achievements.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
