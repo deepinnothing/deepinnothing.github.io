@@ -1,4 +1,5 @@
 site_name: "Google Play Games Services: Unreal Engine Plugin Documentation"
+site_url: https://deepinnothing.github.io/documentation/unreal-engine/play-games-services
 theme:
   name: material
   logo: assets/google-play-games-services-icon.png
