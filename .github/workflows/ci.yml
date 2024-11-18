@@ -30,18 +30,4 @@ jobs:
       
       - run: pip install mkdocs-material 
       
-      - run: mkdocs build
-      
-      - run: |
-          mkdir -p temp/documentation/unreal-engine/play-games-services
-          cp -r site/* temp/documentation/unreal-engine/play-games-services
-          rm -rf site/*
-          mv temp/* site/
-          rm -rf temp
-      
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: site
+      - run: mkdocs gh-deploy --force
