@@ -1,0 +1,1321 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/google-play-games-services/features/achievements/">
+      
+      
+        <link rel="prev" href="../recall-api/">
+      
+      
+        <link rel="next" href="../saved-games/">
+      
+      
+      <link rel="icon" href="../../assets/google-play-games-services-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Achievements - Google Play Games Services: Unreal Engine Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#achievements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Google Play Games Services: Unreal Engine Plugin Documentation" class="md-header__button md-logo" aria-label="Google Play Games Services: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/google-play-games-services-icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Google Play Games Services: Unreal Engine Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Achievements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Google Play Games Services: Unreal Engine Plugin Documentation" class="md-nav__button md-logo" aria-label="Google Play Games Services: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/google-play-games-services-icon.png" alt="logo">
+
+    </a>
+    Google Play Games Services: Unreal Engine Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Google Play Console setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Google Play Console setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../console/setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set up Google Play Games Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/console/cloud-platform" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage project settings in Google Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/test" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable accounts for testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/console/publish" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish through Google Play Console
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ue-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set up Unreal Engine project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Add features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Add features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sign-in/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sign-in
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recall-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recall API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/android/anti-piracy" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anti-piracy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Achievements
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Achievements
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    <span class="md-ellipsis">
+      State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incremental-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incremental achievements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-experience-points-xp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Track experience points (XP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimum achievements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maximum achievements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#icon-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Icon guidelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-achievement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an achievement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create an achievement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      New game
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#published-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Published game
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-an-achievement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit an achievement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit an achievement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undo-an-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undo an edit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-an-achievement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete an achievement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-an-achievement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset an achievement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-translations-for-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add translations for achievements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#achievements-for-unreal-engine-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Achievements for Unreal Engine games
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Achievements for Unreal Engine games">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you begin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unlock-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unlock achievements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display achievements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saved-games/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Saved games
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leaderboards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leaderboards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../friends/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Friends
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player-stats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Player stats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    <span class="md-ellipsis">
+      State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incremental-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incremental achievements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-experience-points-xp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Track experience points (XP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimum achievements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maximum achievements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#icon-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Icon guidelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-achievement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an achievement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create an achievement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      New game
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#published-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Published game
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-an-achievement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit an achievement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit an achievement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undo-an-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undo an edit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-an-achievement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete an achievement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-an-achievement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset an achievement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-translations-for-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add translations for achievements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#achievements-for-unreal-engine-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Achievements for Unreal Engine games
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Achievements for Unreal Engine games">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you begin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unlock-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unlock achievements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display achievements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="achievements">Achievements</h1>
+<p>Achievements can be a great way to increase your users' engagement within your game. You can implement achievements in your game to encourage players to experiment with features they might not normally use, or to approach your game with entirely different play styles. Achievements can also be a fun way for players to compare their progress with each other and engage in light-hearted competition.</p>
+<p>To learn how to implement achievements in your Unreal Engine project, see <a href="#achievements-for-unreal-engine-games">Achievements for Unreal Engine games</a>.</p>
+<h2 id="attributes">Attributes</h2>
+<p>To understand how achievements work, you'll want to be familiar with some of the attributes associated with them.</p>
+<p>These basic elements are associated with every achievement:</p>
+<ul>
+<li><strong>Id</strong> is a unique string that is generated by Google Play Console. You'll use this unique ID to refer to the achievement in your game clients.</li>
+<li><strong>Name</strong> is a short name of the achievement (for example, "Pieman"). The value can be up to 100 characters.</li>
+<li><strong>Description</strong> is a concise description about your achievement. Usually this tells your player how to earn the achievement (for example, "Bake a lemon meringue pie before sundown"). The value can be up to 500 characters.</li>
+<li><strong>Icon</strong> is a square icon that is associated with your achievement. For best practices when creating your achievement icons, see the <a href="#icon-guidelines">Icon Guidelines</a> section.</li>
+<li><strong>List order</strong> is the order in which the locked achievements appear when a player views the achievements associated with your game. This can be in any order that you like. Unlocked achievements appear at the top of the list in the order achieved.</li>
+</ul>
+<h3 id="state">State</h3>
+<p>Achievements can be in one of three different states:</p>
+<ul>
+<li>A <strong>hidden</strong> achievement means that details about the achievement are hidden from the player. Play Games Services provides a generic placeholder description and icon for the achievement while it's in a hidden state. We recommend making an achievement hidden if it contains a spoiler you don't want to reveal about your game too early (for example, "Discover that you were a ghost all along!").</li>
+<li>A <strong>revealed</strong> achievement means that the player knows about the achievement, but hasn't earned it yet. Most achievements start in the revealed state.</li>
+<li>An <strong>unlocked</strong> achievement means that the player has successfully earned the achievement. An achievement can be unlocked offline. When the game comes online, it syncs with Play Games Services to update the achievement's unlocked state.</li>
+</ul>
+<h3 id="incremental-achievements">Incremental achievements</h3>
+<p>Achievements can be designated as standard or <strong>incremental</strong>. Generally, an incremental achievement involves a player making gradual progress towards earning the achievement over a longer period of time. As the player makes progress towards the incremental achievement, you can report the player's partial progress to Play Games Services.</p>
+<p>The Google Play service keeps track of the progress information, alerts the game when the player has met the criteria necessary to unlock that achievement, and tells the player how far along they are towards meeting that goal.</p>
+<figure>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/achievementIncremental.png" /></p>
+<figcaption>
+<p>Incremental achievement showing the player's progress at 23%.</p>
+</figcaption>
+</figure>
+<p>Incremental achievements are cumulative across game sessions, and progress cannot be removed or reset from within the game. For example, "Win 50 games" would qualify as an incremental achievement. "Win 3 games in a row" would not, as the player's progress would be reset when they lose a game. "Have 5,000 poker chips" would not qualify either, as a player could gain and lose chips as they play. For the latter two achievements, it's up to you to track the player's "Wins in a row" state or chip total and to unlock standard achievements when the player earns them.</p>
+<p>When creating an incremental achievement, you must define the total number of steps required to unlock it (this must be a number between 2 and 10,000). As the user makes progress towards unlocking the achievement, you should report the number of additional steps the user has made to Play Games Services. Once the total number of steps reaches the unlock value, the achievement is unlocked (even if it was hidden). There's no need for you to store the user's cumulative progress.</p>
+<h3 id="points">Points</h3>
+<p>Achievements have a point value associated with them. The player's score must be a multiple of 5 and a game can never have a total of more than 1000 points for all of its achievements (although it can have less). In addition, no single achievement can have more than 200 points.</p>
+<h3 id="track-experience-points-xp">Track experience points (XP)</h3>
+<p>Players can gain levels on their Game Profile when they earn achievements in Play Games enabled games. For every <a href="#points">point</a> associated with an achievement, the player gains 100 experience points (XP) when they earn that achievement. In other words:</p>
+<p><strong><code>XP for an achievement = 100 * (point value for the achievement)</code></strong></p>
+<p>Play Games services keeps track of the XP earned by each player and sends out a notification to the <a href="https://play.google.com/store/apps/details?id=com.google.android.play.games">Google Play Games app</a> when the player has earned enough points to 'level up'. Players can view their level and XP history from their Profile page in the Google Play Games app.</p>
+<h3 id="minimum-achievements">Minimum achievements</h3>
+<p>A game that integrates achievements should have at least five achievements before it is published. You can test with fewer than five achievements, but it is recommended you have at least five achievements created before you publish your game.</p>
+<h3 id="maximum-achievements">Maximum achievements</h3>
+<p>The number of achievements is limited by the <a href="#points">points</a> limits and distribution. With a maximum number of points of 1000, and each achievement assigned 5 points, the maximum number of achievements is 200. However, if achievements are assigned more points then the number of achievements available decreases as a result.</p>
+<h2 id="icon-guidelines">Icon guidelines</h2>
+<p>Icons should be created as 512 x 512 PNG or JPG files. You only need to provide us with the icon for the unlocked achievement. We will generate a grayscale version for the revealed icon automatically. For that reason, we recommend your achievement icons include colorful elements, so your users can easily distinguish between revealed and unlocked achievements.</p>
+<p>When an achievement icon is displayed in an Android <a href="https://developer.android.com/guide/topics/ui/notifiers/toasts">toast</a>, the icon is overlaid with a circle and its outer corners are hidden. Make sure that your icon still looks good under these circumstances.</p>
+<figure>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/achievementIconExample.png" /></p>
+<figcaption>
+<p>A sample achievement icon.</p>
+</figcaption>
+</figure>
+<p>The same icon is used in all locales, so we recommend against including any text or localized content in an icon.</p>
+<h2 id="create-an-achievement">Create an achievement</h2>
+<p>This section describes how to create achievements for new and published games.</p>
+<h3 id="new-game">New game</h3>
+<p>To create an achievement for a new and unpublished game, open your game in Google Play Console and navigate to <strong>Grow users &gt; Play Games Services &gt; Setup and management &gt; Achievements</strong>.</p>
+<p>Click the <strong>Create achievement</strong> button.</p>
+<figure>
+<p><img alt="" src="../../assets/GooglePlayConsoleNewAchievement.png" /></p>
+<figcaption>
+<p>The 'Create Achievement' button on the main Achievements Panel.</p>
+</figcaption>
+</figure>
+<p>Then, simply fill out the information required for this achievement.</p>
+<figure>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/achievementSampleForm.png" /></p>
+<figcaption>
+<p>A filled-out sample achievement form for the 'Last place' achievement.</p>
+</figcaption>
+</figure>
+<p>Click <strong>Save</strong>, and your achievement will be made available in "Ready to publish" mode. Once you publish your game, all of your game's achievements will be published with it.</p>
+<h3 id="published-game">Published game</h3>
+<p>To create an additional achievement for a game that has already been published, follow the same steps as above. The only difference is that the <strong>Save</strong> button will be relabeled as <strong>Save as draft</strong> and your achievement will be in a "Ready to test" mode. For more information on testing an updated version of a game, see <a href="https://developer.android.com/games/pgs/publishing/publishing">Publishing Your Game Changes</a>.</p>
+<p>Once you've tested your achievement and are happy with it, you can republish your game with the new achievements, and they will be pushed out to the world.</p>
+<h2 id="edit-an-achievement">Edit an achievement</h2>
+<p>To edit an achievement that you've already created, select the achievement in the <strong>Achievements</strong> tab of Google Play Console. At this point, you will see the same form you used when first creating the achievement, and you can edit any of the fields as you need.</p>
+<p>When you're done editing an achievement, click the <strong>Save as draft</strong> button. The newly edited achievement will be in a "ready to test" stage, and you'll be able to test it out. If it is working correctly, select <strong>Republish</strong> from the drop-down list. This republishes your game, along with all your updated achievements, to the public.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once an achievement is published, its initial state (hidden or revealed) and its type (incremental or standard) is fixed and cannot be changed.</p>
+</div>
+<h3 id="undo-an-edit">Undo an edit</h3>
+<p>If you decide you don't like your current achievement and want to go back to your achievement the way it was before, select <strong>Revert</strong> from the drop-down list in Google Play Console, and all of your achievements will revert back to the previously published version.</p>
+<h3 id="delete-an-achievement">Delete an achievement</h3>
+<p>Once your achievement has been published, it <strong>cannot</strong> be deleted.</p>
+<p>You can only delete an achievement in a pre-published state by clicking the button labeled <strong>Delete</strong> at the bottom of the form for that achievement.</p>
+<h3 id="reset-an-achievement">Reset an achievement</h3>
+<p>You can only reset player progress data for your draft achievements.</p>
+<ul>
+<li>To reset achievements in Google Play Console, click the button labeled <strong>Reset achievement progress</strong> at the bottom of the form for that event.</li>
+<li>To reset achievement data programmatically, call the <a href="https://developer.android.com/games/services/management/api#Achievements">Management API Achievements methods</a>.</li>
+</ul>
+<h2 id="add-translations-for-achievements">Add translations for achievements</h2>
+<p>You can specify your own translations for achievements that are associated with your game. Before you do so, first make sure to complete the steps described in <a href="https://developer.android.com/games/pgs/console/enable-features#add_translations">Adding translations for your game</a>. You must also have created one or more achievements for your game.</p>
+<p>To add your own translations for achievements, open the <strong>Achievements</strong> tab for your game in the Google Play Console, then select an existing achievement. On the achievements details page, select the tab for a language that you previously added in the <strong>Game details</strong> tab. In the achievement details page for that language, edit the form with your translations for that achievement. Click <strong>Save</strong> to store your translated achievement details.</p>
+<h2 id="achievements-for-unreal-engine-games">Achievements for Unreal Engine games</h2>
+<p>This guide shows you how to use the achievements APIs in Unreal Engine to unlock and display achievements in your game.</p>
+<h3 id="before-you-begin">Before you begin</h3>
+<p>Before you start to code using the achievements API:</p>
+<ul>
+<li>Follow the instructions for installing and setting up your app to use Google Play Games Services in the <a href="../../ue-setup/">Set up Unreal Engine project</a> guide.</li>
+<li>Define the achievements that you want your game to unlock or display, by following the instructions in the <a href="#create-an-achievement">Google Play Console guide</a>.</li>
+<li>Familiarize yourself with the recommendations described in <a href="https://developer.android.com/games/pgs/quality#achievements">Quality Checklist</a>.</li>
+</ul>
+<h3 id="unlock-achievements">Unlock achievements</h3>
+<p>To unlock an achievement, call the <strong><code>UGMSGamesAchievementsClient::Unlock()</code></strong> function and pass in the achievement ID.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesAchievementsClient.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">UGMSGamesAchievementsClient</span><span class="o">::</span><span class="n">Unlock</span><span class="p">(</span><span class="n">AchievementID</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/UnlockAchievement.png" /></p>
+</div>
+</div>
+</div>
+<p>If the achievement is of the <em>incremental</em> type (that is, several steps are required to unlock it), call <strong><code>UGMSGamesAchievementsClient::Increment()</code></strong> instead.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesAchievementsClient.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">UGMSGamesAchievementsClient</span><span class="o">::</span><span class="n">Increment</span><span class="p">(</span><span class="n">AchievementID</span><span class="p">,</span><span class="w"> </span><span class="n">NumberOfSteps</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/IncrementAchievement.png" /></p>
+</div>
+</div>
+</div>
+<p>You don't need to write additional code to unlock the achievement; Google Play Games Services automatically unlocks the achievement once it reaches its required number of steps.</p>
+<h3 id="display-achievements">Display achievements</h3>
+<p>To show a player's achievements, call <strong><code>UGMSGamesAchievementsClient::ShowAchievementsUI()</code></strong> to display the default achievements user interface.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>A request code is used when the Achievement UI is shown or closed and can be changed in Project Settings. This code is primarily intended for debugging purposes. Unless you have a specific need to change it, it’s safe to leave the default value unchanged.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesAchievementsClient.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesAchievementsClient</span><span class="o">::</span><span class="n">OnShowAchievementsUISuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnSuccessFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesAchievementsClient</span><span class="o">::</span><span class="n">OnAchievementsUIClosed</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnUIClosedFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesAchievementsClient</span><span class="o">::</span><span class="n">OnShowAchievementsUIFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnFailureFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesAchievementsClient</span><span class="o">::</span><span class="n">OnShowAchievementsUICanceled</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnCanceledFunction</span><span class="p">);</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesAchievementsClient</span><span class="o">::</span><span class="n">ShowAchievementsUI</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/ShowAchievementsUI.png" /></p>
+</div>
+</div>
+</div>
+<p>An example of the default achievements UI is shown below.</p>
+<figure>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/achievements_android.png" /></p>
+<figcaption></figcaption>
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

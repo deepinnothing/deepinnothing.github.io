@@ -1,0 +1,1064 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/google-play-games-services/features/friends/">
+      
+      
+        <link rel="prev" href="../events/">
+      
+      
+        <link rel="next" href="../player-stats/">
+      
+      
+      <link rel="icon" href="../../assets/google-play-games-services-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Friends - Google Play Games Services: Unreal Engine Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#friends" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Google Play Games Services: Unreal Engine Plugin Documentation" class="md-header__button md-logo" aria-label="Google Play Games Services: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/google-play-games-services-icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Google Play Games Services: Unreal Engine Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Friends
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Google Play Games Services: Unreal Engine Plugin Documentation" class="md-nav__button md-logo" aria-label="Google Play Games Services: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/google-play-games-services-icon.png" alt="logo">
+
+    </a>
+    Google Play Games Services: Unreal Engine Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Google Play Console setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Google Play Console setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../console/setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set up Google Play Games Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/console/cloud-platform" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage project settings in Google Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/test" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enable accounts for testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/console/publish" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish through Google Play Console
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ue-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set up Unreal Engine project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Add features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Add features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sign-in/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sign-in
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recall-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recall API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developer.android.com/games/pgs/android/anti-piracy" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anti-piracy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../achievements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Achievements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saved-games/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Saved games
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leaderboards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leaderboards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Friends
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Friends
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-a-play-games-friends-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import a Play Games friends list
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Import a Play Games friends list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-play-games-friends-to-your-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Play Games friends to your game
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grant-play-games-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grant Play Games access
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-another-players-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      View another player's profile
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#social-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Social leaderboards
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#friends-in-unreal-engine-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Friends in Unreal Engine games
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Friends in Unreal Engine games">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load friends
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-another-players-profile_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      View another player’s profile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player-stats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Player stats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-a-play-games-friends-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import a Play Games friends list
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Import a Play Games friends list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-play-games-friends-to-your-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Play Games friends to your game
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grant-play-games-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grant Play Games access
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-another-players-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      View another player's profile
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#social-leaderboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Social leaderboards
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#friends-in-unreal-engine-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      Friends in Unreal Engine games
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Friends in Unreal Engine games">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load friends
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-another-players-profile_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      View another player’s profile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="friends">Friends</h1>
+<p>Use the Friends APIs to complement and enhance your existing in-game friends system and other social systems your game may access. This lets you enable players to:</p>
+<ul>
+<li>Find their friends in your game.</li>
+<li>Compare scores with their friends on leaderboards.</li>
+<li>Combine the list of their Play Games friends with existing in-game lists of friends.</li>
+<li>Identify another player with an in-game profile popup. This popup shows a nickname that the current player has given to their friend, so they know who they are playing with.</li>
+</ul>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/friends-import.gif" /></p>
+<h2 id="basics">Basics</h2>
+<p>These APIs allow you to perform the following actions:</p>
+<ul>
+<li><strong>Load friends</strong>: You can check if the player has allowed the game to access Friends list information. If access is granted, you can get a list of Player objects corresponding to the friends of the signed-in player.</li>
+<li><strong>Launch a view of another player’s Play Games profile</strong>: You can open up this view to show the name given to the other player by the signed-in player. This view also offers friendship management controls and won't take the player out of your game.</li>
+<li><strong>Provide user controls</strong>: The user has controls to manage how their Play Games profile is visible to friends and how their friends list is visible to games. For friends list access, the user can choose to automatically grant access for all games or they can choose to individually approve access for each game. Consequently, when loading the friends list, the result may be a callback to display a request for access.</li>
+</ul>
+<h2 id="import-a-play-games-friends-list">Import a Play Games friends list</h2>
+<p>You can use the Friends APIs to get a list of your players’ Play Games friends and add them to your in-game friends list.</p>
+<p>New users will have a starting list of friends to play with, and existing users can import their Play Games friends into any in-game lists of friends. As a result, your users will have the largest possible set of players to play with or compete against.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you store any relationships from Play Games, you must regularly check the friends list to ensure that the relationships, and consent to use them, are still valid.</p>
+</div>
+<h3 id="add-play-games-friends-to-your-game">Add Play Games friends to your game</h3>
+<p>Add Play Games friends to any existing in-game friends list by associating their Play Games ID with corresponding player information in your internal database. Make sure you have a button with the Play Games icon next to these friends, which shows the other player's profile when pressed, so your users can know who the friends are.</p>
+<p>When using the friends list from a backend server, load it securely using the REST API rather than passing the result of the Android API. Make sure to use the player ID returned by <a href="https://developer.android.com/games/services/web/api/rest/v1/players/get"><strong><code>players.get(me)</code></strong></a> in the REST API for the currently signed-in player, as this will be consistent with the ID seen by other players.</p>
+<p>If the augmented friends list is not stored (but just used at the time of viewing), then no additional work is needed.</p>
+<h3 id="grant-play-games-access">Grant Play Games access</h3>
+<p>If your game doesn't already have Play Games access, a good time to prompt users for their consent is when they view your in-game friends list. For example, you might add a button called <strong>Import Play Games friends</strong>, which prompts the user for consent when tapped. (Make sure to use the Play Games logo on any button that mentions the service.)</p>
+<h2 id="view-another-players-profile">View another player's profile</h2>
+<p>You can allow your signed-in player to view another player's Play Games profile. This allows the signed-in player to see the name they have given the other player and whether or not they are already friends, giving them added context about the relationship. If the players are not yet friends, the signed-in player will see friendship management controls on the profile view. When friendships are created from within the game, the default names for the two players are their in-game names (if provided). The name of the game where the friendship was initiated is also shown.</p>
+<p><img alt="" src="https://developer.android.com/static/images/games/pgs/friends-show-profile.png" /></p>
+<h2 id="social-leaderboards">Social leaderboards</h2>
+<p>The Friends APIs can also be used for leaderboards. Use this feature to show the ranking of the current player among their Play Games friends. Note that this only applies to users who have chosen to share this information with your application, and if the users are friends in Play Games. To support this feature, the game exposes a control to the user. This control uses the <strong><code>collection</code></strong> argument to select the social view of the leaderboard. To learn more, see the section on <a href="../leaderboards/#public-and-social-leaderboards">public and social leaderboards</a>.</p>
+<p>If you implement the social leaderboards collection, the call to load the leaderboard scores may return a consent-required resolution exception similar to that from <strong><code>UGMSGamesPlayersClient::LoadFriends()</code></strong>. If you implement the default Play Games-provided UI (for example, <strong><code>UGMSGamesLeaderboardsClient::ShowLeaderboardUI()</code></strong>), then this is handled for you automatically.</p>
+<h2 id="friends-in-unreal-engine-games">Friends in Unreal Engine games</h2>
+<p>This guide describes how to use the Friends APIs in Unreal Engine projects.</p>
+<h3 id="load-friends">Load friends</h3>
+<p>You can retrieve and display (in the game) a list of players who are friends with the current user. As a user, it is possible to control which games have access to the friends list. When you retrieve the friends list, you must handle the case where permission is required. This is all encapsulated in the API to make requesting access and subsequently using the friends list a straightforward task. To load the friends list, follow these steps:</p>
+<ol>
+<li>Call the <strong><code>UGMSGamesPlayersClient::LoadFriends()</code></strong> function, which is an asynchronous call.</li>
+<li>If the call is successful (the user already granted access to the friends list), Google Play Games Services returns a <strong><code>PlayerBuffer</code></strong> that represents the user's friends.</li>
+<li>If the player needs to grant access to the friends list, the call fails with a <strong><code>FriendsResolutionRequiredException</code></strong>. It triggers a dialog to ask the player for consent. The dialog shows only once.</li>
+<li>If <strong><code>UGMSGamesPlayersClient::OnSharingFriendsConsentUIClosed</code></strong> returns a <strong><code>bIsConsentGranted</code></strong> with a value of <strong><code>true</code></strong>, then consent was granted. Call <strong><code>UGMSGamesPlayersClient::LoadFriends()</code></strong> again to return the friends list. If <strong><code>bIsConsentGranted</code></strong> is <strong><code>false</code></strong>, the user did not consent and <strong><code>UGMSGamesPlayersClient::LoadFriends()</code></strong> will continue to return <strong><code>FriendsResolutionRequiredException</code></strong>.</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayersClient.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayer.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnLoadFriendsSuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnSuccessFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnSharingFriendsConsentUIClosed</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnUIClosedFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnLoadFriendsFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnFailureFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnLoadFriendsCanceled</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnCanceledFunction</span><span class="p">);</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">LoadFriends</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<span class="c1">// ...</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">UMyClass::OnUIClosedFunction</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">RequestCode</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">ResultCode</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">bIsConsentGranted</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bIsConsentGranted</span><span class="p">)</span><span class="w"> </span><span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">LoadFriends</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">UMyClass::OnSuccessFunction</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">TArray</span><span class="o">&lt;</span><span class="n">UGMSGamesPlayer</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">PlayerBuffer</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">UGMSGamesPlayer</span><span class="o">*</span><span class="w"> </span><span class="n">Player</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">PlayerBuffer</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Process loaded friends here...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/LoadingFriends.png" /></p>
+</div>
+</div>
+</div>
+<h3 id="view-another-players-profile_1">View another player’s profile</h3>
+<p>You can display a view of another player’s Play Games profile from within your game. This view allows players to send and accept friend invitations for the player being viewed. This view does not require access to the friends list. Additionally, if your game has its own concept of player names separate from Play Games Gamer IDs, you can pass these along to the profile view so that they can be included in any friend invitations for additional context.</p>
+<p>To show another player’s profile, follow these steps:</p>
+<ol>
+<li>Call the <strong><code>UGMSGamesPlayersClient::ShowCompareProfileUI()</code></strong> function, which is an asynchronous call.</li>
+<li>If the call is successful, Google Play Games Services displays a screen where the user can compare themselves against another player's profile.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>A request code is used when the Compare Profile UI is shown or closed and can be changed in Project Settings. This code is primarily intended for debugging purposes. Unless you have a specific need to change it, it’s safe to leave the default value unchanged.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayersClient.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUISuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnSuccessFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnCompareProfileUIClosed</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnUIClosedFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUIFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnFailureFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUICanceled</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnCanceledFunction</span><span class="p">);</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">ShowCompareProfileUI</span><span class="p">(</span><span class="n">OtherPlayerID</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/ShowCompareProfileUI.png" /></p>
+</div>
+</div>
+</div>
+<p>If the game has its own name for players, these can be added to the API call. This enables Play Games to set the nickname of players who send friend invitations from within your game to "<game-specific-name> from <your-game-name>" Play Games automatically appends "from <your-game-name>":</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayersClient.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUISuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnSuccessFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnCompareProfileUIClosed</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnUIClosedFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUIFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnFailureFunction</span><span class="p">);</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUICanceled</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnCanceledFunction</span><span class="p">);</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">ShowCompareProfileUIWithAlternativeNameHints</span><span class="p">(</span><span class="n">OtherPlayerID</span><span class="p">,</span><span class="w"> </span><span class="n">OtherPlayerInGameName</span><span class="p">,</span><span class="w"> </span><span class="n">CurrentPlayerInGameName</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/ShowCompareProfileUIWithAlternativeNameHints.png" /></p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
