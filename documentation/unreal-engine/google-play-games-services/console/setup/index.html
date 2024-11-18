@@ -1078,7 +1078,7 @@ Make sure that the consent screen is available to everyone that the game is avai
 <div class="tabbed-content">
 <div class="tabbed-block">
 <h4 id="set-up-credentials-details">Set up credentials details</h4>
-<p>Ensure that the name in the <strong>Name</strong> field matches the name of your game. Choose whether to enable <a href="">Anti-Piracy</a>.</p>
+<p>Ensure that the name in the <strong>Name</strong> field matches the name of your game. Choose whether to enable <a href="https://developer.android.com/games/pgs/android/anti-piracy">Anti-Piracy</a>.</p>
 <h4 id="set-up-authorization">Set up authorization</h4>
 <p>Next, choose an OAuth client ID to use for this game project. If you already have OAuth2 client IDs, you can choose one. However, you will usually create a new one. Click <strong>Create OAuth client</strong>. This opens a dialog with deep links and instructions for creating an OAuth Client ID in Google Cloud Platform.</p>
 <ol>
@@ -1136,7 +1136,7 @@ Make sure that the consent screen is available to everyone that the game is avai
 </div>
 <h2 id="enable-testing">Enable testing</h2>
 <p>To ensure that Google Play Games Services is functioning correctly in your game, you should test your game services before publishing your game changes on Google Play.</p>
-<p>If your game is in an unpublished state, grant access to your testers by adding their user accounts to the allowlist. Otherwise, your testers will encounter OAuth and 404 errors when attempting to access Play Games Services endpoints, such as the <a href="">sign-in</a> endpoint.</p>
+<p>If your game is in an unpublished state, grant access to your testers by adding their user accounts to the allowlist. Otherwise, your testers will encounter OAuth and 404 errors when attempting to access Play Games Services endpoints, such as the <a href="../../features/sign-in/">sign-in</a> endpoint.</p>
 <p>Users with authorized test accounts will have access to your unpublished Play Games Services game project and can test that your configured Play Games Services are working correctly.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1183,7 +1183,7 @@ Make sure that the consent screen is available to everyone that the game is avai
 </li>
 <li>
 <p><strong>Sign in with a tester account during development</strong></p>
-<p>If you have not published your game setting changes in the Play Console, you might encounter errors during testing if you are not signed in with a whitelisted tester account. You should always enable your Play Console publisher account for testing. To learn how to manage tester accounts, see <a href="">Enabling accounts for testing</a>.</p>
+<p>If you have not published your game setting changes in the Play Console, you might encounter errors during testing if you are not signed in with a whitelisted tester account. You should always enable your Play Console publisher account for testing. To learn how to manage tester accounts, see <a href="https://developer.android.com/games/pgs/console/publish#enable_accounts_for_testing">Enabling accounts for testing</a>.</p>
 </li>
 <li>
 <p><strong>Publish the consent screen in Google Cloud Platform</strong></p>
@@ -1191,12 +1191,12 @@ Make sure that the consent screen is available to everyone that the game is avai
 </li>
 <li>
 <p><strong>At release, publish the Play Games Services settings first before you publish your game</strong></p>
-<p>Developers might accidentally publish their app without publishing the corresponding Play Games Services settings for their app. This might cause players who are signing in with non-tester accounts to encounter errors since the app cannot reference the correct game settings. When releasing your game, remember to first publish your game settings by using the Publish Game option in the Play Console. To learn how to publish your changes, see <a href="">Publishing your game changes</a>.</p>
+<p>Developers might accidentally publish their app without publishing the corresponding Play Games Services settings for their app. This might cause players who are signing in with non-tester accounts to encounter errors since the app cannot reference the correct game settings. When releasing your game, remember to first publish your game settings by using the Publish Game option in the Play Console. To learn how to publish your changes, see <a href="https://developer.android.com/games/pgs/console/publish#publish_game_changes">Publishing your game changes</a>.</p>
 </li>
 </ol>
 <p>For additional tips, see the <a href="https://developer.android.com/games/pgs/android/troubleshooting">Android troubleshooting guide</a>.</p>
 <h2 id="next-steps">Next steps</h2>
-<p>Once you complete the initial setup tasks described above, you can <a href="">enable Play Games Services features</a> for your game, such as saved games, leaderboards, and achievements.</p>
+<p>Once you complete the initial setup tasks described above, you can <a href="https://developer.android.com/games/pgs/console/enable-features">enable Play Games Services features</a> for your game, such as saved games, leaderboards, and achievements.</p>
 
 
 
@@ -1204,6 +1204,27 @@ Make sure that the consent screen is available to everyone that the game is avai
 
 
 
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 18, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
 

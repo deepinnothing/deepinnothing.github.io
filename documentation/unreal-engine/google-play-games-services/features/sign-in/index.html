@@ -1112,7 +1112,7 @@
 <li>Engage in the game across multiple devices, enabling seamless transitions between smartphones and Chromebooks.</li>
 <li>Uninstall and reinstall the game.</li>
 </ul>
-<p>Developers have the option of either using the player ID as a key for their own cloud save solution, or using the built-in <a href="">Saved Games service</a>.</p>
+<p>Developers have the option of either using the player ID as a key for their own cloud save solution, or using the built-in <a href="../saved-games/">Saved Games service</a>.</p>
 <p>Play Games Services (PGS) supports automatic sign-in, a zero-friction way to sign in players.</p>
 <p>Sign-in with Play Games Services is an effective way to provide players with a strong identity without the need to implement additional features like leaderboards or saved games. This low-friction approach makes it easier for players to engage with your game and create a personalized experience.</p>
 <h3 id="login-request-quota">Login request quota</h3>
@@ -1129,7 +1129,7 @@
 <h3 id="multiple-sign-in-services">Multiple sign-in services</h3>
 <p>Play Games Services provides a gaming identity for Android players, but it doesn't need to be the only identity connected to your users. You can sign in players using Play Games Services, a social network ID, and your own in-game ID system all at the same time.</p>
 <h3 id="player-id">Player ID</h3>
-<p>A player ID is an identifier for a Play Games Services player account. Your game can retrieve a player ID for any player that signs into your game using Play Games Services sign-in. Your game client, <a href="#game-server-integration">backend game servers</a>, and <a href="">cloud-save service</a> can use the ID to securely access player data from Play Games Services.</p>
+<p>A player ID is an identifier for a Play Games Services player account. Your game can retrieve a player ID for any player that signs into your game using Play Games Services sign-in. Your game client, <a href="#game-server-integration">backend game servers</a>, and <a href="../saved-games/">cloud-save service</a> can use the ID to securely access player data from Play Games Services.</p>
 <p>A player ID is consistent for a user when they play your game on multiple devices. However, it is not always consistent between games. For more information, see <a href="https://developer.android.com/games/pgs/next-gen-player-ids">next generation Player IDs</a>.</p>
 <h3 id="oauth-scopes">OAuth Scopes</h3>
 <p>Play Games Services relies on the <a href="https://developers.google.com/identity/protocols/OAuth2">OAuth system</a> to allow players to give your game access to their account. Play Games Services has a unique scope for games (<strong><code>games-lite</code></strong>) and relies on another scope (<strong><code>drive.appdata</code></strong>) if your game uses the saved games feature. The saved games feature gives access to the user's Google Drive account, which is where the game data is stored.</p>
@@ -1221,7 +1221,7 @@
 <li>In the <a href="https://play.google.com/console/about/">Google Play Console</a>, select a game.</li>
 <li>Go to <strong>Play Games Services &gt; Setup and management &gt; Configuration</strong>.</li>
 <li>Select <em>Add credential</em> to be brought to the <em>Add credential</em> page. Select <em>Game server</em> as the credential type and continue onto the <em>Authorization</em> section.<ol>
-<li>If your game server already has an OAuth client ID select it from the drop down menu. After saving your changes, move onto <a href="">the next section</a>.</li>
+<li>If your game server already has an OAuth client ID select it from the drop down menu. After saving your changes, move onto <a href="#get-the-server-auth-code">the next section</a>.</li>
 <li>If you don't have an existing OAuth client ID for your game server, you can create one.<ol>
 <li>Click <em>Create OAuth client</em> and follow the <em>Create OAuth Client ID</em> link.</li>
 <li>This will bring you to the Google Cloud Platform's <em>Create OAuth Client ID</em> page for your project associated with your game.</li>
@@ -1367,13 +1367,13 @@
 <h4 id="player">Player</h4>
 <p>Want to get the signed-in player's ID and profile data? Call <a href="https://developers.google.com/games/services/web/api/rest/v1/players/get"><strong><code>Players.get</code></strong></a> with <strong><code>'me'</code></strong> as the ID.</p>
 <h4 id="friends">Friends</h4>
-<p>See the <a href="">Friends</a> guide for details.</p>
+<p>See the <a href="../friends/">Friends</a> guide for details.</p>
 <ul>
 <li>To retrieve the player's list of friends, call <a href="https://developers.google.com/games/services/web/api/players/list"><strong><code>Players.list</code></strong></a> with <strong><code>friends_all</code></strong> as the <strong><code>collection</code></strong>.</li>
 <li>To verify whether you have access to a friends list, call <a href=""><strong><code>Players.get</code></strong></a> with <strong><code>me</code></strong> as the <strong><code>playerID</code></strong>, and view the <a href="https://developers.google.com/games/services/web/api/players#profileSettings.friendsListVisibility"><strong><code>profileSettings.friendsListVisibility</code></strong></a> field in the response.</li>
 </ul>
 <h4 id="achievements">Achievements</h4>
-<p>See the <a href="">Achievements</a> guide for details.</p>
+<p>See the <a href="../achievements/">Achievements</a> guide for details.</p>
 <ul>
 <li>To get a list of current achievements, call <a href="https://developers.google.com/games/services/web/api/achievementDefinitions/list"><strong><code>AchievementDefinitions.list</code></strong></a>.</li>
 <li>Combine that with a call to <a href="https://developers.google.com/games/services/web/api/achievements/list"><strong><code>Achievements.list</code></strong></a> to find out which ones the player unlocked.</li>
@@ -1382,7 +1382,7 @@
 <li>If you are debugging a game that hasn't reached production, you can call <a href="https://developers.google.com/games/services/management/api/achievements/reset"><strong><code>Achievements.reset</code></strong></a> or <a href="https://developers.google.com/games/services/management/api/achievements/resetAll"><strong><code>Achievements.resetAll</code></strong></a> from the Management APIs to reset achievements to their original state.</li>
 </ul>
 <h4 id="leaderboards">Leaderboards</h4>
-<p>See the <a href="">Leaderboards</a> guide for details.</p>
+<p>See the <a href="../leaderboards/">Leaderboards</a> guide for details.</p>
 <ul>
 <li>Want to get a list of all scoreboards in the game? Make a call to <a href="https://developers.google.com/games/services/web/api/leaderboards/list"><strong><code>Leaderboards.list</code></strong></a>.</li>
 <li>If a player is done with a game, you can submit their score to <a href="https://developers.google.com/games/services/web/api/scores/submit"><strong><code>Scores.submit</code></strong></a> and find out if it is a new high score.</li>
@@ -1398,6 +1398,27 @@
 
 
 
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 18, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
 
