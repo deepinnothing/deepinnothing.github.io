@@ -153,7 +153,7 @@ To retrieve saved games for the currently signed-in player:
 
 1.  Asynchronously open a snapshot with __`UGMSGamesSnapshotsClient::Open()`__.
 2.  Retrieve __`SnapshotContents`__ from the returned __`Snapshot`__ instance.
-3.  Call __`UGMSGamesSnapshotsClient::ReadContents()`__ function and pass in the __`SnapshotContents`.
+3.  Call __`UGMSGamesSnapshotsClient::ReadContents()`__ function and pass in the __`SnapshotContents`__.
 
 
 === "C++"

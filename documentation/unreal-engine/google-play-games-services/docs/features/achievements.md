@@ -163,6 +163,25 @@ To unlock an achievement, call the __`UGMSGamesAchievementsClient::Unlock()`__ f
 
     ![](../assets/UnlockAchievement.png)
 
+The use of the above function is preferable for most applications, though note that the update may not be sent to the server until the next sync. Use __`UGMSGamesAchievementsClient::UnlockImmediate()`__ if you need the operation to attempt to communicate to the server immediately or need to have the status code delivered to your application.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesAchievementsClient.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesAchievementsClient::OnUnlockImmediateSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
+    UGMSGamesAchievementsClient::OnUnlockImmediateFailure.Add(MyObject, &UMyClass::OnFailureFunction);
+    UGMSGamesAchievementsClient::OnUnlockImmediateCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
+    // Calling the function
+    UGMSGamesAchievementsClient::UnlockImmediate(AchievementID);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/UnlockAchievementImmediate.png)
+
 If the achievement is of the *incremental* type (that is, several steps are required to unlock it), call __`UGMSGamesAchievementsClient::Increment()`__ instead.
 
 === "C++"
@@ -177,7 +196,94 @@ If the achievement is of the *incremental* type (that is, several steps are requ
 
     ![](../assets/IncrementAchievement.png)
 
+You can use __`UGMSGamesAchievementsClient::IncrementImmediate()`__ as well if you need the operation to attempt to communicate with the server immediately or need to have the status code returned.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesAchievementsClient.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesAchievementsClient::OnIncrementImmediateSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
+    UGMSGamesAchievementsClient::OnIncrementImmediateFailure.Add(MyObject, &UMyClass::OnFailureFunction);
+    UGMSGamesAchievementsClient::OnIncrementImmediateCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
+    // Calling the function
+    UGMSGamesAchievementsClient::IncrementImmediate(AchievementID, NumberOfSteps);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/IncrementAchievementImmediate.png)
+
+As an alternative, __`UGMSGamesAchievementsClient::SetSteps()`__ can be used for *incremental* type, which sets an achievement to have at least the given number of steps completed. Calling this method while the achievement already has more steps than the provided value is a no-op.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesAchievementsClient.h"
+    // ...
+    UGMSGamesAchievementsClient::SetSteps(AchievementID, NumberOfSteps);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/SetAchievementSteps.png)
+
+Use __`UGMSGamesAchievementsClient::SetStepsImmediate()`__ to attempt for immediate communication with the server.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesAchievementsClient.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesAchievementsClient::OnSetStepsImmediateSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
+    UGMSGamesAchievementsClient::OnSetStepsImmediateFailure.Add(MyObject, &UMyClass::OnFailureFunction);
+    UGMSGamesAchievementsClient::OnSetStepsImmediateCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
+    // Calling the function
+    UGMSGamesAchievementsClient::SetStepsImmediate(AchievementID, NumberOfSteps);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/SetAchievementStepsImmediate.png)
+
 You don't need to write additional code to unlock the achievement; Google Play Games Services automatically unlocks the achievement once it reaches its required number of steps.
+
+### Reveal achievements
+
+If you only want to reveal a hidden achievement to the currently signed-in player, call the __`UGMSGamesAchievementsClient::Reveal()`__ function. This will have no effect if the achievement has already been unlocked.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesAchievementsClient.h"
+    // ...
+    UGMSGamesAchievementsClient::Reveal(AchievementID);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/RevealAchievement.png)
+
+Same as with unlocking the achievements, the __`UGMSGamesAchievementsClient::RevealImmediate()`__ function is also available.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesAchievementsClient.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesAchievementsClient::OnRevealImmediateSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
+    UGMSGamesAchievementsClient::OnRevealImmediateFailure.Add(MyObject, &UMyClass::OnFailureFunction);
+    UGMSGamesAchievementsClient::OnRevealImmediateCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
+    // Calling the function
+    UGMSGamesAchievementsClient::RevealImmediate(AchievementID);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/RevealAchievementImmediate.png)
 
 ### Display achievements
 
@@ -210,3 +316,54 @@ An example of the default achievements UI is shown below.
 ![](https://developer.android.com/static/images/games/pgs/achievements_android.png)
 /// caption
 ///
+
+### Load the list of achievements
+
+You can access the achievement data by calling the __`UGMSGamesAchievementsClient::LoadAchievementBuffer()`__ function. It returns the list of all the achievements in the game and their status for the current player.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesAchievementsClient.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesAchievementsClient::OnLoadAchievementBufferSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
+    UGMSGamesAchievementsClient::OnLoadAchievementBufferFailure.Add(MyObject, &UMyClass::OnFailureFunction);
+    UGMSGamesAchievementsClient::OnLoadAchievementBufferCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
+    // Calling the function
+    UGMSGamesAchievementsClient::LoadAchievementBuffer(bForceReload);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/LoadAchievementBuffer.png)
+
+Then it's possible to access all the different properties of the __`Achievement`__ object.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesAchievementsClient.h"
+    // ...
+    Achievement->GetAchievementID();
+    Achievement->GetAchievementName();
+    Achievement->GetDescription();
+    Achievement->GetXPValue();
+    Achievement->GetState();
+    Achievement->GetLastUpdatedTimestamp();
+    Achievement->GetPlayer();
+    Achievement->GetRevealedImageURI();
+    Achievement->GetUnlockedImageURI();
+
+    if (UGMSGamesIncrementalAchievement* IncrementalAchievement = Cast<UGMSGamesIncrementalAchievement>(Achievement))
+    {
+        IncrementalAchievement->GetCurrentSteps();
+        IncrementalAchievement->GetFormattedCurrentSteps();
+        IncrementalAchievement->GetTotalSteps();
+        IncrementalAchievement->GetFormattedTotalSteps();
+    }
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/AchievementObject.png)
