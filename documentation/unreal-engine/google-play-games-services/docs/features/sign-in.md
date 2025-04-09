@@ -302,26 +302,26 @@ Want to get the signed-in player's ID and profile data? Call [__`Players.get`__]
 
 See the [Friends](friends.md) guide for details.
 
-*   To retrieve the player's list of friends, call [__`Players.list`__](https://developer.android.com/games/services/web/api/players/list) with __`friends_all`__ as the __`collection`__.
-*   To verify whether you have access to a friends list, call [__`Players.get`__]() with __`me`__ as the __`playerID`__, and view the [__`profileSettings.friendsListVisibility`__](https://developer.android.com/games/services/web/api/players#profileSettings.friendsListVisibility) field in the response.
+*   To retrieve the player's list of friends, call [__`Players.list`__](https://developer.android.com/games/services/web/api/rest/v1/players/list) with __`friends_all`__ as the __`collection`__.
+*   To verify whether you have access to a friends list, call [__`Players.get`__]() with __`me`__ as the __`playerID`__, and view the [__`profileSettings.friendsListVisibility`__](https://developer.android.com/games/services/web/api/rest/v1/players#profileSettings.friendsListVisibility) field in the response.
 
 #### Achievements
 
 See the [Achievements](achievements.md) guide for details.
 
-*   To get a list of current achievements, call [__`AchievementDefinitions.list`__](https://developer.android.com/games/services/web/api/achievementDefinitions/list).
-*   Combine that with a call to [__`Achievements.list`__](https://developer.android.com/games/services/web/api/achievements/list) to find out which ones the player unlocked.
-*   Call [__`Achievements.unlock`__](https://developer.android.com/games/services/web/api/achievements/unlock) to unlock a player achievement.
-*   Call [__`Achievements.increment`__](https://developer.android.com/games/services/web/api/achievements/increment) to report progress on an achievement, and find out if the player unlocked it.
-*   If you are debugging a game that hasn't reached production, you can call [__`Achievements.reset`__](https://developer.android.com/games/services/management/api/achievements/reset) or [__`Achievements.resetAll`__](https://developer.android.com/games/services/management/api/achievements/resetAll) from the Management APIs to reset achievements to their original state.
+*   To get a list of current achievements, call [__`AchievementDefinitions.list`__](https://developer.android.com/games/services/web/api/rest/v1/achievementDefinitions/list).
+*   Combine that with a call to [__`Achievements.list`__](https://developer.android.com/games/services/web/api/rest/v1/achievements/list) to find out which ones the player unlocked.
+*   Call [__`Achievements.unlock`__](https://developer.android.com/games/services/web/api/rest/v1/achievements/unlock) to unlock a player achievement.
+*   Call [__`Achievements.increment`__](https://developer.android.com/games/services/web/api/rest/v1/achievements/increment) to report progress on an achievement, and find out if the player unlocked it.
+*   If you are debugging a game that hasn't reached production, you can call [__`Achievements.reset`__](https://developer.android.com/games/services/management/api/rest/v1/achievements/reset) or [__`Achievements.resetAll`__](https://developer.android.com/games/services/management/api/rest/v1/achievements/resetAll) from the Management APIs to reset achievements to their original state.
 
 #### Leaderboards
 
 See the [Leaderboards](leaderboards.md) guide for details.
 
-*   Want to get a list of all scoreboards in the game? Make a call to [__`Leaderboards.list`__](https://developer.android.com/games/services/web/api/leaderboards/list).
-*   If a player is done with a game, you can submit their score to [__`Scores.submit`__](https://developer.android.com/games/services/web/api/scores/submit) and find out if it is a new high score.
-*   To display a leaderboard, get the data from [__`Scores.list`__](https://developer.android.com/games/services/web/api/scores/list) and show it to the user.
-*   Use [__`Scores.listWindow`__](https://developer.android.com/games/services/web/api/scores/listWindow) to find an assortment of scores close to the user's high score.
-*   To get more information about the player's score in a particular leaderboard (for example, if the player is in the top 12% of all players), call [__`Scores.get`__](https://developer.android.com/games/services/web/api/scores/get).
-*   If you debugging a game, you can call [__`Scores.reset`__](https://developer.android.com/games/services/management/api/scores/reset) from the Management APIs to reset all scores for that player from a particular leaderboard.
+*   Want to get a list of all scoreboards in the game? Make a call to [__`Leaderboards.list`__](https://developer.android.com/games/services/web/api/rest/v1/leaderboards/list).
+*   If a player is done with a game, you can submit their score to [__`Scores.submit`__](https://developer.android.com/games/services/web/api/rest/v1/scores/submit) and find out if it is a new high score.
+*   To display a leaderboard, get the data from [__`Scores.list`__](https://developer.android.com/games/services/web/api/rest/v1/scores/list) and show it to the user.
+*   Use [__`Scores.listWindow`__](https://developer.android.com/games/services/web/api/rest/v1/scores/listWindow) to find an assortment of scores close to the user's high score.
+*   To get more information about the player's score in a particular leaderboard (for example, if the player is in the top 12% of all players), call [__`Scores.get`__](https://developer.android.com/games/services/web/api/rest/v1/scores/get).
+*   If you debugging a game, you can call [__`Scores.reset`__](https://developer.android.com/games/services/management/api/rest/v1/scores/reset) from the Management APIs to reset all scores for that player from a particular leaderboard.
