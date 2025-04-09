@@ -338,7 +338,7 @@ You can access the achievement data by calling the __`UGMSGamesAchievementsClien
 
     ![](../assets/LoadAchievementBuffer.png)
 
-Then it's possible to access all the different properties of the __`Achievement`__ object.
+Then it's possible to access all the different properties of the individual __`Achievement`__ objects.
 
 === "C++"
 
