@@ -1413,27 +1413,27 @@
 <h4 id="friends">Friends</h4>
 <p>See the <a href="../friends/">Friends</a> guide for details.</p>
 <ul>
-<li>To retrieve the player's list of friends, call <a href="https://developer.android.com/games/services/web/api/players/list"><strong><code>Players.list</code></strong></a> with <strong><code>friends_all</code></strong> as the <strong><code>collection</code></strong>.</li>
-<li>To verify whether you have access to a friends list, call <a href=""><strong><code>Players.get</code></strong></a> with <strong><code>me</code></strong> as the <strong><code>playerID</code></strong>, and view the <a href="https://developer.android.com/games/services/web/api/players#profileSettings.friendsListVisibility"><strong><code>profileSettings.friendsListVisibility</code></strong></a> field in the response.</li>
+<li>To retrieve the player's list of friends, call <a href="https://developer.android.com/games/services/web/api/rest/v1/players/list"><strong><code>Players.list</code></strong></a> with <strong><code>friends_all</code></strong> as the <strong><code>collection</code></strong>.</li>
+<li>To verify whether you have access to a friends list, call <a href=""><strong><code>Players.get</code></strong></a> with <strong><code>me</code></strong> as the <strong><code>playerID</code></strong>, and view the <a href="https://developer.android.com/games/services/web/api/rest/v1/players#profileSettings.friendsListVisibility"><strong><code>profileSettings.friendsListVisibility</code></strong></a> field in the response.</li>
 </ul>
 <h4 id="achievements">Achievements</h4>
 <p>See the <a href="../achievements/">Achievements</a> guide for details.</p>
 <ul>
-<li>To get a list of current achievements, call <a href="https://developer.android.com/games/services/web/api/achievementDefinitions/list"><strong><code>AchievementDefinitions.list</code></strong></a>.</li>
-<li>Combine that with a call to <a href="https://developer.android.com/games/services/web/api/achievements/list"><strong><code>Achievements.list</code></strong></a> to find out which ones the player unlocked.</li>
-<li>Call <a href="https://developer.android.com/games/services/web/api/achievements/unlock"><strong><code>Achievements.unlock</code></strong></a> to unlock a player achievement.</li>
-<li>Call <a href="https://developer.android.com/games/services/web/api/achievements/increment"><strong><code>Achievements.increment</code></strong></a> to report progress on an achievement, and find out if the player unlocked it.</li>
-<li>If you are debugging a game that hasn't reached production, you can call <a href="https://developer.android.com/games/services/management/api/achievements/reset"><strong><code>Achievements.reset</code></strong></a> or <a href="https://developer.android.com/games/services/management/api/achievements/resetAll"><strong><code>Achievements.resetAll</code></strong></a> from the Management APIs to reset achievements to their original state.</li>
+<li>To get a list of current achievements, call <a href="https://developer.android.com/games/services/web/api/rest/v1/achievementDefinitions/list"><strong><code>AchievementDefinitions.list</code></strong></a>.</li>
+<li>Combine that with a call to <a href="https://developer.android.com/games/services/web/api/rest/v1/achievements/list"><strong><code>Achievements.list</code></strong></a> to find out which ones the player unlocked.</li>
+<li>Call <a href="https://developer.android.com/games/services/web/api/rest/v1/achievements/unlock"><strong><code>Achievements.unlock</code></strong></a> to unlock a player achievement.</li>
+<li>Call <a href="https://developer.android.com/games/services/web/api/rest/v1/achievements/increment"><strong><code>Achievements.increment</code></strong></a> to report progress on an achievement, and find out if the player unlocked it.</li>
+<li>If you are debugging a game that hasn't reached production, you can call <a href="https://developer.android.com/games/services/management/api/rest/v1/achievements/reset"><strong><code>Achievements.reset</code></strong></a> or <a href="https://developer.android.com/games/services/management/api/rest/v1/achievements/resetAll"><strong><code>Achievements.resetAll</code></strong></a> from the Management APIs to reset achievements to their original state.</li>
 </ul>
 <h4 id="leaderboards">Leaderboards</h4>
 <p>See the <a href="../leaderboards/">Leaderboards</a> guide for details.</p>
 <ul>
-<li>Want to get a list of all scoreboards in the game? Make a call to <a href="https://developer.android.com/games/services/web/api/leaderboards/list"><strong><code>Leaderboards.list</code></strong></a>.</li>
-<li>If a player is done with a game, you can submit their score to <a href="https://developer.android.com/games/services/web/api/scores/submit"><strong><code>Scores.submit</code></strong></a> and find out if it is a new high score.</li>
-<li>To display a leaderboard, get the data from <a href="https://developer.android.com/games/services/web/api/scores/list"><strong><code>Scores.list</code></strong></a> and show it to the user.</li>
-<li>Use <a href="https://developer.android.com/games/services/web/api/scores/listWindow"><strong><code>Scores.listWindow</code></strong></a> to find an assortment of scores close to the user's high score.</li>
-<li>To get more information about the player's score in a particular leaderboard (for example, if the player is in the top 12% of all players), call <a href="https://developer.android.com/games/services/web/api/scores/get"><strong><code>Scores.get</code></strong></a>.</li>
-<li>If you debugging a game, you can call <a href="https://developer.android.com/games/services/management/api/scores/reset"><strong><code>Scores.reset</code></strong></a> from the Management APIs to reset all scores for that player from a particular leaderboard.</li>
+<li>Want to get a list of all scoreboards in the game? Make a call to <a href="https://developer.android.com/games/services/web/api/rest/v1/leaderboards/list"><strong><code>Leaderboards.list</code></strong></a>.</li>
+<li>If a player is done with a game, you can submit their score to <a href="https://developer.android.com/games/services/web/api/rest/v1/scores/submit"><strong><code>Scores.submit</code></strong></a> and find out if it is a new high score.</li>
+<li>To display a leaderboard, get the data from <a href="https://developer.android.com/games/services/web/api/rest/v1/scores/list"><strong><code>Scores.list</code></strong></a> and show it to the user.</li>
+<li>Use <a href="https://developer.android.com/games/services/web/api/rest/v1/scores/listWindow"><strong><code>Scores.listWindow</code></strong></a> to find an assortment of scores close to the user's high score.</li>
+<li>To get more information about the player's score in a particular leaderboard (for example, if the player is in the top 12% of all players), call <a href="https://developer.android.com/games/services/web/api/rest/v1/scores/get"><strong><code>Scores.get</code></strong></a>.</li>
+<li>If you debugging a game, you can call <a href="https://developer.android.com/games/services/management/api/rest/v1/scores/reset"><strong><code>Scores.reset</code></strong></a> from the Management APIs to reset all scores for that player from a particular leaderboard.</li>
 </ul>
 
 
@@ -1455,7 +1455,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 9, 2025 21:31:28">April 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 9, 2025 21:35:33">April 9, 2025</span>
   </span>
 
     
