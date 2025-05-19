@@ -233,6 +233,9 @@ To detect and resolve saved game conflicts:
 
     ![](../assets/HandleSavedGameConflicts.png)
 
+!!! info
+    The above approach is only reasonable if your conflict policy is __`RESOLUTION_POLICY_MANUAL`__. Other policies resolve conflicts automatically.
+
 ### Modify saved games
 
 If you want to merge data from multiple saved games or modify an existing Snapshot to save to the server as the resolved final version, follow these steps:
@@ -245,3 +248,164 @@ If you want to merge data from multiple saved games or modify an existing Snapsh
 6.  If the __`UGMSGamesSnapshotsClient::ResolveConflict()`__ call is successful, the API stores the __`UGMSGamesSnapshot`__ object to the server and attempts to open the Snapshot object on your local device.
     *   If there is a conflict, your game should return to step 2 and repeat the steps to modify the snapshot until conflicts are resolved.
     *   If there's no conflict, the __`UGMSGamesSnapshot`__ object is open for your game to modify.
+
+### Discard and close a snapshot without committing 
+
+To discard all changes made to the file and close the snapshot, __`UGMSGamesSnapshotsClient::DiscardAndClose()`__ function can be used. You'll have to reopen the snapshot if changes are needed afterwards.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesSnapshotsClient.h"
+    #include "GMSGamesSnapshot.h"
+    // ...
+    UGMSGamesSnapshotsClient::OnDiscardAndCloseSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
+    UGMSGamesSnapshotsClient::DiscardAndClose(Snapshot);
+    // ...
+    void UMyClass::OnSuccessFunction()
+    {
+        // Snapshot closed without saving changes...
+    }
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/DiscardAndCloseSnapshot.png)
+
+### Load the list of saved games
+
+You can access the list of snapshot metadata objects by calling the __`UGMSGamesSnapshotsClient::LoadSnapshotMetadataBuffer()`__ function. It returns the list of all the current player's saved games and can be used to implement a custom in-game cloud saves management system.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesSnapshotsClient.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesSnapshotsClient::OnLoadSnapshotMetadataBufferSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
+    UGMSGamesSnapshotsClient::OnLoadSnapshotMetadataBufferFailure.Add(MyObject, &UMyClass::OnFailureFunction);
+    UGMSGamesSnapshotsClient::OnLoadSnapshotMetadataBufferCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
+    // Calling the function
+    UGMSGamesSnapshotsClient::LoadSnapshotMetadataBuffer(bForceReload);
+    // ...
+    void UMyClass::OnSuccessFunction(const TArray<UGMSGamesSnapshotMetadata*>& SnapshotMetadataBuffer)
+    {
+        // Process the snapshot metadata objects
+    }
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/LoadSnapshotMetadataBuffer.png)
+
+Returned __`UGMSGamesSnapshotMetadata`__ objects can be used in conjunction with other functions and various properties can be accessed to retrieve information about each snapshot.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesSnapshotMetadata.h"
+    #include "GMSGamesGame.h"
+    #include "GMSGamesPlayer.h"
+    // ...
+    float CoverImageAspectRatio = SnapshotMetadata->GetCoverImageAspectRatio();
+    FString CoverImageURI = SnapshotMetadata->GetCoverImageURI();
+    FString Description = SnapshotMetadata->GetDescription();
+    FString DeviceName = SnapshotMetadata->GetDeviceName();
+    int64 LastModifiedTimestamp = SnapshotMetadata->GetLastModifiedTimestamp();
+    UGMSGamesGame* Game = SnapshotMetadata->GetGame();
+    UGMSGamesPlayer* Owner = SnapshotMetadata->GetOwner();
+    int64 PlayedTime = SnapshotMetadata->GetPlayedTime();
+    int64 ProgressValue = SnapshotMetadata->GetProgressValue();
+    FString SnapshotID = SnapshotMetadata->GetSnapshotID();
+    FString UniqueName = SnapshotMetadata->GetUniqueName();
+    bool bHasChangePending = SnapshotMetadata->HasChangePending();
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/SnapshotMetadataObject.png)
+
+### Delete saved game
+
+Pass the SnapshotMetadata object as a parameter to the __`UGMSGamesSnapshotsClient::Delete()`__ function to delete the saved game associated with it.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesSnapshotsClient.h"
+    #include "GMSGamesSnapshotMetadata.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesSnapshotsClient::OnDeleteSuccess.Add(MyObject, &UMyClass::OnSnapshotDeleted);
+    UGMSGamesSnapshotsClient::OnDeleteFailure.Add(MyObject, &UMyClass::OnFailureFunction);
+    UGMSGamesSnapshotsClient::OnDeleteCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
+    // Calling the function
+    UGMSGamesSnapshotsClient::Delete(SnapshotMetadata);
+    // ...
+    void UMyClass::OnSnapshotDeleted(const FString& SnapshotID)
+    {
+        if (GEngine)
+	    {
+	        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, TEXT("Deleted snapshot with ID: ") + SnapshotID);
+	    }
+    }
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/DeleteSnapshot.png)
+
+### Process binary data
+
+You can also manipulate byte data stored in the __`UGMSGamesSnapshotContents`__ object directly, which can be useful if you rely on a custom low-level serialization algorithm instead of Unreal Engine's __`USaveGame`__ system.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesSnapshotsClient.h"
+    #include "GMSGamesSnapshot.h"
+    #include "GMSGamesSnapshotConflict.h"
+    #include "GMSGamesSnapshotContents.h"
+    // ...
+    UGMSGamesSnapshotsClient::OnOpenSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
+    UGMSGamesSnapshotsClient::Open("SavedGame1", false, EGMSGamesSnapshotResolutionPolicy::RESOLUTION_POLICY_MOST_RECENTLY_MODIFIED);
+    // ...
+    void UMyClass::OnSuccessFunction(UGMSGamesSnapshot* Snapshot)
+    {
+        UGMSGamesSnapshotContents* SnapshotContents = Snapshot->GetSnapshotContents();
+        TArray<uint8> DataBytes = SnapshotContents->ReadBytes();
+        bool bIsModified = SnapshotContents->ModifyBytes(DstOffset, ByteDataToAdd, SrcOffset, Count);
+        bool bIsWritten = SnapshotContents->WriteBytes(ByteDataToWrite);
+    }
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/ProcessBinaryData.png)
+
+In a situation where you are not sure if the contents are still open, use __`UGMSGamesSnapshotContents::IsClosed()`__ to check if snapshot contents are writable before modifying them.
+
+### Get max snapshot data and cover image sizes
+
+If you need to get the current size limits in bytes for the snapshot data and cover image, you can use __`UGMSGamesSnapshotsClient::GetMaxDataSize()`__ and __`UGMSGamesSnapshotsClient::GetMaxCoverImageSize()`__ functions respectively.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesSnapshotsClient.h"
+    // ...
+    UGMSGamesSnapshotsClient::OnGetMaxDataSizeSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
+    UGMSGamesSnapshotsClient::GetMaxDataSize();
+
+    UGMSGamesSnapshotsClient::OnGetMaxCoverImageSizeSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
+    UGMSGamesSnapshotsClient::GetMaxCoverImageSize();
+    // ...
+    void UMyClass::OnSuccessFunction(const int32 MaxDataSize)
+    {
+        // ...
+    }
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/GetMaxSnapshotSize.png)

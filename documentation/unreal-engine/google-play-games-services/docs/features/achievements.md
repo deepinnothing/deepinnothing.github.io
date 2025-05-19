@@ -343,24 +343,26 @@ Then it's possible to access all the different properties of the individual __`A
 === "C++"
 
     ``` c++
-    #include "GMSGamesAchievementsClient.h"
+    #include "GMSGamesAchievement.h"
+    #include "GMSGamesIncrementalAchievement.h"
+    #include "GMSGamesPlayer.h"
     // ...
-    Achievement->GetAchievementID();
-    Achievement->GetAchievementName();
-    Achievement->GetDescription();
-    Achievement->GetXPValue();
-    Achievement->GetState();
-    Achievement->GetLastUpdatedTimestamp();
-    Achievement->GetPlayer();
-    Achievement->GetRevealedImageURI();
-    Achievement->GetUnlockedImageURI();
+    FString AchievementID = Achievement->GetAchievementID();
+    FString AchievementName = Achievement->GetAchievementName();
+    FString Description = Achievement->GetDescription();
+    int64 XPValue = Achievement->GetXPValue();
+    EGMSGamesAchievementState State = Achievement->GetState();
+    int64 LastUpdatedTimestamp = Achievement->GetLastUpdatedTimestamp();
+    UGMSGamesPlayer* Player = Achievement->GetPlayer();
+    FString RevealedImageURI = Achievement->GetRevealedImageURI();
+    FString UnlockedImageURI = Achievement->GetUnlockedImageURI();
 
     if (UGMSGamesIncrementalAchievement* IncrementalAchievement = Cast<UGMSGamesIncrementalAchievement>(Achievement))
     {
-        IncrementalAchievement->GetCurrentSteps();
-        IncrementalAchievement->GetFormattedCurrentSteps();
-        IncrementalAchievement->GetTotalSteps();
-        IncrementalAchievement->GetFormattedTotalSteps();
+        int32 CurrentSteps = IncrementalAchievement->GetCurrentSteps();
+        FString FormattedCurrentSteps = IncrementalAchievement->GetFormattedCurrentSteps();
+        int32 TotalSteps = IncrementalAchievement->GetTotalSteps();
+        FString FormattedTotalSteps = IncrementalAchievement->GetFormattedTotalSteps();
     }
     ```
 

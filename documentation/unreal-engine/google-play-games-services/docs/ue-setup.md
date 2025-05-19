@@ -45,3 +45,6 @@ PrivateDependencyModuleNames.Add("GMSGames");
 ### Next steps
 
 With the initial setup tasks complete, you can start integrating various features into your game, such as saved games, leaderboards, and achievements.
+
+!!! warning
+    Google Play Games Services will only work on Android-based devices, i.e. the project should be built/packaged for Android platform.
