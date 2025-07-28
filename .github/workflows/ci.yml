@@ -35,6 +35,11 @@ jobs:
         run: |
           cd documentation/unreal-engine/google-play-games-services
           mkdocs build
+
+      - name: Build Google AdMob
+        run: |
+          cd documentation/unreal-engine/google-admob
+          mkdocs build
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
