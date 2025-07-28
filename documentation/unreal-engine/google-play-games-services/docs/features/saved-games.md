@@ -355,6 +355,9 @@ Pass the SnapshotMetadata object as a parameter to the __`UGMSGamesSnapshotsClie
 
     ![](../assets/DeleteSnapshot.png)
 
+!!! note
+    A snapshot can also be deleted via the default saved games selection user interface (UI), if __`UGMSGamesSnapshotsClient::ShowSnapshotsUI()`__ is called with the __`bAllowDelete`__ param set to __`true`__. No additional code is required in this case, as the UI handles the deletion process itself.
+
 ### Process binary data
 
 You can also manipulate byte data stored in the __`UGMSGamesSnapshotContents`__ object directly, which can be useful if you rely on a custom low-level serialization algorithm instead of Unreal Engine's __`USaveGame`__ system.
