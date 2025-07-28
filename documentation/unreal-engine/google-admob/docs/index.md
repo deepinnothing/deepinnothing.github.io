@@ -53,22 +53,22 @@ Now you're ready to add your first interstitial ad to your game! Follow the step
 
     === "C++"
 
-    ``` c++
-    // In header file:
-    class UGoogleAdMobInterstitialAd;
-    // ...
-    UPROPERTY()
-    TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
+        ``` c++
+        // In header file:
+        class UGoogleAdMobInterstitialAd;
+        // ...
+        UPROPERTY()
+        TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
 
-    // In source file:
-    #include "GoogleAdMobInterstitialAd.h"
-    // ...
-    InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
-    ```
+        // In source file:
+        #include "GoogleAdMobInterstitialAd.h"
+        // ...
+        InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
+        ```
 
     === "Blueprints"
 
-    ![](assets/ConstructInterstitialAd.png)
+        ![](assets/ConstructInterstitialAd.png)
 
     !!! tip
 
@@ -78,126 +78,126 @@ Now you're ready to add your first interstitial ad to your game! Follow the step
 
     === "C++"
 
-    ``` c++
-    // In header file:
-    class UGoogleAdMobInterstitialAd;
-    // ...
-    UPROPERTY()
-    TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
-
-    // In source file:
-    #include "GoogleAdMobInterstitialAd.h"
-    #include "GoogleAdMob.h"
-    // ...
-    InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
-    // ...
-    if (UGoogleAdMob::CanRequestAds()) 
-    {
+        ``` c++
+        // In header file:
+        class UGoogleAdMobInterstitialAd;
         // ...
-    }
-    ```
+        UPROPERTY()
+        TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
+
+        // In source file:
+        #include "GoogleAdMobInterstitialAd.h"
+        #include "GoogleAdMob.h"
+        // ...
+        InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
+        // ...
+        if (UGoogleAdMob::CanRequestAds()) 
+        {
+            // ...
+        }
+        ```
 
     === "Blueprints"
 
-    ![](assets/CanRequestAds.png)
+        ![](assets/CanRequestAds.png)
 
 3. __Bind an event to the ad being loaded__. Prior to loading the ad, you should also bind some event to the __`OnLoaded`__ multicast delegate, so that you know when your ad is loaded and is ready to be shown.
 
     === "C++"
 
-    ``` c++
-    // In header file:
-    class UGoogleAdMobInterstitialAd;
-    // ...
-    UPROPERTY()
-    TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
+        ``` c++
+        // In header file:
+        class UGoogleAdMobInterstitialAd;
+        // ...
+        UPROPERTY()
+        TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
 
-    // In source file:
-    #include "GoogleAdMobInterstitialAd.h"
-    #include "GoogleAdMob.h"
-    #include "GoogleAdMobResponseInfo.h"
-    // ...
-    InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
-    // ...
-    if (UGoogleAdMob::CanRequestAds()) 
-    {
-        InterstitialAd->OnLoaded.AddLambda([](const FGoogleAdMobResponseInfo& ResponseInfo){});
-    }
-    ```
+        // In source file:
+        #include "GoogleAdMobInterstitialAd.h"
+        #include "GoogleAdMob.h"
+        #include "GoogleAdMobResponseInfo.h"
+        // ...
+        InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
+        // ...
+        if (UGoogleAdMob::CanRequestAds()) 
+        {
+            InterstitialAd->OnLoaded.AddLambda([](const FGoogleAdMobResponseInfo& ResponseInfo){});
+        }
+        ```
 
     === "Blueprints"
 
-    ![](assets/BindEventToOnLoaded.png)
+        ![](assets/BindEventToOnLoaded.png)
 
 4. __Load the ad__. Now you can finally load your ad by calling __`UGoogleAdMobInterstitialAd::Load(const FString& AdUnitID)`__ function! Just remember that the function must be called on the created ad object (i.e. the function won't appear in Blueprints unless the context menu is shown after dragging the pin from this object), and that there are two different Ad Unit IDs for Android and iOS.
 
     === "C++"
 
-    ``` c++
-    // In header file:
-    class UGoogleAdMobInterstitialAd;
-    // ...
-    UPROPERTY()
-    TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
+        ``` c++
+        // In header file:
+        class UGoogleAdMobInterstitialAd;
+        // ...
+        UPROPERTY()
+        TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
 
-    // In source file:
-    #include "GoogleAdMobInterstitialAd.h"
-    #include "GoogleAdMob.h"
-    #include "GoogleAdMobResponseInfo.h"
-    // ...
-    InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
-    // ...
-    if (UGoogleAdMob::CanRequestAds()) 
-    {
-        InterstitialAd->OnLoaded.AddLambda([](const FGoogleAdMobResponseInfo& ResponseInfo){});
-    #if PLATFORM_ANDROID
-        InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/1033173712"));
-    #elif PLATFORM_IOS
-        InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/4411468910"));
-    #endif
-    }
-    ```
+        // In source file:
+        #include "GoogleAdMobInterstitialAd.h"
+        #include "GoogleAdMob.h"
+        #include "GoogleAdMobResponseInfo.h"
+        // ...
+        InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
+        // ...
+        if (UGoogleAdMob::CanRequestAds()) 
+        {
+            InterstitialAd->OnLoaded.AddLambda([](const FGoogleAdMobResponseInfo& ResponseInfo){});
+        #if PLATFORM_ANDROID
+            InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/1033173712"));
+        #elif PLATFORM_IOS
+            InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/4411468910"));
+        #endif
+        }
+        ```
 
     === "Blueprints"
 
-    ![](assets/LoadInterstitialAd.png)
+        ![](assets/LoadInterstitialAd.png)
 
 5. __Show your interstitial ad__. The last step here is obviously showing your ad when it's loaded. Just call __`UGoogleAdMobInterstitialAd::Show()`__ when the __`OnLoaded`__ delegate is broadcast, and you're done!
 
     === "C++"
 
-    ``` c++
-    // In header file:
-    class UGoogleAdMobInterstitialAd;
-    // ...
-    UPROPERTY()
-    TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
+        ``` c++
+        // In header file:
+        class UGoogleAdMobInterstitialAd;
+        // ...
+        UPROPERTY()
+        TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
 
-    // In source file:
-    #include "GoogleAdMobInterstitialAd.h"
-    #include "GoogleAdMob.h"
-    #include "GoogleAdMobResponseInfo.h"
-    // ...
-    InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
-    // ...
-    if (UGoogleAdMob::CanRequestAds()) 
-    {
-        InterstitialAd->OnLoaded.AddLambda(
-            [InterstitialAd](const FGoogleAdMobResponseInfo& ResponseInfo)
-            {
-                InterstitialAd->Show();
-            }
-        );
-    #if PLATFORM_ANDROID
-        InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/1033173712"));
-    #elif PLATFORM_IOS
-        InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/4411468910"));
-    #endif
-    }
-    ```
+        // In source file:
+        #include "GoogleAdMobInterstitialAd.h"
+        #include "GoogleAdMob.h"
+        #include "GoogleAdMobResponseInfo.h"
+        // ...
+        InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
+        // ...
+        if (UGoogleAdMob::CanRequestAds()) 
+        {
+            InterstitialAd->OnLoaded.AddLambda(
+                [InterstitialAd](const FGoogleAdMobResponseInfo& ResponseInfo)
+                {
+                    InterstitialAd->Show();
+                }
+            );
+        #if PLATFORM_ANDROID
+            InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/1033173712"));
+        #elif PLATFORM_IOS
+            InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/4411468910"));
+        #endif
+        }
+        ```
 
     === "Blueprints"
 
-    ![](assets/ShowInterstitialAd.png)
+        ![](assets/ShowInterstitialAd.png)
 
 Congratilations! You've successfully loaded your first interstitial ad! It might seem a bit overwhelming at first, but once you get it, this plugin will become a powerful tool in your developer hands, and will help you implement a robust mobile ad system in your game. Go on and check out what other features it has to offer!
