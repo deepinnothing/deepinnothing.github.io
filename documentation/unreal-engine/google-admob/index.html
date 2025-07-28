@@ -492,11 +492,9 @@
 <ol>
 <li>
 <p><strong>Create an interstitial ad object and store it in a variable</strong>. In Blueprints, add a <strong><code>Construct Object from Class</code></strong> node and choose <strong>UGoogleAdMobInterstitialAd</strong> as a class to create the object from. Think of it as a communication interface between your Unreal project and Google AdMob.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1">// In header file:</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobInterstitialAd</span><span class="p">;</span>
 <span class="c1">// ...</span>
@@ -508,12 +506,12 @@
 <span class="c1">// ...</span>
 <span class="n">InterstitialAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewObject</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Blueprints</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <p><img alt="" src="assets/ConstructInterstitialAd.png" /></p>
+</div>
+</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>It's generally recommended to keep your ads in a class/blueprint derived from <strong>PlatformGameInstance</strong>, as they often need to persist between levels.</p>
@@ -521,11 +519,9 @@
 </li>
 <li>
 <p><strong>Check if ads can be requested</strong>. Before loading any ads, you should first check if the consent has been gathered from a user using the <strong><code>UGoogleAdMob::CanRequestAds()</code></strong> function.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1">// In header file:</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobInterstitialAd</span><span class="p">;</span>
 <span class="c1">// ...</span>
@@ -543,20 +539,18 @@
 <span class="w">    </span><span class="c1">// ...</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Blueprints</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <p><img alt="" src="assets/CanRequestAds.png" /></p>
+</div>
+</div>
+</div>
 </li>
 <li>
 <p><strong>Bind an event to the ad being loaded</strong>. Prior to loading the ad, you should also bind some event to the <strong><code>OnLoaded</code></strong> multicast delegate, so that you know when your ad is loaded and is ready to be shown.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">C++</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1">// In header file:</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobInterstitialAd</span><span class="p">;</span>
 <span class="c1">// ...</span>
@@ -575,20 +569,18 @@
 <span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnLoaded</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">){});</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Blueprints</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <p><img alt="" src="assets/BindEventToOnLoaded.png" /></p>
+</div>
+</div>
+</div>
 </li>
 <li>
 <p><strong>Load the ad</strong>. Now you can finally load your ad by calling <strong><code>UGoogleAdMobInterstitialAd::Load(const FString&amp; AdUnitID)</code></strong> function! Just remember that the function must be called on the created ad object (i.e. the function won't appear in Blueprints unless the context menu is shown after dragging the pin from this object), and that there are two different Ad Unit IDs for Android and iOS.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">C++</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">C++</label><label for="__tabbed_4_2">Blueprints</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1">// In header file:</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobInterstitialAd</span><span class="p">;</span>
 <span class="c1">// ...</span>
@@ -612,20 +604,18 @@
 <span class="cp">#endif</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Blueprints</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <p><img alt="" src="assets/LoadInterstitialAd.png" /></p>
+</div>
+</div>
+</div>
 </li>
 <li>
 <p><strong>Show your interstitial ad</strong>. The last step here is obviously showing your ad when it's loaded. Just call <strong><code>UGoogleAdMobInterstitialAd::Show()</code></strong> when the <strong><code>OnLoaded</code></strong> delegate is broadcast, and you're done!</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">C++</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">C++</label><label for="__tabbed_5_2">Blueprints</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1">// In header file:</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobInterstitialAd</span><span class="p">;</span>
 <span class="c1">// ...</span>
@@ -654,12 +644,12 @@
 <span class="cp">#endif</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Blueprints</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <p><img alt="" src="assets/ShowInterstitialAd.png" /></p>
+</div>
+</div>
+</div>
 </li>
 </ol>
 <p>Congratilations! You've successfully loaded your first interstitial ad! It might seem a bit overwhelming at first, but once you get it, this plugin will become a powerful tool in your developer hands, and will help you implement a robust mobile ad system in your game. Go on and check out what other features it has to offer!</p>
@@ -683,7 +673,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 28, 2025 01:10:56 UTC">July 28, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 28, 2025 01:14:13 UTC">July 28, 2025</span>
   </span>
 
     
