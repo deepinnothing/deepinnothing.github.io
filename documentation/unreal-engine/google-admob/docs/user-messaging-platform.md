@@ -198,3 +198,54 @@ This is an example of what the complete UMP set-up might look like:
 === "Blueprints"
 
     ![](assets/BP_UMP_5.png)
+
+## Testing
+
+If you want to test the integration in your project as you're developing, follow these steps to register your test device. Be sure to remove these test device IDs before you release your game.
+
+1.  Run your game on a device of your choice (iOS or Android), and make sure __`UGoogleAdMob::RequestConsentInfoUpdate()`__ is called.
+2.  Check the log output of your device for a message similar to the following examples, which shows your device ID:
+
+    -   __iOS:__ 
+
+        ```
+        <UMP SDK>To enable debug mode for this device, set: UMPDebugSettings.testDeviceIdentifiers = @[2077ef9a63d2b398840261c8221a0c9b]
+
+        ```
+
+    -   __Android:__ 
+
+        ```
+        Use new ConsentDebugSettings.Builder().addTestDeviceHashedId("33BE2250B43518CCDA7DE426D04EE231") to set this as a debug device.
+        ```
+
+3.  Copy your test device ID to your clipboard.
+4.  Go to __Project Settings > Plugins > Google AdMob__ and paste the copied device ID into the appropriate Test Device IDs array:
+
+    ![](assets/TestDeviceIDs.png)
+
+### Force a geography
+
+The UMP provides a way to test your game's behavior as though the devices were located in various regions, such as the EEA or UK. Note that debug settings only work on test devices.
+
+![](assets/DebugGeographyArea.png)
+
+### Reset consent state
+
+When testing your game with the UMP SDK, you might find it helpful to reset the state of the SDK so that you can simulate a user's first install experience. The plugin provides the __`UGoogleAdMob::ResetConsentState()`__ function to do this.
+
+=== "C++"
+
+    ``` c++
+    #include "GoogleAdMob.h"
+    // ...
+    UGoogleAdMob::ResetConsentState();
+    ```
+
+=== "Blueprints"
+
+    ![](assets/ResetConsentState.png)
+
+!!! warning
+
+    This function is intended to be used for testing purposes only. You shouldn't call __`UGoogleAdMob::ResetConsentState()`__ in shipping builds.
