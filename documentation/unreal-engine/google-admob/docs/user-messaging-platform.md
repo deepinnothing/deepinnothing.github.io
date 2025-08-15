@@ -1,6 +1,8 @@
 # User Messaging Platform (UMP)
 
-Before you can show any ads to your users, you have to ask for their consent. Ideally, it should be done at game's start-up before initializing AdMob SDK. The Google User Messaging Platform (UMP) is a privacy and messaging tool to help you manage privacy choices. For more information, see [About Privacy & messaging](https://support.google.com/admob/answer/10107561). [Automatic SDK initialization](./index.md#enable-automatic-sdk-initialization) does most of the steps described below automatically, but manual set-up should be a preferred option.
+Before you can show any ads to your users, you have to ask for their consent. Ideally, it should be done at game's start-up before initializing AdMob SDK. The Google User Messaging Platform (UMP) is a privacy and messaging tool to help you manage privacy choices. For more information, see [About Privacy & messaging](https://support.google.com/admob/answer/10107561). 
+
+[Automatic SDK initialization](./index.md#enable-automatic-sdk-initialization) does most of the steps described below automatically, but manual set-up should be a preferred option.
 
 ## Before you start
 
@@ -22,7 +24,7 @@ You should request an update of the user's consent information at every app laun
 
 !!! tip
 
-    It's highly recommended you do your UMP and initialization logic inside the __`Init()`__ function of the __`UPlatformGameInstance`__ derived class.
+    It's highly recommended you do your UMP and initialization logic inside the __`Init()`__ function of the __`UPlatformGameInstance`__ derived class, as game instance persists between levels and its __`Init()`__ function gets executed before any other game logic.
 
 === "C++"
 
@@ -30,7 +32,11 @@ You should request an update of the user's consent information at every app laun
     #include "GoogleAdMob.h"
     // ...
     UGoogleAdMob::OnRequestConsentInfoUpdateSuccess.AddLambda([](){});
-    UGoogleAdMob::OnRequestConsentInfoUpdateFailure.AddLambda([](const int32 ErrorCode, const FString& ErrorMessage){});
+    UGoogleAdMob::OnRequestConsentInfoUpdateFailure.AddLambda(
+        []
+        (const int32 ErrorCode, const FString& ErrorMessage)
+        {}
+    );
     UGoogleAdMob::RequestConsentInfoUpdate();
     ```
 
@@ -52,7 +58,11 @@ After you have received the most up-to-date consent status, call __`UGoogleAdMob
     #include "GoogleAdMob.h"
     // ...
     UGoogleAdMob::OnConsentFormDismissed.AddLambda([](){});
-    UGoogleAdMob::OnConsentFormDismissedWithError.AddLambda([](const int32 ErrorCode, const FString& ErrorMessage){});
+    UGoogleAdMob::OnConsentFormDismissedWithError.AddLambda(
+        []
+        (const int32 ErrorCode, const FString& ErrorMessage)
+        {}
+    );
     UGoogleAdMob::LoadAndShowConsentFormIfRequired();
     ```
 
@@ -161,7 +171,8 @@ This is an example of what the complete UMP set-up might look like:
                     }
                 }
             );
-            UGoogleAdMob::OnConsentFormDismissedWithError.AddLambda([](const int32 ErrorCode, const FString& ErrorMessage)
+            UGoogleAdMob::OnConsentFormDismissedWithError.AddLambda([]
+                (const int32 ErrorCode, const FString& ErrorMessage)
                 {
                     UE_LOG(LogExec, Error, TEXT("%d | %s"), ErrorCode, *ErrorMessage);
                 }
@@ -169,7 +180,8 @@ This is an example of what the complete UMP set-up might look like:
             UGoogleAdMob::LoadAndShowConsentFormIfRequired();
         }
     );
-    UGoogleAdMob::OnRequestConsentInfoUpdateFailure.AddLambda([](const int32 ErrorCode, const FString& ErrorMessage)
+    UGoogleAdMob::OnRequestConsentInfoUpdateFailure.AddLambda([]
+        (const int32 ErrorCode, const FString& ErrorMessage)
         {
             UE_LOG(LogExec, Error, TEXT("%d | %s"), ErrorCode, *ErrorMessage);
         }
