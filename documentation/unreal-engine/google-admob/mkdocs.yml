@@ -25,6 +25,7 @@ markdown_extensions:
       alternate_style: true
 nav:
   - index.md
+  - user-messaging-platform.md
 plugins: 
   - search
   - git-revision-date-localized
