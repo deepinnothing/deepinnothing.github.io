@@ -34,7 +34,7 @@ To avoid any compatibility issues and library conflicts, disable build-in AdMob 
 
 ### Enable automatic SDK initialization
 
-Typically, you would want manual control over Privacy & Messaging in your game (*it's even required in some cases!*), but for this tutorial we are going to ask plugin to attempt initializing Google AdMob SDK automatically at game's start-up. Once again, go to __Project Settings > Plugins > Google AdMob__, and set the __`Enable automatic SDK initialization on startup`__ field to __`true`__ (it's disabled be default).
+Typically, you would want [manual control over Privacy & Messaging](./user-messaging-platform.md) in your game (*it's even required in some cases!*), but for this tutorial we are going to ask plugin to attempt initializing Google AdMob SDK automatically at game's start-up. Once again, go to __Project Settings > Plugins > Google AdMob__, and set the __`Enable automatic SDK initialization on startup`__ field to __`true`__ (it's disabled be default).
 
 ![Enable automatic SDK initialization on startup](assets/EnableAutoInit.png)
 
