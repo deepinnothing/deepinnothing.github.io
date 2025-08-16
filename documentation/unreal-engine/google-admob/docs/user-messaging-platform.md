@@ -210,7 +210,6 @@ If you want to test the integration in your project as you're developing, follow
 
         ```
         <UMP SDK>To enable debug mode for this device, set: UMPDebugSettings.testDeviceIdentifiers = @[2077ef9a63d2b398840261c8221a0c9b]
-
         ```
 
     -   __Android:__ 

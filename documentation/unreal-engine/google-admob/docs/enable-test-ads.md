@@ -49,6 +49,7 @@ For a non-programmatic way to add a test device and test new or existing app bui
 ### Add your test device programmatically
 
 To register your test device, complete the following steps:
+
 1.  Run your game on a device of your choice (iOS or Android), and make an ad request.
 2.  Check the log output of your device for a message similar to the following examples, which shows your device ID:
 
