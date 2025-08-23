@@ -75,7 +75,7 @@ To register your test device, complete the following steps:
 
     !!! warning
 
-        Be sure to remove the code that sets these test devices before you release your game.
+        Be sure to disable "Enable Test Devices" fields before you release your game.
 
 5.  Rebuild your project and run it again. If the ad is a Google ad, you'll see a __Test mode__ label centered at the top of the ad (banner, interstitial, or rewarded ad):
 

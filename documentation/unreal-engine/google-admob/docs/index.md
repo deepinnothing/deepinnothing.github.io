@@ -34,7 +34,7 @@ To avoid any compatibility issues and library conflicts, disable build-in AdMob 
 
 ### Enable automatic SDK initialization
 
-Typically, you would want [manual control over Privacy & Messaging](./user-messaging-platform.md) in your game (*it's even required in some cases!*), but for this tutorial we are going to ask plugin to attempt initializing Google AdMob SDK automatically at game's start-up. Once again, go to __Project Settings > Plugins > Google AdMob__, and set the __`Enable automatic SDK initialization on startup`__ field to __`true`__ (it's disabled be default).
+Typically, you would want [manual control over Privacy & Messaging](./user-messaging-platform.md) in your game (*it's even required in some cases!*), but for this tutorial we are going to ask plugin to attempt initializing Google AdMob SDK automatically on game's start-up. Once again, go to __Project Settings > Plugins > Google AdMob__, and set the __`Enable automatic SDK initialization on startup`__ field to __`true`__ (it's disabled be default).
 
 ![Enable automatic SDK initialization on startup](assets/EnableAutoInit.png)
 
@@ -108,20 +108,28 @@ Now you're ready to add your first interstitial ad to your game! Follow the step
         ``` c++
         // In header file:
         class UGoogleAdMobInterstitialAd;
+        struct FGoogleAdMobResponseInfo;
         // ...
         UPROPERTY()
         TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
+
+        UFUNCTION()
+        void InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo);
 
         // In source file:
         #include "GoogleAdMobInterstitialAd.h"
         #include "GoogleAdMob.h"
         #include "GoogleAdMobResponseInfo.h"
         // ...
+        void UYourClass::InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo) 
+        {      
+        }
+        // ...
         InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
         // ...
         if (UGoogleAdMob::CanRequestAds()) 
         {
-            InterstitialAd->OnLoaded.AddLambda([](const FGoogleAdMobResponseInfo& ResponseInfo){});
+            InterstitialAd->OnLoaded.AddDynamic(this, &UYourClass::InterstitialAdLoaded);
         }
         ```
 
@@ -136,20 +144,28 @@ Now you're ready to add your first interstitial ad to your game! Follow the step
         ``` c++
         // In header file:
         class UGoogleAdMobInterstitialAd;
+        struct FGoogleAdMobResponseInfo;
         // ...
         UPROPERTY()
         TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
+
+        UFUNCTION()
+        void InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo);
 
         // In source file:
         #include "GoogleAdMobInterstitialAd.h"
         #include "GoogleAdMob.h"
         #include "GoogleAdMobResponseInfo.h"
         // ...
+        void UYourClass::InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo) 
+        {      
+        }
+        // ...
         InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
         // ...
         if (UGoogleAdMob::CanRequestAds()) 
         {
-            InterstitialAd->OnLoaded.AddLambda([](const FGoogleAdMobResponseInfo& ResponseInfo){});
+            InterstitialAd->OnLoaded.AddDynamic(this, &UYourClass::InterstitialAdLoaded);
         #if PLATFORM_ANDROID
             InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/1033173712"));
         #elif PLATFORM_IOS
@@ -169,25 +185,29 @@ Now you're ready to add your first interstitial ad to your game! Follow the step
         ``` c++
         // In header file:
         class UGoogleAdMobInterstitialAd;
+        struct FGoogleAdMobResponseInfo;
         // ...
         UPROPERTY()
         TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
+
+        UFUNCTION()
+        void InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo);
 
         // In source file:
         #include "GoogleAdMobInterstitialAd.h"
         #include "GoogleAdMob.h"
         #include "GoogleAdMobResponseInfo.h"
         // ...
+        void UYourClass::InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo) 
+        {     
+            InterstitialAd->Show(); 
+        }
+        // ...
         InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
         // ...
         if (UGoogleAdMob::CanRequestAds()) 
         {
-            InterstitialAd->OnLoaded.AddLambda(
-                [InterstitialAd](const FGoogleAdMobResponseInfo& ResponseInfo)
-                {
-                    InterstitialAd->Show();
-                }
-            );
+            InterstitialAd->OnLoaded.AddDynamic(this, &UYourClass::InterstitialAdLoaded);
         #if PLATFORM_ANDROID
             InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/1033173712"));
         #elif PLATFORM_IOS

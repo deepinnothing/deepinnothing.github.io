@@ -82,13 +82,34 @@ After you have called __`UGoogleAdMob::RequestConsentInfoUpdate()`__, get privac
     #include "Components/Widget.h"
     #include "GoogleAdMob.h"
     // ...
-    if (UGoogleAdMob::ArePrivacyOptionsRequired()) 
+    void UYourWidget::NativeConstruct()
     {
-        PrivacyOptionsButton->SetVisibility(ESlateVisiblity::Visible);
+        Super::NativeConstruct();
+
+        if (UGoogleAdMob::ArePrivacyOptionsRequired())
+        {
+            PrivacyOptionsButton->SetVisibility(ESlateVisibility::Visible);
+        }
+        else
+        {
+            PrivacyOptionsButton->SetVisibility(ESlateVisibility::Collapsed);
+        }
     }
-    else
+
+    void UYourWidget::OnPrivacyOptionsButtonClicked()
     {
-        PrivacyOptionsButton->SetVisibility(ESlateVisibility::Collapsed);
+        UGoogleAdMob::OnConsentFormDismissed.AddLambda([]
+            {
+                //...
+            }
+        );
+        UGoogleAdMob::OnConsentFormDismissedWithError.AddLambda([]
+            (const int32 ErrorCode, const FString& ErrorMessage)
+            {
+                //...
+            }
+        );
+        UGoogleAdMob::ShowPrivacyOptionsForm();
     }
     ```
 
@@ -104,21 +125,27 @@ When the user interacts with your element, present the privacy options form:
     #include "Components/Button.h"
     #include "GoogleAdMob.h"
     // ...
-    PrivacyOptionsButton->OnClicked.AddLambda([]()
-        {   
-            UGoogleAdMob::OnConsentFormDismissed.AddLambda([]()
-                {
-                    //... 
-                }
-            );
-            UGoogleAdMob::OnConsentFormDismissedWithError.AddLambda([](const int32 ErrorCode, const FString& ErrorMessage)
-                {
-                    //...
-                }
-            );
-            UGoogleAdMob::ShowPrivacyOptionsForm();
-        }
-    );
+    void UYourWidget::NativeConstruct()
+    {
+        //...
+        PrivacyOptionsButton->OnClicked.AddDynamic(this, &UYourWidget::OnPrivacyOptionsButtonClicked);
+    }
+
+    void UYourWidget::OnPrivacyOptionsButtonClicked()
+    {
+        UGoogleAdMob::OnConsentFormDismissed.AddLambda([]
+            {
+                //...
+            }
+        );
+        UGoogleAdMob::OnConsentFormDismissedWithError.AddLambda([]
+            (const int32 ErrorCode, const FString& ErrorMessage)
+            {
+                //...
+            }
+        );
+        UGoogleAdMob::ShowPrivacyOptionsForm();
+    }
     ```
 
 === "Blueprints"
