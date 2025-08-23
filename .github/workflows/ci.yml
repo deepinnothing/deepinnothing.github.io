@@ -44,7 +44,7 @@ jobs:
       - name: Include ZIP files
         run: |
           mkdir -p site/sample-projects/unreal-engine/google-admob
-          cp sample-project/unreal-engine/google-admob/*.zip site/sample-projects/unreal-engine/google-admob/
+          cp sample-projects/unreal-engine/google-admob/*.zip site/sample-projects/unreal-engine/google-admob/
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
