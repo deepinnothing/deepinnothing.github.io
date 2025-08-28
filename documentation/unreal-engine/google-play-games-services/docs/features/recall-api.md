@@ -159,7 +159,6 @@ To communicate with Google's servers with the correct information, you need to r
     // Binding functions to multicast delegates
     UGMSGamesRecallClient::OnRequestRecallAccessSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesRecallClient::OnRequestRecallAccessFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesRecallClient::OnRequestRecallAccessCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesRecallClient::RequestRecallAccess();
     ```

@@ -78,7 +78,6 @@ To verify the sign in attempt, call __`UGMSGamesSignInClient::IsAuthenticated()`
     // Binding functions to multicast delegates
     UGMSGamesSignInClient::OnIsAuthenticatedSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesSignInClient::OnIsAuthenticatedFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesSignInClient::OnIsAuthenticatedCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesSignInClient::IsAuthenticated();
     ```
@@ -97,7 +96,6 @@ If the user chooses not to sign in when the game launches, you may optionally ch
     // Binding functions to multicast delegates
     UGMSGamesSignInClient::OnSignInSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesSignInClient::OnSignInFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesSignInClient::OnSignInCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesSignInClient::SignIn();
     ```
@@ -116,7 +114,6 @@ After verifying that the user is signed in, you can retrieve the Player ID to id
     // Binding functions to multicast delegates
     UGMSGamesPlayersClient::OnGetCurrentPlayerIDSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesPlayersClient::OnGetCurrentPlayerIDFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesPlayersClient::OnGetCurrentPlayerIDCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesPlayersClient::GetCurrentPlayerID();
     ```
@@ -175,7 +172,6 @@ To retrieve a server auth code that your game can use for access tokens on your 
         // Binding functions to multicast delegates
         UGMSGamesSignInClient::OnRequestServerSideAccessSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
         UGMSGamesSignInClient::OnRequestServerSideAccessFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-        UGMSGamesSignInClient::OnRequestServerSideAccessCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
         // Calling the function
         UGMSGamesSignInClient::RequestServerSideAccess(OAUTH_2_WEB_CLIENT_ID, false);
         ```
@@ -183,6 +179,10 @@ To retrieve a server auth code that your game can use for access tokens on your 
     === "Blueprints"
 
         ![](../assets/RequestServerSideAccess.png)
+
+    !!! tip "New in version 1.1.0"
+
+        It's now also possible to pass auth scopes requested such as __`AuthScope.EMAIL`__, __`AuthScope.PROFILE`__, __`AuthScope.OPEN_ID`__. For new permissions, users will see a consent screen upon the first request. Granting consent (or if permissions were already granted) results in the response listing the effectively granted auth scopes. Declining permission results in an empty list of granted auth scopes in the response . Regardless of granted permissions, a successful request will always return the authorization code.
 
 2.  Send the OAuth auth code token to your backend server so it may be exchanged, the Player ID verified against the Play Games Services REST APIs, and then authenticated with your game.
 

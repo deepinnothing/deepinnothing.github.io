@@ -173,7 +173,6 @@ The use of the above function is preferable for most applications, though note t
     // Binding functions to multicast delegates
     UGMSGamesAchievementsClient::OnUnlockImmediateSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesAchievementsClient::OnUnlockImmediateFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesAchievementsClient::OnUnlockImmediateCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesAchievementsClient::UnlockImmediate(AchievementID);
     ```
@@ -206,7 +205,6 @@ You can use __`UGMSGamesAchievementsClient::IncrementImmediate()`__ as well if y
     // Binding functions to multicast delegates
     UGMSGamesAchievementsClient::OnIncrementImmediateSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesAchievementsClient::OnIncrementImmediateFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesAchievementsClient::OnIncrementImmediateCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesAchievementsClient::IncrementImmediate(AchievementID, NumberOfSteps);
     ```
@@ -239,7 +237,6 @@ Use __`UGMSGamesAchievementsClient::SetStepsImmediate()`__ to attempt for immedi
     // Binding functions to multicast delegates
     UGMSGamesAchievementsClient::OnSetStepsImmediateSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesAchievementsClient::OnSetStepsImmediateFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesAchievementsClient::OnSetStepsImmediateCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesAchievementsClient::SetStepsImmediate(AchievementID, NumberOfSteps);
     ```
@@ -276,7 +273,6 @@ Same as with unlocking the achievements, the __`UGMSGamesAchievementsClient::Rev
     // Binding functions to multicast delegates
     UGMSGamesAchievementsClient::OnRevealImmediateSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesAchievementsClient::OnRevealImmediateFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesAchievementsClient::OnRevealImmediateCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesAchievementsClient::RevealImmediate(AchievementID);
     ```
@@ -302,7 +298,6 @@ To show a player's achievements, call __`UGMSGamesAchievementsClient::ShowAchiev
     UGMSGamesAchievementsClient::OnShowAchievementsUISuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesAchievementsClient::OnAchievementsUIClosed.Add(MyObject, &UMyClass::OnUIClosedFunction);
     UGMSGamesAchievementsClient::OnShowAchievementsUIFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesAchievementsClient::OnShowAchievementsUICanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesAchievementsClient::ShowAchievementsUI();
     ```
@@ -329,7 +324,6 @@ You can access the achievement data by calling the __`UGMSGamesAchievementsClien
     // Binding functions to multicast delegates
     UGMSGamesAchievementsClient::OnLoadAchievementBufferSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesAchievementsClient::OnLoadAchievementBufferFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesAchievementsClient::OnLoadAchievementBufferCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesAchievementsClient::LoadAchievementBuffer(bForceReload);
     ```

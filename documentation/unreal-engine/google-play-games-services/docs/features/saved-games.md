@@ -98,7 +98,6 @@ If the player selects to create a new saved game or load an existing saved game,
     UGMSGamesSnapshotsClient::OnSnapshotsUIAdd.Add(MyObject, &UMyClass::OnSnapshotAddedFunction);
     UGMSGamesSnapshotsClient::OnSnapshotsUIClosed.Add(MyObject, &UMyClass::OnUIClosedFunction);
     UGMSGamesSnapshotsClient::OnShowSnapshotsUIFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesSnapshotsClient::OnShowSnapshotsUICanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesSnapshotsClient::ShowSnapshotsUI("See My Saves", true, true, MaxNumberOfSavedGamesToShow);
     ```
@@ -284,7 +283,6 @@ You can access the list of snapshot metadata objects by calling the __`UGMSGames
     // Binding functions to multicast delegates
     UGMSGamesSnapshotsClient::OnLoadSnapshotMetadataBufferSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesSnapshotsClient::OnLoadSnapshotMetadataBufferFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesSnapshotsClient::OnLoadSnapshotMetadataBufferCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesSnapshotsClient::LoadSnapshotMetadataBuffer(bForceReload);
     // ...
@@ -338,7 +336,6 @@ Pass the SnapshotMetadata object as a parameter to the __`UGMSGamesSnapshotsClie
     // Binding functions to multicast delegates
     UGMSGamesSnapshotsClient::OnDeleteSuccess.Add(MyObject, &UMyClass::OnSnapshotDeleted);
     UGMSGamesSnapshotsClient::OnDeleteFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesSnapshotsClient::OnDeleteCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesSnapshotsClient::Delete(SnapshotMetadata);
     // ...

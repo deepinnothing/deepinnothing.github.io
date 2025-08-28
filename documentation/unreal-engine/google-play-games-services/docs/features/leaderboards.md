@@ -202,6 +202,33 @@ When the player's score changes (for example, when the player finishes the game)
 
     ![](../assets/SubmitLeaderboardScore.png)
 
+The use of the above function is preferable for most applications, though note that the update may not be sent to the server until the next sync. Use __`UGMSGamesLeaderboardsClient::SubmitScoreImmediate()`__ if you need the operation to attempt to communicate to the server immediately or need to have the score submission data returned to your application.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesLeaderboardsClient.h"
+    #include "GMSGamesScoreSubmissionData.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesLeaderboardsClient::OnSubmitScoreImmediateSuccess.AddLambda([](UGMSGamesScoreSubmissionData* ScoreSubmissionData)
+    {
+        ScoreSubmissionData->GetLeaderboardID();
+        ScoreSubmissionData->GetPlayerID();
+        ScoreSubmissionData->GetScoreResult(TimeSpan)->GetFormattedScore();
+        ScoreSubmissionData->GetScoreResult(TimeSpan)->IsNewBest();
+        ScoreSubmissionData->GetScoreResult(TimeSpan)->GetRawScore();
+        ScoreSubmissionData->GetScoreResult(TimeSpan)->GetScoreTag();
+    });
+    UGMSGamesLeaderboardsClient::OnSubmitScoreImmediateFailure.AddLambda([](const FString& ErrorMessage){});
+    // Calling the function
+    UGMSGamesLeaderboardsClient::SubmitScoreImmediate(LeaderboardID, Score, ScoreTag);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/SubmitLeaderboardScoreImmediate.png)
+
 When making calls to update and load player scores, make sure to also follow these [best practices](https://developer.android.com/games/pgs/quality) to avoid exceeding your API quota.
 
 ### Display a leaderboard
@@ -221,7 +248,6 @@ To display leaderboard, call __`UGMSGamesLeaderboardsClient::ShowLeaderboardUI()
     UGMSGamesLeaderboardsClient::OnShowLeaderboardUISuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesLeaderboardsClient::OnLeaderboardUIClosed.Add(MyObject, &UMyClass::OnUIClosedFunction);
     UGMSGamesLeaderboardsClient::OnShowLeaderboardUIFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesLeaderboardsClient::OnShowLeaderboardUICanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesLeaderboardsClient::ShowLeaderboardUI(LeaderboardID, TimeSpan, Collection);
     ```
@@ -235,3 +261,199 @@ An example of the default leaderboard UI is shown below.
 ![](https://developer.android.com/static/images/games/pgs/leaderboard_android.png)
 /// caption
 ///
+
+If you want to display a list of all leaderboards to choose from, then call __`UGMSGamesLeaderboardsClient::ShowAllLeaderboardsUI()`__ without passing any arguments.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesLeaderboardsClient.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesLeaderboardsClient::OnShowLeaderboardUISuccess.AddLambda([](const int32 RequestCode){});
+    UGMSGamesLeaderboardsClient::OnLeaderboardUIClosed.AddLambda([](const int32 RequestCode, const int32 ResultCode){});
+    UGMSGamesLeaderboardsClient::OnShowLeaderboardUIFailure.AddLambda([](const FString& ErrorMessage){});
+    // Calling the function
+    UGMSGamesLeaderboardsClient::ShowAllLeaderboardsUI();
+    ```
+
+    !!! note
+
+        Same multicast delegates are used for __`UGMSGamesLeaderboardsClient::ShowLeaderboardUI()`__ and __`UGMSGamesLeaderboardsClient::ShowAllLeaderboardsUI()`__ functions.
+
+=== "Blueprints"
+
+    ![](../assets/ShowAllLeaderboardsUI.png)
+
+### Load current player's score
+
+You can retrieve player's score from Google servers using __`UGMSGamesLeaderboardsClient::LoadCurrentPlayerLeaderboardScore()`__ function.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesLeaderboardsClient.h"
+    #include "GMSGamesLeaderboardScore.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesLeaderboardsClient::OnLoadCurrentPlayerLeaderboardScoreSuccess.AddLambda([](UGMSGamesLeaderboardScore* LeaderboardScore){});
+    UGMSGamesLeaderboardsClient::OnLoadCurrentPlayerLeaderboardScoreFailure.AddLambda([](const FString& ErrorMessage){});
+    // Calling the function
+    UGMSGamesLeaderboardsClient::LoadCurrentPlayerLeaderboardScore(LeaderboardID, TimeSpan, Collection);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/LoadCurrentPlayerLeaderboardScore.png)
+
+And then read the various properties of the __`UGMSGamesLeaderboardScore`__ object:
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesLeaderboardScore.h"
+    // ...
+    LeaderboardScore->GetDisplayRank();
+    LeaderboardScore->GetDisplayScore();
+    LeaderboardScore->GetRank();
+    LeaderboardScore->GetRawScore();
+    LeaderboardScore->GetScoreHolder();
+    LeaderboardScore->GetScoreHolderDisplayName();
+    LeaderboardScore->GetScoreHolderHiResImageURI();
+    LeaderboardScore->GetScoreHolderIconImageURI();
+    LeaderboardScore->GetScoreTag();
+    LeaderboardScore->GetTimestampMillis();
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/LeaderboardScore.png)
+
+### Load multiple leaderboard scores
+
+Loading multiple scores from a single leaderboard is also possible. You can either use __`UGMSGamesLeaderboardsClient::LoadTopScores()`__ or __`UGMSGamesLeaderboardsClient::LoadPlayerCenteredScores()`__. These functions return __`UGMSGamesLeaderboardScores`__ object on success, that contains leaderboard metadata and an array of loaded leaderboard scores. Remember to call __`UGMSGamesLeaderboardScores::Release()`__ on this object when you no longer need it.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesLeaderboardsClient.h"
+    #include "GMSGamesLeaderboardScore.h"
+    #include "GMSGamesLeaderboardScores.h"
+    #include "GMSGamesLeaderboard.h"
+    // ...
+    // Define functions to be bind
+    UMyClass::ScoresLoaded(UGMSGamesLeaderboardScores* LeaderboardScores)
+    {
+        LeaderboardScores->GetLeaderboard(); // Leaderboard metadata
+        LeaderboardScores->GetScores(); // TArray of scores
+        // ...
+        // Releasing memory when scores are no longer needed
+        LeaderboardScores->Release();
+    }
+    UMyClass::ScoresLoadFailed(const FString& ErrorMessage)
+    {
+        UE_LOG(LogTemp, Error, *ErrorMessage);
+    }
+    // ...
+    // Loading top scores
+    UGMSGamesLeaderboardsClient::OnLoadTopScoresSuccess.Add(MyObject, &UMyClass::ScoresLoaded);
+    UGMSGamesLeaderboardsClient::OnLoadTopScoresFailure.Add(MyObject, &UMyClass::ScoresLoadFailed);
+    UGMSGamesLeaderboardsClient::LoadTopScores(LeaderboardID, TimeSpan, Collection, MaxResults, bForceReload);
+    // Loading player-centered scores
+    UGMSGamesLeaderboardsClient::OnLoadPlayerCenteredScoresSuccess.Add(MyObject, &UMyClass::ScoresLoaded);
+    UGMSGamesLeaderboardsClient::OnLoadPlayerCenteredScoresFailure.Add(MyObject, &UMyClass::ScoresLoadFailed);
+    UGMSGamesLeaderboardsClient::LoadPlayerCenteredScores(LeaderboardID, TimeSpan, Collection, MaxResults, bForceReload);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/LoadScores.png)
+
+It's also possible to load more scores in addition to those loaded previously. Just use __`UGMSGamesLeaderboardsClient::LoadMoreScores()`__ and pass __`UGMSGamesLeaderboardScores`__ that you retrieved earlier to the function.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesLeaderboardsClient.h"
+    #include "GMSGamesLeaderboardScores.h"
+    #include "GMSGamesPageDirection.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesLeaderboardsClient::OnLoadMoreScoresSuccess.Add(MyObject, &UMyClass::ScoresLoaded);
+    UGMSGamesLeaderboardsClient::OnLoadMoreScoresFailure.Add(MyObject, &UMyClass::ScoresLoadFailed);
+    // Calling the function
+    UGMSGamesLeaderboardsClient::LoadMoreScores(LeaderboardScores, MaxResults, PageDirection);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/LoadMoreScores.png)
+
+### Load leaderboard info
+
+To load leaderboard's metadata, use __`UGMSGamesLeaderboardsClient::LoadLeaderboardMetadata`__ function.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesLeaderboardsClient.h"
+    #include "GMSGamesLeaderboard.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesLeaderboardsClient::OnLoadLeaderboardMetadataSuccess.AddLambda([](UGMSGamesLeaderboard* Leaderboard)
+    {
+        Leaderboard->GetDisplayName();
+        Leaderboard->GetIconImageURI();
+        Leaderboard->GetLeaderboardID();
+        Leaderboard->GetScoreOrder();
+        Leaderboard->GetVariants();
+    });
+    UGMSGamesLeaderboardsClient::OnLoadLeaderboardMetadataFailure.AddLambda([](const FString& ErrorMessage){});
+    // Calling the function
+    UGMSGamesLeaderboardsClient::LoadLeaderboardMetadata(LeaderboardID, bForceReload);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/LoadLeaderboardMetadata.png)
+
+The following properties can be retrieved from __`UGMSGamesLeaderboardVariant`__ object:
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesLeaderboardVariant.h"
+    // ...
+    LeaderboardVariant->GetCollection(); // Public or Friends
+    LeaderboardVariant->GetDisplayPlayerRank();
+    LeaderboardVariant->GetDisplayPlayerScore();
+    LeaderboardVariant->GetNumScores();
+    LeaderboardVariant->GetPlayerRank();
+    LeaderboardVariant->GetPlayerScoreTag();
+    LeaderboardVariant->GetRawPlayerScore();
+    LeaderboardVariant->GetTimeSpan();
+    LeaderboardVariant->HasPlayerInfo();
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/LeaderboardVariant.png)
+
+Loading all leaderboards at once is also possible with __`UGMSGamesLeaderboardsClient::LoadLeaderboardBuffer()`__ function, which returns an array of leaderboards' metadata.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesLeaderboardsClient.h"
+    #include "GMSGamesLeaderboard.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesLeaderboardsClient::OnLoadLeaderboardBufferSuccess.AddLambda([](const TArray<UGMSGamesLeaderboard*>& LeaderboardBuffer){});
+    UGMSGamesLeaderboardsClient::OnLoadLeaderboardBufferFailure.AddLambda([](const FString& ErrorMessage){});
+    // Calling the function
+    UGMSGamesLeaderboardsClient::LoadLeaderboardBuffer(bForceReload);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/LoadLeaderboardBuffer.png)
