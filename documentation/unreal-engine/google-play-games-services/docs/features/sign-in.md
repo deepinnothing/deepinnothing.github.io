@@ -180,7 +180,7 @@ To retrieve a server auth code that your game can use for access tokens on your 
 
         ![](../assets/RequestServerSideAccess.png)
 
-    !!! tip "New in version 1.1.0"
+    !!! tip "New in 1.1.0"
 
         It's now also possible to pass auth scopes requested such as __`AuthScope.EMAIL`__, __`AuthScope.PROFILE`__, __`AuthScope.OPEN_ID`__. For new permissions, users will see a consent screen upon the first request. Granting consent (or if permissions were already granted) results in the response listing the effectively granted auth scopes. Declining permission results in an empty list of granted auth scopes in the response . Regardless of granted permissions, a successful request will always return the authorization code.
 
