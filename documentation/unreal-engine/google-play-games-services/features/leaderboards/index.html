@@ -858,6 +858,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#load-current-players-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load current player's score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-multiple-leaderboard-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load multiple leaderboard scores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-leaderboard-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load leaderboard info
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1221,6 +1248,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#load-current-players-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load current player's score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-multiple-leaderboard-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load multiple leaderboard scores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-leaderboard-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load leaderboard info
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1388,6 +1442,33 @@
 </div>
 </div>
 </div>
+<p>The use of the above function is preferable for most applications, though note that the update may not be sent to the server until the next sync. Use <strong><code>UGMSGamesLeaderboardsClient::SubmitScoreImmediate()</code></strong> if you need the operation to attempt to communicate to the server immediately or need to have the score submission data returned to your application.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardsClient.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesScoreSubmissionData.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnSubmitScoreImmediateSuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">UGMSGamesScoreSubmissionData</span><span class="o">*</span><span class="w"> </span><span class="n">ScoreSubmissionData</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ScoreSubmissionData</span><span class="o">-&gt;</span><span class="n">GetLeaderboardID</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ScoreSubmissionData</span><span class="o">-&gt;</span><span class="n">GetPlayerID</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ScoreSubmissionData</span><span class="o">-&gt;</span><span class="n">GetScoreResult</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">GetFormattedScore</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ScoreSubmissionData</span><span class="o">-&gt;</span><span class="n">GetScoreResult</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">IsNewBest</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ScoreSubmissionData</span><span class="o">-&gt;</span><span class="n">GetScoreResult</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">GetRawScore</span><span class="p">();</span>
+<span class="w">    </span><span class="n">ScoreSubmissionData</span><span class="o">-&gt;</span><span class="n">GetScoreResult</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">GetScoreTag</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnSubmitScoreImmediateFailure</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">SubmitScoreImmediate</span><span class="p">(</span><span class="n">LeaderboardID</span><span class="p">,</span><span class="w"> </span><span class="n">Score</span><span class="p">,</span><span class="w"> </span><span class="n">ScoreTag</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/SubmitLeaderboardScoreImmediate.png" /></p>
+</div>
+</div>
+</div>
 <p>When making calls to update and load player scores, make sure to also follow these <a href="https://developer.android.com/games/pgs/quality">best practices</a> to avoid exceeding your API quota.</p>
 <h3 id="display-a-leaderboard">Display a leaderboard</h3>
 <p>To display leaderboard, call <strong><code>UGMSGamesLeaderboardsClient::ShowLeaderboardUI()</code></strong> and pass in the leaderboard ID and optional time span and collection parameters to display the default leaderboard user interface.</p>
@@ -1395,7 +1476,7 @@
 <p class="admonition-title">Info</p>
 <p>A request code is used when the Leaderboard UI is shown or closed and can be changed in Project Settings. This code is primarily intended for debugging purposes. Unless you have a specific need to change it, it’s safe to leave the default value unchanged.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardsClient.h&quot;</span>
@@ -1404,7 +1485,6 @@
 <span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnShowLeaderboardUISuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnSuccessFunction</span><span class="p">);</span>
 <span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLeaderboardUIClosed</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnUIClosedFunction</span><span class="p">);</span>
 <span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnShowLeaderboardUIFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnFailureFunction</span><span class="p">);</span>
-<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnShowLeaderboardUICanceled</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnCanceledFunction</span><span class="p">);</span>
 <span class="c1">// Calling the function</span>
 <span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">ShowLeaderboardUI</span><span class="p">(</span><span class="n">LeaderboardID</span><span class="p">,</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">,</span><span class="w"> </span><span class="n">Collection</span><span class="p">);</span>
 </code></pre></div>
@@ -1419,6 +1499,199 @@
 <p><img alt="" src="https://developer.android.com/static/images/games/pgs/leaderboard_android.png" /></p>
 <figcaption></figcaption>
 </figure>
+<p>If you want to display a list of all leaderboards to choose from, then call <strong><code>UGMSGamesLeaderboardsClient::ShowAllLeaderboardsUI()</code></strong> without passing any arguments.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">C++</label><label for="__tabbed_4_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardsClient.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnShowLeaderboardUISuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">RequestCode</span><span class="p">){});</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLeaderboardUIClosed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">RequestCode</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">ResultCode</span><span class="p">){});</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnShowLeaderboardUIFailure</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">ShowAllLeaderboardsUI</span><span class="p">();</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Same multicast delegates are used for <strong><code>UGMSGamesLeaderboardsClient::ShowLeaderboardUI()</code></strong> and <strong><code>UGMSGamesLeaderboardsClient::ShowAllLeaderboardsUI()</code></strong> functions.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/ShowAllLeaderboardsUI.png" /></p>
+</div>
+</div>
+</div>
+<h3 id="load-current-players-score">Load current player's score</h3>
+<p>You can retrieve player's score from Google servers using <strong><code>UGMSGamesLeaderboardsClient::LoadCurrentPlayerLeaderboardScore()</code></strong> function.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">C++</label><label for="__tabbed_5_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardsClient.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardScore.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadCurrentPlayerLeaderboardScoreSuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">UGMSGamesLeaderboardScore</span><span class="o">*</span><span class="w"> </span><span class="n">LeaderboardScore</span><span class="p">){});</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadCurrentPlayerLeaderboardScoreFailure</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">LoadCurrentPlayerLeaderboardScore</span><span class="p">(</span><span class="n">LeaderboardID</span><span class="p">,</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">,</span><span class="w"> </span><span class="n">Collection</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/LoadCurrentPlayerLeaderboardScore.png" /></p>
+</div>
+</div>
+</div>
+<p>And then read the various properties of the <strong><code>UGMSGamesLeaderboardScore</code></strong> object:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">C++</label><label for="__tabbed_6_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardScore.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">LeaderboardScore</span><span class="o">-&gt;</span><span class="n">GetDisplayRank</span><span class="p">();</span>
+<span class="n">LeaderboardScore</span><span class="o">-&gt;</span><span class="n">GetDisplayScore</span><span class="p">();</span>
+<span class="n">LeaderboardScore</span><span class="o">-&gt;</span><span class="n">GetRank</span><span class="p">();</span>
+<span class="n">LeaderboardScore</span><span class="o">-&gt;</span><span class="n">GetRawScore</span><span class="p">();</span>
+<span class="n">LeaderboardScore</span><span class="o">-&gt;</span><span class="n">GetScoreHolder</span><span class="p">();</span>
+<span class="n">LeaderboardScore</span><span class="o">-&gt;</span><span class="n">GetScoreHolderDisplayName</span><span class="p">();</span>
+<span class="n">LeaderboardScore</span><span class="o">-&gt;</span><span class="n">GetScoreHolderHiResImageURI</span><span class="p">();</span>
+<span class="n">LeaderboardScore</span><span class="o">-&gt;</span><span class="n">GetScoreHolderIconImageURI</span><span class="p">();</span>
+<span class="n">LeaderboardScore</span><span class="o">-&gt;</span><span class="n">GetScoreTag</span><span class="p">();</span>
+<span class="n">LeaderboardScore</span><span class="o">-&gt;</span><span class="n">GetTimestampMillis</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/LeaderboardScore.png" /></p>
+</div>
+</div>
+</div>
+<h3 id="load-multiple-leaderboard-scores">Load multiple leaderboard scores</h3>
+<p>Loading multiple scores from a single leaderboard is also possible. You can either use <strong><code>UGMSGamesLeaderboardsClient::LoadTopScores()</code></strong> or <strong><code>UGMSGamesLeaderboardsClient::LoadPlayerCenteredScores()</code></strong>. These functions return <strong><code>UGMSGamesLeaderboardScores</code></strong> object on success, that contains leaderboard metadata and an array of loaded leaderboard scores. Remember to call <strong><code>UGMSGamesLeaderboardScores::Release()</code></strong> on this object when you no longer need it.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">C++</label><label for="__tabbed_7_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardsClient.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardScore.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardScores.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboard.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Define functions to be bind</span>
+<span class="n">UMyClass</span><span class="o">::</span><span class="n">ScoresLoaded</span><span class="p">(</span><span class="n">UGMSGamesLeaderboardScores</span><span class="o">*</span><span class="w"> </span><span class="n">LeaderboardScores</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">LeaderboardScores</span><span class="o">-&gt;</span><span class="n">GetLeaderboard</span><span class="p">();</span><span class="w"> </span><span class="c1">// Leaderboard metadata</span>
+<span class="w">    </span><span class="n">LeaderboardScores</span><span class="o">-&gt;</span><span class="n">GetScores</span><span class="p">();</span><span class="w"> </span><span class="c1">// TArray of scores</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="c1">// Releasing memory when scores are no longer needed</span>
+<span class="w">    </span><span class="n">LeaderboardScores</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="n">UMyClass</span><span class="o">::</span><span class="n">ScoresLoadFailed</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ErrorMessage</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// ...</span>
+<span class="c1">// Loading top scores</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadTopScoresSuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">ScoresLoaded</span><span class="p">);</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadTopScoresFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">ScoresLoadFailed</span><span class="p">);</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">LoadTopScores</span><span class="p">(</span><span class="n">LeaderboardID</span><span class="p">,</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">,</span><span class="w"> </span><span class="n">Collection</span><span class="p">,</span><span class="w"> </span><span class="n">MaxResults</span><span class="p">,</span><span class="w"> </span><span class="n">bForceReload</span><span class="p">);</span>
+<span class="c1">// Loading player-centered scores</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadPlayerCenteredScoresSuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">ScoresLoaded</span><span class="p">);</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadPlayerCenteredScoresFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">ScoresLoadFailed</span><span class="p">);</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">LoadPlayerCenteredScores</span><span class="p">(</span><span class="n">LeaderboardID</span><span class="p">,</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">,</span><span class="w"> </span><span class="n">Collection</span><span class="p">,</span><span class="w"> </span><span class="n">MaxResults</span><span class="p">,</span><span class="w"> </span><span class="n">bForceReload</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/LoadScores.png" /></p>
+</div>
+</div>
+</div>
+<p>It's also possible to load more scores in addition to those loaded previously. Just use <strong><code>UGMSGamesLeaderboardsClient::LoadMoreScores()</code></strong> and pass <strong><code>UGMSGamesLeaderboardScores</code></strong> that you retrieved earlier to the function.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">C++</label><label for="__tabbed_8_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardsClient.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardScores.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPageDirection.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadMoreScoresSuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">ScoresLoaded</span><span class="p">);</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadMoreScoresFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">ScoresLoadFailed</span><span class="p">);</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">LoadMoreScores</span><span class="p">(</span><span class="n">LeaderboardScores</span><span class="p">,</span><span class="w"> </span><span class="n">MaxResults</span><span class="p">,</span><span class="w"> </span><span class="n">PageDirection</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/LoadMoreScores.png" /></p>
+</div>
+</div>
+</div>
+<h3 id="load-leaderboard-info">Load leaderboard info</h3>
+<p>To load leaderboard's metadata, use <strong><code>UGMSGamesLeaderboardsClient::LoadLeaderboardMetadata</code></strong> function.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">C++</label><label for="__tabbed_9_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardsClient.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboard.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadLeaderboardMetadataSuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">UGMSGamesLeaderboard</span><span class="o">*</span><span class="w"> </span><span class="n">Leaderboard</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Leaderboard</span><span class="o">-&gt;</span><span class="n">GetDisplayName</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Leaderboard</span><span class="o">-&gt;</span><span class="n">GetIconImageURI</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Leaderboard</span><span class="o">-&gt;</span><span class="n">GetLeaderboardID</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Leaderboard</span><span class="o">-&gt;</span><span class="n">GetScoreOrder</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Leaderboard</span><span class="o">-&gt;</span><span class="n">GetVariants</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadLeaderboardMetadataFailure</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">LoadLeaderboardMetadata</span><span class="p">(</span><span class="n">LeaderboardID</span><span class="p">,</span><span class="w"> </span><span class="n">bForceReload</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/LoadLeaderboardMetadata.png" /></p>
+</div>
+</div>
+</div>
+<p>The following properties can be retrieved from <strong><code>UGMSGamesLeaderboardVariant</code></strong> object:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">C++</label><label for="__tabbed_10_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardVariant.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">LeaderboardVariant</span><span class="o">-&gt;</span><span class="n">GetCollection</span><span class="p">();</span><span class="w"> </span><span class="c1">// Public or Friends</span>
+<span class="n">LeaderboardVariant</span><span class="o">-&gt;</span><span class="n">GetDisplayPlayerRank</span><span class="p">();</span>
+<span class="n">LeaderboardVariant</span><span class="o">-&gt;</span><span class="n">GetDisplayPlayerScore</span><span class="p">();</span>
+<span class="n">LeaderboardVariant</span><span class="o">-&gt;</span><span class="n">GetNumScores</span><span class="p">();</span>
+<span class="n">LeaderboardVariant</span><span class="o">-&gt;</span><span class="n">GetPlayerRank</span><span class="p">();</span>
+<span class="n">LeaderboardVariant</span><span class="o">-&gt;</span><span class="n">GetPlayerScoreTag</span><span class="p">();</span>
+<span class="n">LeaderboardVariant</span><span class="o">-&gt;</span><span class="n">GetRawPlayerScore</span><span class="p">();</span>
+<span class="n">LeaderboardVariant</span><span class="o">-&gt;</span><span class="n">GetTimeSpan</span><span class="p">();</span>
+<span class="n">LeaderboardVariant</span><span class="o">-&gt;</span><span class="n">HasPlayerInfo</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/LeaderboardVariant.png" /></p>
+</div>
+</div>
+</div>
+<p>Loading all leaderboards at once is also possible with <strong><code>UGMSGamesLeaderboardsClient::LoadLeaderboardBuffer()</code></strong> function, which returns an array of leaderboards' metadata.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">C++</label><label for="__tabbed_11_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboardsClient.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesLeaderboard.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadLeaderboardBufferSuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">TArray</span><span class="o">&lt;</span><span class="n">UGMSGamesLeaderboard</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">LeaderboardBuffer</span><span class="p">){});</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">OnLoadLeaderboardBufferFailure</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesLeaderboardsClient</span><span class="o">::</span><span class="n">LoadLeaderboardBuffer</span><span class="p">(</span><span class="n">bForceReload</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/LoadLeaderboardBuffer.png" /></p>
+</div>
+</div>
+</div>
 
 
 
@@ -1439,7 +1712,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 23, 2025 23:53:38 UTC">August 23, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 28, 2025 22:21:29 UTC">August 28, 2025</span>
   </span>
 
     
