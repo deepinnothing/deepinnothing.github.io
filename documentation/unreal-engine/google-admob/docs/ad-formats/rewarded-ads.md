@@ -150,15 +150,15 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
 #### Is there a timeout for the initialization call?
     
-    After 10 seconds, Google Mobile Ads SDK invokes the __`OnInitializationComplete`__ delegate even if a mediation network still hasn't completed initialization.
+After 10 seconds, Google Mobile Ads SDK invokes the __`OnInitializationComplete`__ delegate even if a mediation network still hasn't completed initialization.
 
 #### What if some mediation networks aren't ready when I get the initialization callback?
 
-    Google recommends loading an ad inside the bound function of the __`OnInitializationComplete`__ delegate. Even if a mediation network is not ready, Google Mobile Ads SDK still asks that network for an ad. So if a mediation network finishes initializing after the timeout, it can still service future ad requests in that session.
+Google recommends loading an ad inside the bound function of the __`OnInitializationComplete`__ delegate. Even if a mediation network is not ready, Google Mobile Ads SDK still asks that network for an ad. So if a mediation network finishes initializing after the timeout, it can still service future ad requests in that session.
 
 #### Does the __`OnUserEarnedReward`__ delegate always get called before the __`OnDismissed`__ delegate?
 
-    For Google ads, __`OnUserEarnedReward`__ is broadcast before the __`OnDismissed`__ delegate. For ads served through mediation, the third-party ad network SDK's implementation determines the broadcast order. For ad network SDKs that provide a single close callback with reward information, the mediation adapter invokes __`OnUserEarnedReward`__ delegate before __`OnDismissed`__.
+For Google ads, __`OnUserEarnedReward`__ is broadcast before the __`OnDismissed`__ delegate. For ads served through mediation, the third-party ad network SDK's implementation determines the broadcast order. For ad network SDKs that provide a single close callback with reward information, the mediation adapter invokes __`OnUserEarnedReward`__ delegate before __`OnDismissed`__.
 
 ## Sample projects
 
