@@ -1,0 +1,849 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/google-admob/app-open-ads/">
+      
+      
+        <link rel="prev" href="../user-messaging-platform/">
+      
+      
+        <link rel="next" href="../banner-ads/">
+      
+      
+      <link rel="icon" href="../assets/google-admob-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>App Open Ads - Google AdMob: Unreal Engine Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#app-open-ads" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Google AdMob: Unreal Engine Plugin Documentation" class="md-header__button md-logo" aria-label="Google AdMob: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../assets/google-admob-icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Google AdMob: Unreal Engine Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              App Open Ads
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Google AdMob: Unreal Engine Plugin Documentation" class="md-nav__button md-logo" aria-label="Google AdMob: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../assets/google-admob-icon.png" alt="logo">
+
+    </a>
+    Google AdMob: Unreal Engine Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enable-test-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable test ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-messaging-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Messaging Platform (UMP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    App Open Ads
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    App Open Ads
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#always-test-with-test-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always test with test ads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-an-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load an ad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-the-ad-during-app-foregrounding-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show the ad during app foregrounding events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-presentation-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handle presentation callbacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cold-starts-and-loading-screens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cold starts and loading screens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample projects
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../banner-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Banner Ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#always-test-with-test-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always test with test ads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-an-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load an ad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-the-ad-during-app-foregrounding-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show the ad during app foregrounding events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-presentation-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handle presentation callbacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cold-starts-and-loading-screens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cold starts and loading screens
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample projects
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="app-open-ads">App Open Ads</h1>
+<p>App open ads are a special ad format intended for publishers wishing to monetize their app load screens. App open ads can be closed by your users at any time. App open ads can be shown when users bring your app to the foreground.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Specific format may vary by region.</p>
+</div>
+<p>App open ads automatically show a small branding area so users know they're in your app. Here is an example of what an app open ad looks like:</p>
+<p><img alt="" src="https://developers.google.com/static/admob/images/app-open-ad.png" /></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Complete the following steps described in the <a href="../">Get Started guide</a>:</p>
+<ul>
+<li><a href="../#set-up-your-app-in-your-admob-account">Set up your app in your AdMob account</a>.</li>
+<li><a href="../#configure-your-project">Configure your project</a>.</li>
+</ul>
+<h2 id="always-test-with-test-ads">Always test with test ads</h2>
+<p>When building and testing your apps, make sure you use test ads rather than live, production ads. Failure to do so can lead to suspension of your AdMob account.</p>
+<p>The easiest way to load test ads is to use our dedicated test ad unit IDs for app open ads:</p>
+<table>
+<thead>
+<tr>
+<th>iOS demo ad unit ID</th>
+<th>Android demo ad unit ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ca-app-pub-3940256099942544/5575463023</td>
+<td>ca-app-pub-3940256099942544/9257395921</td>
+</tr>
+</tbody>
+</table>
+<p>It's been specially configured to return test ads for every request, and you're free to use it in your own apps while coding, testing, and debugging. Just make sure you replace it with your own ad unit ID before publishing your app.</p>
+<p>For more information about how the Mobile Ads SDK's test ads work, see <a href="../enable-test-ads/">Test Ads</a>.</p>
+<h2 id="implementation">Implementation</h2>
+<p>At a high level, here are the steps required to implement app open ads:</p>
+<ol>
+<li>Load an ad some time before you need to display it.</li>
+<li>Show the add during app foregrounding events.</li>
+<li>Handle presentation callbacks.</li>
+</ol>
+<h3 id="load-an-ad">Load an ad</h3>
+<p>Your ad should show quickly, so it's best to load your ad before you need to display it. That way, you'll have an ad ready to go as soon as your user enters into your app. For example, you could immediately after Google AdMob SDK initialization, right after a previous ad has been shown, or if the ad fails to show.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It's assumed you implement App Open Ad inside the class derived from <strong><code>UPlatformGameInstance</code></strong>.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Header:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobAppOpenAd</span><span class="p">;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">UGoogleAdMobAdError</span><span class="p">;</span>
+<span class="c1">// ...</span>
+<span class="n">UPROPERTY</span><span class="p">()</span>
+<span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">UGoogleAdMobAppOpenAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">AppOpenAd</span><span class="p">;</span>
+
+<span class="n">UFUNCTION</span><span class="p">()</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">LoadAppOpenAd</span><span class="p">();</span>
+
+<span class="n">UFUNCTION</span><span class="p">()</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">FailedToShow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdError</span><span class="p">);</span>
+</code></pre></div>
+<p>Source:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMob.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAppOpenAd.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">AppOpenAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewObject</span><span class="o">&lt;</span><span class="n">UGoogleAdMobAppOpenAd</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnDismissed</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">LoadAppOpenAd</span><span class="p">);</span>
+<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnFailedToShow</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">FailedToShow</span><span class="p">);</span>
+<span class="n">LoadAppOpenAd</span><span class="p">();</span>
+<span class="c1">// ...</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::LoadAppOpenAd</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">CanRequestAds</span><span class="p">())</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="cp">#if PLATFORM_ANDROID</span>
+<span class="w">        </span><span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/9257395921&quot;</span><span class="p">);</span>
+<span class="cp">#elif PLATFORM_IOS</span>
+<span class="w">        </span><span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/5575463023&quot;</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::FailedToShow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdError</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">LoadAppOpenAd</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../assets/LoadAppOpenAd.png" /></p>
+</div>
+</div>
+</div>
+<h3 id="show-the-ad-during-app-foregrounding-events">Show the ad during app foregrounding events</h3>
+<p>The next step is to show an app open ad. If no ad is available, attempt to load a new ad.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Header:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ...</span>
+<span class="n">UFUNCTION</span><span class="p">()</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">ShowAppOpenAd</span><span class="p">();</span>
+</code></pre></div>
+<p>Source:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ...</span>
+<span class="n">ApplicationHasEnteredForegroundDelegate</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">ShowAppOpenAd</span><span class="p">);</span>
+<span class="c1">// ...</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::ShowAppOpenAd</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">IsReady</span><span class="p">())</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">Show</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LoadAppOpenAd</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../assets/ShowAppOpenAd.png" /></p>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Take note that on Android devices dismissing fullscreen ads also triggers foreground entering event. Make sure you don't show app open ad right after interstitial or rewarded ad (for example, with an additional boolean variable).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>App open ads will time out after four hours. Ads rendered more than four hours after request time will no longer be valid and may not earn revenue. Checking the ad with <strong><code>IsReady()</code></strong> before showing it is usually enough, but you can also call <strong><code>GetState()</code></strong> and check whether the state of the ad is <strong><code>EXPIRED</code></strong> or not.</p>
+</div>
+<h3 id="handle-presentation-callbacks">Handle presentation callbacks</h3>
+<p>You can bind your functions and events to various dynamic multicast delegates. The following are available for App Open Ad:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Header:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">UGoogleAdMobResponseInfo</span><span class="p">;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">UGoogleAdMobAdError</span><span class="p">;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">UGoogleAdMobAdValue</span><span class="p">;</span>
+<span class="c1">// ...</span>
+<span class="n">UFUNCTION</span><span class="p">()</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">OnLoaded</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">);</span>
+
+<span class="n">UFUNCTION</span><span class="p">()</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">OnFailedToLoad</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">LoadAdError</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">);</span>
+
+<span class="n">UFUNCTION</span><span class="p">()</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">OnFailedToShow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdError</span><span class="p">);</span>
+
+<span class="n">UFUNCTION</span><span class="p">()</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">OnShown</span><span class="p">();</span>
+
+<span class="n">UFUNCTION</span><span class="p">()</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">OnClicked</span><span class="p">();</span>
+
+<span class="n">UFUNCTION</span><span class="p">()</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">OnImpression</span><span class="p">();</span>
+
+<span class="n">UFUNCTION</span><span class="p">()</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">OnDismissed</span><span class="p">();</span>
+
+<span class="n">UFUNCTION</span><span class="p">()</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">OnPaidEvent</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdValue</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdValue</span><span class="p">);</span>
+</code></pre></div>
+<p>Source:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAppOpenAd.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobResponseInfo.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAdError.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAdValue.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnLoaded</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnLoaded</span><span class="p">);</span>
+<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnFailedToLoad</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnFailedToLoad</span><span class="p">);</span>
+<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnFailedToShow</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnFailedToShow</span><span class="p">);</span>
+<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnShown</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnShown</span><span class="p">);</span>
+<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnClicked</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnClicked</span><span class="p">);</span>
+<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnImpression</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnImpression</span><span class="p">);</span>
+<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnDismissed</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnDismissed</span><span class="p">);</span>
+<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnPaidEvent</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnPaidEvent</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../assets/AppOpenAdDelegates.png" /></p>
+</div>
+</div>
+</div>
+<h3 id="cold-starts-and-loading-screens">Cold starts and loading screens</h3>
+<p>The documentation thus far assumes that you only show app open ads when users foreground your app when it is suspended in memory. "Cold starts" occur when your app is launched but was not previously suspended in memory.</p>
+<p>An example of a cold start is when a user opens your app for the first time. With cold starts, you won't have a previously loaded app open ad that's ready to be shown right away. The delay between when you request an ad and receive an ad back can create a situation where users are able to briefly use your app before being surprised by an out of context ad. This should be avoided because it is a bad user experience.</p>
+<p>The preferred way to use app open ads on cold starts is to use a loading screen to load your game or app assets, and to only show the ad from the loading screen. If your app has completed loading and has sent the user to the main content of your app, don't show the ad.</p>
+<h2 id="best-practices">Best practices</h2>
+<p>App open ads help you monetize your app's loading screen, when the app first launches and during app switches, but it's important to keep best practices in mind so that your users enjoy using your app. It's best to:</p>
+<ul>
+<li>Show your first app open ad after your users have used your app a few times.</li>
+<li>Show app open ads during times when your users would otherwise be waiting for your app to load.</li>
+<li>If you have a loading screen under the app open ad, and your loading screen completes loading before the ad is dismissed, you may want to dismiss your loading screen when the <strong><code>OnDismissed</code></strong> delegate is broadcast.</li>
+</ul>
+<h2 id="sample-projects">Sample projects</h2>
+<ul>
+<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip">Blueprint</a></li>
+<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip">C++</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 29, 2025 19:32:47 UTC">August 29, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
