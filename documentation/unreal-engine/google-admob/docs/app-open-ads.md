@@ -6,6 +6,13 @@ App open ads are a special ad format intended for publishers wishing to monetize
 
 
 
+
+
+
+
+
+
+
 !!! note
 
     Specific format may vary by region.
