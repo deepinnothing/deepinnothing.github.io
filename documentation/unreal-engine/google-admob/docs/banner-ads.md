@@ -1,5 +1,6 @@
 # Banner Ads
 
+![](https://developers.google.com/static/admob/images/format-banner.svg){ align=left }
 [Banner ads](https://support.google.com/admob/answer/9993556) are rectangular ads that occupy a portion of an app's layout. Anchored adaptive banners are fixed aspect ratio ads that stay on screen while users are interacting with the app, either anchored at the top or bottom of the screen.
 
 ## Anchored adaptive banner
