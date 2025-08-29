@@ -841,14 +841,11 @@
 </div>
 <h2 id="faq">FAQ</h2>
 <h4 id="is-there-a-timeout-for-the-initialization-call">Is there a timeout for the initialization call?</h4>
-<pre><code>After 10 seconds, Google Mobile Ads SDK invokes the __`OnInitializationComplete`__ delegate even if a mediation network still hasn't completed initialization.
-</code></pre>
+<p>After 10 seconds, Google Mobile Ads SDK invokes the <strong><code>OnInitializationComplete</code></strong> delegate even if a mediation network still hasn't completed initialization.</p>
 <h4 id="what-if-some-mediation-networks-arent-ready-when-i-get-the-initialization-callback">What if some mediation networks aren't ready when I get the initialization callback?</h4>
-<pre><code>Google recommends loading an ad inside the bound function of the __`OnInitializationComplete`__ delegate. Even if a mediation network is not ready, Google Mobile Ads SDK still asks that network for an ad. So if a mediation network finishes initializing after the timeout, it can still service future ad requests in that session.
-</code></pre>
+<p>Google recommends loading an ad inside the bound function of the <strong><code>OnInitializationComplete</code></strong> delegate. Even if a mediation network is not ready, Google Mobile Ads SDK still asks that network for an ad. So if a mediation network finishes initializing after the timeout, it can still service future ad requests in that session.</p>
 <h4 id="does-the-onuserearnedreward-delegate-always-get-called-before-the-ondismissed-delegate">Does the <strong><code>OnUserEarnedReward</code></strong> delegate always get called before the <strong><code>OnDismissed</code></strong> delegate?</h4>
-<pre><code>For Google ads, __`OnUserEarnedReward`__ is broadcast before the __`OnDismissed`__ delegate. For ads served through mediation, the third-party ad network SDK's implementation determines the broadcast order. For ad network SDKs that provide a single close callback with reward information, the mediation adapter invokes __`OnUserEarnedReward`__ delegate before __`OnDismissed`__.
-</code></pre>
+<p>For Google ads, <strong><code>OnUserEarnedReward</code></strong> is broadcast before the <strong><code>OnDismissed</code></strong> delegate. For ads served through mediation, the third-party ad network SDK's implementation determines the broadcast order. For ad network SDKs that provide a single close callback with reward information, the mediation adapter invokes <strong><code>OnUserEarnedReward</code></strong> delegate before <strong><code>OnDismissed</code></strong>.</p>
 <h2 id="sample-projects">Sample projects</h2>
 <ul>
 <li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip">Blueprint</a></li>
@@ -874,7 +871,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 29, 2025 23:12:39 UTC">August 29, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 29, 2025 23:22:20 UTC">August 29, 2025</span>
   </span>
 
     
