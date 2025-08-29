@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/google-admob/app-open-ads/">
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/google-admob/interstitial-ads/">
       
       
-        <link rel="prev" href="../user-messaging-platform/">
+        <link rel="prev" href="../banner-ads/">
       
-      
-        <link rel="next" href="../banner-ads/">
       
       
       <link rel="icon" href="../assets/google-admob-icon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>App open ads - Google AdMob: Unreal Engine Plugin Documentation</title>
+        <title>Interstitial ads - Google AdMob: Unreal Engine Plugin Documentation</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#app-open-ads" class="md-skip">
+        <a href="#interstitial-ads" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              App open ads
+              Interstitial ads
             
           </span>
         </div>
@@ -267,6 +265,50 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../app-open-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    App open ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../banner-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Banner ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -284,7 +326,7 @@
   
   
   <span class="md-ellipsis">
-    App open ads
+    Interstitial ads
     
   </span>
   
@@ -297,7 +339,7 @@
   
   
   <span class="md-ellipsis">
-    App open ads
+    Interstitial ads
     
   </span>
   
@@ -338,16 +380,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implementation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#load-an-ad" class="md-nav__link">
     <span class="md-ellipsis">
       Load an ad
@@ -355,29 +387,66 @@
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#show-the-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show the ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ad events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some best practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Some best practices">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#show-the-ad-during-app-foregrounding-events" class="md-nav__link">
+  <a href="#consider-whether-interstitial-ads-are-the-right-type-of-ad-for-your-app" class="md-nav__link">
     <span class="md-ellipsis">
-      Show the ad during app foregrounding events
+      Consider whether interstitial ads are the right type of ad for your app.
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#handle-presentation-callbacks" class="md-nav__link">
+  <a href="#remember-to-pause-the-action-when-displaying-an-interstitial-ad" class="md-nav__link">
     <span class="md-ellipsis">
-      Handle presentation callbacks
+      Remember to pause the action when displaying an interstitial ad.
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cold-starts-and-loading-screens" class="md-nav__link">
+  <a href="#allow-for-adequate-loading-time" class="md-nav__link">
     <span class="md-ellipsis">
-      Cold starts and loading screens
+      Allow for adequate loading time.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont-flood-the-user-with-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Don't flood the user with ads.
     </span>
   </a>
   
@@ -385,15 +454,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best practices
-    </span>
-  </a>
   
 </li>
       
@@ -410,50 +470,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../banner-ads/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Banner ads
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../interstitial-ads/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Interstitial ads
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -503,16 +519,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implementation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#load-an-ad" class="md-nav__link">
     <span class="md-ellipsis">
       Load an ad
@@ -520,29 +526,66 @@
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#show-the-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show the ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ad events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some best practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Some best practices">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#show-the-ad-during-app-foregrounding-events" class="md-nav__link">
+  <a href="#consider-whether-interstitial-ads-are-the-right-type-of-ad-for-your-app" class="md-nav__link">
     <span class="md-ellipsis">
-      Show the ad during app foregrounding events
+      Consider whether interstitial ads are the right type of ad for your app.
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#handle-presentation-callbacks" class="md-nav__link">
+  <a href="#remember-to-pause-the-action-when-displaying-an-interstitial-ad" class="md-nav__link">
     <span class="md-ellipsis">
-      Handle presentation callbacks
+      Remember to pause the action when displaying an interstitial ad.
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cold-starts-and-loading-screens" class="md-nav__link">
+  <a href="#allow-for-adequate-loading-time" class="md-nav__link">
     <span class="md-ellipsis">
-      Cold starts and loading screens
+      Allow for adequate loading time.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dont-flood-the-user-with-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Don't flood the user with ads.
     </span>
   </a>
   
@@ -550,15 +593,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best practices
-    </span>
-  </a>
   
 </li>
       
@@ -587,15 +621,9 @@
 
 
 
-<h1 id="app-open-ads">App open ads</h1>
-<p><img align="left" alt="" src="../assets/format-app-open.png" /></p>
-<p>App open ads are a special ad format intended for publishers wishing to monetize their app load screens. App open ads can be closed by your users at any time. App open ads can be shown when users bring your app to the foreground.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Specific format may vary by region.</p>
-</div>
-<p>App open ads automatically show a small branding area so users know they're in your app. Here is an example of what an app open ad looks like:</p>
-<p><img alt="" src="https://developers.google.com/static/admob/images/app-open-ad.png" /></p>
+<h1 id="interstitial-ads">Interstitial ads</h1>
+<p><img align="left" alt="" src="../assets/format-interstitial.png" /></p>
+<p>Interstitial ads are full-screen ads that cover the interface of their host app. They're typically displayed at natural transition points in the flow of an app, such as between activities or during the pause between levels in a game. When an app shows an interstitial ad, the user has the choice to either tap on the ad and continue to its destination or close it and return to the app.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Complete the following steps described in the <a href="../">Get Started guide</a>:</p>
 <ul>
@@ -603,8 +631,8 @@
 <li><a href="../#configure-your-project">Configure your project</a>.</li>
 </ul>
 <h2 id="always-test-with-test-ads">Always test with test ads</h2>
-<p>When building and testing your apps, make sure you use test ads rather than live, production ads. Failure to do so can lead to suspension of your AdMob account.</p>
-<p>The easiest way to load test ads is to use our dedicated test ad unit IDs for app open ads:</p>
+<p>When building and testing your apps, make sure you use test ads rather than live, production ads. Failure to do so can lead to suspension of your account.</p>
+<p>The easiest way to load test ads is to use our dedicated test ad unit ID for interstitials:</p>
 <table>
 <thead>
 <tr>
@@ -614,116 +642,66 @@
 </thead>
 <tbody>
 <tr>
-<td>ca-app-pub-3940256099942544/5575463023</td>
-<td>ca-app-pub-3940256099942544/9257395921</td>
+<td>ca-app-pub-3940256099942544/4411468910</td>
+<td>ca-app-pub-3940256099942544/1033173712</td>
 </tr>
 </tbody>
 </table>
 <p>It's been specially configured to return test ads for every request, and you're free to use it in your own apps while coding, testing, and debugging. Just make sure you replace it with your own ad unit ID before publishing your app.</p>
-<p>For more information about how the Mobile Ads SDK's test ads work, see <a href="../enable-test-ads/">Test Ads</a>.</p>
-<h2 id="implementation">Implementation</h2>
-<p>At a high level, here are the steps required to implement app open ads:</p>
-<ol>
-<li>Load an ad some time before you need to display it.</li>
-<li>Show the add during app foregrounding events.</li>
-<li>Handle presentation callbacks.</li>
-</ol>
-<h3 id="load-an-ad">Load an ad</h3>
-<p>Your ad should show quickly, so it's best to load your ad before you need to display it. That way, you'll have an ad ready to go as soon as your user enters into your app. For example, you could immediately after Google AdMob SDK initialization, right after a previous ad has been shown, or if the ad fails to show.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It's assumed you implement App Open Ad inside the class derived from <strong><code>UPlatformGameInstance</code></strong>.</p>
-</div>
+<p>For more information about how Google Mobile Ads SDK test ads work, see <a href="../enable-test-ads/">Test Ads</a>.</p>
+<h2 id="load-an-ad">Load an ad</h2>
+<p>To load an interstitial ad, create an instance of <strong><code>UGoogleAdMobInterstitialAd</code></strong> class and call it's <strong><code>Load()</code></strong> method.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Header:</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobAppOpenAd</span><span class="p">;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">UGoogleAdMobAdError</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobInterstitialAd</span><span class="p">;</span>
 <span class="c1">// ...</span>
 <span class="n">UPROPERTY</span><span class="p">()</span>
-<span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">UGoogleAdMobAppOpenAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">AppOpenAd</span><span class="p">;</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">LoadAppOpenAd</span><span class="p">();</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">FailedToShow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdError</span><span class="p">);</span>
+<span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">InterstitialAd</span><span class="p">;</span>
 </code></pre></div>
 <p>Source:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMob.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAppOpenAd.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobInterstitialAd.h&quot;</span>
 <span class="c1">// ...</span>
-<span class="n">AppOpenAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewObject</span><span class="o">&lt;</span><span class="n">UGoogleAdMobAppOpenAd</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnDismissed</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">LoadAppOpenAd</span><span class="p">);</span>
-<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnFailedToShow</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">FailedToShow</span><span class="p">);</span>
-<span class="n">LoadAppOpenAd</span><span class="p">();</span>
-<span class="c1">// ...</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::LoadAppOpenAd</span><span class="p">()</span>
+<span class="n">InterstitialAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewObject</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">CanRequestAds</span><span class="p">())</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">CanRequestAds</span><span class="p">())</span>
-<span class="w">    </span><span class="p">{</span>
 <span class="cp">#if PLATFORM_ANDROID</span>
-<span class="w">        </span><span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/9257395921&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/1033173712&quot;</span><span class="p">);</span>
 <span class="cp">#elif PLATFORM_IOS</span>
-<span class="w">        </span><span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/5575463023&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/4411468910&quot;</span><span class="p">);</span>
 <span class="cp">#endif</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::FailedToShow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdError</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">LoadAppOpenAd</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="../assets/LoadAppOpenAd.png" /></p>
+<p><img alt="" src="../assets/LoadInterstitial.png" /></p>
 </div>
 </div>
 </div>
-<h3 id="show-the-ad-during-app-foregrounding-events">Show the ad during app foregrounding events</h3>
-<p>The next step is to show an app open ad. If no ad is available, attempt to load a new ad.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use ad load calls to build up a cache of preloaded ads before you intend to show them, so that ads can be shown with zero latency when needed. Since ads expire after an hour, you should clear this cache and reload with new ads every hour. You can see an example of how it can be implemented in the C++ sample project at the bottom of the page.</p>
+</div>
+<h2 id="show-the-ad">Show the ad</h2>
+<p>Interstitial ads should be displayed during natural pauses in the flow of an app. Between levels of a game is a good example, or after the user completes a task. To show an interstitial, use it's <strong><code>Show()</code></strong> method.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Header:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// ...</span>
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">ShowAppOpenAd</span><span class="p">();</span>
-</code></pre></div>
-<p>Source:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// ...</span>
-<span class="n">ApplicationHasEnteredForegroundDelegate</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">ShowAppOpenAd</span><span class="p">);</span>
-<span class="c1">// ...</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::ShowAppOpenAd</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">IsReady</span><span class="p">())</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">IsReady</span><span class="p">())</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">Show</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">else</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">LoadAppOpenAd</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">Show</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="../assets/ShowAppOpenAd.png" /></p>
+<p><img alt="" src="../assets/ShowInterstitial.png" /></p>
 </div>
 </div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Take note that on Android devices dismissing fullscreen ads also triggers foreground entering event. Make sure you don't show app open ad right after interstitial or rewarded ad (for example, with an additional boolean variable).</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>App open ads will time out after four hours. Ads rendered more than four hours after request time will no longer be valid and may not earn revenue. Checking the ad with <strong><code>IsReady()</code></strong> before showing it is usually enough, but you can also call <strong><code>GetState()</code></strong> and check whether the state of the ad is <strong><code>EXPIRED</code></strong> or not.</p>
-</div>
-<h3 id="handle-presentation-callbacks">Handle presentation callbacks</h3>
-<p>You can bind your functions and events to various dynamic multicast delegates. The following are available for App Open Ad:</p>
+<h2 id="ad-events">Ad events</h2>
+<p>You can listen for a number of events in the ad's lifecycle, including loading, ad impression and click, as well as show and dismiss events. It is recommended to bind to the delegates before loading the interstitial.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -757,19 +735,19 @@
 <span class="kt">void</span><span class="w"> </span><span class="n">OnPaidEvent</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdValue</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdValue</span><span class="p">);</span>
 </code></pre></div>
 <p>Source:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAppOpenAd.h&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobInterstitialAd.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobResponseInfo.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAdError.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAdValue.h&quot;</span>
 <span class="c1">// ...</span>
-<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnLoaded</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnLoaded</span><span class="p">);</span>
-<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnFailedToLoad</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnFailedToLoad</span><span class="p">);</span>
-<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnFailedToShow</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnFailedToShow</span><span class="p">);</span>
-<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnShown</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnShown</span><span class="p">);</span>
-<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnClicked</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnClicked</span><span class="p">);</span>
-<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnImpression</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnImpression</span><span class="p">);</span>
-<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnDismissed</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnDismissed</span><span class="p">);</span>
-<span class="n">AppOpenAd</span><span class="o">-&gt;</span><span class="n">OnPaidEvent</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnPaidEvent</span><span class="p">);</span>
+<span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnLoaded</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnLoaded</span><span class="p">);</span>
+<span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnFailedToLoad</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnFailedToLoad</span><span class="p">);</span>
+<span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnFailedToShow</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnFailedToShow</span><span class="p">);</span>
+<span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnShown</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnShown</span><span class="p">);</span>
+<span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnClicked</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnClicked</span><span class="p">);</span>
+<span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnImpression</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnImpression</span><span class="p">);</span>
+<span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnDismissed</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnDismissed</span><span class="p">);</span>
+<span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnPaidEvent</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnPaidEvent</span><span class="p">);</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -777,21 +755,23 @@
 </div>
 </div>
 </div>
-<h3 id="cold-starts-and-loading-screens">Cold starts and loading screens</h3>
-<p>The documentation thus far assumes that you only show app open ads when users foreground your app when it is suspended in memory. "Cold starts" occur when your app is launched but was not previously suspended in memory.</p>
-<p>An example of a cold start is when a user opens your app for the first time. With cold starts, you won't have a previously loaded app open ad that's ready to be shown right away. The delay between when you request an ad and receive an ad back can create a situation where users are able to briefly use your app before being surprised by an out of context ad. This should be avoided because it is a bad user experience.</p>
-<p>The preferred way to use app open ads on cold starts is to use a loading screen to load your game or app assets, and to only show the ad from the loading screen. If your app has completed loading and has sent the user to the main content of your app, don't show the ad.</p>
-<h2 id="best-practices">Best practices</h2>
-<p>App open ads help you monetize your app's loading screen, when the app first launches and during app switches, but it's important to keep best practices in mind so that your users enjoy using your app. It's best to:</p>
-<ul>
-<li>Show your first app open ad after your users have used your app a few times.</li>
-<li>Show app open ads during times when your users would otherwise be waiting for your app to load.</li>
-<li>If you have a loading screen under the app open ad, and your loading screen completes loading before the ad is dismissed, you may want to dismiss your loading screen when the <strong><code>OnDismissed</code></strong> delegate is broadcast.</li>
-</ul>
+<h2 id="some-best-practices">Some best practices</h2>
+<h4 id="consider-whether-interstitial-ads-are-the-right-type-of-ad-for-your-app">Consider whether interstitial ads are the right type of ad for your app.</h4>
+<pre><code>Interstitial ads work best in apps with natural transition points. The conclusion of a task within an app, like sharing an image or completing a game level, creates such a point. Make sure you consider at which points in your app's workflow you'll display interstitial ads and how the user is likely to respond.
+</code></pre>
+<h4 id="remember-to-pause-the-action-when-displaying-an-interstitial-ad">Remember to pause the action when displaying an interstitial ad.</h4>
+<pre><code>There are a number of different types of interstitial ads: text, image, video, and more. It's important to make sure that when your app displays an interstitial ad, it also suspends its use of some resources to allow the ad to take advantage of them. For example, when you make the call to display an interstitial ad, be sure to pause any audio output being produced by your app.
+</code></pre>
+<h4 id="allow-for-adequate-loading-time">Allow for adequate loading time.</h4>
+<pre><code>Just as it's important to make sure you display interstitial ads at an appropriate time, it's also important to make sure the user doesn't have to wait for them to load. Loading the ad in advance by calling __`Load()`__ before you intend to call __`Show()`__ can ensure that your app has a fully loaded interstitial ad at the ready when the time comes to display one.
+</code></pre>
+<h4 id="dont-flood-the-user-with-ads">Don't flood the user with ads.</h4>
+<pre><code>While increasing the frequency of interstitial ads in your app might seem like a great way to increase revenue, it can also degrade the user experience and lower clickthrough rates. Make sure that users aren't so frequently interrupted that they're no longer able to enjoy the use of your app.
+</code></pre>
 <h2 id="sample-projects">Sample projects</h2>
 <ul>
 <li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip">Blueprint</a></li>
-<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip">C++</a></li>
+<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip">C++</a> </li>
 </ul>
 
 
