@@ -55,6 +55,70 @@ If you implement the social leaderboards collection, the call to load the leader
 
 This guide describes how to use the Friends APIs in Unreal Engine projects.
 
+### Load player's info
+
+Before you acquire any info about player's friends, you might want to gather some info about the player themselves first. You can do this with __`UGMSGamesPlayersClient::GetCurrentPlayer()`__ function.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesPlayersClient.h"
+    #include "GMSGamesPlayer.h"
+    #include "GMSGamesPlayerLevel.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesPlayersClient::OnGetCurrentPlayerSuccess.AddLambda([](UGMSGamesPlayer* Player)
+    {
+        Player->GetPlayerID();
+        Player->GetDisplayName();
+        Player->GetLastPlayedWithTimestamp();
+        Player->GetRetrievedTimestamp();
+        Player->GetTitle();
+        Player->GetPlayerLevelInfo()->GetCurrentLevel().LevelNumber;
+        Player->GetPlayerLevelInfo()->GetCurrentLevel().MaxXP;
+        Player->GetPlayerLevelInfo()->GetCurrentLevel().MinXP;
+        Player->GetPlayerLevelInfo()->GetNextLevel().LevelNumber;
+        Player->GetPlayerLevelInfo()->GetNextLevel().MaxXP;
+        Player->GetPlayerLevelInfo()->GetNextLevel().MinXP;
+        Player->GetPlayerLevelInfo()->IsMaxLevel();
+        Player->GetPlayerLevelInfo()->GetCurrentXPTotal();
+        Player->GetPlayerLevelInfo()->GetLastLevelUpTimestamp();
+        Player->GetFriendsListVisibilityStatus();
+        Player->GetFriendStatus();
+        Player->HasHiResImage();
+        Player->GetHiResImageURI();
+        Player->HasIconImage();
+        Player->GetIconImageURI();
+        Player->GetBannerImageLandscapeURI();
+        Player->GetBannerImagePortraitURI();
+    });
+    UGMSGamesPlayersClient::OnGetCurrentPlayerFailure.AddLambda([](const FString& ErrorMessage){});
+    // Calling the function
+    UGMSGamesPlayersClient::GetCurrentPlayer(bForceReload);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/GetCurrentPlayer.png)
+
+If you only need player's ID, call __`UGMSGamesPlayersClient::GetCurrentPlayerID()`__:
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesPlayersClient.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesPlayersClient::OnGetCurrentPlayerIDSuccess.AddLambda([](const FString& PlayerID){});
+    UGMSGamesPlayersClient::OnGetCurrentPlayerIDFailure.AddLambda([](const FString& ErrorMessage){});
+    // Calling the function
+    UGMSGamesPlayersClient::GetCurrentPlayerID();
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/GetCurrentPlayerID.png)
+
 ### Load friends
 
 You can retrieve and display (in the game) a list of players who are friends with the current user. As a user, it is possible to control which games have access to the friends list. When you retrieve the friends list, you must handle the case where permission is required. This is all encapsulated in the API to make requesting access and subsequently using the friends list a straightforward task. To load the friends list, follow these steps:
@@ -74,7 +138,6 @@ You can retrieve and display (in the game) a list of players who are friends wit
     UGMSGamesPlayersClient::OnLoadFriendsSuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesPlayersClient::OnSharingFriendsConsentUIClosed.Add(MyObject, &UMyClass::OnUIClosedFunction);
     UGMSGamesPlayersClient::OnLoadFriendsFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesPlayersClient::OnLoadFriendsCanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesPlayersClient::LoadFriends(10, false);
     // ...
@@ -95,6 +158,29 @@ You can retrieve and display (in the game) a list of players who are friends wit
 === "Blueprints"
 
     ![](../assets/LoadingFriends.png)
+
+Then it's possible to use __`UGMSGamesPlayersClient::LoadMoreFriends()`__ function.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesPlayersClient.h"
+    #include "GMSGamesPlayer.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesPlayersClient::OnLoadFriendsSuccess.AddLambda([](const TArray<UGMSGamesPlayer*>& PlayerBuffer){});
+    UGMSGamesPlayersClient::OnLoadFriendsFailure.AddLambda([](const FString& ErrorMessage){});
+    // Calling the function
+    UGMSGamesPlayersClient::LoadMoreFriends(PageSize);
+    ```
+
+    !!! note
+
+        Same multicast delegates are used for __`UGMSGamesPlayersClient::LoadFriends()`__ and __`UGMSGamesPlayersClient::LoadMoreFriends()`__ functions.
+
+=== "Blueprints"
+
+    ![](../assets/LoadMoreFriends.png)
 
 ### View another player’s profile
 
@@ -118,7 +204,6 @@ To show another player’s profile, follow these steps:
     UGMSGamesPlayersClient::OnShowCompareProfileUISuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesPlayersClient::OnCompareProfileUIClosed.Add(MyObject, &UMyClass::OnUIClosedFunction);
     UGMSGamesPlayersClient::OnShowCompareProfileUIFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesPlayersClient::OnShowCompareProfileUICanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesPlayersClient::ShowCompareProfileUI(OtherPlayerID);
     ```
@@ -138,7 +223,6 @@ If the game has its own name for players, these can be added to the API call. Th
     UGMSGamesPlayersClient::OnShowCompareProfileUISuccess.Add(MyObject, &UMyClass::OnSuccessFunction);
     UGMSGamesPlayersClient::OnCompareProfileUIClosed.Add(MyObject, &UMyClass::OnUIClosedFunction);
     UGMSGamesPlayersClient::OnShowCompareProfileUIFailure.Add(MyObject, &UMyClass::OnFailureFunction);
-    UGMSGamesPlayersClient::OnShowCompareProfileUICanceled.Add(MyObject, &UMyClass::OnCanceledFunction);
     // Calling the function
     UGMSGamesPlayersClient::ShowCompareProfileUIWithAlternativeNameHints(OtherPlayerID, OtherPlayerInGameName, CurrentPlayerInGameName);
     ```
@@ -146,3 +230,44 @@ If the game has its own name for players, these can be added to the API call. Th
 === "Blueprints"
 
     ![](../assets/ShowCompareProfileUIWithAlternativeNameHints.png)
+
+Just like with the current player, you can load other player's information by calling __`UGMSGamesPlayersClient::LoadPlayer()`__ function and passing in their ID.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesPlayersClient.h"
+    #include "GMSGamesPlayer.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesPlayersClient::OnLoadPlayerSuccess.AddLambda([](UGMSGamesPlayer* Player){});
+    UGMSGamesPlayersClient::OnLoadPlayerFailure.AddLambda([](const FString& ErrorMessage){});
+    // Calling the function
+    UGMSGamesPlayersClient::LoadPlayer(PlayerID, bForceReload);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/LoadPlayer.png)
+
+
+It's also possible to let the player search for other players in a separate UI with __`UGMSGamesPlayersClient::ShowPlayerSearchUI()`__ function.
+
+=== "C++"
+
+    ``` c++
+    #include "GMSGamesPlayersClient.h"
+    #include "GMSGamesPlayer.h"
+    // ...
+    // Binding functions to multicast delegates
+    UGMSGamesPlayersClient::OnShowPlayerSearchUISuccess.AddLambda([](const int32 RequestCode){});
+    UGMSGamesPlayersClient::OnPlayerSearchUISelect.AddLambda([](UGMSGamesPlayer* Player){});
+    UGMSGamesPlayersClient::OnPlayerSearchUIClosed.AddLambda([](const int32 RequestCode, const int32 ResultCode){});
+    UGMSGamesPlayersClient::OnShowPlayerSearchUIFailure.AddLambda([](const FString& ErrorMessage){});
+    // Calling the function
+    UGMSGamesPlayersClient::ShowPlayerSearchUI();
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/ShowPlayerSearchUI.png)
