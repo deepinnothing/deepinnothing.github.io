@@ -1,4 +1,4 @@
-# Banner Ads
+# Banner ads
 
 ![](./assets/format-banner.png){ align=left }
 

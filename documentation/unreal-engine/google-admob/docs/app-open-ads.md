@@ -1,4 +1,4 @@
-# App Open Ads
+# App open ads
 
 ![](./assets/format-app-open.png){ align=left }
 

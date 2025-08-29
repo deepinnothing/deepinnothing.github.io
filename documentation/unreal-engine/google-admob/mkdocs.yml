@@ -29,6 +29,7 @@ nav:
   - user-messaging-platform.md
   - app-open-ads.md
   - banner-ads.md
+  - interstitial-ads.md
 plugins: 
   - search
   - git-revision-date-localized
