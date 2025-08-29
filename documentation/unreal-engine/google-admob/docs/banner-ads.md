@@ -4,7 +4,9 @@
 
 [Banner ads](https://support.google.com/admob/answer/9993556) are rectangular ads that occupy a portion of an app's layout. Anchored adaptive banners are fixed aspect ratio ads that stay on screen while users are interacting with the app, either anchored at the top or bottom of the screen.
 
-  ## Anchored adaptive banner
+&nbsp;
+
+## Anchored adaptive banner
 
 Anchored adaptive banner ads are fixed aspect ratio ads rather than the regular fixed size ads. The aspect ratio is similar to 320x50 industry standard. Once you specify the full width available, it returns an ad with optimal height for that width. The optimal height doesn't change across requests from the same device, and the surrounding views don't need to move when the ad refreshes.
 
