@@ -1,15 +1,15 @@
 # Rewarded ads
 
-![](./assets/format-rewarded.png){ align=left }
+![](../assets/format-rewarded.png){ align=left }
 
 [Rewarded ads](https://support.google.com/admob/answer/7372450) enable users to play games, take surveys, or watch videos to earn in-app rewards, such as coins, extra lives, or points. You can set different rewards for different ad units, and specify the reward values and items the user received.
 
 ## Prerequisites
 
-Complete the following steps described in the [Get Started guide](./index.md):
+Complete the following steps described in the [Get Started guide](../index.md):
 
--   [Set up your app in your AdMob account](./index.md#set-up-your-app-in-your-admob-account).
--   [Configure your project](./index.md#configure-your-project).
+-   [Set up your app in your AdMob account](../index.md#set-up-your-app-in-your-admob-account).
+-   [Configure your project](../index.md#configure-your-project).
 
 ## Always test with test ads
 
@@ -23,7 +23,7 @@ The easiest way to load test ads is to use our dedicated test ad unit ID for rew
 
 It's been specially configured to return test ads for every request, and you're free to use it in your own apps while coding, testing, and debugging. Just make sure you replace it with your own ad unit ID before publishing your app.
 
-For more information about how Google Mobile Ads SDK test ads work, see [Test Ads](./enable-test-ads.md).
+For more information about how Google Mobile Ads SDK test ads work, see [Test Ads](../enable-test-ads.md).
 
 ## Load a rewarded ad object
 
@@ -59,7 +59,7 @@ To load a rewarded ad, create an instance of __`UGoogleAdMobRewardedAd`__ class 
 
 === "Blueprints"
 
-    ![](assets/LoadRewardedAd.png)
+    ![](../assets/LoadRewardedAd.png)
 
 !!! tip
 
@@ -80,7 +80,7 @@ When you show a rewarded ad, you will use a __`OnUserEarnedReward`__ delegate to
 
 === "Blueprints"
 
-    ![](assets/ShowRewardedAd.png)
+    ![](../assets/ShowRewardedAd.png)
 
 ## Ad events
 
@@ -144,7 +144,7 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
 === "Blueprints"
 
-    ![](assets/RewardedAdDelegates.png)
+    ![](../assets/RewardedAdDelegates.png)
 
 ## FAQ
 

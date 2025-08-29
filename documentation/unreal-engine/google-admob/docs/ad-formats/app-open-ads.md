@@ -1,6 +1,6 @@
 # App open ads
 
-![](./assets/format-app-open.png){ align=left }
+![](../assets/format-app-open.png){ align=left }
 
 App open ads are a special ad format intended for publishers wishing to monetize their app load screens. App open ads can be closed by your users at any time. App open ads can be shown when users bring your app to the foreground.
 
@@ -14,10 +14,10 @@ App open ads automatically show a small branding area so users know they're in y
 
 ## Prerequisites
 
-Complete the following steps described in the [Get Started guide](./index.md):
+Complete the following steps described in the [Get Started guide](../index.md):
 
--   [Set up your app in your AdMob account](./index.md#set-up-your-app-in-your-admob-account).
--   [Configure your project](./index.md#configure-your-project).
+-   [Set up your app in your AdMob account](../index.md#set-up-your-app-in-your-admob-account).
+-   [Configure your project](../index.md#configure-your-project).
 
 ## Always test with test ads
 
@@ -31,7 +31,7 @@ The easiest way to load test ads is to use our dedicated test ad unit IDs for ap
 
 It's been specially configured to return test ads for every request, and you're free to use it in your own apps while coding, testing, and debugging. Just make sure you replace it with your own ad unit ID before publishing your app.
 
-For more information about how the Mobile Ads SDK's test ads work, see [Test Ads](./enable-test-ads.md).
+For more information about how the Mobile Ads SDK's test ads work, see [Test Ads](../enable-test-ads.md).
 
 ## Implementation
 
@@ -98,7 +98,7 @@ Your ad should show quickly, so it's best to load your ad before you need to dis
 
 === "Blueprints"
 
-    ![](assets/LoadAppOpenAd.png)
+    ![](../assets/LoadAppOpenAd.png)
 
 ### Show the ad during app foregrounding events
 
@@ -135,7 +135,7 @@ The next step is to show an app open ad. If no ad is available, attempt to load 
 
 === "Blueprints"
 
-    ![](assets/ShowAppOpenAd.png)
+    ![](../assets/ShowAppOpenAd.png)
 
 !!! warning
 
@@ -203,7 +203,7 @@ You can bind your functions and events to various dynamic multicast delegates. T
 
 === "Blueprints"
 
-    ![](assets/AppOpenAdDelegates.png)
+    ![](../assets/AppOpenAdDelegates.png)
 
 ### Cold starts and loading screens
 

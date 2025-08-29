@@ -1,6 +1,6 @@
 # Banner ads
 
-![](./assets/format-banner.png){ align=left }
+![](../assets/format-banner.png){ align=left }
 
 [Banner ads](https://support.google.com/admob/answer/9993556) are rectangular ads that occupy a portion of an app's layout. Anchored adaptive banners are fixed aspect ratio ads that stay on screen while users are interacting with the app, either anchored at the top or bottom of the screen.
 
@@ -30,10 +30,10 @@ The following table lists the standard banner sizes.
 
 ## Prerequisites
 
-Complete the following steps described in the [Get Started guide](./index.md):
+Complete the following steps described in the [Get Started guide](../index.md):
 
--   [Set up your app in your AdMob account](./index.md#set-up-your-app-in-your-admob-account).
--   [Configure your project](./index.md#configure-your-project).
+-   [Set up your app in your AdMob account](../index.md#set-up-your-app-in-your-admob-account).
+-   [Configure your project](../index.md#configure-your-project).
 
 ## Always test with test ads
 
@@ -48,7 +48,7 @@ The easiest way to load test ads is to use dedicated test ad unit IDs for banner
 
 It's been specially configured to return test ads for every request, and you can use it in your own apps while coding, testing, and debugging. Just make sure you replace it with your own ad unit ID before publishing your app.
 
-For more information about how Google Mobile Ads SDK test ads work, see [Enable test ads](./enable-test-ads.md).
+For more information about how Google Mobile Ads SDK test ads work, see [Enable test ads](../enable-test-ads.md).
 
 ## Load and show an ad
 
@@ -109,7 +109,7 @@ Create a __`UGoogleAdMobBannerAd`__ object and then call __`Load()`__ method on 
 
 === "Blueprints"
 
-    ![](assets/LoadAndShowBannerAd.png)
+    ![](../assets/LoadAndShowBannerAd.png)
 
 !!! note
 
@@ -138,7 +138,7 @@ When you are finished using a banner ad, you can release the banner ad's resourc
 
 === "Blueprints"
 
-    ![](assets/RemoveBannerAd.png)
+    ![](../assets/RemoveBannerAd.png)
 
 ## Ad events
 
@@ -194,7 +194,7 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
 === "Blueprints"
 
-    ![](assets/BannerAdDelegates.png)
+    ![](../assets/BannerAdDelegates.png)
 
 | Delegate       | Description |
 | -------------- | ----------- |

@@ -1,15 +1,15 @@
 # Rewarded interstitial ads
 
-![](./assets/format-rewarded-interstitial.png){ align=left }
+![](../assets/format-rewarded-interstitial.png){ align=left }
 
 [Rewarded interstitial](https://support.google.com/admob/answer/9884467) is a type of incentivized ad format that lets you offer rewards for ads that appear automatically during natural app transitions. Unlike rewarded ads, users aren't required to opt in to view a rewarded interstitial.
 
 ## Prerequisites
 
-Complete the following steps described in the [Get Started guide](./index.md):
+Complete the following steps described in the [Get Started guide](../index.md):
 
--   [Set up your app in your AdMob account](./index.md#set-up-your-app-in-your-admob-account).
--   [Configure your project](./index.md#configure-your-project).
+-   [Set up your app in your AdMob account](../index.md#set-up-your-app-in-your-admob-account).
+-   [Configure your project](../index.md#configure-your-project).
 
 ## Always test with test ads
 
@@ -23,7 +23,7 @@ The easiest way to load test ads is to use our dedicated test ad unit ID for rew
 
 It's been specially configured to return test ads for every request, and you're free to use it in your own apps while coding, testing, and debugging. Just make sure you replace it with your own ad unit ID before publishing your app.
 
-For more information about how Google Mobile Ads SDK test ads work, see [Test Ads](./enable-test-ads.md).
+For more information about how Google Mobile Ads SDK test ads work, see [Test Ads](../enable-test-ads.md).
 
 ## Load an ad
 
@@ -59,7 +59,7 @@ Loading an ad is accomplished using the __`Load()`__ method on the __`UGoogleAdM
 
 === "Blueprints"
 
-    ![](assets/LoadRewardedInterstitialAd.png)
+    ![](../assets/LoadRewardedInterstitialAd.png)
 
 !!! tip
 
@@ -84,7 +84,7 @@ When you show a rewarded interstitial ad, you use a __`OnUserEarnedReward`__ del
 
 === "Blueprints"
 
-    ![](assets/ShowRewardedInterstitialAd.png)
+    ![](../assets/ShowRewardedInterstitialAd.png)
 
 ## Ad events
 
@@ -148,7 +148,7 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
 === "Blueprints"
 
-    ![](assets/RewardedAdDelegates.png)
+    ![](../assets/RewardedAdDelegates.png)
 
 ## Sample projects
 

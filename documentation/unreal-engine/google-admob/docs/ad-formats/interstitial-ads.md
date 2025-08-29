@@ -1,15 +1,15 @@
 # Interstitial ads
 
-![](./assets/format-interstitial.png){ align=left }
+![](../assets/format-interstitial.png){ align=left }
 
 Interstitial ads are full-screen ads that cover the interface of their host app. They're typically displayed at natural transition points in the flow of an app, such as between activities or during the pause between levels in a game. When an app shows an interstitial ad, the user has the choice to either tap on the ad and continue to its destination or close it and return to the app.
 
 ## Prerequisites
 
-Complete the following steps described in the [Get Started guide](./index.md):
+Complete the following steps described in the [Get Started guide](../index.md):
 
--   [Set up your app in your AdMob account](./index.md#set-up-your-app-in-your-admob-account).
--   [Configure your project](./index.md#configure-your-project).
+-   [Set up your app in your AdMob account](../index.md#set-up-your-app-in-your-admob-account).
+-   [Configure your project](../index.md#configure-your-project).
 
 ## Always test with test ads
 
@@ -23,7 +23,7 @@ The easiest way to load test ads is to use our dedicated test ad unit ID for int
 
 It's been specially configured to return test ads for every request, and you're free to use it in your own apps while coding, testing, and debugging. Just make sure you replace it with your own ad unit ID before publishing your app.
 
-For more information about how Google Mobile Ads SDK test ads work, see [Test Ads](./enable-test-ads.md).
+For more information about how Google Mobile Ads SDK test ads work, see [Test Ads](../enable-test-ads.md).
 
 ## Load an ad
 
@@ -59,7 +59,7 @@ To load an interstitial ad, create an instance of __`UGoogleAdMobInterstitialAd`
 
 === "Blueprints"
 
-    ![](assets/LoadInterstitial.png)
+    ![](../assets/LoadInterstitial.png)
 
 !!! tip
 
@@ -80,7 +80,7 @@ Interstitial ads should be displayed during natural pauses in the flow of an app
 
 === "Blueprints"
 
-    ![](assets/ShowInterstitial.png)
+    ![](../assets/ShowInterstitial.png)
 
 ## Ad events
 
@@ -140,7 +140,7 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
 === "Blueprints"
 
-    ![](assets/AppOpenAdDelegates.png)
+    ![](../assets/AppOpenAdDelegates.png)
 
 ## Some best practices
 
