@@ -194,6 +194,8 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
     ![](assets/BannerAdDelegates.png)
 
+| Delegate       | Description |
+| -------------- | ----------- |
 | OnLoaded       | The OnLoaded delegate is broadcast when an ad has finished loading. If you want to delay showing the ad until you're sure it will be loaded, for example, you can do so here. |
 | OnFailedToLoad | The OnFailedToLoad delegate includes the LoadAdError parameter that describes what error occurred. For more information, refer to the [Debugging Ad Load Errors documentation](https://developers.google.com/admob/android/ad-load-errors). |
 | OnClicked      | The OnClicked delegate is broadcast when a click is recorded for an ad. |
