@@ -728,6 +728,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#load-players-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load player's info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#load-friends" class="md-nav__link">
     <span class="md-ellipsis">
       Load friends
@@ -886,6 +895,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#load-players-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load player's info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#load-friends" class="md-nav__link">
     <span class="md-ellipsis">
       Load friends
@@ -961,6 +979,69 @@
 <p>If you implement the social leaderboards collection, the call to load the leaderboard scores may return a consent-required resolution exception similar to that from <strong><code>UGMSGamesPlayersClient::LoadFriends()</code></strong>. If you implement the default Play Games-provided UI (for example, <strong><code>UGMSGamesLeaderboardsClient::ShowLeaderboardUI()</code></strong>), then this is handled for you automatically.</p>
 <h2 id="friends-in-unreal-engine-games">Friends in Unreal Engine games</h2>
 <p>This guide describes how to use the Friends APIs in Unreal Engine projects.</p>
+<h3 id="load-players-info">Load player's info</h3>
+<p>Before you acquire any info about player's friends, you might want to gather some info about the player themselves first. You can do this with <strong><code>UGMSGamesPlayersClient::GetCurrentPlayer()</code></strong> function.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayersClient.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayer.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayerLevel.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnGetCurrentPlayerSuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">UGMSGamesPlayer</span><span class="o">*</span><span class="w"> </span><span class="n">Player</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetPlayerID</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetDisplayName</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetLastPlayedWithTimestamp</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetRetrievedTimestamp</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetTitle</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetPlayerLevelInfo</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetCurrentLevel</span><span class="p">().</span><span class="n">LevelNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetPlayerLevelInfo</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetCurrentLevel</span><span class="p">().</span><span class="n">MaxXP</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetPlayerLevelInfo</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetCurrentLevel</span><span class="p">().</span><span class="n">MinXP</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetPlayerLevelInfo</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetNextLevel</span><span class="p">().</span><span class="n">LevelNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetPlayerLevelInfo</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetNextLevel</span><span class="p">().</span><span class="n">MaxXP</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetPlayerLevelInfo</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetNextLevel</span><span class="p">().</span><span class="n">MinXP</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetPlayerLevelInfo</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">IsMaxLevel</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetPlayerLevelInfo</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetCurrentXPTotal</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetPlayerLevelInfo</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetLastLevelUpTimestamp</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetFriendsListVisibilityStatus</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetFriendStatus</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">HasHiResImage</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetHiResImageURI</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">HasIconImage</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetIconImageURI</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetBannerImageLandscapeURI</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Player</span><span class="o">-&gt;</span><span class="n">GetBannerImagePortraitURI</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnGetCurrentPlayerFailure</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">GetCurrentPlayer</span><span class="p">(</span><span class="n">bForceReload</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/GetCurrentPlayer.png" /></p>
+</div>
+</div>
+</div>
+<p>If you only need player's ID, call <strong><code>UGMSGamesPlayersClient::GetCurrentPlayerID()</code></strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayersClient.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnGetCurrentPlayerIDSuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">PlayerID</span><span class="p">){});</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnGetCurrentPlayerIDFailure</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">GetCurrentPlayerID</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/GetCurrentPlayerID.png" /></p>
+</div>
+</div>
+</div>
 <h3 id="load-friends">Load friends</h3>
 <p>You can retrieve and display (in the game) a list of players who are friends with the current user. As a user, it is possible to control which games have access to the friends list. When you retrieve the friends list, you must handle the case where permission is required. This is all encapsulated in the API to make requesting access and subsequently using the friends list a straightforward task. To load the friends list, follow these steps:</p>
 <ol>
@@ -969,7 +1050,7 @@
 <li>If the player needs to grant access to the friends list, the call fails with a <strong><code>FriendsResolutionRequiredException</code></strong>. It triggers a dialog to ask the player for consent. The dialog shows only once.</li>
 <li>If <strong><code>UGMSGamesPlayersClient::OnSharingFriendsConsentUIClosed</code></strong> returns a <strong><code>bIsConsentGranted</code></strong> with a value of <strong><code>true</code></strong>, then consent was granted. Call <strong><code>UGMSGamesPlayersClient::LoadFriends()</code></strong> again to return the friends list. If <strong><code>bIsConsentGranted</code></strong> is <strong><code>false</code></strong>, the user did not consent and <strong><code>UGMSGamesPlayersClient::LoadFriends()</code></strong> will continue to return <strong><code>FriendsResolutionRequiredException</code></strong>.</li>
 </ol>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayersClient.h&quot;</span>
@@ -979,7 +1060,6 @@
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnLoadFriendsSuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnSuccessFunction</span><span class="p">);</span>
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnSharingFriendsConsentUIClosed</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnUIClosedFunction</span><span class="p">);</span>
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnLoadFriendsFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnFailureFunction</span><span class="p">);</span>
-<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnLoadFriendsCanceled</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnCanceledFunction</span><span class="p">);</span>
 <span class="c1">// Calling the function</span>
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">LoadFriends</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
 <span class="c1">// ...</span>
@@ -1002,6 +1082,29 @@
 </div>
 </div>
 </div>
+<p>Then it's possible to use <strong><code>UGMSGamesPlayersClient::LoadMoreFriends()</code></strong> function.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">C++</label><label for="__tabbed_4_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayersClient.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayer.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnLoadFriendsSuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">TArray</span><span class="o">&lt;</span><span class="n">UGMSGamesPlayer</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">PlayerBuffer</span><span class="p">){});</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnLoadFriendsFailure</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">LoadMoreFriends</span><span class="p">(</span><span class="n">PageSize</span><span class="p">);</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Same multicast delegates are used for <strong><code>UGMSGamesPlayersClient::LoadFriends()</code></strong> and <strong><code>UGMSGamesPlayersClient::LoadMoreFriends()</code></strong> functions.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/LoadMoreFriends.png" /></p>
+</div>
+</div>
+</div>
 <h3 id="view-another-players-profile_1">View another player’s profile</h3>
 <p>You can display a view of another player’s Play Games profile from within your game. This view allows players to send and accept friend invitations for the player being viewed. This view does not require access to the friends list. Additionally, if your game has its own concept of player names separate from Play Games Gamer IDs, you can pass these along to the profile view so that they can be included in any friend invitations for additional context.</p>
 <p>To show another player’s profile, follow these steps:</p>
@@ -1013,7 +1116,7 @@
 <p class="admonition-title">Info</p>
 <p>A request code is used when the Compare Profile UI is shown or closed and can be changed in Project Settings. This code is primarily intended for debugging purposes. Unless you have a specific need to change it, it’s safe to leave the default value unchanged.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">C++</label><label for="__tabbed_5_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayersClient.h&quot;</span>
@@ -1022,7 +1125,6 @@
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUISuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnSuccessFunction</span><span class="p">);</span>
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnCompareProfileUIClosed</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnUIClosedFunction</span><span class="p">);</span>
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUIFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnFailureFunction</span><span class="p">);</span>
-<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUICanceled</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnCanceledFunction</span><span class="p">);</span>
 <span class="c1">// Calling the function</span>
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">ShowCompareProfileUI</span><span class="p">(</span><span class="n">OtherPlayerID</span><span class="p">);</span>
 </code></pre></div>
@@ -1033,7 +1135,7 @@
 </div>
 </div>
 <p>If the game has its own name for players, these can be added to the API call. This enables Play Games to set the nickname of players who send friend invitations from within your game to "<game-specific-name> from <your-game-name>" Play Games automatically appends "from <your-game-name>":</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">C++</label><label for="__tabbed_6_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayersClient.h&quot;</span>
@@ -1042,13 +1144,52 @@
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUISuccess</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnSuccessFunction</span><span class="p">);</span>
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnCompareProfileUIClosed</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnUIClosedFunction</span><span class="p">);</span>
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUIFailure</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnFailureFunction</span><span class="p">);</span>
-<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowCompareProfileUICanceled</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">MyObject</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UMyClass</span><span class="o">::</span><span class="n">OnCanceledFunction</span><span class="p">);</span>
 <span class="c1">// Calling the function</span>
 <span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">ShowCompareProfileUIWithAlternativeNameHints</span><span class="p">(</span><span class="n">OtherPlayerID</span><span class="p">,</span><span class="w"> </span><span class="n">OtherPlayerInGameName</span><span class="p">,</span><span class="w"> </span><span class="n">CurrentPlayerInGameName</span><span class="p">);</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <p><img alt="" src="../../assets/ShowCompareProfileUIWithAlternativeNameHints.png" /></p>
+</div>
+</div>
+</div>
+<p>Just like with the current player, you can load other player's information by calling <strong><code>UGMSGamesPlayersClient::LoadPlayer()</code></strong> function and passing in their ID.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">C++</label><label for="__tabbed_7_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayersClient.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayer.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnLoadPlayerSuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">UGMSGamesPlayer</span><span class="o">*</span><span class="w"> </span><span class="n">Player</span><span class="p">){});</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnLoadPlayerFailure</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">LoadPlayer</span><span class="p">(</span><span class="n">PlayerID</span><span class="p">,</span><span class="w"> </span><span class="n">bForceReload</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/LoadPlayer.png" /></p>
+</div>
+</div>
+</div>
+<p>It's also possible to let the player search for other players in a separate UI with <strong><code>UGMSGamesPlayersClient::ShowPlayerSearchUI()</code></strong> function.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">C++</label><label for="__tabbed_8_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayersClient.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GMSGamesPlayer.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="c1">// Binding functions to multicast delegates</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowPlayerSearchUISuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">RequestCode</span><span class="p">){});</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnPlayerSearchUISelect</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">UGMSGamesPlayer</span><span class="o">*</span><span class="w"> </span><span class="n">Player</span><span class="p">){});</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnPlayerSearchUIClosed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">RequestCode</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">ResultCode</span><span class="p">){});</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">OnShowPlayerSearchUIFailure</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="c1">// Calling the function</span>
+<span class="n">UGMSGamesPlayersClient</span><span class="o">::</span><span class="n">ShowPlayerSearchUI</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/ShowPlayerSearchUI.png" /></p>
 </div>
 </div>
 </div>
@@ -1072,7 +1213,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 28, 2025 22:34:18 UTC">August 28, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 29, 2025 10:21:22 UTC">August 29, 2025</span>
   </span>
 
     
