@@ -4,6 +4,8 @@
 
 App open ads are a special ad format intended for publishers wishing to monetize their app load screens. App open ads can be closed by your users at any time. App open ads can be shown when users bring your app to the foreground.
 
+
+
 !!! note
 
     Specific format may vary by region.
