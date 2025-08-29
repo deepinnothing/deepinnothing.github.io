@@ -27,9 +27,12 @@ nav:
   - index.md
   - enable-test-ads.md
   - user-messaging-platform.md
-  - app-open-ads.md
-  - banner-ads.md
-  - interstitial-ads.md
+  - Ad formats:
+    - ad-formats/app-open-ads.md
+    - ad-formats/banner-ads.md
+    - ad-formats/interstitial-ads.md
+    - ad-formats/rewarded-ads.md
+    - ad-formats/rewarded-interstitial-ads.md
 plugins: 
   - search
   - git-revision-date-localized
