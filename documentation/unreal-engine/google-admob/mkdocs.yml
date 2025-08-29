@@ -27,6 +27,8 @@ nav:
   - index.md
   - enable-test-ads.md
   - user-messaging-platform.md
+  - app-open-ads.md
+  - banner-ads.md
 plugins: 
   - search
   - git-revision-date-localized
