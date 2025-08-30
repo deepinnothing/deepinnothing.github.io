@@ -33,6 +33,7 @@ nav:
     - ad-formats/interstitial-ads.md
     - ad-formats/rewarded-ads.md
     - ad-formats/rewarded-interstitial-ads.md
+  - mediation.md
 plugins: 
   - search
   - git-revision-date-localized
