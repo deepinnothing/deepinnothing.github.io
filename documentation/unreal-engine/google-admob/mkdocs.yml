@@ -38,6 +38,15 @@ nav:
     - ad-formats/rewarded-ads.md
     - ad-formats/rewarded-interstitial-ads.md
   - mediation.md
+  - Tools and debugging:
+    - Ad inspector:
+      - ad-inspector.md
+      - ad-inspector/launch-ad-inspector.md
+      - Verify adapter integrations: https://developers.google.com/admob/android/ad-inspector/verify-adapter-integrations
+      - Test ad units: https://developers.google.com/admob/android/ad-inspector/test-ad-units
+      - Troubleshoot ad units: https://developers.google.com/admob/android/ad-inspector/troubleshoot-ad-units
+      - Troubleshoot privacy settings: https://developers.google.com/admob/android/ad-inspector/troubleshoot-privacy-settings
+      - Copy troubleshooting output: https://developers.google.com/admob/android/ad-inspector/copy-troubleshooting-output
 plugins: 
   - search
   - git-revision-date-localized

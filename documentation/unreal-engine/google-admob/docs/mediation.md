@@ -39,7 +39,7 @@ Here is an example that logs the ad network class name for an ad:
 
 === "Blueprints"
 
-    ![](../assets/CheckAdapterClassName.png)
+    ![](assets/CheckAdapterClassName.png)
 
 Refer to the [Response info]() documentation on MediationAdapterClassName for details about this property.
 
@@ -100,9 +100,9 @@ When integrating a bidding partner that requires their SDK, the following sympto
 -   The [Ads Activity report](https://support.google.com/admob/answer/10979428) shows significantly fewer ad requests to that partner than you expect.
 -   The __`a3p`__ parameter in any request after the first ad request is missing.
 
-!!! note
+    !!! note
 
-    The first ad request may contain the __`a3p`__ parameter even if you did not configure bidding.
+        The first ad request may contain the __`a3p`__ parameter even if you did not configure bidding.
 
 Follow this checklist to make sure your setup is correct:
 
