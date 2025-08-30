@@ -56,16 +56,20 @@ AdMob Mediation supports several ad sources, with a mix of bidding and waterfall
 
 | Ad Source | App Open | Banner | Interstitial | Rewarded | Rewarded Interstitial | Bidding | Ad source optimization support | Plugin Version |
 | --------- | :------: | :----: | :----------: | :------: | :-------------------: | :-----: | :----------------------------- | :------------- |
-| AppLovin ([Android](https://developers.google.com/admob/android/mediation/applovin)\|[iOS](https://developers.google.com/admob/ios/mediation/applovin)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| InMobi ([Android](https://developers.google.com/admob/android/mediation/inmobi)\|[iOS](https://developers.google.com/admob/ios/mediation/inmobi)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| ironSource ([Android](https://developers.google.com/admob/android/mediation/ironsource)\|[iOS](https://developers.google.com/admob/ios/mediation/ironsource)) | | :material-check: | :material-check: | :material-check: | :material-check: | :material-check: | Country-specific | 1.0.0+ |
-| Liftoff&nbsp;Monetize ([Android](https://developers.google.com/admob/android/mediation/liftoff-monetize)\|[iOS](https://developers.google.com/admob/ios/mediation/liftoff-monetize)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| LINE Ads Network ([Android](https://developers.google.com/admob/android/mediation/line)\|[iOS](https://developers.google.com/admob/ios/mediation/line)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| Meta Audience Network ([Android](https://developers.google.com/admob/android/mediation/meta)\|[iOS](https://developers.google.com/admob/ios/mediation/meta)) | | :material-check: | :material-check: | :material-check: | :material-check: | :material-check: | Bidding only | 1.0.0+ |
-| Mintegral ([Android](https://developers.google.com/admob/android/mediation/mintegral)\|[iOS](https://developers.google.com/admob/ios/mediation/mintegral)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| Moloco ([Android](https://developers.google.com/admob/android/mediation/moloco)\|[iOS](https://developers.google.com/admob/ios/mediation/moloco)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.1.0+ |
-| Pangle ([Android](https://developers.google.com/admob/android/mediation/pangle)\|[iOS](https://developers.google.com/admob/ios/mediation/pangle)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| Unity Ads ([Android](https://developers.google.com/admob/android/mediation/unity)\|[iOS](https://developers.google.com/admob/ios/mediation/unity)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
+| AppLovin ([Android](https://developers.google.com/admob/android/mediation/applovin) \| [iOS](https://developers.google.com/admob/ios/mediation/applovin)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
+| InMobi ([Android](https://developers.google.com/admob/android/mediation/inmobi) \| [iOS](https://developers.google.com/admob/ios/mediation/inmobi)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
+| ironSource ([Android](https://developers.google.com/admob/android/mediation/ironsource) \| [iOS](https://developers.google.com/admob/ios/mediation/ironsource)) | | :material-check: | :material-check: | :material-check: | :material-check: | :material-check: | Country-specific | 1.0.0+ |
+| Liftoff&nbsp;Monetize ([Android](https://developers.google.com/admob/android/mediation/liftoff-monetize) \| [iOS](https://developers.google.com/admob/ios/mediation/liftoff-monetize)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
+| LINE Ads Network ([Android](https://developers.google.com/admob/android/mediation/line) \| [iOS](https://developers.google.com/admob/ios/mediation/line)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
+| Meta Audience Network ([Android](https://developers.google.com/admob/android/mediation/meta) \| [iOS](https://developers.google.com/admob/ios/mediation/meta)) | | :material-check: | :material-check: | :material-check: | :material-check: | :material-check: | Bidding only | 1.0.0+ |
+| Mintegral ([Android](https://developers.google.com/admob/android/mediation/mintegral) \| [iOS](https://developers.google.com/admob/ios/mediation/mintegral)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
+| Moloco ([Android](https://developers.google.com/admob/android/mediation/moloco) \| [iOS](https://developers.google.com/admob/ios/mediation/moloco)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.1.0+ |
+| Pangle ([Android](https://developers.google.com/admob/android/mediation/pangle) \| [iOS](https://developers.google.com/admob/ios/mediation/pangle)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
+| Unity Ads ([Android](https://developers.google.com/admob/android/mediation/unity) \| [iOS](https://developers.google.com/admob/ios/mediation/unity)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
+
+!!! note
+
+    The project won't package for Android if both __`LINE Ads Network`__ and __`Generate universal APK from bundle`__ are set to __`True`__.
 
 ### Ad source optimization
 
