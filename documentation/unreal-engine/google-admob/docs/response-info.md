@@ -73,13 +73,4 @@ See [Adapter Response Info]() for more information. |
 | LoadedAdapterResponseInfo | A __`FGoogleAdMobAdapterResponseInfo`__ struct corresponding to the adapter that loaded the ad. |
 | MediationAdapterClassName | The mediation adapter class name of the ad network that loaded the ad. |
 | ResponseID | The response identifier is a unique identifier for the ad response. This identifier can be used to identify and block the ad in the [Ads Review Center (ARC)](https://support.google.com/admob/answer/3480906). |
-| ResponseExtras | <div class="admonition example"><p class="admonition-title">Beta</p><p>This API is in beta. Returned values can change without an SDK release.</p></div> |
-    
-    !!! example 
-        
-        This API is in beta. Returned values can change without an SDK release.
-        
-    TMap containing extra information about the ad response. Extras can return the following keys: 
-    - __`mediation_group_name`__: Name of the mediation group
-    - __`mediation_ab_test_name`__: Name of the [mediation A/B test](https://support.google.com/admob/answer/9572326), if applicable
-    - __`mediation_ab_test_variant`__: Variant used in the mediation A/B test, if applicable |
+| ResponseExtras | <div class="admonition example"><p class="admonition-title">Beta</p><p>This API is in beta. Returned values can change without an SDK release.</p></div><p><strong>TMap</strong> containing extra information about the ad response. Extras can return the following keys:</p><ul><li><code>mediation_group_name</code>: Name of the mediation group</li><li><code>mediation_ab_test_name</code>: Name of the <a href="https://support.google.com/admob/answer/9572326">mediation A/B test</a>, if applicable</li><li><code>mediation_ab_test_variant</code>: Variant used in the mediation A/B test, if applicable</li></ul> |
