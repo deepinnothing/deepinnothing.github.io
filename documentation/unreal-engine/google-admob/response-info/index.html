@@ -924,16 +924,7 @@
 | LoadedAdapterResponseInfo | A <strong><code>FGoogleAdMobAdapterResponseInfo</code></strong> struct corresponding to the adapter that loaded the ad. |
 | MediationAdapterClassName | The mediation adapter class name of the ad network that loaded the ad. |
 | ResponseID | The response identifier is a unique identifier for the ad response. This identifier can be used to identify and block the ad in the <a href="https://support.google.com/admob/answer/3480906">Ads Review Center (ARC)</a>. |
-| ResponseExtras | <div class="admonition example"><p class="admonition-title">Beta</p><p>This API is in beta. Returned values can change without an SDK release.</p></div> |</p>
-<pre><code>!!! example
-
-    This API is in beta. Returned values can change without an SDK release.
-
-TMap containing extra information about the ad response. Extras can return the following keys: 
-- __`mediation_group_name`__: Name of the mediation group
-- __`mediation_ab_test_name`__: Name of the [mediation A/B test](https://support.google.com/admob/answer/9572326), if applicable
-- __`mediation_ab_test_variant`__: Variant used in the mediation A/B test, if applicable |
-</code></pre>
+| ResponseExtras | <div class="admonition example"><p class="admonition-title">Beta</p><p>This API is in beta. Returned values can change without an SDK release.</p></div><p><strong>TMap</strong> containing extra information about the ad response. Extras can return the following keys:</p><ul><li><code>mediation_group_name</code>: Name of the mediation group</li><li><code>mediation_ab_test_name</code>: Name of the <a href="https://support.google.com/admob/answer/9572326">mediation A/B test</a>, if applicable</li><li><code>mediation_ab_test_variant</code>: Variant used in the mediation A/B test, if applicable</li></ul> |</p>
 
 
 
@@ -954,7 +945,7 @@ TMap containing extra information about the ad response. Extras can return the f
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 30, 2025 21:16:29 UTC">August 30, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 30, 2025 21:19:35 UTC">August 30, 2025</span>
   </span>
 
     
