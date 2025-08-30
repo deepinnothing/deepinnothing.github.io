@@ -67,7 +67,8 @@ Properties on the __`FGoogleAdMobResponseInfo`__ struct include:
 
 | Property | Description |
 | -------- | ----------- |
-| AdapterResponses | TArray of __`FGoogleAdMobAdapterResponseInfo`__ containing metadata for each adapter included in the ad response. Can be used to debug the waterfall mediation and bidding execution. The order of the list matches the order of the mediation waterfall for this ad request.
+| AdapterResponses | TArray of __`FGoogleAdMobAdapterResponseInfo`__ containing metadata for each adapter included in the ad response. Can be used to debug the waterfall mediation and bidding execution. The order of the list matches the order of the mediation waterfall for this ad request.&nbsp;
+
 See [Adapter Response Info]() for more information. |
 | LoadedAdapterResponseInfo | A __`FGoogleAdMobAdapterResponseInfo`__ struct corresponding to the adapter that loaded the ad. |
 | MediationAdapterClassName | The mediation adapter class name of the ad network that loaded the ad. |
