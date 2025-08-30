@@ -25,7 +25,7 @@ For debugging and logging purposes, successfully loaded ads (as well as those th
 
 === "Blueprints"
 
-    ![](../assets/ResponseInfo.png)
+    ![](assets/ResponseInfo.png)
 
 ## Response info
 
