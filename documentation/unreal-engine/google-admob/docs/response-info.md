@@ -67,10 +67,40 @@ Properties on the __`FGoogleAdMobResponseInfo`__ struct include:
 
 | Property | Description |
 | -------- | ----------- |
-| AdapterResponses | TArray of __`FGoogleAdMobAdapterResponseInfo`__ containing metadata for each adapter included in the ad response. Can be used to debug the waterfall mediation and bidding execution. The order of the list matches the order of the mediation waterfall for this ad request.&nbsp;
-
-See [Adapter Response Info]() for more information. |
+| AdapterResponses | TArray of __`FGoogleAdMobAdapterResponseInfo`__ containing metadata for each adapter included in the ad response. Can be used to debug the waterfall mediation and bidding execution. The order of the list matches the order of the mediation waterfall for this ad request.<br><br>See [Adapter Response Info]() for more information. |
 | LoadedAdapterResponseInfo | A __`FGoogleAdMobAdapterResponseInfo`__ struct corresponding to the adapter that loaded the ad. |
 | MediationAdapterClassName | The mediation adapter class name of the ad network that loaded the ad. |
 | ResponseID | The response identifier is a unique identifier for the ad response. This identifier can be used to identify and block the ad in the [Ads Review Center (ARC)](https://support.google.com/admob/answer/3480906). |
 | ResponseExtras | <div class="admonition example"><p class="admonition-title">Beta</p><p>This API is in beta. Returned values can change without an SDK release.</p></div><p><strong>TMap</strong> containing extra information about the ad response. Extras can return the following keys:</p><ul><li><code>mediation_group_name</code>: Name of the mediation group</li><li><code>mediation_ab_test_name</code>: Name of the <a href="https://support.google.com/admob/answer/9572326">mediation A/B test</a>, if applicable</li><li><code>mediation_ab_test_variant</code>: Variant used in the mediation A/B test, if applicable</li></ul> |
+
+## Adapter response info
+
+__`FGoogleAdMobAdapterResponseInfo`__ contains metadata for each adapter included in the ad response, which can be used to debug the waterfall mediation and bidding execution. The order of the list matches the order of the mediation waterfall for the ad request.
+
+Here is a sample output returned by __`FGoogleAdMobAdapterResponseInfo`__:
+
+``` json
+{
+  "Adapter": "com.google.ads.mediation.admob.AdMobAdapter",
+  "Latency": 328,
+  "Ad Source Name": "Reservation campaign",
+  "Ad Source ID": "7068401028668408324",
+  "Ad Source Instance Name": "[DO NOT EDIT] Publisher Test Interstitial",
+  "Ad Source Instance ID": "4665218928925097",
+  "Credentials": {},
+  "Ad Error": "null"
+}
+```
+
+For each ad network, __`FGoogleAdMobAdapterResponseInfo`__ provides the following properties:
+
+| Property | Description |
+| -------- | ----------- |
+| AdError  | The error associated with the request to the network. Returns __`null`__ if the network successfully loaded an ad or if the network was not attempted. |
+| AdSourceID | The ad source ID associated with this adapter response. For campaigns, __`6060308706800320801`__ is returned for a mediated ads [campaign goal type](https://support.google.com/admob/answer/9152820), and __`7068401028668408324`__ is returned for impression and click goal types. See [Ad sources](https://developers.google.com/admob/api/v1/ad-sources-reference) for the list of possible ad source IDs when an ad network serves the ad. |
+| AdSourceInstanceID | The ad source instance ID associated with this adapter response. |
+| AdSourceInstanceName | The ad source instance name associated with this adapter response. |
+| AdSourceName | The ad source representing the specific ad network that serves the impression. For campaigns,__` Mediated House Ads`__ is returned for a mediated ads [campaign goal type](https://support.google.com/admob/answer/9152820), and __`Reservation Campaign`__ is returned for impression and click goal types. See [Ad sources](https://developers.google.com/admob/api/v1/ad-sources-reference) for the list of possible ad source names when an ad network serves the ad. |
+| AdapterClassName | The class name of the ad source adapter that loaded the ad. |
+| Credentials | The ad source adapter credentials specified in the AdMob UI. |
+| LatencyMillis | The amount of time the ad source adapter spent loading an ad. Returns 0 if the ad source was not attempted. |

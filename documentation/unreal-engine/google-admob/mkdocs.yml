@@ -49,6 +49,14 @@ nav:
       - Copy troubleshooting output: https://developers.google.com/admob/android/ad-inspector/copy-troubleshooting-output
     - ad-load-errors.md
     - response-info.md
+    - Network tracing: https://developers.google.com/admob/android/network-tracing
+    - Troubleshoot ads not showing: https://support.google.com/admob/answer/9469204
+  - Privacy:
+    - Ad serving modes: https://developers.google.com/admob/android/privacy/ad-serving-modes
+    - Google Play data disclosure: https://developers.google.com/admob/android/privacy/play-data-disclosure
+  - Advanced topics:
+    - Authorized Sellers for Apps: https://developers.google.com/admob/android/app-ads
+    - Reporting: https://developers.google.com/admob/api/v1/getting-started
 plugins: 
   - search
   - git-revision-date-localized
