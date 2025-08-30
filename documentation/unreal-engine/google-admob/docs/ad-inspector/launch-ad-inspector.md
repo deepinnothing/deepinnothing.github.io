@@ -12,8 +12,8 @@ Before you continue, do the following:
 
 You can launch ad inspector in the following ways:
 
-    Use the gesture you selected in the AdMob UI after registering a test device. For details, see [Set up a test device](https://support.google.com/admob/answer/9691433).
-    Programmatically through the Google Mobile Ads SDK.
+-   Use the gesture you selected in the AdMob UI after registering a test device. For details, see [Set up a test device](https://support.google.com/admob/answer/9691433).
+-   Programmatically through the Google Mobile Ads SDK.
 
 ### Launch using gestures
 

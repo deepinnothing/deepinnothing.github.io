@@ -48,7 +48,7 @@ nav:
       - Troubleshoot privacy settings: https://developers.google.com/admob/android/ad-inspector/troubleshoot-privacy-settings
       - Copy troubleshooting output: https://developers.google.com/admob/android/ad-inspector/copy-troubleshooting-output
     - ad-load-errors.md
-    - response-info.md
+    - Response info: response-info.md
     - Network tracing: https://developers.google.com/admob/android/network-tracing
     - Troubleshoot ads not showing: https://support.google.com/admob/answer/9469204
   - Privacy:
@@ -56,7 +56,10 @@ nav:
     - Google Play data disclosure: https://developers.google.com/admob/android/privacy/play-data-disclosure
   - Advanced topics:
     - Authorized Sellers for Apps: https://developers.google.com/admob/android/app-ads
+    - advanced/global-settings.md
+    - advanced/impression-level-ad-revenue.md
     - Reporting: https://developers.google.com/admob/api/v1/getting-started
+    - advanced/targeting.md
 plugins: 
   - search
   - git-revision-date-localized
