@@ -47,6 +47,8 @@ nav:
       - Troubleshoot ad units: https://developers.google.com/admob/android/ad-inspector/troubleshoot-ad-units
       - Troubleshoot privacy settings: https://developers.google.com/admob/android/ad-inspector/troubleshoot-privacy-settings
       - Copy troubleshooting output: https://developers.google.com/admob/android/ad-inspector/copy-troubleshooting-output
+    - ad-load-errors.md
+    - response-info.md
 plugins: 
   - search
   - git-revision-date-localized

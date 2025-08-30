@@ -72,7 +72,7 @@ See [Adapter Response Info]() for more information. |
 | LoadedAdapterResponseInfo | A __`FGoogleAdMobAdapterResponseInfo`__ struct corresponding to the adapter that loaded the ad. |
 | MediationAdapterClassName | The mediation adapter class name of the ad network that loaded the ad. |
 | ResponseID | The response identifier is a unique identifier for the ad response. This identifier can be used to identify and block the ad in the [Ads Review Center (ARC)](https://support.google.com/admob/answer/3480906). |
-| ResponseExtras | 
+| ResponseExtras | <div class="admonition example"><p class="admonition-title">Beta</p><p>This API is in beta. Returned values can change without an SDK release.</p></div> |
     
     !!! example 
         
