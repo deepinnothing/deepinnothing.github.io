@@ -175,7 +175,6 @@ If an error occurs during the consent gathering process, check if you can reques
 
 As you check __`UGoogleAdMob::CanRequestAds()`__ after gathering consent and after calling __`UGoogleAdMob::RequestConsentInfoUpdate()`__, ensure your logic prevents redundant ad requests that might result in both checks returning true. For example, with a boolean variable.
 
-
 This is an example of what the complete UMP set-up might look like:
 
 === "C++"

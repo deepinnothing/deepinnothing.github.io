@@ -17,9 +17,9 @@ When building and testing your apps, make sure you use test ads rather than live
 
 The easiest way to load test ads is to use our dedicated test ad unit ID for interstitials:
 
-| iOS demo ad unit ID                    | Android demo ad unit ID                |
+| Android demo ad unit ID                | iOS demo ad unit ID                    |
 | -------------------------------------- | -------------------------------------- |
-| ca-app-pub-3940256099942544/4411468910 | ca-app-pub-3940256099942544/1033173712 |
+| ca-app-pub-3940256099942544/1033173712 | ca-app-pub-3940256099942544/4411468910 |
 
 It's been specially configured to return test ads for every request, and you're free to use it in your own apps while coding, testing, and debugging. Just make sure you replace it with your own ad unit ID before publishing your app.
 

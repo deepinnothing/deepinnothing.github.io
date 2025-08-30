@@ -17,16 +17,16 @@ The quickest way to enable testing is to use Google-provided demo ad units. Thes
 
 Here are demo ad units that point to specific test creatives for each format:
 
-| Ad format             | iOS demo ad unit ID                    | Android demo ad unit ID                |
+| Ad format             | Android demo ad unit ID                | iOS demo ad unit ID                    |
 | --------------------- | -------------------------------------- | -------------------------------------- |
-| App Open              | ca-app-pub-3940256099942544/5575463023 | ca-app-pub-3940256099942544/9257395921 |
-| Adaptive Banner       | ca-app-pub-3940256099942544/2435281174 | ca-app-pub-3940256099942544/9214589741 |
-| Fixed Size Banner     | ca-app-pub-3940256099942544/2934735716 | ca-app-pub-3940256099942544/6300978111 |
-| Interstitial          | ca-app-pub-3940256099942544/4411468910 | ca-app-pub-3940256099942544/1033173712 |
-| Rewarded Ads          | ca-app-pub-3940256099942544/1712485313 | ca-app-pub-3940256099942544/5224354917 |
-| Rewarded Interstitial | ca-app-pub-3940256099942544/6978759866 | ca-app-pub-3940256099942544/5354046379 |
-| Native                | ca-app-pub-3940256099942544/3986624511 | ca-app-pub-3940256099942544/2247696110 |
-| Native Video          | ca-app-pub-3940256099942544/2521693316 | ca-app-pub-3940256099942544/1044960115 |
+| App Open              | ca-app-pub-3940256099942544/9257395921 | ca-app-pub-3940256099942544/5575463023 |
+| Adaptive Banner       | ca-app-pub-3940256099942544/9214589741 | ca-app-pub-3940256099942544/2435281174 |
+| Fixed Size Banner     | ca-app-pub-3940256099942544/6300978111 | ca-app-pub-3940256099942544/2934735716 |
+| Interstitial          | ca-app-pub-3940256099942544/1033173712 | ca-app-pub-3940256099942544/4411468910 |
+| Rewarded Ads          | ca-app-pub-3940256099942544/5224354917 | ca-app-pub-3940256099942544/1712485313 |
+| Rewarded Interstitial | ca-app-pub-3940256099942544/5354046379 | ca-app-pub-3940256099942544/6978759866 |
+| Native                | ca-app-pub-3940256099942544/2247696110 | ca-app-pub-3940256099942544/3986624511 |
+| Native Video          | ca-app-pub-3940256099942544/1044960115 | ca-app-pub-3940256099942544/2521693316 |
 
 ## Enable test devices
 

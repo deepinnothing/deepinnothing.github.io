@@ -41,10 +41,10 @@ When building and testing your apps, make sure you use test ads rather than live
 
 The easiest way to load test ads is to use dedicated test ad unit IDs for banners:
 
-| Ad format             | iOS demo ad unit ID                    | Android demo ad unit ID                |
+| Ad format             | Android demo ad unit ID                | iOS demo ad unit ID                    |
 | --------------------- | -------------------------------------- | -------------------------------------- |
-| Adaptive Banner       | ca-app-pub-3940256099942544/2435281174 | ca-app-pub-3940256099942544/9214589741 |
-| Fixed Size Banner     | ca-app-pub-3940256099942544/2934735716 | ca-app-pub-3940256099942544/6300978111 |
+| Adaptive Banner       | ca-app-pub-3940256099942544/9214589741 | ca-app-pub-3940256099942544/2435281174 |
+| Fixed Size Banner     | ca-app-pub-3940256099942544/6300978111 | ca-app-pub-3940256099942544/2934735716 |
 
 It's been specially configured to return test ads for every request, and you can use it in your own apps while coding, testing, and debugging. Just make sure you replace it with your own ad unit ID before publishing your app.
 

@@ -221,3 +221,56 @@ Now you're ready to add your first interstitial ad to your game! Follow the step
         ![](assets/ShowInterstitialAd.png)
 
 Congratilations! You've successfully loaded your first interstitial ad! It might seem a bit overwhelming at first, but once you get it, this plugin will become a powerful tool in your developer hands, and will help you implement a robust mobile ad system in your game. Go on and check out what other features it has to offer!
+
+## Select an ad format
+
+Google Mobile Ads SDK is now imported and you're ready to implement other ads. AdMob offers a number of different ad formats, so you can choose the one that best fits your app's user experience.
+
+### Banner
+
+![](assets/format-banner.png){ align=left }
+
+Banner ad units display rectangular ads that occupy a portion of an app's layout. They can refresh automatically after a set period of time. This means users view a new ad at regular intervals, even if they stay on the same screen in your app. They're also the simplest ad format to implement.
+
+[Implement banner ads](ad-formats/banner-ads.md){ .md-button .md-button--primary align-left }
+
+### Interstitial
+
+![](assets/format-interstitial.png){ align=left }
+
+Interstitial ad units show full-page ads in your app. Place them at natural breaks and transitions in your app's interface, such as after level completion in a gaming app.
+
+[Implement interstitial ads](ad-formats/interstitial-ads.md){ .md-button .md-button--primary align-left }
+
+### Rewarded
+
+![](assets/format-rewarded.png){ align=left }
+
+Rewarded ad units enable users to play games, take surveys, or watch videos to earn in-app rewards, such as coins, extra lives, or points. You can set different rewards for different ad units, and specify the reward values and items the user received.
+
+[Implement rewarded ads](ad-formats/rewarded-ads.md){ .md-button .md-button--primary align-left }
+
+### Rewarded interstitial
+
+![](assets/format-rewarded-interstitial.png){ align=left }
+
+Rewarded interstitial is a new type of incentivized ad format that lets you offer rewards, such as coins or extra lives, for ads that appear automatically during natural app transitions.
+
+Unlike rewarded ads, users aren't required to opt in to view a rewarded interstitial.
+
+Instead of the opt-in prompt in rewarded ads, rewarded interstitials require an intro screen that announces the reward and gives users a chance to opt out if they want to do so.
+
+[Implement rewarded interstitial ads](ad-formats/rewarded-interstitial-ads.md){ .md-button .md-button--primary align-left }
+
+### App open
+
+![](assets/format-app-open.png){ align=left }
+
+App open is an ad format that appears when users open or switch back to your app. The ad overlays the loading screen.
+
+[Implement app open ads](ad-formats/app-open-ads.md){ .md-button .md-button--primary align-left }
+
+## Sample projects
+
+- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip)
+- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip)
