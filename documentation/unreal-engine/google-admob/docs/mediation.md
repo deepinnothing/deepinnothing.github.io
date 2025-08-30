@@ -39,7 +39,7 @@ Here is an example that logs the ad network class name for an ad:
 
 === "Blueprints"
 
-    ![](../assets/LoadAppOpenAd.png)
+    ![](../assets/CheckAdapterClassName.png)
 
 Refer to the [Response info]() documentation on MediationAdapterClassName for details about this property.
 
@@ -56,4 +56,4 @@ AdMob Mediation supports several ad sources, with a mix of bidding and waterfall
 
 | Ad Source | App Open | Banner | Interstitial | Rewarded | Rewarded Interstitial | Bidding | Ad source optimization support | Plugin Version |
 | --------- | -------- | ------ | ------------ | -------- | --------------------- | ------- | ------------------------------ | -------------- |
-| AppLovin ([Android](https://developers.google.com/admob/android/mediation/applovin)|[iOS](https://developers.google.com/admob/ios/mediation/applovin)) | | :material-check: | :material-check: | :material-check: | | | :material-check: | Country-specific | 1.0.0+ |
+| AppLovin ([Android](https://developers.google.com/admob/android/mediation/applovin)\|[iOS](https://developers.google.com/admob/ios/mediation/applovin)) | | :material-check: | :material-check: | :material-check: | | | :material-check: | Country-specific | 1.0.0+ |
