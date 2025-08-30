@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/google-admob/enable-test-ads/">
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/google-admob/response-info/">
       
       
-        <link rel="prev" href="..">
-      
-      
-        <link rel="next" href="../user-messaging-platform/">
       
       
       <link rel="icon" href="../assets/google-admob-icon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Enable test ads - Google AdMob: Unreal Engine Plugin Documentation</title>
+        <title>Retrieve information about the ad response - Google AdMob: Unreal Engine Plugin Documentation</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enable-test-ads" class="md-skip">
+        <a href="#retrieve-information-about-the-ad-response" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enable test ads
+              Retrieve information about the ad response
             
           </span>
         </div>
@@ -223,32 +219,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Enable test ads
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../enable-test-ads/" class="md-nav__link">
         
   
   
@@ -259,77 +233,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#demo-ad-units" class="md-nav__link">
-    <span class="md-ellipsis">
-      Demo ad units
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enable-test-devices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enable test devices
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Enable test devices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#add-your-test-device-in-the-admob-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add your test device in the AdMob UI
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-your-test-device-programmatically" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add your test device programmatically
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-with-mediation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing with mediation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -817,51 +720,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#demo-ad-units" class="md-nav__link">
+  <a href="#response-info" class="md-nav__link">
     <span class="md-ellipsis">
-      Demo ad units
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enable-test-devices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enable test devices
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Enable test devices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#add-your-test-device-in-the-admob-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add your test device in the AdMob UI
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-your-test-device-programmatically" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add your test device programmatically
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-with-mediation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing with mediation
+      Response info
     </span>
   </a>
   
@@ -883,129 +744,110 @@
 
 
 
-<h1 id="enable-test-ads">Enable test ads</h1>
-<p>This guide explains how to enable test ads in your ads integration. It's important to enable test ads during development so that you can click them without charging Google advertisers. If you click too many ads without being in test mode, you risk your account being flagged for invalid activity.</p>
-<p>There are two ways to get test ads:</p>
-<ol>
-<li>Use one of Google's <a href="#demo-ad-units">demo ad units</a>.</li>
-<li>Use your own ad unit and <a href="#enable-test-devices">enable test devices</a>.</li>
-</ol>
-<h2 id="demo-ad-units">Demo ad units</h2>
-<p>The quickest way to enable testing is to use Google-provided demo ad units. These ad units are not associated with your AdMob account, so there's no risk of your account generating invalid traffic when using these ad units.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Make sure you replace these IDs with your own ad unit ID before publishing your game.</p>
+<h1 id="retrieve-information-about-the-ad-response">Retrieve information about the ad response</h1>
+<p>For debugging and logging purposes, successfully loaded ads (as well as those that failed to load) provide a <strong><code>ResponseInfo</code></strong> struct. This object contains information about the ad it loaded (or not), in addition to information about the mediation waterfall used to load the ad.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAdResponseInfo.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::OnLoaded</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ResponseInfo</span><span class="p">.</span><span class="n">ResponseID</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ResponseInfo</span><span class="p">.</span><span class="n">MediationAdapterClassName</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ResponseInfo</span><span class="p">.</span><span class="n">AdapterResponses</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ResponseInfo</span><span class="p">.</span><span class="n">LoadedAdapterResponseInfo</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ResponseInfo</span><span class="p">.</span><span class="n">ResponseExtras</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ResponseInfo</span><span class="p">.</span><span class="n">FullResponse</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::OnFailedToLoad</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">LoadAdError</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
 </div>
-<p>Here are demo ad units that point to specific test creatives for each format:</p>
+<div class="tabbed-block">
+<p><img alt="" src="../assets/ResponseInfo.png" /></p>
+</div>
+</div>
+</div>
+<h2 id="response-info">Response info</h2>
+<p>Here is a sample output returned by <strong><code>FGoogleAdMobResponseInfo::FullResponse</code></strong> showing the debugging data returned for a loaded ad:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Response ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COOllLGxlPoCFdAx4Aod-Q4A0g&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Mediation Adapter Class Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;com.google.ads.mediation.admob.AdMobAdapter&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Adapter Responses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Adapter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;com.google.ads.mediation.admob.AdMobAdapter&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Latency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">328</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Ad Source Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reservation campaign&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Ad Source ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7068401028668408324&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Ad Source Instance Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[DO NOT EDIT] Publisher Test Interstitial&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Ad Source Instance ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4665218928925097&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Credentials&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">      </span><span class="nt">&quot;Ad Error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;Loaded Adapter Response&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Adapter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;com.google.ads.mediation.admob.AdMobAdapter&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Latency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">328</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Ad Source Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reservation campaign&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Ad Source ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7068401028668408324&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Ad Source Instance Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[DO NOT EDIT] Publisher Test Interstitial&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Ad Source Instance ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4665218928925097&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Credentials&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;Ad Error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;Response Extras&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;mediation_group_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Campaign&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Properties on the <strong><code>FGoogleAdMobResponseInfo</code></strong> struct include:</p>
 <table>
 <thead>
 <tr>
-<th>Ad format</th>
-<th>Android demo ad unit ID</th>
-<th>iOS demo ad unit ID</th>
+<th>Property</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>App Open</td>
-<td>ca-app-pub-3940256099942544/9257395921</td>
-<td>ca-app-pub-3940256099942544/5575463023</td>
+<td>AdapterResponses</td>
+<td>TArray of <strong><code>FGoogleAdMobAdapterResponseInfo</code></strong> containing metadata for each adapter included in the ad response. Can be used to debug the waterfall mediation and bidding execution. The order of the list matches the order of the mediation waterfall for this ad request.</td>
 </tr>
 <tr>
-<td>Adaptive Banner</td>
-<td>ca-app-pub-3940256099942544/9214589741</td>
-<td>ca-app-pub-3940256099942544/2435281174</td>
+<td>See <a href="">Adapter Response Info</a> for more information.</td>
+<td></td>
 </tr>
 <tr>
-<td>Fixed Size Banner</td>
-<td>ca-app-pub-3940256099942544/6300978111</td>
-<td>ca-app-pub-3940256099942544/2934735716</td>
+<td>LoadedAdapterResponseInfo</td>
+<td>A <strong><code>FGoogleAdMobAdapterResponseInfo</code></strong> struct corresponding to the adapter that loaded the ad.</td>
 </tr>
 <tr>
-<td>Interstitial</td>
-<td>ca-app-pub-3940256099942544/1033173712</td>
-<td>ca-app-pub-3940256099942544/4411468910</td>
+<td>MediationAdapterClassName</td>
+<td>The mediation adapter class name of the ad network that loaded the ad.</td>
 </tr>
 <tr>
-<td>Rewarded Ads</td>
-<td>ca-app-pub-3940256099942544/5224354917</td>
-<td>ca-app-pub-3940256099942544/1712485313</td>
+<td>ResponseID</td>
+<td>The response identifier is a unique identifier for the ad response. This identifier can be used to identify and block the ad in the <a href="https://support.google.com/admob/answer/3480906">Ads Review Center (ARC)</a>.</td>
 </tr>
 <tr>
-<td>Rewarded Interstitial</td>
-<td>ca-app-pub-3940256099942544/5354046379</td>
-<td>ca-app-pub-3940256099942544/6978759866</td>
-</tr>
-<tr>
-<td>Native</td>
-<td>ca-app-pub-3940256099942544/2247696110</td>
-<td>ca-app-pub-3940256099942544/3986624511</td>
-</tr>
-<tr>
-<td>Native Video</td>
-<td>ca-app-pub-3940256099942544/1044960115</td>
-<td>ca-app-pub-3940256099942544/2521693316</td>
+<td>ResponseExtras</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="enable-test-devices">Enable test devices</h2>
-<p>If you want to do more rigorous testing with production-looking ads, you can configure your device as a test device and use your own ad unit IDs that you've created in the AdMob UI. Test devices can either be added in the AdMob UI or programmatically using the plugin settings.</p>
-<p>Follow the steps below to add your device as a test device.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Android emulators and iOS simulators are automatically configured as test devices.</p>
-</div>
-<h3 id="add-your-test-device-in-the-admob-ui">Add your test device in the AdMob UI</h3>
-<p>For a non-programmatic way to add a test device and test new or existing app builds, use the AdMob UI. <a href="https://support.google.com/admob/answer/9691433">Learn how</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>New test devices typically start serving test ads in your app within 15 minutes, but it can also take up to 24 hours.</p>
-</div>
-<h3 id="add-your-test-device-programmatically">Add your test device programmatically</h3>
-<p>To register your test device, complete the following steps:</p>
-<ol>
-<li>Run your game on a device of your choice (iOS or Android), and make an ad request.</li>
-<li>
-<p>Check the log output of your device for a message similar to the following examples, which shows your device ID:</p>
-<ul>
-<li>
-<p><strong>iOS:</strong> </p>
-<div class="highlight"><pre><span></span><code>&lt;Google&gt; To get test ads on this device, set:
-GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers =
-@[ @&quot;2077ef9a63d2b398840261c8221a0c9b&quot; ];
-</code></pre></div>
-</li>
-<li>
-<p><strong>Android:</strong> </p>
-<div class="highlight"><pre><span></span><code>I/Ads: Use RequestConfiguration.Builder.setTestDeviceIds(Arrays.asList(&quot;33BE2250B43518CCDA7DE426D04EE231&quot;)) 
-to get test ads on this device.
-</code></pre></div>
-</li>
-</ul>
-</li>
-<li>
-<p>Copy your test device ID to your clipboard.</p>
-</li>
-<li>
-<p>Go to <strong>Project Settings &gt; Plugins &gt; Google AdMob</strong> and paste the copied device ID into the appropriate Test Device IDs array:</p>
-<p><img alt="" src="../assets/TestDeviceIDs.png" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Be sure to disable "Enable Test Devices" fields before you release your game.</p>
-</div>
-</li>
-<li>
-<p>Rebuild your project and run it again. If the ad is a Google ad, you'll see a <strong>Test mode</strong> label centered at the top of the ad (banner, interstitial, or rewarded ad):</p>
-<figure>
-<p><img alt="" src="https://developers.google.com/static/admob/images/ios-testad-0-admob.png" /></p>
-<figcaption></figcaption>
-</figure>
-</li>
-</ol>
-<h2 id="testing-with-mediation">Testing with mediation</h2>
-<p>Google's demo ad units only show Google ads. To test your mediation configuration, you must use the <a href="#enable-test-devices">enable test devices</a> approach.</p>
-<p>Mediated ads do not render a <strong>Test mode</strong> label. You are responsible for ensuring that test mode is enabled for each of your mediation networks so that these networks don't flag your account for invalid activity. See each network's respective <a href="">mediation guide</a> for more information.</p>
-<p>If you aren't sure whether a mediation ad network adapter provides a test mode, it is safest to avoid clicking on ads from that network during development. You can use the <strong><code>FGoogleAdMobResponseInfo::MediationAdapterClassName</code></strong> property on any of the ad formats to figure out which ad network served the current ad.</p>
+<pre><code>!!! example
+
+    This API is in beta. Returned values can change without an SDK release.
+
+TMap containing extra information about the ad response. Extras can return the following keys: 
+- __`mediation_group_name`__: Name of the mediation group
+- __`mediation_ab_test_name`__: Name of the [mediation A/B test](https://support.google.com/admob/answer/9572326), if applicable
+- __`mediation_ab_test_variant`__: Variant used in the mediation A/B test, if applicable |
+</code></pre>
 
 
 
