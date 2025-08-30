@@ -64,7 +64,7 @@ Learn more about [setting the maximum ad content rating for an app or account](h
 
 !!! tip
 
-    It's recommended to leave this setting with the __`MAX_AD_CONTENT_RATING_UNSCPECIFIED`__ value, because it will be possible to change it anytime later using the AdMob UI, and the setting in Project Settings is hardcoded and cannot be changed after the project is packaged.
+    It's recommended to leave this setting with the __`MAX_AD_CONTENT_RATING_UNSPECIFIED`__ value, because it will be possible to change it anytime later using the AdMob UI, and the setting in __`Project Settings`__ is hardcoded and cannot be changed after the project is packaged.
 
 ## Publisher Privacy Treatment (Beta)
 
