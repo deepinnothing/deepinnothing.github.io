@@ -778,10 +778,247 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#adapter-response-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adapter response info
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/network-tracing" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network tracing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://support.google.com/admob/answer/9469204" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot ads not showing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Privacy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Privacy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/privacy/ad-serving-modes" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ad serving modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Play data disclosure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advanced topics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/app-ads" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authorized Sellers for Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/api/v1/getting-started" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reporting
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -824,6 +1061,15 @@
   <a href="#response-info" class="md-nav__link">
     <span class="md-ellipsis">
       Response info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapter-response-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adapter response info
     </span>
   </a>
   
@@ -916,15 +1162,83 @@
 <tbody>
 <tr>
 <td>AdapterResponses</td>
-<td>TArray of <strong><code>FGoogleAdMobAdapterResponseInfo</code></strong> containing metadata for each adapter included in the ad response. Can be used to debug the waterfall mediation and bidding execution. The order of the list matches the order of the mediation waterfall for this ad request.&nbsp;</td>
+<td>TArray of <strong><code>FGoogleAdMobAdapterResponseInfo</code></strong> containing metadata for each adapter included in the ad response. Can be used to debug the waterfall mediation and bidding execution. The order of the list matches the order of the mediation waterfall for this ad request.<br><br>See <a href="">Adapter Response Info</a> for more information.</td>
+</tr>
+<tr>
+<td>LoadedAdapterResponseInfo</td>
+<td>A <strong><code>FGoogleAdMobAdapterResponseInfo</code></strong> struct corresponding to the adapter that loaded the ad.</td>
+</tr>
+<tr>
+<td>MediationAdapterClassName</td>
+<td>The mediation adapter class name of the ad network that loaded the ad.</td>
+</tr>
+<tr>
+<td>ResponseID</td>
+<td>The response identifier is a unique identifier for the ad response. This identifier can be used to identify and block the ad in the <a href="https://support.google.com/admob/answer/3480906">Ads Review Center (ARC)</a>.</td>
+</tr>
+<tr>
+<td>ResponseExtras</td>
+<td><div class="admonition example"><p class="admonition-title">Beta</p><p>This API is in beta. Returned values can change without an SDK release.</p></div><p><strong>TMap</strong> containing extra information about the ad response. Extras can return the following keys:</p><ul><li><code>mediation_group_name</code>: Name of the mediation group</li><li><code>mediation_ab_test_name</code>: Name of the <a href="https://support.google.com/admob/answer/9572326">mediation A/B test</a>, if applicable</li><li><code>mediation_ab_test_variant</code>: Variant used in the mediation A/B test, if applicable</li></ul></td>
 </tr>
 </tbody>
 </table>
-<p>See <a href="">Adapter Response Info</a> for more information. |
-| LoadedAdapterResponseInfo | A <strong><code>FGoogleAdMobAdapterResponseInfo</code></strong> struct corresponding to the adapter that loaded the ad. |
-| MediationAdapterClassName | The mediation adapter class name of the ad network that loaded the ad. |
-| ResponseID | The response identifier is a unique identifier for the ad response. This identifier can be used to identify and block the ad in the <a href="https://support.google.com/admob/answer/3480906">Ads Review Center (ARC)</a>. |
-| ResponseExtras | <div class="admonition example"><p class="admonition-title">Beta</p><p>This API is in beta. Returned values can change without an SDK release.</p></div><p><strong>TMap</strong> containing extra information about the ad response. Extras can return the following keys:</p><ul><li><code>mediation_group_name</code>: Name of the mediation group</li><li><code>mediation_ab_test_name</code>: Name of the <a href="https://support.google.com/admob/answer/9572326">mediation A/B test</a>, if applicable</li><li><code>mediation_ab_test_variant</code>: Variant used in the mediation A/B test, if applicable</li></ul> |</p>
+<h2 id="adapter-response-info">Adapter response info</h2>
+<p><strong><code>FGoogleAdMobAdapterResponseInfo</code></strong> contains metadata for each adapter included in the ad response, which can be used to debug the waterfall mediation and bidding execution. The order of the list matches the order of the mediation waterfall for the ad request.</p>
+<p>Here is a sample output returned by <strong><code>FGoogleAdMobAdapterResponseInfo</code></strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Adapter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;com.google.ads.mediation.admob.AdMobAdapter&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Latency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">328</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Ad Source Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reservation campaign&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Ad Source ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7068401028668408324&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Ad Source Instance Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[DO NOT EDIT] Publisher Test Interstitial&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Ad Source Instance ID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4665218928925097&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Credentials&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">  </span><span class="nt">&quot;Ad Error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>For each ad network, <strong><code>FGoogleAdMobAdapterResponseInfo</code></strong> provides the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AdError</td>
+<td>The error associated with the request to the network. Returns <strong><code>null</code></strong> if the network successfully loaded an ad or if the network was not attempted.</td>
+</tr>
+<tr>
+<td>AdSourceID</td>
+<td>The ad source ID associated with this adapter response. For campaigns, <strong><code>6060308706800320801</code></strong> is returned for a mediated ads <a href="https://support.google.com/admob/answer/9152820">campaign goal type</a>, and <strong><code>7068401028668408324</code></strong> is returned for impression and click goal types. See <a href="https://developers.google.com/admob/api/v1/ad-sources-reference">Ad sources</a> for the list of possible ad source IDs when an ad network serves the ad.</td>
+</tr>
+<tr>
+<td>AdSourceInstanceID</td>
+<td>The ad source instance ID associated with this adapter response.</td>
+</tr>
+<tr>
+<td>AdSourceInstanceName</td>
+<td>The ad source instance name associated with this adapter response.</td>
+</tr>
+<tr>
+<td>AdSourceName</td>
+<td>The ad source representing the specific ad network that serves the impression. For campaigns,<strong><code>Mediated House Ads</code></strong> is returned for a mediated ads <a href="https://support.google.com/admob/answer/9152820">campaign goal type</a>, and <strong><code>Reservation Campaign</code></strong> is returned for impression and click goal types. See <a href="https://developers.google.com/admob/api/v1/ad-sources-reference">Ad sources</a> for the list of possible ad source names when an ad network serves the ad.</td>
+</tr>
+<tr>
+<td>AdapterClassName</td>
+<td>The class name of the ad source adapter that loaded the ad.</td>
+</tr>
+<tr>
+<td>Credentials</td>
+<td>The ad source adapter credentials specified in the AdMob UI.</td>
+</tr>
+<tr>
+<td>LatencyMillis</td>
+<td>The amount of time the ad source adapter spent loading an ad. Returns 0 if the ad source was not attempted.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -945,7 +1259,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 30, 2025 21:19:35 UTC">August 30, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 30, 2025 21:47:48 UTC">August 30, 2025</span>
   </span>
 
     
