@@ -80,6 +80,7 @@ When you configure multiple ad networks for mediation, you have to specify what 
 [Ad source optimization](https://support.google.com/admob/answer/3379794) is a feature that lets you to generate the highest CPM from the ad networks in your mediation chain by automating the process of ordering the mediation chain to maximize revenue.
 
 The mediation networks table earlier uses the following values for ad source optimization support:
+
 | Ad source optimization support | What it means |
 | ------------------------------ | ------------- |
 | __Bidding only__ | The ad network only participates in bidding. Ad source optimization is not applicable. |
