@@ -40,6 +40,11 @@ jobs:
         run: |
           cd documentation/unreal-engine/google-admob
           mkdocs build
+
+      - name: Build Google UMP
+        run: |
+          cd documentation/unreal-engine/google-ump
+          mkdocs build
       
       - name: Include ZIP files
         run: |
