@@ -1,6 +1,4 @@
-!!! warning "If you like this plugin, please, rate it on Fab. Thank you!"
-
-    __`If you like this plugin, please, rate it on Fab. Thank you!`__
+[If you like this plugin, please, rate it on Fab. Thank you!](#){ .md-button .md-button--primary }
 
 # Get started
 
