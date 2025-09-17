@@ -1,0 +1,29 @@
+site_name: "Google UMP: Unreal Engine Plugin Documentation"
+site_url: https://deepinnothing.github.io/documentation/unreal-engine/google-ump
+site_dir: ../../../site/documentation/unreal-engine/google-ump
+theme:
+  name: material
+  logo: assets/google-ump-icon.png
+  favicon: assets/google-ump-icon.png
+  palette:
+    scheme: slate
+    primary: black
+    accent: custom
+  features:
+    - content.code.copy
+markdown_extensions:
+  - attr_list
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.tabbed:
+      alternate_style: true
+  - abbr
+nav:
+  - index.md
+plugins: 
+  - search
+  - git-revision-date-localized
