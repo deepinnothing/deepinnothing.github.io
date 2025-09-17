@@ -1,6 +1,6 @@
 !!! warning ""
 
-    If you like this plugin, please, rate it on Fab. Thank you!
+    __`If you like this plugin, please, rate it on Fab. Thank you!`__
 
 # Get started
 
@@ -276,4 +276,4 @@ When testing your game with the UMP SDK, you might find it helpful to reset the 
 
 !!! warning
 
-    This function is intended to be used for testing purposes only. You shouldn't call __`UGoogleAdMob::ResetConsentState()`__ in shipping builds.
+    This function is intended to be used for testing purposes only. You shouldn't call __`UGoogleUMP::ResetConsentState()`__ in shipping builds.
