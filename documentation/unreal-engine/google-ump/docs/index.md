@@ -1,4 +1,4 @@
-!!! warning ""
+!!! warning "If you like this plugin, please, rate it on Fab. Thank you!"
 
     __`If you like this plugin, please, rate it on Fab. Thank you!`__
 
