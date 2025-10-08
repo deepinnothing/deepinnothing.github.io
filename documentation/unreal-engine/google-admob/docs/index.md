@@ -1,6 +1,10 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary }
+
 # Get started
 
-This get started guide will walk you through integrating the __Google Mobile Ads__ into your Unreal project, and then displaying your first ad with it! Here we will focus on an interstitial ad, but detailed guides on implementing different ad formats will be linked at the bottom of the page.
+The Google Mobile Ads Unreal Engine plugin lets Unreal developers serve Google mobile ads on Android and iOS apps without having to write Java or Objective-C code. The plugin provides a C++ and Blueprints interfaces for requesting ads that can be used in your Unreal project.
+
+This guide is intended for publishers who want to monetize an Unreal app.
 
 ## Set up your app in your AdMob account
 
@@ -32,12 +36,6 @@ To avoid any compatibility issues and library conflicts, disable build-in AdMob 
 
 ![AdMob App ID fields example](assets/AdMobAppIDFields.png)
 
-### Enable automatic SDK initialization
-
-Typically, you would want [manual control over Privacy & Messaging](./user-messaging-platform.md) in your game (*it's even required in some cases!*), but for this tutorial we are going to ask plugin to attempt initializing Google AdMob SDK automatically on game's start-up. Once again, go to __Project Settings > Plugins > Google AdMob__, and set the __`Enable automatic SDK initialization on startup`__ field to __`true`__ (it's disabled be default).
-
-![Enable automatic SDK initialization on startup](assets/EnableAutoInit.png)
-
 ### Add dependency to your modules `(C++ projects)`
 
 To use the plugin in your C++ code, you must include `GoogleAdMob` as either a public or private dependency in your module's build configuration, for example:
@@ -45,182 +43,35 @@ To use the plugin in your C++ code, you must include `GoogleAdMob` as either a p
 PrivateDependencyModuleNames.Add("GoogleAdMob");
 ```
 
-## Implement your first ad
+### Initialize the SDK
 
-Now you're ready to add your first interstitial ad to your game! Follow the steps below to make it a reality!
+Before loading ads, have your app initialize Google Mobile Ads SDK by calling __`UGoogleAdMob::Initialize()`__. This needs to be done only once, ideally at app launch.
 
-1.  __Create an interstitial ad object and store it in a variable__. In Blueprints, add a __`Construct Object from Class`__ node and choose __UGoogleAdMobInterstitialAd__ as a class to create the object from. Think of it as a communication interface between your Unreal project and Google AdMob.
+!!! warning
 
-    === "C++"
+    If you need to obtain consent from users in the European Economic Area (EEA), set any request-specific flags, such as __`SetTagForChildDirectedTreatment()`__ or __`SetTagForUnderAgeOfConsent()`__, or otherwise take action before loading ads, ensure you do so before initializing Google Mobile Ads SDK.
 
-        ``` c++
-        // In header file:
-        class UGoogleAdMobInterstitialAd;
-        // ...
-        UPROPERTY()
-        TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
+Here's an example of how to call __`UGoogleAdMob::Initialize()`__:
 
-        // In source file:
-        #include "GoogleAdMobInterstitialAd.h"
-        // ...
-        InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
-        ```
+=== "C++"
 
-    === "Blueprints"
+    ``` c++
+    UGoogleAdMob::OnInitializationComplete.AddLambda([]()
+    {
+        UE_LOG(LogTemp, Display, TEXT("Google Mobile Ads initialization complete."));
+    });
+    UGoogleAdMob::Initialize();
+    ```
 
-        ![](assets/ConstructInterstitialAd.png)
+=== "Blueprints"
 
-    !!! tip
+    ![](assets/InitializeTheSDK.png)
 
-        It's generally recommended to keep your ads in a class/blueprint derived from __PlatformGameInstance__, as they often need to persist between levels.
+If you're using mediation, wait until the callback occurs before loading ads to verify that all mediation adapters are initialized.
 
-2.  __Check if ads can be requested__. Before loading any ads, you should first check if the consent has been gathered from a user using the __`UGoogleAdMob::CanRequestAds()`__ function.
+!!! note
 
-    === "C++"
-
-        ``` c++
-        // In header file:
-        class UGoogleAdMobInterstitialAd;
-        // ...
-        UPROPERTY()
-        TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
-
-        // In source file:
-        #include "GoogleAdMobInterstitialAd.h"
-        #include "GoogleAdMob.h"
-        // ...
-        InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
-        // ...
-        if (UGoogleAdMob::CanRequestAds()) 
-        {
-            // ...
-        }
-        ```
-
-    === "Blueprints"
-
-        ![](assets/CanRequestAds.png)
-
-3. __Bind an event to the ad being loaded__. Prior to loading the ad, you should also bind some event to the __`OnLoaded`__ multicast delegate, so that you know when your ad is loaded and is ready to be shown.
-
-    === "C++"
-
-        ``` c++
-        // In header file:
-        class UGoogleAdMobInterstitialAd;
-        struct FGoogleAdMobResponseInfo;
-        // ...
-        UPROPERTY()
-        TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
-
-        UFUNCTION()
-        void InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo);
-
-        // In source file:
-        #include "GoogleAdMobInterstitialAd.h"
-        #include "GoogleAdMob.h"
-        #include "GoogleAdMobResponseInfo.h"
-        // ...
-        void UYourClass::InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo) 
-        {      
-        }
-        // ...
-        InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
-        // ...
-        if (UGoogleAdMob::CanRequestAds()) 
-        {
-            InterstitialAd->OnLoaded.AddDynamic(this, &UYourClass::InterstitialAdLoaded);
-        }
-        ```
-
-    === "Blueprints"
-
-        ![](assets/BindEventToOnLoaded.png)
-
-4. __Load the ad__. Now you can finally load your ad by calling __`UGoogleAdMobInterstitialAd::Load(const FString& AdUnitID)`__ function! Just remember that the function must be called on the created ad object (i.e. the function won't appear in Blueprints unless the context menu is shown after dragging the pin from this object), and that there are two different Ad Unit IDs for Android and iOS.
-
-    === "C++"
-
-        ``` c++
-        // In header file:
-        class UGoogleAdMobInterstitialAd;
-        struct FGoogleAdMobResponseInfo;
-        // ...
-        UPROPERTY()
-        TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
-
-        UFUNCTION()
-        void InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo);
-
-        // In source file:
-        #include "GoogleAdMobInterstitialAd.h"
-        #include "GoogleAdMob.h"
-        #include "GoogleAdMobResponseInfo.h"
-        // ...
-        void UYourClass::InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo) 
-        {      
-        }
-        // ...
-        InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
-        // ...
-        if (UGoogleAdMob::CanRequestAds()) 
-        {
-            InterstitialAd->OnLoaded.AddDynamic(this, &UYourClass::InterstitialAdLoaded);
-        #if PLATFORM_ANDROID
-            InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/1033173712"));
-        #elif PLATFORM_IOS
-            InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/4411468910"));
-        #endif
-        }
-        ```
-
-    === "Blueprints"
-
-        ![](assets/LoadInterstitialAd.png)
-
-5. __Show your interstitial ad__. The last step here is obviously showing your ad when it's loaded. Just call __`UGoogleAdMobInterstitialAd::Show()`__ when the __`OnLoaded`__ delegate is broadcast, and you're done!
-
-    === "C++"
-
-        ``` c++
-        // In header file:
-        class UGoogleAdMobInterstitialAd;
-        struct FGoogleAdMobResponseInfo;
-        // ...
-        UPROPERTY()
-        TObjectPtr<UGoogleAdMobInterstitialAd> InterstitialAd;
-
-        UFUNCTION()
-        void InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo);
-
-        // In source file:
-        #include "GoogleAdMobInterstitialAd.h"
-        #include "GoogleAdMob.h"
-        #include "GoogleAdMobResponseInfo.h"
-        // ...
-        void UYourClass::InterstitialAdLoaded(const FGoogleAdMobResponseInfo& ResponseInfo) 
-        {     
-            InterstitialAd->Show(); 
-        }
-        // ...
-        InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
-        // ...
-        if (UGoogleAdMob::CanRequestAds()) 
-        {
-            InterstitialAd->OnLoaded.AddDynamic(this, &UYourClass::InterstitialAdLoaded);
-        #if PLATFORM_ANDROID
-            InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/1033173712"));
-        #elif PLATFORM_IOS
-            InterstitialAd->Load(TEXT("ca-app-pub-3940256099942544/4411468910"));
-        #endif
-        }
-        ```
-
-    === "Blueprints"
-
-        ![](assets/ShowInterstitialAd.png)
-
-Congratilations! You've successfully loaded your first interstitial ad! It might seem a bit overwhelming at first, but once you get it, this plugin will become a powerful tool in your developer hands, and will help you implement a robust mobile ad system in your game. Go on and check out what other features it has to offer!
+    It's recommended to use some Consent Management Platform to obrain user consent in EEA and regulated US states before initializing the SDK. You can use [Google UMP plugin](https://fab.com/s/b1cdf3b0e8c8) for that. It is also required by __`Enable automatic SDK initialization on start-up`__ setting in Project Settings, which allows you to skip this step entirely.
 
 ## Select an ad format
 
@@ -272,5 +123,5 @@ App open is an ad format that appears when users open or switch back to your app
 
 ## Sample projects
 
-- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip)
-- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip)
+- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-bp.zip)
+- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-cpp.zip)

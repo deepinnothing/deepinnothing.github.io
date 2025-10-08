@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary }
+
 # App open ads
 
 ![](../assets/format-app-open.png){ align=left }
@@ -14,10 +16,7 @@ App open ads automatically show a small branding area so users know they're in y
 
 ## Prerequisites
 
-Complete the following steps described in the [Get Started guide](../index.md):
-
--   [Set up your app in your AdMob account](../index.md#set-up-your-app-in-your-admob-account).
--   [Configure your project](../index.md#configure-your-project).
+Complete the [Get Started guide](../index.md).
 
 ## Always test with test ads
 
@@ -62,9 +61,6 @@ Your ad should show quickly, so it's best to load your ad before you need to dis
 
     UFUNCTION()
     void LoadAppOpenAd();
-
-    UFUNCTION()
-    void FailedToShow(const UGoogleAdMobAdError& AdError);
     ```
 
     Source:
@@ -74,25 +70,21 @@ Your ad should show quickly, so it's best to load your ad before you need to dis
     #include "GoogleAdMobAppOpenAd.h"
     // ...
     AppOpenAd = NewObject<UGoogleAdMobAppOpenAd>(this);
-    AppOpenAd->OnDismissed.AddDynamic(this, &UYourClass::LoadAppOpenAd);
-    AppOpenAd->OnFailedToShow.AddDynamic(this, &UYourClass::FailedToShow);
+    AppOpenAd->OnDismissed.AddUObject(this, &UYourClass::LoadAppOpenAd);
+    AppOpenAd->OnFailedToShow.AddLambda([](const UGoogleAdMobAdError& AdError)
+    {
+        UE_LOG(LogTemp, Display, TEXT("App Open Ad failed to show with error: %s"), *AdError.Message);
+        LoadAppOpenAd();
+    });
     LoadAppOpenAd();
     // ...
     void UYourClass::LoadAppOpenAd()
     {
-        if (UGoogleAdMob::CanRequestAds())
-        {
     #if PLATFORM_ANDROID
-            AppOpenAd->Load("ca-app-pub-3940256099942544/9257395921");
+        AppOpenAd->Load("ca-app-pub-3940256099942544/9257395921");
     #elif PLATFORM_IOS
-            AppOpenAd->Load("ca-app-pub-3940256099942544/5575463023");
+        AppOpenAd->Load("ca-app-pub-3940256099942544/5575463023");
     #endif
-        }
-    }
-
-    void UYourClass::FailedToShow(const UGoogleAdMobAdError& AdError)
-    {
-        LoadAppOpenAd();
     }
     ```
 
@@ -143,47 +135,13 @@ The next step is to show an app open ad. If no ad is available, attempt to load 
 
 !!! note
 
-    App open ads will time out after four hours. Ads rendered more than four hours after request time will no longer be valid and may not earn revenue. Checking the ad with __`IsReady()`__ before showing it is usually enough, but you can also call __`GetState()`__ and check whether the state of the ad is __`EXPIRED`__ or not.
+    App open ads will time out after four hours. Ads rendered more than four hours after request time will no longer be valid and may not earn revenue. Checking the ad with __`IsReady()`__ before showing it is usually enough, but you can also call __`GetState()`__ and check whether the state of the ad is __`Expired`__ or not.
 
 ### Handle presentation callbacks
 
-You can bind your functions and events to various dynamic multicast delegates. The following are available for App Open Ad:
+You can bind your functions and assign events to various delegates. The following are available for App Open Ad:
 
 === "C++"
-
-    Header:
-
-    ``` c++
-    struct UGoogleAdMobResponseInfo;
-    struct UGoogleAdMobAdError;
-    struct UGoogleAdMobAdValue;
-    // ...
-    UFUNCTION()
-    void OnLoaded(const UGoogleAdMobResponseInfo& ResponseInfo);
-
-    UFUNCTION()
-    void OnFailedToLoad(const UGoogleAdMobAdError& LoadAdError, const UGoogleAdMobResponseInfo& ResponseInfo);
-
-    UFUNCTION()
-    void OnFailedToShow(const UGoogleAdMobAdError& AdError);
-
-    UFUNCTION()
-    void OnShown();
-
-    UFUNCTION()
-    void OnClicked();
-
-    UFUNCTION()
-    void OnImpression();
-
-    UFUNCTION()
-    void OnDismissed();
-
-    UFUNCTION()
-    void OnPaidEvent(const UGoogleAdMobAdValue& AdValue);
-    ```
-
-    Source:
 
     ``` c++
     #include "GoogleAdMobAppOpenAd.h"
@@ -191,14 +149,14 @@ You can bind your functions and events to various dynamic multicast delegates. T
     #include "GoogleAdMobAdError.h"
     #include "GoogleAdMobAdValue.h"
     // ...
-    AppOpenAd->OnLoaded.AddDynamic(this, &UYourClass::OnLoaded);
-    AppOpenAd->OnFailedToLoad.AddDynamic(this, &UYourClass::OnFailedToLoad);
-    AppOpenAd->OnFailedToShow.AddDynamic(this, &UYourClass::OnFailedToShow);
-    AppOpenAd->OnShown.AddDynamic(this, &UYourClass::OnShown);
-    AppOpenAd->OnClicked.AddDynamic(this, &UYourClass::OnClicked);
-    AppOpenAd->OnImpression.AddDynamic(this, &UYourClass::OnImpression);
-    AppOpenAd->OnDismissed.AddDynamic(this, &UYourClass::OnDismissed);
-    AppOpenAd->OnPaidEvent.AddDynamic(this, &UYourClass::OnPaidEvent);
+    AppOpenAd->OnLoaded.AddLambda([](const UGoogleAdMobResponseInfo& ResponseInfo){});
+    AppOpenAd->OnFailedToLoad.AddLambda([](const UGoogleAdMobAdError& LoadAdError, const UGoogleAdMobResponseInfo& ResponseInfo){});
+    AppOpenAd->OnClicked.AddLambda([](){});
+    AppOpenAd->OnImpression.AddLambda([](){});
+    AppOpenAd->OnShown.AddLambda([](){});
+    AppOpenAd->OnFailedToShow.AddLambda([](const UGoogleAdMobAdError& AdError){});
+    AppOpenAd->OnDismissed.AddLambda([](){});
+    AppOpenAd->OnPaidEvent.AddLambda([](const UGoogleAdMobAdValue& AdValue){});
     ```
 
 === "Blueprints"
@@ -223,5 +181,5 @@ App open ads help you monetize your app's loading screen, when the app first lau
 
 ## Sample projects
 
-- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip)
-- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip)
+- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-bp.zip)
+- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-cpp.zip)
