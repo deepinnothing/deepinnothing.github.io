@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary }
+
 # Enable test ads
 
 This guide explains how to enable test ads in your ads integration. It's important to enable test ads during development so that you can click them without charging Google advertisers. If you click too many ads without being in test mode, you risk your account being flagged for invalid activity.

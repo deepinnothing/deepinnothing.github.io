@@ -28,9 +28,8 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - abbr
 nav:
-  - index.md
-  - enable-test-ads.md
-  - user-messaging-platform.md
+  - Get started: index.md
+  - Enable test ads: enable-test-ads.md
   - Ad formats:
     - ad-formats/app-open-ads.md
     - ad-formats/banner-ads.md
