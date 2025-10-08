@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Get started
+              Home
             
           </span>
         </div>
@@ -216,7 +216,7 @@
   
   
   <span class="md-ellipsis">
-    Get started
+    Home
     
   </span>
   
@@ -229,7 +229,7 @@
   
   
   <span class="md-ellipsis">
-    Get started
+    Home
     
   </span>
   
@@ -298,15 +298,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#enable-automatic-sdk-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enable automatic SDK initialization
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#add-dependency-to-your-modules-c-projects" class="md-nav__link">
     <span class="md-ellipsis">
       Add dependency to your modules (C++ projects)
@@ -315,17 +306,17 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implement-your-first-ad" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#initialize-the-sdk" class="md-nav__link">
     <span class="md-ellipsis">
-      Implement your first ad
+      Initialize the SDK
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -435,12 +426,12 @@
   
   
     <li class="md-nav__item">
-      <a href="user-messaging-platform/" class="md-nav__link">
+      <a href="user-messaging-platform.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    User Messaging Platform (UMP)
+    None
     
   </span>
   
@@ -1300,15 +1291,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#enable-automatic-sdk-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enable automatic SDK initialization
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#add-dependency-to-your-modules-c-projects" class="md-nav__link">
     <span class="md-ellipsis">
       Add dependency to your modules (C++ projects)
@@ -1317,17 +1299,17 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implement-your-first-ad" class="md-nav__link">
+          <li class="md-nav__item">
+  <a href="#initialize-the-sdk" class="md-nav__link">
     <span class="md-ellipsis">
-      Implement your first ad
+      Initialize the SDK
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1416,8 +1398,10 @@
 
 
 
+<p><a class="md-button md-button--primary" href="https://fab.com/s/804df971aef3">If you like this plugin, please, rate it on Fab. Thank you!</a></p>
 <h1 id="get-started">Get started</h1>
-<p>This get started guide will walk you through integrating the <strong>Google Mobile Ads</strong> into your Unreal project, and then displaying your first ad with it! Here we will focus on an interstitial ad, but detailed guides on implementing different ad formats will be linked at the bottom of the page.</p>
+<p>The Google Mobile Ads Unreal Engine plugin lets Unreal developers serve Google mobile ads on Android and iOS apps without having to write Java or Objective-C code. The plugin provides a C++ and Blueprints interfaces for requesting ads that can be used in your Unreal project.</p>
+<p>This guide is intended for publishers who want to monetize an Unreal app.</p>
 <h2 id="set-up-your-app-in-your-admob-account">Set up your app in your AdMob account</h2>
 <p>Register your app as an AdMob app by completing the following steps:</p>
 <ol>
@@ -1441,199 +1425,37 @@
 <li>Open <strong>Project Settings &gt; Plugins &gt; Google AdMob</strong> in Unreal Engine, and paste the copied values into the corresponding AdMob App ID fields.</li>
 </ol>
 <p><img alt="AdMob App ID fields example" src="assets/AdMobAppIDFields.png" /></p>
-<h3 id="enable-automatic-sdk-initialization">Enable automatic SDK initialization</h3>
-<p>Typically, you would want <a href="user-messaging-platform/">manual control over Privacy &amp; Messaging</a> in your game (<em>it's even required in some cases!</em>), but for this tutorial we are going to ask plugin to attempt initializing Google AdMob SDK automatically on game's start-up. Once again, go to <strong>Project Settings &gt; Plugins &gt; Google AdMob</strong>, and set the <strong><code>Enable automatic SDK initialization on startup</code></strong> field to <strong><code>true</code></strong> (it's disabled be default).</p>
-<p><img alt="Enable automatic SDK initialization on startup" src="assets/EnableAutoInit.png" /></p>
 <h3 id="add-dependency-to-your-modules-c-projects">Add dependency to your modules <code>(C++ projects)</code></h3>
 <p>To use the plugin in your C++ code, you must include <code>GoogleAdMob</code> as either a public or private dependency in your module's build configuration, for example:
 <div class="highlight"><pre><span></span><code><span class="n">PrivateDependencyModuleNames</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;GoogleAdMob&quot;</span><span class="p">);</span>
 </code></pre></div></p>
-<h2 id="implement-your-first-ad">Implement your first ad</h2>
-<p>Now you're ready to add your first interstitial ad to your game! Follow the steps below to make it a reality!</p>
-<ol>
-<li>
-<p><strong>Create an interstitial ad object and store it in a variable</strong>. In Blueprints, add a <strong><code>Construct Object from Class</code></strong> node and choose <strong>UGoogleAdMobInterstitialAd</strong> as a class to create the object from. Think of it as a communication interface between your Unreal project and Google AdMob.</p>
+<h3 id="initialize-the-sdk">Initialize the SDK</h3>
+<p>Before loading ads, have your app initialize Google Mobile Ads SDK by calling <strong><code>UGoogleAdMob::Initialize()</code></strong>. This needs to be done only once, ideally at app launch.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you need to obtain consent from users in the European Economic Area (EEA), set any request-specific flags, such as <strong><code>SetTagForChildDirectedTreatment()</code></strong> or <strong><code>SetTagForUnderAgeOfConsent()</code></strong>, or otherwise take action before loading ads, ensure you do so before initializing Google Mobile Ads SDK.</p>
+</div>
+<p>Here's an example of how to call <strong><code>UGoogleAdMob::Initialize()</code></strong>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1">// In header file:</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobInterstitialAd</span><span class="p">;</span>
-<span class="c1">// ...</span>
-<span class="n">UPROPERTY</span><span class="p">()</span>
-<span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">InterstitialAd</span><span class="p">;</span>
-
-<span class="c1">// In source file:</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobInterstitialAd.h&quot;</span>
-<span class="c1">// ...</span>
-<span class="n">InterstitialAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewObject</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="assets/ConstructInterstitialAd.png" /></p>
-</div>
-</div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>It's generally recommended to keep your ads in a class/blueprint derived from <strong>PlatformGameInstance</strong>, as they often need to persist between levels.</p>
-</div>
-</li>
-<li>
-<p><strong>Check if ads can be requested</strong>. Before loading any ads, you should first check if the consent has been gathered from a user using the <strong><code>UGoogleAdMob::CanRequestAds()</code></strong> function.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1">// In header file:</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobInterstitialAd</span><span class="p">;</span>
-<span class="c1">// ...</span>
-<span class="n">UPROPERTY</span><span class="p">()</span>
-<span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">InterstitialAd</span><span class="p">;</span>
-
-<span class="c1">// In source file:</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobInterstitialAd.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMob.h&quot;</span>
-<span class="c1">// ...</span>
-<span class="n">InterstitialAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewObject</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="c1">// ...</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">CanRequestAds</span><span class="p">())</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">OnInitializationComplete</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([]()</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;Google Mobile Ads initialization complete.&quot;</span><span class="p">));</span>
+<span class="p">});</span>
+<span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">Initialize</span><span class="p">();</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="assets/CanRequestAds.png" /></p>
+<p><img alt="" src="assets/InitializeTheSDK.png" /></p>
 </div>
 </div>
 </div>
-</li>
-<li>
-<p><strong>Bind an event to the ad being loaded</strong>. Prior to loading the ad, you should also bind some event to the <strong><code>OnLoaded</code></strong> multicast delegate, so that you know when your ad is loaded and is ready to be shown.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1">// In header file:</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobInterstitialAd</span><span class="p">;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">FGoogleAdMobResponseInfo</span><span class="p">;</span>
-<span class="c1">// ...</span>
-<span class="n">UPROPERTY</span><span class="p">()</span>
-<span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">InterstitialAd</span><span class="p">;</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">InterstitialAdLoaded</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">);</span>
-
-<span class="c1">// In source file:</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobInterstitialAd.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMob.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobResponseInfo.h&quot;</span>
-<span class="c1">// ...</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::InterstitialAdLoaded</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">)</span><span class="w"> </span>
-<span class="p">{</span><span class="w">      </span>
-<span class="p">}</span>
-<span class="c1">// ...</span>
-<span class="n">InterstitialAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewObject</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="c1">// ...</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">CanRequestAds</span><span class="p">())</span><span class="w"> </span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnLoaded</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">InterstitialAdLoaded</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>If you're using mediation, wait until the callback occurs before loading ads to verify that all mediation adapters are initialized.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It's recommended to use some Consent Management Platform to obrain user consent in EEA and regulated US states before initializing the SDK. You can use <a href="https://fab.com/s/b1cdf3b0e8c8">Google UMP plugin</a> for that. It is also required by <strong><code>Enable automatic SDK initialization on start-up</code></strong> setting in Project Settings, which allows you to skip this step entirely.</p>
 </div>
-<div class="tabbed-block">
-<p><img alt="" src="assets/BindEventToOnLoaded.png" /></p>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p><strong>Load the ad</strong>. Now you can finally load your ad by calling <strong><code>UGoogleAdMobInterstitialAd::Load(const FString&amp; AdUnitID)</code></strong> function! Just remember that the function must be called on the created ad object (i.e. the function won't appear in Blueprints unless the context menu is shown after dragging the pin from this object), and that there are two different Ad Unit IDs for Android and iOS.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">C++</label><label for="__tabbed_4_2">Blueprints</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1">// In header file:</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobInterstitialAd</span><span class="p">;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">FGoogleAdMobResponseInfo</span><span class="p">;</span>
-<span class="c1">// ...</span>
-<span class="n">UPROPERTY</span><span class="p">()</span>
-<span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">InterstitialAd</span><span class="p">;</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">InterstitialAdLoaded</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">);</span>
-
-<span class="c1">// In source file:</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobInterstitialAd.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMob.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobResponseInfo.h&quot;</span>
-<span class="c1">// ...</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::InterstitialAdLoaded</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">)</span><span class="w"> </span>
-<span class="p">{</span><span class="w">      </span>
-<span class="p">}</span>
-<span class="c1">// ...</span>
-<span class="n">InterstitialAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewObject</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="c1">// ...</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">CanRequestAds</span><span class="p">())</span><span class="w"> </span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnLoaded</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">InterstitialAdLoaded</span><span class="p">);</span>
-<span class="cp">#if PLATFORM_ANDROID</span>
-<span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/1033173712&quot;</span><span class="p">));</span>
-<span class="cp">#elif PLATFORM_IOS</span>
-<span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/4411468910&quot;</span><span class="p">));</span>
-<span class="cp">#endif</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="assets/LoadInterstitialAd.png" /></p>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p><strong>Show your interstitial ad</strong>. The last step here is obviously showing your ad when it's loaded. Just call <strong><code>UGoogleAdMobInterstitialAd::Show()</code></strong> when the <strong><code>OnLoaded</code></strong> delegate is broadcast, and you're done!</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">C++</label><label for="__tabbed_5_2">Blueprints</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="c1">// In header file:</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobInterstitialAd</span><span class="p">;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">FGoogleAdMobResponseInfo</span><span class="p">;</span>
-<span class="c1">// ...</span>
-<span class="n">UPROPERTY</span><span class="p">()</span>
-<span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">InterstitialAd</span><span class="p">;</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">InterstitialAdLoaded</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">);</span>
-
-<span class="c1">// In source file:</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobInterstitialAd.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMob.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobResponseInfo.h&quot;</span>
-<span class="c1">// ...</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::InterstitialAdLoaded</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">)</span><span class="w"> </span>
-<span class="p">{</span><span class="w">     </span>
-<span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">Show</span><span class="p">();</span><span class="w"> </span>
-<span class="p">}</span>
-<span class="c1">// ...</span>
-<span class="n">InterstitialAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewObject</span><span class="o">&lt;</span><span class="n">UGoogleAdMobInterstitialAd</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="c1">// ...</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">CanRequestAds</span><span class="p">())</span><span class="w"> </span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">OnLoaded</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">InterstitialAdLoaded</span><span class="p">);</span>
-<span class="cp">#if PLATFORM_ANDROID</span>
-<span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/1033173712&quot;</span><span class="p">));</span>
-<span class="cp">#elif PLATFORM_IOS</span>
-<span class="w">    </span><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/4411468910&quot;</span><span class="p">));</span>
-<span class="cp">#endif</span>
-<span class="p">}</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="assets/ShowInterstitialAd.png" /></p>
-</div>
-</div>
-</div>
-</li>
-</ol>
-<p>Congratilations! You've successfully loaded your first interstitial ad! It might seem a bit overwhelming at first, but once you get it, this plugin will become a powerful tool in your developer hands, and will help you implement a robust mobile ad system in your game. Go on and check out what other features it has to offer!</p>
 <h2 id="select-an-ad-format">Select an ad format</h2>
 <p>Google Mobile Ads SDK is now imported and you're ready to implement other ads. AdMob offers a number of different ad formats, so you can choose the one that best fits your app's user experience.</p>
 <h3 id="banner">Banner</h3>
@@ -1660,8 +1482,8 @@
 <p><a align-left="align-left" class="md-button md-button--primary" href="ad-formats/app-open-ads/">Implement app open ads</a></p>
 <h2 id="sample-projects">Sample projects</h2>
 <ul>
-<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip">Blueprint</a></li>
-<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip">C++</a></li>
+<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-bp.zip">Blueprint</a></li>
+<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-cpp.zip">C++</a></li>
 </ul>
 
 
@@ -1683,7 +1505,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 8, 2025 00:26:14 UTC">October 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 8, 2025 22:52:51 UTC">October 8, 2025</span>
   </span>
 
     
