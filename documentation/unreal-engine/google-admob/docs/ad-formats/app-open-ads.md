@@ -71,7 +71,7 @@ Your ad should show quickly, so it's best to load your ad before you need to dis
     // ...
     AppOpenAd = NewObject<UGoogleAdMobAppOpenAd>(this);
     AppOpenAd->OnDismissed.AddUObject(this, &UYourClass::LoadAppOpenAd);
-    AppOpenAd->OnFailedToShow.AddLambda([](const UGoogleAdMobAdError& AdError)
+    AppOpenAd->OnFailedToShow.AddLambda([this](const UGoogleAdMobAdError& AdError)
     {
         UE_LOG(LogTemp, Display, TEXT("App Open Ad failed to show with error: %s"), *AdError.Message);
         LoadAppOpenAd();

@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary }
+
 # Banner ads
 
 ![](../assets/format-banner.png){ align=left }
@@ -30,10 +32,7 @@ The following table lists the standard banner sizes.
 
 ## Prerequisites
 
-Complete the following steps described in the [Get Started guide](../index.md):
-
--   [Set up your app in your AdMob account](../index.md#set-up-your-app-in-your-admob-account).
--   [Configure your project](../index.md#configure-your-project).
+Complete the [Get Started guide](../index.md):
 
 ## Always test with test ads
 
@@ -64,15 +63,11 @@ Create a __`UGoogleAdMobBannerAd`__ object and then call __`Load()`__ method on 
 
     ``` c++
     class UGoogleAdMobBannerAd;
-    struct UGoogleAdMobResponseInfo;
     // ...
     UPROPERTY()
     TObjectPtr<UGoogleAdMobBannerAd> BannerAd;
 
     bool bIsShown = false;
-
-    UFUNCTION()
-    void OnLoaded(const UGoogleAdMobResponseInfo& ResponseInfo);
     ```
 
     Source:
@@ -83,28 +78,23 @@ Create a __`UGoogleAdMobBannerAd`__ object and then call __`Load()`__ method on 
     #include "GoogleAdMobResponseInfo.h"
     // ...
     BannerAd = NewObject<UGoogleAdMobBannerAd>(this);
-    BannerAd->OnLoaded.AddDynamic(this, &UYourClass::OnLoaded);
-    if (UGoogleAdMob::CanRequestAds())
-    {
-    #if PLATFORM_ANDROID
-        if (BannerSize == EGoogleAdMobBannerSize::ADAPTIVE)
-            BannerAd->Load("ca-app-pub-3940256099942544/9214589741", BannerSize, CollapsibleBannerPlacement);
-        else 
-            BannerAd->Load("ca-app-pub-3940256099942544/6300978111", BannerSize, CollapsibleBannerPlacement);
-    #elif PLATFORM_IOS
-        if (BannerSize == EGoogleAdMobBannerSize::ADAPTIVE)
-            BannerAd->Load("ca-app-pub-3940256099942544/2435281174", BannerSize, CollapsibleBannerPlacement);
-        else
-            BannerAd->Load("ca-app-pub-3940256099942544/2934735716", BannerSize, CollapsibleBannerPlacement);
-    #endif
-    }
-    // ...
-    void UYourClass::OnLoaded()
+    BannerAd->OnLoaded.AddLambda([this](const FGoogleAdMobResponseInfo& ResponseInfo)
     {
         if (bIsShown) return;
         BannerAd->Show(BannerPosition);
         bIsShown = true;
-    }
+    });
+    #if PLATFORM_ANDROID
+    if (BannerSize == EGoogleAdMobBannerSize::Adaptive)
+        BannerAd->Load("ca-app-pub-3940256099942544/9214589741", BannerSize, CollapsibleBannerPlacement);
+    else 
+        BannerAd->Load("ca-app-pub-3940256099942544/6300978111", BannerSize);
+    #elif PLATFORM_IOS
+    if (BannerSize == EGoogleAdMobBannerSize::Adaptive)
+        BannerAd->Load("ca-app-pub-3940256099942544/2435281174", BannerSize, CollapsibleBannerPlacement);
+    else
+        BannerAd->Load("ca-app-pub-3940256099942544/2934735716", BannerSize);
+    #endif
     ```
 
 === "Blueprints"
@@ -123,15 +113,29 @@ If you configured your ad unit to refresh, you don't need to request another ad 
 
     When setting a refresh rate in the AdMob UI, the automatic refresh occurs only if the banner is visible on screen.
 
+## Hide the ad
+
+You can hide an ad and show it later without having to reaload it. It doesn't release any resources and just removes the banner ad from the view.
+
+=== "C++"
+    
+    ``` c++
+    BannerAd->Hide();
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/HideBannerAd.png)
+
 ## Release an ad resource
 
-When you are finished using a banner ad, you can release the banner ad's resources. To do it, just call __`Remove()`__ method on the banner ad.
+When you are finished using a banner ad, you can release the banner ad's resources. To do it, just call __`Destroy()`__ method on the banner ad.
 
 === "C++"
 
     ``` c++
     // ...
-    BannerAd->Remove();
+    BannerAd->Destroy();
     bIsShown = false;
     // ...
     ```
@@ -146,50 +150,19 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
 === "C++"
 
-    Header:
-
-    ``` c++
-    struct UGoogleAdMobResponseInfo;
-    struct UGoogleAdMobAdError;
-    struct UGoogleAdMobAdValue;
-    // ...
-    UFUNCTION()
-    void OnLoaded(const UGoogleAdMobResponseInfo& ResponseInfo);
-
-    UFUNCTION()
-    void OnFailedToLoad(const UGoogleAdMobAdError& LoadAdError, const UGoogleAdMobResponseInfo& ResponseInfo);
-
-    UFUNCTION()
-    void OnClicked();
-
-    UFUNCTION()
-    void OnImpression();
-
-    UFUNCTION()
-    void OnOpened();
-
-    UFUNCTION()
-    void OnClosed();
-
-    UFUNCTION()
-    void OnPaidEvent(const UGoogleAdMobAdValue& AdValue);
-    ```
-
-    Source:
-
     ``` c++
     #include "GoogleAdMobBannerAd.h"
     #include "GoogleAdMobResponseInfo.h"
     #include "GoogleAdMobAdError.h"
     #include "GoogleAdMobAdValue.h"
     // ...
-    BannerAd->OnLoaded.AddDynamic(this, &UYourClass::OnLoaded);
-    BannerAd->OnFailedToLoad.AddDynamic(this, &UYourClass::OnFailedToLoad);
-    BannerAd->OnClicked.AddDynamic(this, &UYourClass::OnClicked);
-    BannerAd->OnImpression.AddDynamic(this, &UYourClass::OnImpression);
-    BannerAd->OnOpened.AddDynamic(this, &UYourClass::OnOpened);
-    BannerAd->OnClosed.AddDynamic(this, &UYourClass::OnClosed);
-    BannerAd->OnPaidEvent.AddDynamic(this, &UYourClass::OnPaidEvent);
+    BannerAd->OnLoaded.AddLambda([](const UGoogleAdMobResponseInfo& ResponseInfo){});
+    BannerAd->OnFailedToLoad.AddLambda([](const UGoogleAdMobAdError& LoadAdError, const UGoogleAdMobResponseInfo& ResponseInfo){});
+    BannerAd->OnClicked.AddLambda([](){});
+    BannerAd->OnImpression.AddLambda([](){});
+    BannerAd->OnOpened.AddLambda([](){});
+    BannerAd->OnClosed.AddLambda([](){});
+    BannerAd->OnPaidEvent.AddLambda([](const UGoogleAdMobAdValue& AdValue){});
     ```
 
 === "Blueprints"
@@ -208,5 +181,5 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
 ## Sample projects
 
-- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip)
-- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip)
+- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-bp.zip)
+- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-cpp.zip)
