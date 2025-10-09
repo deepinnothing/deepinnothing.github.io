@@ -112,6 +112,28 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
     ![](../assets/RewardedAdDelegates.png)
 
+## Validate server-side verification (SSV) callbacks `(Optional)`
+
+Apps that require extra data in [server-side verification](https://developers.google.com/admob/unity/ssv) callbacks should use the custom data feature of rewarded ads. Any string value set on a rewarded ad object is passed to the __`custom_data`__ query parameter of the SSV callback. If no custom data value is set, the __`custom_data`__ query parameter value won't be present in the SSV callback.
+
+=== "C++"
+
+    ``` c++
+    #include "GoogleAdMobRewardedInterstitialAd.h"
+    // ...
+    RewardedInterstitialAd->SetSSVCustomData(TEXT("CUSTOM_DATA_STRING"));
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/SetSSVCustomData.png)
+
+If you want to set the custom reward string, you must do so before showing the ad.
+
+!!! note
+
+    The custom reward string is [percent escaped](https://en.wikipedia.org/wiki/Percent-encoding) and might require decoding when parsed from the SSV callback.
+
 ## Sample projects
 
 - [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-bp.zip)

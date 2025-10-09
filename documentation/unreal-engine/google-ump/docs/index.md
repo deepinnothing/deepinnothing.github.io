@@ -1,4 +1,4 @@
-[If you like this plugin, please, rate it on Fab. Thank you!](#){ .md-button .md-button--primary }
+[If you like this plugin, please, rate it on Fab. Thank you!](#){ .md-button .md-button--primary .full-width }
 
 # Get started
 
