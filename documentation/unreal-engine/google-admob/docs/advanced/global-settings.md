@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary .full-width }
+
 # Global settings
 
 ## Video ad volume control
@@ -37,3 +39,25 @@ By default, the app volume is set to __`1`__ (the current device volume), and th
 !!! note
 
     Video ads that are ineligible to be shown with muted audio are not returned for ad requests made when the app volume is reported as muted or set to a value of __0__. This may restrict a subset of the broader video ads pool from serving.
+
+## Consent for cookies
+
+If your app has special requirements, you can set the optional __`gad_has_consent_for_cookies`__ preference. The SDK will enable limited ads (LTD) when the __`gad_has_consent_for_cookies`__ preference is set to false.
+
+=== "C++"
+
+    ``` c++
+    #include "GoogleAdMob.h"
+    // ...
+    UGoogleAdMob::SetConsentForCookies(false);
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/SetConsentForCookies.png)
+
+## Crash reporting `(iOS only)`
+
+Google Mobile Ads SDK inspects exceptions that occur in an iOS app and records them if they were caused by the SDK. These exceptions are then addressed in future SDK versions.
+
+Crash reporting is enabled by default. If you don't want SDK-related exceptions to be recorded, you can disable this feature by setting __`Disable SDK Crash Reporting`__ in Project Settings to true.

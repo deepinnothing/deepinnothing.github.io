@@ -1,13 +1,12 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary .full-width }
+
 # Targeting
 
 This guide explains how to provide targeting information to the Google Mobile Ads SDK.
 
 ## Prerequisite
 
--   Complete the following steps described in the [Get Started guide](../index.md):
-    
-    -   [Set up your app in your AdMob account](../index.md#set-up-your-app-in-your-admob-account).
-    -   [Configure your project](../index.md#configure-your-project).
+-   Complete the [Get Started guide](../index.md).
 
 ## Child-directed setting
 
@@ -20,6 +19,8 @@ As an app developer, you can indicate whether you want Google to treat your cont
 -   Choose __`TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE`__ to indicate that you want your content treated as child-directed for purposes of COPPA. This prevents the transmission of the [Android advertising identifier (AAID)](https://support.google.com/googleplay/android-developer/answer/6048248) and Advertising Identifier, IDFA on iOS.
 -   Choose __`TAG_FOR_CHILD_DIRECTED_TREATMENT_FALSE`__ to indicate that you don't want your content treated as child-directed for purposes of COPPA.
 -   Choose __`TAG_FOR_CHILD_DIRECTED_TREATMENT_UNSPECIFIED`__ if you don't want to indicate how you would like your content treated with respect to COPPA in ad requests.
+
+You can also change the default value set in Project Setting at runtime by calling __`UGoogleAdMob::SetTagForChildDirectedTreatment()`__ function.
 
 !!! note
 
@@ -36,6 +37,8 @@ When using this feature, a Tag For Users under the Age of Consent in Europe (TFU
 -   Choose __`TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE`__ to indicate that you want the ad request to receive treatment for users in the European Economic Area (EEA) under the age of consent. This also prevents the transmission of the Android advertising identifier (AAID) and Advertising Identifier, IDFA on iOS.
 -   Choose __`TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE`__ to indicate that you want the ad request to not receive treatment for users in the European Economic Area (EEA) under the age of consent.
 -   Choose __`TAG_FOR_UNDER_AGE_OF_CONSENT_UNSPECIFIED`__ to indicate that you have not specified whether the ad request should receive treatment for users in the European Economic Area (EEA) under the age of consent.
+
+You can also change the default value set in Project Setting at runtime by calling __`UGoogleAdMob::SetTagForUnderAgeOfConsent()`__ function.
 
 !!! note
 
@@ -56,6 +59,8 @@ AdMob ads returned when this is configured have a content rating at or below tha
 
 ![](../assets/MaxAdContentRating.png)
 
+You can also change the default value set in Project Setting at runtime by calling __`UGoogleAdMob::SetMaxAdContentRating()`__ function.
+
 Learn more about [setting the maximum ad content rating for an app or account](https://support.google.com/admob/answer/7562142).
 
 !!! note
@@ -72,6 +77,24 @@ The [Publisher Privacy Treatment (PPT) API](https://support.google.com/admob/ans
 
 ![](../assets/PPTState.png)
 
+You can also change the default value set in Project Setting at runtime by calling __`UGoogleAdMob::SetPublisherPrivacyPersonalizationState()`__ function.
+
 !!! note
 
     For ad requests with multiple user privacy signals, the most restrictive signal will take precedence. See the [Publisher Privacy Treatment API](https://support.google.com/admob/answer/14323214) documentation for specific examples.
+
+## Content URL
+
+When requesting an ad, apps can pass the URL of the content they are serving. This enables keyword targeting to match the ad with the content.
+
+For example, if your app is requesting an ad while showing content from https://www.example.com, you can pass this URL to target relevant keywords:
+
+=== "C++"
+
+    ``` c++
+    InterstitialAd->Load(InterstitialAdUnitId, TEXT("https://www.example.com"));
+    ```
+
+=== "Blueprints"
+
+    ![](../assets/LoadAdWithContentUrl.png)

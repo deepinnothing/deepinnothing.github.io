@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary .full-width }
+
 # Ad load errors
 
 When an ad fails to load, an __`OnFailedToLoad`__ delegate is broadcast which provides a __`LoadAdError`__ struct.

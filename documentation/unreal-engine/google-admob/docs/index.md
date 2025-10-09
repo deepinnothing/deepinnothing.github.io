@@ -43,6 +43,22 @@ To use the plugin in your C++ code, you must include `GoogleAdMob` as either a p
 PrivateDependencyModuleNames.Add("GoogleAdMob");
 ```
 
+### Obtain consent from a user
+
+It's highly recommended that you use [Google UMP plugin](https://fab.com/s/b1cdf3b0e8c8) or some other CMP solution to obtain consent from a user before requesting ads, so you comply with GDPR rules in EEA countries and US privacy regulations (e.g. CCPA). If you decide to use a custom solution, you can use the following functions to pass consent choices to the Google AdMob SDK (should be done before initializing it):
+
+=== "C++"
+
+    ``` c++
+    UGoogleAdMob::SetConsent(bIsConsentRequired, bHasUserConsent); // For GDPR
+    UGoogleAdMob::SetRestrictedDataProcessing(bRestrictedDataProcessing); // For US privacy regulations
+    ```
+
+=== "Blueprints"
+
+    ![](assets/SetConsent.png)
+
+
 ### Initialize the SDK
 
 Before loading ads, have your app initialize Google Mobile Ads SDK by calling __`UGoogleAdMob::Initialize()`__. This needs to be done only once, ideally at app launch.

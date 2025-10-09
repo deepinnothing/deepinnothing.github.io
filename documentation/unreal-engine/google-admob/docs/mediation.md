@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary .full-width }
+
 # Mediation
 
 AdMob Mediation is a feature lets you serve ads to your apps from multiple sources, including the AdMob Network and third-party ad sources, in one place. AdMob Mediation helps maximize your fill rate and increase your monetization by sending ad requests to multiple networks to verify you find the best available network to serve ads. [Case study](https://admob.google.com/home/resources/cookapps-grows-ad-revenue-86-times-with-admob-rewarded-ads-and-mediation/).
@@ -47,29 +49,58 @@ Refer to the [Response info]() documentation on MediationAdapterClassName for de
 
 If you need to comply with the [U.S. states privacy laws](https://support.google.com/admob/answer/9561022) or [General Data Protection Regulation (GDPR)](https://support.google.com/admob/answer/7666366), follow the steps in [US state regulations settings](https://support.google.com/admob/answer/10860309) or [GDPR settings](https://support.google.com/admob/answer/10113004#adding_ad_partners_to_published_gdpr_messages) to add your mediation partners in AdMob Privacy & messaging's US states or GDPR ad partners list. Failure to do so can lead to partners failing to serve ads on your app.
 
-Learn more about enabling [restricted data processing (RDP)]() and obtaining GDPR consent with the [Google User Messaging Platform (UMP) SDK](user-messaging-platform.md).
+Learn more about enabling [restricted data processing (RDP)]() and obtaining GDPR consent with the [Google User Messaging Platform (UMP) SDK](https://fab.com/s/b1cdf3b0e8c8).
 
 
 ## Choose networks
 
 AdMob Mediation supports several ad sources, with a mix of bidding and waterfall mediation integrations. To add one of the networks, you need to choose an appropriate guide from Google from the table below and complete __first 2 steps__ from it, and then enable this mediation network in __Project Settings__. Select an ad source for integration instructions specific to that ad source:
 
-| Ad Source | App Open | Banner | Interstitial | Rewarded | Rewarded Interstitial | Bidding | Ad source optimization support | Plugin Version |
+| Ad Source | App Open | Banner | Interstitial | Rewarded | Rewarded Interstitial | Bidding | Ad source optimization support |
 | --------- | :------: | :----: | :----------: | :------: | :-------------------: | :-----: | :----------------------------- | :------------- |
-| AppLovin ([Android](https://developers.google.com/admob/android/mediation/applovin) \| [iOS](https://developers.google.com/admob/ios/mediation/applovin)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| InMobi ([Android](https://developers.google.com/admob/android/mediation/inmobi) \| [iOS](https://developers.google.com/admob/ios/mediation/inmobi)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| ironSource ([Android](https://developers.google.com/admob/android/mediation/ironsource) \| [iOS](https://developers.google.com/admob/ios/mediation/ironsource)) | | :material-check: | :material-check: | :material-check: | :material-check: | :material-check: | Country-specific | 1.0.0+ |
-| Liftoff&nbsp;Monetize ([Android](https://developers.google.com/admob/android/mediation/liftoff-monetize) \| [iOS](https://developers.google.com/admob/ios/mediation/liftoff-monetize)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| LINE Ads Network ([Android](https://developers.google.com/admob/android/mediation/line) \| [iOS](https://developers.google.com/admob/ios/mediation/line)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| Meta Audience Network ([Android](https://developers.google.com/admob/android/mediation/meta) \| [iOS](https://developers.google.com/admob/ios/mediation/meta)) | | :material-check: | :material-check: | :material-check: | :material-check: | :material-check: | Bidding only | 1.0.0+ |
-| Mintegral ([Android](https://developers.google.com/admob/android/mediation/mintegral) \| [iOS](https://developers.google.com/admob/ios/mediation/mintegral)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| Moloco ([Android](https://developers.google.com/admob/android/mediation/moloco) \| [iOS](https://developers.google.com/admob/ios/mediation/moloco)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.1.0+ |
-| Pangle ([Android](https://developers.google.com/admob/android/mediation/pangle) \| [iOS](https://developers.google.com/admob/ios/mediation/pangle)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
-| Unity Ads ([Android](https://developers.google.com/admob/android/mediation/unity) \| [iOS](https://developers.google.com/admob/ios/mediation/unity)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific | 1.0.0+ |
+| AppLovin ([Android](https://developers.google.com/admob/android/mediation/applovin) \| [iOS](https://developers.google.com/admob/ios/mediation/applovin)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific |
+| Chartboost ([Android](https://developers.google.com/admob/android/mediation/chartboost) \| [iOS](https://developers.google.com/admob/ios/mediation/chartboost)) | | :material-check: | :material-check: | :material-check: | | | Country-specific |
+| DT Exchange ([Android](https://developers.google.com/admob/android/mediation/dt-exchange) \| [iOS](https://developers.google.com/admob/ios/mediation/dt-exchange)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific |
+| i-mobile ([Android](https://developers.google.com/admob/android/mediation/imobile) \| [iOS](https://developers.google.com/admob/ios/mediation/imobile)) | | :material-check: | :material-check: | | | | Japan only |
+| InMobi ([Android](https://developers.google.com/admob/android/mediation/inmobi) \| [iOS](https://developers.google.com/admob/ios/mediation/inmobi)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific |
+| ironSource ([Android](https://developers.google.com/admob/android/mediation/ironsource) \| [iOS](https://developers.google.com/admob/ios/mediation/ironsource)) | | :material-check: | :material-check: | :material-check: | :material-check: | :material-check: | Country-specific |
+| Liftoff&nbsp;Monetize ([Android](https://developers.google.com/admob/android/mediation/liftoff-monetize) \| [iOS](https://developers.google.com/admob/ios/mediation/liftoff-monetize)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific |
+| LINE Ads Network ([Android](https://developers.google.com/admob/android/mediation/line) \| [iOS](https://developers.google.com/admob/ios/mediation/line)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific |
+| maio ([Android](https://developers.google.com/admob/android/mediation/maio) \| [iOS](https://developers.google.com/admob/ios/mediation/maio)) | | | :material-check: | :material-check: | | | Japan only |
+| Meta Audience Network ([Android](https://developers.google.com/admob/android/mediation/meta) \| [iOS](https://developers.google.com/admob/ios/mediation/meta)) | | :material-check: | :material-check: | :material-check: | :material-check: | :material-check: | Bidding only |
+| Mintegral ([Android](https://developers.google.com/admob/android/mediation/mintegral) \| [iOS](https://developers.google.com/admob/ios/mediation/mintegral)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific |
+| Moloco ([Android](https://developers.google.com/admob/android/mediation/moloco) \| [iOS](https://developers.google.com/admob/ios/mediation/moloco)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific |
+| Pangle ([Android](https://developers.google.com/admob/android/mediation/pangle) \| [iOS](https://developers.google.com/admob/ios/mediation/pangle)) | :material-check: | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific |
+| Unity Ads ([Android](https://developers.google.com/admob/android/mediation/unity) \| [iOS](https://developers.google.com/admob/ios/mediation/unity)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific |
+| VK Ads ([Android](https://developers.google.com/admob/android/mediation/mytarget) \| [iOS](https://developers.google.com/admob/ios/mediation/mytarget)) | | :material-check: | :material-check: | :material-check: | | | Country-specific |
+
+### Network-specific optional steps
+
+Some mediation networks support additional request parameters which can improve targeting and ad serving performance. The following functions are available:
+
+- __`UGoogleAdMob::SetAdditionalRequestParametersAppLovin()`__
+- __`UGoogleAdMob::SetAdditionalRequestParametersDTExchange()`__
+- __`UGoogleAdMob::SetAdditionalRequestParametersInMobi()`__
+- __`UGoogleAdMob::SetAdditionalRequestParametersLiftoffMonetize()`__
+- __`UGoogleAdMob::SetAdditionalRequestParametersLineAdsNetwork()`__
+- __`UGoogleAdMob::SetAdditionalRequestParametersVKAds()`__
+
+To reset previously set request parameters call the following functions:
+
+- __`UGoogleAdMob::ClearAdditionalRequestParametersAppLovin()`__
+- __`UGoogleAdMob::ClearAdditionalRequestParametersDTExchange()`__
+- __`UGoogleAdMob::ClearAdditionalRequestParametersInMobi()`__
+- __`UGoogleAdMob::ClearAdditionalRequestParametersLiftoffMonetize()`__
+- __`UGoogleAdMob::ClearAdditionalRequestParametersLineAdsNetwork()`__
+- __`UGoogleAdMob::ClearAdditionalRequestParametersVKAds()`__
+
+Chartboost and InMobi networks recommend adding additional optional permissions on Android to improve ad performance:
+
+![](assets/OptionalPermissions.png)
 
 !!! note
 
-    The project won't package for Android if both __`LINE Ads Network`__ and __`Generate universal APK from bundle`__ are set to __`True`__.
+    Some of this permissions are not recommended to be added if they are not required by your app to function.
 
 ### Ad source optimization
 

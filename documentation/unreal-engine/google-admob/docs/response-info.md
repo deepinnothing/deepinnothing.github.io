@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary .full-width }
+
 # Retrieve information about the ad response
 
 For debugging and logging purposes, successfully loaded ads (as well as those that failed to load) provide a __`ResponseInfo`__ struct. This object contains information about the ad it loaded (or not), in addition to information about the mediation waterfall used to load the ad.

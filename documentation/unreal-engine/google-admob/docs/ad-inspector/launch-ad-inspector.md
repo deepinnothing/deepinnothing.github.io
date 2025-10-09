@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary .full-width }
+
 # Launch ad inspector
 
 Before you test your ad integration, you must launch ad inspector in your app. This page covers how to launch ad inspector using gestures and how to launch programmatically.
