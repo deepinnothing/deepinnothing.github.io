@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary .full-width }
+
 # Rewarded ads
 
 ![](../assets/format-rewarded.png){ align=left }
@@ -6,10 +8,7 @@
 
 ## Prerequisites
 
-Complete the following steps described in the [Get Started guide](../index.md):
-
--   [Set up your app in your AdMob account](../index.md#set-up-your-app-in-your-admob-account).
--   [Configure your project](../index.md#configure-your-project).
+Complete the [Get Started guide](../index.md).
 
 ## Always test with test ads
 
@@ -43,18 +42,14 @@ To load a rewarded ad, create an instance of __`UGoogleAdMobRewardedAd`__ class 
     Source:
 
     ``` c++
-    #include "GoogleAdMob.h"
     #include "GoogleAdMobRewardedAd.h"
     // ...
     RewardedAd = NewObject<UGoogleAdMobRewardedAd>(this);
-    if (UGoogleAdMob::CanRequestAds())
-    {
     #if PLATFORM_ANDROID
-        RewardedAd->Load("ca-app-pub-3940256099942544/5224354917");
+    RewardedAd->Load("ca-app-pub-3940256099942544/5224354917");
     #elif PLATFORM_IOS
-        RewardedAd->Load("ca-app-pub-3940256099942544/1712485313");
+    RewardedAd->Load("ca-app-pub-3940256099942544/1712485313");
     #endif
-    }
     ```
 
 === "Blueprints"
@@ -72,6 +67,10 @@ When you show a rewarded ad, you will use a __`OnUserEarnedReward`__ delegate to
 === "C++"
 
     ``` c++
+    RewardedAd->OnUserEarnedReward.AddLambda([](int32 RewardAmount, const FString& RewardType)
+    {
+        UE_LOG(LogTemp, Display, TEXT("User earned reward: %d %s"), RewardAmount, *RewardType);
+    });
     if (RewardedAd->IsReady())
     {
         RewardedAd->Show();
@@ -88,58 +87,21 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
 === "C++"
 
-    Header:
-
-    ``` c++
-    struct UGoogleAdMobResponseInfo;
-    struct UGoogleAdMobAdError;
-    struct UGoogleAdMobAdValue;
-    // ...
-    UFUNCTION()
-    void OnLoaded(const UGoogleAdMobResponseInfo& ResponseInfo);
-
-    UFUNCTION()
-    void OnFailedToLoad(const UGoogleAdMobAdError& LoadAdError, const UGoogleAdMobResponseInfo& ResponseInfo);
-
-    UFUNCTION()
-    void OnFailedToShow(const UGoogleAdMobAdError& AdError);
-
-    UFUNCTION()
-    void OnShown();
-
-    UFUNCTION()
-    void OnClicked();
-
-    UFUNCTION()
-    void OnImpression();
-
-    UFUNCTION()
-    void OnDismissed();
-
-    UFUNCTION()
-    void OnPaidEvent(const UGoogleAdMobAdValue& AdValue);
-
-    UFUNCTION()
-    void OnUserEarnedReward(int32 RewardAmount, const FString& RewardType);
-    ```
-
-    Source:
-
     ``` c++
     #include "GoogleAdMobRewardedAd.h"
     #include "GoogleAdMobResponseInfo.h"
     #include "GoogleAdMobAdError.h"
     #include "GoogleAdMobAdValue.h"
     // ...
-    RewardedAd->OnLoaded.AddDynamic(this, &UYourClass::OnLoaded);
-    RewardedAd->OnFailedToLoad.AddDynamic(this, &UYourClass::OnFailedToLoad);
-    RewardedAd->OnFailedToShow.AddDynamic(this, &UYourClass::OnFailedToShow);
-    RewardedAd->OnShown.AddDynamic(this, &UYourClass::OnShown);
-    RewardedAd->OnClicked.AddDynamic(this, &UYourClass::OnClicked);
-    RewardedAd->OnImpression.AddDynamic(this, &UYourClass::OnImpression);
-    RewardedAd->OnDismissed.AddDynamic(this, &UYourClass::OnDismissed);
-    RewardedAd->OnPaidEvent.AddDynamic(this, &UYourClass::OnPaidEvent);
-    RewardedAd->OnUserEarnedReward.AddDynamic(this, &UYourClass::OnUserEarnedReward);
+    RewardedAd->OnLoaded.AddLambda([](const UGoogleAdMobResponseInfo& ResponseInfo){});
+    RewardedAd->OnFailedToLoad.AddLambda([](const UGoogleAdMobAdError& LoadAdError, const UGoogleAdMobResponseInfo& ResponseInfo){});
+    RewardedAd->OnClicked.AddLambda([](){});
+    RewardedAd->OnImpression.AddLambda([](){});
+    RewardedAd->OnShown.AddLambda([](){});
+    RewardedAd->OnFailedToShow.AddLambda([](const UGoogleAdMobAdError& AdError){});
+    RewardedAd->OnDismissed.AddLambda([](){});
+    RewardedAd->OnPaidEvent.AddLambda([](const UGoogleAdMobAdValue& AdValue){});
+    RewardedAd->OnUserEarnedReward.AddLambda([](int32 RewardAmount, const FString& RewardType){});
     ```
 
 === "Blueprints"
@@ -162,5 +124,5 @@ For Google ads, __`OnUserEarnedReward`__ is broadcast before the __`OnDismissed`
 
 ## Sample projects
 
-- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip)
-- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip) 
+- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-bp.zip)
+- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-cpp.zip) 

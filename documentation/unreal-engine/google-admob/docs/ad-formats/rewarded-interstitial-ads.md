@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary .full-width }
+
 # Rewarded interstitial ads
 
 ![](../assets/format-rewarded-interstitial.png){ align=left }
@@ -6,10 +8,7 @@
 
 ## Prerequisites
 
-Complete the following steps described in the [Get Started guide](../index.md):
-
--   [Set up your app in your AdMob account](../index.md#set-up-your-app-in-your-admob-account).
--   [Configure your project](../index.md#configure-your-project).
+Complete the [Get Started guide](../index.md).
 
 ## Always test with test ads
 
@@ -43,18 +42,14 @@ Loading an ad is accomplished using the __`Load()`__ method on the __`UGoogleAdM
     Source:
 
     ``` c++
-    #include "GoogleAdMob.h"
     #include "GoogleAdMobRewardedInterstitialAd.h"
     // ...
     RewardedAd = NewObject<UGoogleAdMobRewardedInterstitialAd>(this);
-    if (UGoogleAdMob::CanRequestAds())
-    {
     #if PLATFORM_ANDROID
-        RewardedInterstitialAd->Load("ca-app-pub-3940256099942544/5354046379");
+    RewardedInterstitialAd->Load("ca-app-pub-3940256099942544/5354046379");
     #elif PLATFORM_IOS
-        RewardedInterstitialAd->Load("ca-app-pub-3940256099942544/6978759866");
+    RewardedInterstitialAd->Load("ca-app-pub-3940256099942544/6978759866");
     #endif
-    }
     ```
 
 === "Blueprints"
@@ -76,6 +71,10 @@ When you show a rewarded interstitial ad, you use a __`OnUserEarnedReward`__ del
 === "C++"
 
     ``` c++
+    RewardedInterstitialAd->OnUserEarnedReward.AddLambda([](int32 RewardAmount, const FString& RewardType)
+    {
+        UE_LOG(LogTemp, Display, TEXT("User earned reward: %d %s"), RewardAmount, *RewardType);
+    });
     if (RewardedInterstitialAd->IsReady())
     {
         RewardedInterstitialAd->Show();
@@ -92,58 +91,21 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
 === "C++"
 
-    Header:
-
-    ``` c++
-    struct UGoogleAdMobResponseInfo;
-    struct UGoogleAdMobAdError;
-    struct UGoogleAdMobAdValue;
-    // ...
-    UFUNCTION()
-    void OnLoaded(const UGoogleAdMobResponseInfo& ResponseInfo);
-
-    UFUNCTION()
-    void OnFailedToLoad(const UGoogleAdMobAdError& LoadAdError, const UGoogleAdMobResponseInfo& ResponseInfo);
-
-    UFUNCTION()
-    void OnFailedToShow(const UGoogleAdMobAdError& AdError);
-
-    UFUNCTION()
-    void OnShown();
-
-    UFUNCTION()
-    void OnClicked();
-
-    UFUNCTION()
-    void OnImpression();
-
-    UFUNCTION()
-    void OnDismissed();
-
-    UFUNCTION()
-    void OnPaidEvent(const UGoogleAdMobAdValue& AdValue);
-
-    UFUNCTION()
-    void OnUserEarnedReward(int32 RewardAmount, const FString& RewardType);
-    ```
-
-    Source:
-
     ``` c++
     #include "GoogleAdMobRewardedInterstitialAd.h"
     #include "GoogleAdMobResponseInfo.h"
     #include "GoogleAdMobAdError.h"
     #include "GoogleAdMobAdValue.h"
     // ...
-    RewardedInterstitialAd->OnLoaded.AddDynamic(this, &UYourClass::OnLoaded);
-    RewardedInterstitialAd->OnFailedToLoad.AddDynamic(this, &UYourClass::OnFailedToLoad);
-    RewardedInterstitialAd->OnFailedToShow.AddDynamic(this, &UYourClass::OnFailedToShow);
-    RewardedInterstitialAd->OnShown.AddDynamic(this, &UYourClass::OnShown);
-    RewardedInterstitialAd->OnClicked.AddDynamic(this, &UYourClass::OnClicked);
-    RewardedInterstitialAd->OnImpression.AddDynamic(this, &UYourClass::OnImpression);
-    RewardedInterstitialAd->OnDismissed.AddDynamic(this, &UYourClass::OnDismissed);
-    RewardedInterstitialAd->OnPaidEvent.AddDynamic(this, &UYourClass::OnPaidEvent);
-    RewardedInterstitialAd->OnUserEarnedReward.AddDynamic(this, &UYourClass::OnUserEarnedReward);
+    RewardedInterstitialAd->OnLoaded.AddLambda([](const UGoogleAdMobResponseInfo& ResponseInfo){});
+    RewardedInterstitialAd->OnFailedToLoad.AddLambda([](const UGoogleAdMobAdError& LoadAdError, const UGoogleAdMobResponseInfo& ResponseInfo){});
+    RewardedInterstitialAd->OnClicked.AddLambda([](){});
+    RewardedInterstitialAd->OnImpression.AddLambda([](){});
+    RewardedInterstitialAd->OnShown.AddLambda([](){});
+    RewardedInterstitialAd->OnFailedToShow.AddLambda([](const UGoogleAdMobAdError& AdError){});
+    RewardedInterstitialAd->OnDismissed.AddLambda([](){});
+    RewardedInterstitialAd->OnPaidEvent.AddLambda([](const UGoogleAdMobAdValue& AdValue){});
+    RewardedInterstitialAd->OnUserEarnedReward.AddLambda([](int32 RewardAmount, const FString& RewardType){});
     ```
 
 === "Blueprints"
@@ -152,5 +114,5 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
 ## Sample projects
 
-- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip)
-- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip) 
+- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-bp.zip)
+- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-cpp.zip) 

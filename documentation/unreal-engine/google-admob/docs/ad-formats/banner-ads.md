@@ -32,7 +32,7 @@ The following table lists the standard banner sizes.
 
 ## Prerequisites
 
-Complete the [Get Started guide](../index.md):
+Complete the [Get Started guide](../index.md).
 
 ## Always test with test ads
 

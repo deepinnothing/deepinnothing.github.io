@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary .full-width }
+
 # Interstitial ads
 
 ![](../assets/format-interstitial.png){ align=left }
@@ -6,10 +8,7 @@ Interstitial ads are full-screen ads that cover the interface of their host app.
 
 ## Prerequisites
 
-Complete the following steps described in the [Get Started guide](../index.md):
-
--   [Set up your app in your AdMob account](../index.md#set-up-your-app-in-your-admob-account).
--   [Configure your project](../index.md#configure-your-project).
+Complete the [Get Started guide](../index.md).
 
 ## Always test with test ads
 
@@ -43,23 +42,19 @@ To load an interstitial ad, create an instance of __`UGoogleAdMobInterstitialAd`
     Source:
 
     ``` c++
-    #include "GoogleAdMob.h"
     #include "GoogleAdMobInterstitialAd.h"
     // ...
     InterstitialAd = NewObject<UGoogleAdMobInterstitialAd>(this);
-    if (UGoogleAdMob::CanRequestAds())
-    {
     #if PLATFORM_ANDROID
-        InterstitialAd->Load("ca-app-pub-3940256099942544/1033173712");
+    InterstitialAd->Load("ca-app-pub-3940256099942544/1033173712");
     #elif PLATFORM_IOS
-        InterstitialAd->Load("ca-app-pub-3940256099942544/4411468910");
+    InterstitialAd->Load("ca-app-pub-3940256099942544/4411468910");
     #endif
-    }
     ```
 
 === "Blueprints"
 
-    ![](../assets/LoadInterstitial.png)
+    ![](../assets/LoadInterstitialAd.png)
 
 !!! tip
 
@@ -80,7 +75,7 @@ Interstitial ads should be displayed during natural pauses in the flow of an app
 
 === "Blueprints"
 
-    ![](../assets/ShowInterstitial.png)
+    ![](../assets/ShowInterstitialAd.png)
 
 ## Ad events
 
@@ -88,54 +83,20 @@ You can listen for a number of events in the ad's lifecycle, including loading, 
 
 === "C++"
 
-    Header:
-
-    ``` c++
-    struct UGoogleAdMobResponseInfo;
-    struct UGoogleAdMobAdError;
-    struct UGoogleAdMobAdValue;
-    // ...
-    UFUNCTION()
-    void OnLoaded(const UGoogleAdMobResponseInfo& ResponseInfo);
-
-    UFUNCTION()
-    void OnFailedToLoad(const UGoogleAdMobAdError& LoadAdError, const UGoogleAdMobResponseInfo& ResponseInfo);
-
-    UFUNCTION()
-    void OnFailedToShow(const UGoogleAdMobAdError& AdError);
-
-    UFUNCTION()
-    void OnShown();
-
-    UFUNCTION()
-    void OnClicked();
-
-    UFUNCTION()
-    void OnImpression();
-
-    UFUNCTION()
-    void OnDismissed();
-
-    UFUNCTION()
-    void OnPaidEvent(const UGoogleAdMobAdValue& AdValue);
-    ```
-
-    Source:
-
     ``` c++
     #include "GoogleAdMobInterstitialAd.h"
     #include "GoogleAdMobResponseInfo.h"
     #include "GoogleAdMobAdError.h"
     #include "GoogleAdMobAdValue.h"
     // ...
-    InterstitialAd->OnLoaded.AddDynamic(this, &UYourClass::OnLoaded);
-    InterstitialAd->OnFailedToLoad.AddDynamic(this, &UYourClass::OnFailedToLoad);
-    InterstitialAd->OnFailedToShow.AddDynamic(this, &UYourClass::OnFailedToShow);
-    InterstitialAd->OnShown.AddDynamic(this, &UYourClass::OnShown);
-    InterstitialAd->OnClicked.AddDynamic(this, &UYourClass::OnClicked);
-    InterstitialAd->OnImpression.AddDynamic(this, &UYourClass::OnImpression);
-    InterstitialAd->OnDismissed.AddDynamic(this, &UYourClass::OnDismissed);
-    InterstitialAd->OnPaidEvent.AddDynamic(this, &UYourClass::OnPaidEvent);
+    InterstitialAd->OnLoaded.AddLambda([](const UGoogleAdMobResponseInfo& ResponseInfo){});
+    InterstitialAd->OnFailedToLoad.AddLambda([](const UGoogleAdMobAdError& LoadAdError, const UGoogleAdMobResponseInfo& ResponseInfo){});
+    InterstitialAd->OnClicked.AddLambda([](){});
+    InterstitialAd->OnImpression.AddLambda([](){});
+    InterstitialAd->OnShown.AddLambda([](){});
+    InterstitialAd->OnFailedToShow.AddLambda([](const UGoogleAdMobAdError& AdError){});
+    InterstitialAd->OnDismissed.AddLambda([](){});
+    InterstitialAd->OnPaidEvent.AddLambda([](const UGoogleAdMobAdValue& AdValue){});
     ```
 
 === "Blueprints"
@@ -162,5 +123,5 @@ While increasing the frequency of interstitial ads in your app might seem like a
 
 ## Sample projects
 
-- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip)
-- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip) 
+- [Blueprint](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-bp.zip)
+- [C++](https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-cpp.zip) 

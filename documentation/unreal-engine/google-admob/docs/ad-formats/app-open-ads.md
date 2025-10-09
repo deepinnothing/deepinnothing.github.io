@@ -54,7 +54,6 @@ Your ad should show quickly, so it's best to load your ad before you need to dis
 
     ``` c++
     class UGoogleAdMobAppOpenAd;
-    struct UGoogleAdMobAdError;
     // ...
     UPROPERTY()
     TObjectPtr<UGoogleAdMobAppOpenAd> AppOpenAd;
@@ -66,8 +65,8 @@ Your ad should show quickly, so it's best to load your ad before you need to dis
     Source:
 
     ``` c++
-    #include "GoogleAdMob.h"
     #include "GoogleAdMobAppOpenAd.h"
+    #include "GoogleAdMobAdError.h"
     // ...
     AppOpenAd = NewObject<UGoogleAdMobAppOpenAd>(this);
     AppOpenAd->OnDismissed.AddUObject(this, &UYourClass::LoadAppOpenAd);
