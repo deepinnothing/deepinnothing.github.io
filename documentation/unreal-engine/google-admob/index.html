@@ -307,6 +307,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#obtain-consent-from-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtain consent from a user
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#initialize-the-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       Initialize the SDK
@@ -689,7 +698,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    Ad inspector
     
   </span>
   
@@ -1132,7 +1141,7 @@
   
   
   <span class="md-ellipsis">
-    Impression-level ad revenue
+    Impression level ad revenue
     
   </span>
   
@@ -1278,6 +1287,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#obtain-consent-from-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtain consent from a user
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#initialize-the-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       Initialize the SDK
@@ -1407,6 +1425,20 @@
 <p>To use the plugin in your C++ code, you must include <code>GoogleAdMob</code> as either a public or private dependency in your module's build configuration, for example:
 <div class="highlight"><pre><span></span><code><span class="n">PrivateDependencyModuleNames</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;GoogleAdMob&quot;</span><span class="p">);</span>
 </code></pre></div></p>
+<h3 id="obtain-consent-from-a-user">Obtain consent from a user</h3>
+<p>It's highly recommended that you use <a href="https://fab.com/s/b1cdf3b0e8c8">Google UMP plugin</a> or some other CMP solution to obtain consent from a user before requesting ads, so you comply with GDPR rules in EEA countries and US privacy regulations (e.g. CCPA). If you decide to use a custom solution, you can use the following functions to pass consent choices to the Google AdMob SDK (should be done before initializing it):</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">SetConsent</span><span class="p">(</span><span class="n">bIsConsentRequired</span><span class="p">,</span><span class="w"> </span><span class="n">bHasUserConsent</span><span class="p">);</span><span class="w"> </span><span class="c1">// For GDPR</span>
+<span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">SetRestrictedDataProcessing</span><span class="p">(</span><span class="n">bRestrictedDataProcessing</span><span class="p">);</span><span class="w"> </span><span class="c1">// For US privacy regulations</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="assets/SetConsent.png" /></p>
+</div>
+</div>
+</div>
 <h3 id="initialize-the-sdk">Initialize the SDK</h3>
 <p>Before loading ads, have your app initialize Google Mobile Ads SDK by calling <strong><code>UGoogleAdMob::Initialize()</code></strong>. This needs to be done only once, ideally at app launch.</p>
 <div class="admonition warning">
@@ -1414,7 +1446,7 @@
 <p>If you need to obtain consent from users in the European Economic Area (EEA), set any request-specific flags, such as <strong><code>SetTagForChildDirectedTreatment()</code></strong> or <strong><code>SetTagForUnderAgeOfConsent()</code></strong>, or otherwise take action before loading ads, ensure you do so before initializing Google Mobile Ads SDK.</p>
 </div>
 <p>Here's an example of how to call <strong><code>UGoogleAdMob::Initialize()</code></strong>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">OnInitializationComplete</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([]()</span>
@@ -1483,7 +1515,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 17:09:44 UTC">October 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 21:07:11 UTC">October 9, 2025</span>
   </span>
 
     

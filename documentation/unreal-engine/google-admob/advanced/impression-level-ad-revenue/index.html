@@ -22,7 +22,7 @@
     
     
       
-        <title>Impression-level ad revenue - Google AdMob: Unreal Engine Plugin Documentation</title>
+        <title>Impression level ad revenue - Google AdMob: Unreal Engine Plugin Documentation</title>
       
     
     
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Impression-level ad revenue
+              Impression level ad revenue
             
           </span>
         </div>
@@ -511,7 +511,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    Ad inspector
     
   </span>
   
@@ -965,7 +965,7 @@
   
   
   <span class="md-ellipsis">
-    Impression-level ad revenue
+    Impression level ad revenue
     
   </span>
   
@@ -978,7 +978,7 @@
   
   
   <span class="md-ellipsis">
-    Impression-level ad revenue
+    Impression level ad revenue
     
   </span>
   
@@ -1188,18 +1188,13 @@
 
 
 
+<p><a class="md-button md-button--primary full-width" href="https://fab.com/s/804df971aef3">If you like this plugin, please, rate it on Fab. Thank you!</a></p>
 <h1 id="impression-level-ad-revenue">Impression-level ad revenue</h1>
 <p>When an impression occurs, Google Mobile Ads SDK provides ad revenue data associated with that impression. You can use the data to calculate a user's lifetime value, or forward the data downstream to other relevant systems.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>Make sure you have <a href="https://support.google.com/admob/answer/11322405">turned on the impression-level ad revenue feature</a> in the AdMob UI.</li>
-<li>
-<p>Complete the following steps described in the <a href="../../">Get Started guide</a>:</p>
-<ul>
-<li><a href="../../#set-up-your-app-in-your-admob-account">Set up your app in your AdMob account</a>.</li>
-<li><a href="../../#configure-your-project">Configure your project</a>.</li>
-</ul>
-</li>
+<li>Complete the<a href="../../">Get Started guide</a>.</li>
 <li>
 <p>Before you can receive any impression-level ad revenue, you need to implement at least one ad format:</p>
 <ul>
@@ -1218,14 +1213,12 @@
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAdValue.h&quot;</span>
 <span class="c1">// ...</span>
-<span class="n">Ad</span><span class="o">-&gt;</span><span class="n">OnPaidEvent</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnPaidEvent</span><span class="p">);</span>
-<span class="c1">// ...</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::OnPaidEvent</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobAdValue</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdValue</span><span class="p">)</span>
+<span class="n">Ad</span><span class="o">-&gt;</span><span class="n">OnPaidEvent</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobAdValue</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdValue</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">AdValue</span><span class="p">.</span><span class="n">ValueMicros</span><span class="p">;</span>
 <span class="w">    </span><span class="n">AdValue</span><span class="p">.</span><span class="n">PrecisionType</span><span class="p">;</span>
 <span class="w">    </span><span class="n">AdValue</span><span class="p">.</span><span class="n">Domain</span><span class="p">;</span><span class="w"> </span><span class="c1">// Currency Code</span>
-<span class="p">}</span>
+<span class="p">});</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1248,32 +1241,32 @@
 </thead>
 <tbody>
 <tr>
-<td><strong><code>UNKNOWN</code></strong></td>
+<td><strong><code>Unknown</code></strong></td>
 <td>An ad value that's unknown. This gets returned when LTV pingback is enabled but there isn't enough data available.</td>
 </tr>
 <tr>
-<td><strong><code>ESTIMATED</code></strong></td>
+<td><strong><code>Estimated</code></strong></td>
 <td>An ad value estimated from aggregated data.</td>
 </tr>
 <tr>
-<td><strong><code>PUBLISHER_PROVIDED</code></strong></td>
+<td><strong><code>PublisherProvided</code></strong></td>
 <td>A publisher provided ad value, such as manual CPMs in a mediation group.</td>
 </tr>
 <tr>
-<td><strong><code>PRECISE</code></strong></td>
+<td><strong><code>Precise</code></strong></td>
 <td>The precise value paid for this ad.</td>
 </tr>
 </tbody>
 </table>
-<p>In the case of AdMob Mediation, AdMob tries to provide an <strong><code>ESTIMATED</code></strong> value for ad sources that are <a href="https://support.google.com/admob/answer/7374110">optimized</a>.</p>
-<p>For non-optimized ad sources, or in cases where there aren't enough aggregated data to report a meaningful estimation, the <strong><code>PUBLISHER_PROVIDED</code></strong> value is returned.</p>
+<p>In the case of AdMob Mediation, AdMob tries to provide an <strong><code>Estimated</code></strong> value for ad sources that are <a href="https://support.google.com/admob/answer/7374110">optimized</a>.</p>
+<p>For non-optimized ad sources, or in cases where there aren't enough aggregated data to report a meaningful estimation, the <strong><code>PublisherProvided</code></strong> value is returned.</p>
 <h3 id="test-impressions-from-bidding-ad-sources">Test impressions from bidding ad sources</h3>
 <p>After an impression-level ad revenue event occurs for a bidding ad source through a test request, you receive only the following values:</p>
 <ul>
-<li><strong><code>UNKNOWN</code></strong>: indicates the precision type.</li>
+<li><strong><code>Unknown</code></strong>: indicates the precision type.</li>
 <li><strong><code>0</code></strong>: indicates the ad value.</li>
 </ul>
-<p>Previously, you might have seen the precision type as a value other than <strong><code>UNKNOWN</code></strong> and an ad value more than <strong><code>0</code></strong>.</p>
+<p>Previously, you might have seen the precision type as a value other than <strong><code>Unknown</code></strong> and an ad value more than <strong><code>0</code></strong>.</p>
 <p>For details on sending a test ad request, see <a href="../../enable-test-ads/#enable-test-devices">Enable test devices</a>.</p>
 
 
@@ -1295,7 +1288,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 17:09:44 UTC">October 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 21:07:11 UTC">October 9, 2025</span>
   </span>
 
     

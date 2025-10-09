@@ -511,7 +511,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    Ad inspector
     
   </span>
   
@@ -986,6 +986,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#consent-for-cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consent for cookies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crash-reporting-ios-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crash reporting (iOS only)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1007,7 +1025,7 @@
   
   
   <span class="md-ellipsis">
-    Impression-level ad revenue
+    Impression level ad revenue
     
   </span>
   
@@ -1106,6 +1124,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#consent-for-cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consent for cookies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crash-reporting-ios-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crash reporting (iOS only)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1122,6 +1158,7 @@
 
 
 
+<p><a class="md-button md-button--primary full-width" href="https://fab.com/s/804df971aef3">If you like this plugin, please, rate it on Fab. Thank you!</a></p>
 <h1 id="global-settings">Global settings</h1>
 <h2 id="video-ad-volume-control">Video ad volume control</h2>
 <p>If your app has its own volume controls (such as custom music or sound effect volumes), disclosing app volume to Google Mobile Ads SDK allows video ads to respect app volume settings. This ensures users receive video ads with the expected audio volume.</p>
@@ -1158,6 +1195,24 @@
 <p class="admonition-title">Note</p>
 <p>Video ads that are ineligible to be shown with muted audio are not returned for ad requests made when the app volume is reported as muted or set to a value of <strong>0</strong>. This may restrict a subset of the broader video ads pool from serving.</p>
 </div>
+<h2 id="consent-for-cookies">Consent for cookies</h2>
+<p>If your app has special requirements, you can set the optional <strong><code>gad_has_consent_for_cookies</code></strong> preference. The SDK will enable limited ads (LTD) when the <strong><code>gad_has_consent_for_cookies</code></strong> preference is set to false.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMob.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">SetConsentForCookies</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/SetConsentForCookies.png" /></p>
+</div>
+</div>
+</div>
+<h2 id="crash-reporting-ios-only">Crash reporting <code>(iOS only)</code></h2>
+<p>Google Mobile Ads SDK inspects exceptions that occur in an iOS app and records them if they were caused by the SDK. These exceptions are then addressed in future SDK versions.</p>
+<p>Crash reporting is enabled by default. If you don't want SDK-related exceptions to be recorded, you can disable this feature by setting <strong><code>Disable SDK Crash Reporting</code></strong> in Project Settings to true.</p>
 
 
 
@@ -1178,7 +1233,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 17:09:44 UTC">October 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 21:07:11 UTC">October 9, 2025</span>
   </span>
 
     

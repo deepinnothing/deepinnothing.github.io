@@ -504,6 +504,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#network-specific-optional-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network-specific optional steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ad-source-optimization" class="md-nav__link">
     <span class="md-ellipsis">
       Ad source optimization
@@ -622,7 +631,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    Ad inspector
     
   </span>
   
@@ -1065,7 +1074,7 @@
   
   
   <span class="md-ellipsis">
-    Impression-level ad revenue
+    Impression level ad revenue
     
   </span>
   
@@ -1202,6 +1211,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#network-specific-optional-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network-specific optional steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ad-source-optimization" class="md-nav__link">
     <span class="md-ellipsis">
       Ad source optimization
@@ -1240,6 +1258,7 @@
 
 
 
+<p><a class="md-button md-button--primary full-width" href="https://fab.com/s/804df971aef3">If you like this plugin, please, rate it on Fab. Thank you!</a></p>
 <h1 id="mediation">Mediation</h1>
 <p>AdMob Mediation is a feature lets you serve ads to your apps from multiple sources, including the AdMob Network and third-party ad sources, in one place. AdMob Mediation helps maximize your fill rate and increase your monetization by sending ad requests to multiple networks to verify you find the best available network to serve ads. <a href="https://admob.google.com/home/resources/cookapps-grows-ad-revenue-86-times-with-admob-rewarded-ads-and-mediation/">Case study</a>.</p>
 <h2 id="prerequisites">Prerequisites</h2>
@@ -1279,139 +1298,50 @@
 <p>Refer to the <a href="">Response info</a> documentation on MediationAdapterClassName for details about this property.</p>
 <h2 id="us-states-privacy-laws-and-gdpr">US states privacy laws and GDPR</h2>
 <p>If you need to comply with the <a href="https://support.google.com/admob/answer/9561022">U.S. states privacy laws</a> or <a href="https://support.google.com/admob/answer/7666366">General Data Protection Regulation (GDPR)</a>, follow the steps in <a href="https://support.google.com/admob/answer/10860309">US state regulations settings</a> or <a href="https://support.google.com/admob/answer/10113004#adding_ad_partners_to_published_gdpr_messages">GDPR settings</a> to add your mediation partners in AdMob Privacy &amp; messaging's US states or GDPR ad partners list. Failure to do so can lead to partners failing to serve ads on your app.</p>
-<p>Learn more about enabling <a href="">restricted data processing (RDP)</a> and obtaining GDPR consent with the <a href="user-messaging-platform.md">Google User Messaging Platform (UMP) SDK</a>.</p>
+<p>Learn more about enabling <a href="">restricted data processing (RDP)</a> and obtaining GDPR consent with the <a href="https://fab.com/s/b1cdf3b0e8c8">Google User Messaging Platform (UMP) SDK</a>.</p>
 <h2 id="choose-networks">Choose networks</h2>
 <p>AdMob Mediation supports several ad sources, with a mix of bidding and waterfall mediation integrations. To add one of the networks, you need to choose an appropriate guide from Google from the table below and complete <strong>first 2 steps</strong> from it, and then enable this mediation network in <strong>Project Settings</strong>. Select an ad source for integration instructions specific to that ad source:</p>
-<table>
-<thead>
-<tr>
-<th>Ad Source</th>
-<th style="text-align: center;">App Open</th>
-<th style="text-align: center;">Banner</th>
-<th style="text-align: center;">Interstitial</th>
-<th style="text-align: center;">Rewarded</th>
-<th style="text-align: center;">Rewarded Interstitial</th>
-<th style="text-align: center;">Bidding</th>
-<th style="text-align: left;">Ad source optimization support</th>
-<th style="text-align: left;">Plugin Version</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AppLovin (<a href="https://developers.google.com/admob/android/mediation/applovin">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/applovin">iOS</a>)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: left;">Country-specific</td>
-<td style="text-align: left;">1.0.0+</td>
-</tr>
-<tr>
-<td>InMobi (<a href="https://developers.google.com/admob/android/mediation/inmobi">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/inmobi">iOS</a>)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: left;">Country-specific</td>
-<td style="text-align: left;">1.0.0+</td>
-</tr>
-<tr>
-<td>ironSource (<a href="https://developers.google.com/admob/android/mediation/ironsource">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/ironsource">iOS</a>)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: left;">Country-specific</td>
-<td style="text-align: left;">1.0.0+</td>
-</tr>
-<tr>
-<td>Liftoff&nbsp;Monetize (<a href="https://developers.google.com/admob/android/mediation/liftoff-monetize">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/liftoff-monetize">iOS</a>)</td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: left;">Country-specific</td>
-<td style="text-align: left;">1.0.0+</td>
-</tr>
-<tr>
-<td>LINE Ads Network (<a href="https://developers.google.com/admob/android/mediation/line">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/line">iOS</a>)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: left;">Country-specific</td>
-<td style="text-align: left;">1.0.0+</td>
-</tr>
-<tr>
-<td>Meta Audience Network (<a href="https://developers.google.com/admob/android/mediation/meta">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/meta">iOS</a>)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: left;">Bidding only</td>
-<td style="text-align: left;">1.0.0+</td>
-</tr>
-<tr>
-<td>Mintegral (<a href="https://developers.google.com/admob/android/mediation/mintegral">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/mintegral">iOS</a>)</td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: left;">Country-specific</td>
-<td style="text-align: left;">1.0.0+</td>
-</tr>
-<tr>
-<td>Moloco (<a href="https://developers.google.com/admob/android/mediation/moloco">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/moloco">iOS</a>)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: left;">Country-specific</td>
-<td style="text-align: left;">1.1.0+</td>
-</tr>
-<tr>
-<td>Pangle (<a href="https://developers.google.com/admob/android/mediation/pangle">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/pangle">iOS</a>)</td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: left;">Country-specific</td>
-<td style="text-align: left;">1.0.0+</td>
-</tr>
-<tr>
-<td>Unity Ads (<a href="https://developers.google.com/admob/android/mediation/unity">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/unity">iOS</a>)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td style="text-align: left;">Country-specific</td>
-<td style="text-align: left;">1.0.0+</td>
-</tr>
-</tbody>
-</table>
+<p>| Ad Source | App Open | Banner | Interstitial | Rewarded | Rewarded Interstitial | Bidding | Ad source optimization support |
+| --------- | :------: | :----: | :----------: | :------: | :-------------------: | :-----: | :----------------------------- | :------------- |
+| AppLovin (<a href="https://developers.google.com/admob/android/mediation/applovin">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/applovin">iOS</a>) | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | Country-specific |
+| Chartboost (<a href="https://developers.google.com/admob/android/mediation/chartboost">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/chartboost">iOS</a>) | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | | Country-specific |
+| DT Exchange (<a href="https://developers.google.com/admob/android/mediation/dt-exchange">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/dt-exchange">iOS</a>) | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | Country-specific |
+| i-mobile (<a href="https://developers.google.com/admob/android/mediation/imobile">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/imobile">iOS</a>) | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | | | Japan only |
+| InMobi (<a href="https://developers.google.com/admob/android/mediation/inmobi">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/inmobi">iOS</a>) | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | Country-specific |
+| ironSource (<a href="https://developers.google.com/admob/android/mediation/ironsource">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/ironsource">iOS</a>) | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | Country-specific |
+| Liftoff&nbsp;Monetize (<a href="https://developers.google.com/admob/android/mediation/liftoff-monetize">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/liftoff-monetize">iOS</a>) | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | Country-specific |
+| LINE Ads Network (<a href="https://developers.google.com/admob/android/mediation/line">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/line">iOS</a>) | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | Country-specific |
+| maio (<a href="https://developers.google.com/admob/android/mediation/maio">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/maio">iOS</a>) | | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | | Japan only |
+| Meta Audience Network (<a href="https://developers.google.com/admob/android/mediation/meta">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/meta">iOS</a>) | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | Bidding only |
+| Mintegral (<a href="https://developers.google.com/admob/android/mediation/mintegral">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/mintegral">iOS</a>) | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | Country-specific |
+| Moloco (<a href="https://developers.google.com/admob/android/mediation/moloco">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/moloco">iOS</a>) | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | Country-specific |
+| Pangle (<a href="https://developers.google.com/admob/android/mediation/pangle">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/pangle">iOS</a>) | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | Country-specific |
+| Unity Ads (<a href="https://developers.google.com/admob/android/mediation/unity">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/unity">iOS</a>) | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | Country-specific |
+| VK Ads (<a href="https://developers.google.com/admob/android/mediation/mytarget">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/mytarget">iOS</a>) | | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span> | | | Country-specific |</p>
+<h3 id="network-specific-optional-steps">Network-specific optional steps</h3>
+<p>Some mediation networks support additional request parameters which can improve targeting and ad serving performance. The following functions are available:</p>
+<ul>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersAppLovin()</code></strong></li>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersDTExchange()</code></strong></li>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersInMobi()</code></strong></li>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersLiftoffMonetize()</code></strong></li>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersLineAdsNetwork()</code></strong></li>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersVKAds()</code></strong></li>
+</ul>
+<p>To reset previously set request parameters call the following functions:</p>
+<ul>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersAppLovin()</code></strong></li>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersDTExchange()</code></strong></li>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersInMobi()</code></strong></li>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersLiftoffMonetize()</code></strong></li>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersLineAdsNetwork()</code></strong></li>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersVKAds()</code></strong></li>
+</ul>
+<p>Chartboost and InMobi networks recommend adding additional optional permissions on Android to improve ad performance:</p>
+<p><img alt="" src="../assets/OptionalPermissions.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The project won't package for Android if both <strong><code>LINE Ads Network</code></strong> and <strong><code>Generate universal APK from bundle</code></strong> are set to <strong><code>True</code></strong>.</p>
+<p>Some of this permissions are not recommended to be added if they are not required by your app to function.</p>
 </div>
 <h3 id="ad-source-optimization">Ad source optimization</h3>
 <p>When you configure multiple ad networks for mediation, you have to specify what order to request these networks by setting their respective <abbr title="cost per thousand impressions">CPM</abbr>. This can be difficult to manage, since ad network performance changes over time.</p>
@@ -1493,7 +1423,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 17:09:44 UTC">October 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 21:07:11 UTC">October 9, 2025</span>
   </span>
 
     
