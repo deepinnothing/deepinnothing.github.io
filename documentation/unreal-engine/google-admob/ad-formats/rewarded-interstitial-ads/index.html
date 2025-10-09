@@ -1212,15 +1212,12 @@
 
 
 
+<p><a class="md-button md-button--primary full-width" href="https://fab.com/s/804df971aef3">If you like this plugin, please, rate it on Fab. Thank you!</a></p>
 <h1 id="rewarded-interstitial-ads">Rewarded interstitial ads</h1>
 <p><img align="left" alt="" src="../../assets/format-rewarded-interstitial.png" /></p>
 <p><a href="https://support.google.com/admob/answer/9884467">Rewarded interstitial</a> is a type of incentivized ad format that lets you offer rewards for ads that appear automatically during natural app transitions. Unlike rewarded ads, users aren't required to opt in to view a rewarded interstitial.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Complete the following steps described in the <a href="../../">Get Started guide</a>:</p>
-<ul>
-<li><a href="../../#set-up-your-app-in-your-admob-account">Set up your app in your AdMob account</a>.</li>
-<li><a href="../../#configure-your-project">Configure your project</a>.</li>
-</ul>
+<p>Complete the <a href="../../">Get Started guide</a>.</p>
 <h2 id="always-test-with-test-ads">Always test with test ads</h2>
 <p>When building and testing your apps, make sure you use test ads rather than live, production ads. Failure to do so can lead to suspension of your account.</p>
 <p>The easiest way to load test ads is to use our dedicated test ad unit ID for rewarded interstitial ads:</p>
@@ -1252,18 +1249,14 @@
 <span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">UGoogleAdMobRewardedInterstitialAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">RewardedInterstitialAd</span><span class="p">;</span>
 </code></pre></div>
 <p>Source:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMob.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobRewardedInterstitialAd.h&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobRewardedInterstitialAd.h&quot;</span>
 <span class="c1">// ...</span>
 <span class="n">RewardedAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewObject</span><span class="o">&lt;</span><span class="n">UGoogleAdMobRewardedInterstitialAd</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">UGoogleAdMob</span><span class="o">::</span><span class="n">CanRequestAds</span><span class="p">())</span>
-<span class="p">{</span>
 <span class="cp">#if PLATFORM_ANDROID</span>
-<span class="w">    </span><span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/5354046379&quot;</span><span class="p">);</span>
+<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/5354046379&quot;</span><span class="p">);</span>
 <span class="cp">#elif PLATFORM_IOS</span>
-<span class="w">    </span><span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/6978759866&quot;</span><span class="p">);</span>
+<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/6978759866&quot;</span><span class="p">);</span>
 <span class="cp">#endif</span>
-<span class="p">}</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1284,7 +1277,11 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">IsReady</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnUserEarnedReward</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">int32</span><span class="w"> </span><span class="n">RewardAmount</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">RewardType</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;User earned reward: %d %s&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">RewardAmount</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">RewardType</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">IsReady</span><span class="p">())</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">Show</span><span class="p">();</span>
 <span class="p">}</span>
@@ -1300,53 +1297,20 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Header:</p>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">UGoogleAdMobResponseInfo</span><span class="p">;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">UGoogleAdMobAdError</span><span class="p">;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">UGoogleAdMobAdValue</span><span class="p">;</span>
-<span class="c1">// ...</span>
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">OnLoaded</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">);</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">OnFailedToLoad</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">LoadAdError</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">);</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">OnFailedToShow</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdError</span><span class="p">);</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">OnShown</span><span class="p">();</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">OnClicked</span><span class="p">();</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">OnImpression</span><span class="p">();</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">OnDismissed</span><span class="p">();</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">OnPaidEvent</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdValue</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdValue</span><span class="p">);</span>
-
-<span class="n">UFUNCTION</span><span class="p">()</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">OnUserEarnedReward</span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">RewardAmount</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">RewardType</span><span class="p">);</span>
-</code></pre></div>
-<p>Source:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobRewardedInterstitialAd.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobResponseInfo.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAdError.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAdValue.h&quot;</span>
 <span class="c1">// ...</span>
-<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnLoaded</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnLoaded</span><span class="p">);</span>
-<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnFailedToLoad</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnFailedToLoad</span><span class="p">);</span>
-<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnFailedToShow</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnFailedToShow</span><span class="p">);</span>
-<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnShown</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnShown</span><span class="p">);</span>
-<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnClicked</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnClicked</span><span class="p">);</span>
-<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnImpression</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnImpression</span><span class="p">);</span>
-<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnDismissed</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnDismissed</span><span class="p">);</span>
-<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnPaidEvent</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnPaidEvent</span><span class="p">);</span>
-<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnUserEarnedReward</span><span class="p">.</span><span class="n">AddDynamic</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">UYourClass</span><span class="o">::</span><span class="n">OnUserEarnedReward</span><span class="p">);</span>
+<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnLoaded</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">){});</span>
+<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnFailedToLoad</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">LoadAdError</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">){});</span>
+<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnClicked</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](){});</span>
+<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnImpression</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](){});</span>
+<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnShown</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](){});</span>
+<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnFailedToShow</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdError</span><span class="p">){});</span>
+<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnDismissed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](){});</span>
+<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnPaidEvent</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdValue</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdValue</span><span class="p">){});</span>
+<span class="n">RewardedInterstitialAd</span><span class="o">-&gt;</span><span class="n">OnUserEarnedReward</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">int32</span><span class="w"> </span><span class="n">RewardAmount</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">RewardType</span><span class="p">){});</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1356,8 +1320,8 @@
 </div>
 <h2 id="sample-projects">Sample projects</h2>
 <ul>
-<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobBP.zip">Blueprint</a></li>
-<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/GoogleAdMobCPP.zip">C++</a> </li>
+<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-bp.zip">Blueprint</a></li>
+<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-cpp.zip">C++</a> </li>
 </ul>
 
 
@@ -1379,7 +1343,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 15:38:12 UTC">October 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 17:09:44 UTC">October 9, 2025</span>
   </span>
 
     
