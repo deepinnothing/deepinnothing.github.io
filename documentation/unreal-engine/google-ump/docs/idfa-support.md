@@ -27,7 +27,7 @@ The usage description appears as part of the IDFA ATT alert when you present the
 
 ## Testing
 
-While testing, remember that the ATT alert only appears a single time since __`[requestTrackingAuthorization](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/3547037-requesttrackingauthorization)`__ is a one-time request. The UMP SDK only has a form available to load if the authorization status is __`[ATTrackingManagerAuthorizationStatusNotDetermined](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanagerauthorizationstatus/attrackingmanagerauthorizationstatusnotdetermined?language=objc)`__.
+While testing, remember that the ATT alert only appears a single time since [__`requestTrackingAuthorization`__](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/3547037-requesttrackingauthorization) is a one-time request. The UMP SDK only has a form available to load if the authorization status is [__`ATTrackingManagerAuthorizationStatusNotDetermined`__](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanagerauthorizationstatus/attrackingmanagerauthorizationstatusnotdetermined?language=objc).
 
 To make the alert appear a second time, you must uninstall and reinstall your app on your test device.
 

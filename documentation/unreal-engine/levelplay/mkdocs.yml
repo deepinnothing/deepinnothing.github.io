@@ -1,0 +1,67 @@
+site_name: "Unity LevelPlay: Unreal Engine Plugin Documentation"
+site_url: https://deepinnothing.github.io/documentation/unreal-engine/levelplay
+site_dir: ../../../site/documentation/unreal-engine/levelplay
+theme:
+  name: material
+  logo: assets/ironsource-icon.png
+  favicon: assets/ironsource-icon.png
+  palette:
+    scheme: slate
+    primary: black
+    accent: custom
+  features:
+    - content.code.copy
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - attr_list
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - abbr
+nav:
+  - Get started: index.md
+  - Enable test ads: enable-test-ads.md
+  - Ad formats:
+    - ad-formats/app-open-ads.md
+    - ad-formats/banner-ads.md
+    - ad-formats/interstitial-ads.md
+    - ad-formats/rewarded-ads.md
+    - ad-formats/rewarded-interstitial-ads.md
+  - mediation.md
+  - Tools and debugging:
+    - Ad inspector:
+      - ad-inspector.md
+      - ad-inspector/launch-ad-inspector.md
+      - Verify adapter integrations: https://developers.google.com/admob/android/ad-inspector/verify-adapter-integrations
+      - Test ad units: https://developers.google.com/admob/android/ad-inspector/test-ad-units
+      - Troubleshoot ad units: https://developers.google.com/admob/android/ad-inspector/troubleshoot-ad-units
+      - Troubleshoot privacy settings: https://developers.google.com/admob/android/ad-inspector/troubleshoot-privacy-settings
+      - Copy troubleshooting output: https://developers.google.com/admob/android/ad-inspector/copy-troubleshooting-output
+    - ad-load-errors.md
+    - Response info: response-info.md
+    - Network tracing: https://developers.google.com/admob/android/network-tracing
+    - Troubleshoot ads not showing: https://support.google.com/admob/answer/9469204
+  - Privacy:
+    - Strategies: privacy/strategies.md
+    - Ad serving modes: https://developers.google.com/admob/android/privacy/ad-serving-modes
+    - Google Play data disclosure: https://developers.google.com/admob/unity/privacy/play-data-disclosure
+    - Apple App Store data disclosure: https://developers.google.com/admob/unity/privacy/data-disclosure
+  - Advanced topics:
+    - Authorized Sellers for Apps: https://developers.google.com/admob/android/app-ads
+    - advanced/global-settings.md
+    - advanced/impression-level-ad-revenue.md
+    - Reporting: https://developers.google.com/admob/api/v1/getting-started
+    - Server-side verification: https://developers.google.com/admob/unity/ssv
+    - advanced/targeting.md
+plugins: 
+  - search
+  - git-revision-date-localized

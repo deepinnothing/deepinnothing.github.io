@@ -45,6 +45,11 @@ jobs:
         run: |
           cd documentation/unreal-engine/google-ump
           mkdocs build
+
+      - name: Build Unity LevelPlay
+        run: |
+          cd documentation/unreal-engine/levelplay
+          mkdocs build
       
       - name: Include ZIP files
         run: |
