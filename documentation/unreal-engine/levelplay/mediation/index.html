@@ -1,0 +1,1700 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/levelplay/mediation/">
+      
+      
+        <link rel="prev" href="../ad-formats/rewarded-interstitial-ads/">
+      
+      
+        <link rel="next" href="../ad-inspector/">
+      
+      
+      <link rel="icon" href="../assets/ironsource-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Mediation - Unity LevelPlay: Unreal Engine Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mediation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Unity LevelPlay: Unreal Engine Plugin Documentation" class="md-header__button md-logo" aria-label="Unity LevelPlay: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../assets/ironsource-icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Unity LevelPlay: Unreal Engine Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mediation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Unity LevelPlay: Unreal Engine Plugin Documentation" class="md-nav__button md-logo" aria-label="Unity LevelPlay: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../assets/ironsource-icon.png" alt="logo">
+
+    </a>
+    Unity LevelPlay: Unreal Engine Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enable-test-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable test ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ad formats
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ad formats
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ad-formats/app-open-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    App open ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ad-formats/banner-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Banner ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ad-formats/interstitial-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interstitial ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ad-formats/rewarded-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rewarded ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ad-formats/rewarded-interstitial-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rewarded interstitial ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Mediation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mediation
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-google-mobile-ads-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialize Google Mobile Ads SDK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-which-ad-network-adapter-class-loaded-the-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check which ad network adapter class loaded the ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us-states-privacy-laws-and-gdpr" class="md-nav__link">
+    <span class="md-ellipsis">
+      US states privacy laws and GDPR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choose-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choose networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-specific-optional-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network-specific optional steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ad-source-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ad source optimization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot-admob-bidding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshoot AdMob bidding
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools and debugging
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tools and debugging
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ad inspector
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ad inspector
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ad-inspector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ad inspector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ad-inspector/launch-ad-inspector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Launch ad inspector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/ad-inspector/verify-adapter-integrations" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Verify adapter integrations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/ad-inspector/test-ad-units" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test ad units
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/ad-inspector/troubleshoot-ad-units" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot ad units
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/ad-inspector/troubleshoot-privacy-settings" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot privacy settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/ad-inspector/copy-troubleshooting-output" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Copy troubleshooting output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ad-load-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ad load errors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../response-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Response info
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/network-tracing" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network tracing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://support.google.com/admob/answer/9469204" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot ads not showing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Privacy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Privacy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../privacy/strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/privacy/ad-serving-modes" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ad serving modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/unity/privacy/play-data-disclosure" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Play data disclosure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/unity/privacy/data-disclosure" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apple App Store data disclosure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advanced topics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/app-ads" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authorized Sellers for Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/global-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Global settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/impression-level-ad-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Impression level ad revenue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/api/v1/getting-started" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reporting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/unity/ssv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Server-side verification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/targeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Targeting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-google-mobile-ads-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialize Google Mobile Ads SDK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-which-ad-network-adapter-class-loaded-the-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check which ad network adapter class loaded the ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us-states-privacy-laws-and-gdpr" class="md-nav__link">
+    <span class="md-ellipsis">
+      US states privacy laws and GDPR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choose-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choose networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-specific-optional-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network-specific optional steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ad-source-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ad source optimization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot-admob-bidding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshoot AdMob bidding
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a class="md-button md-button--primary full-width" href="https://fab.com/s/804df971aef3">If you like this plugin, please, rate it on Fab. Thank you!</a></p>
+<h1 id="mediation">Mediation</h1>
+<p>AdMob Mediation is a feature lets you serve ads to your apps from multiple sources, including the AdMob Network and third-party ad sources, in one place. AdMob Mediation helps maximize your fill rate and increase your monetization by sending ad requests to multiple networks to verify you find the best available network to serve ads. <a href="https://admob.google.com/home/resources/cookapps-grows-ad-revenue-86-times-with-admob-rewarded-ads-and-mediation/">Case study</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Verify that you have the necessary account permissions to complete the mediation configuration. These permissions include access to inventory management, app access, and privacy and messaging features. See <a href="https://support.google.com/admob/answer/2784628">Manage user access to your account</a> for details.</p>
+</div>
+<p>Before you can integrate mediation for an ad format, you need to integrate that ad format into your app:</p>
+<ul>
+<li><a href="../ad-formats/app-open-ads/">App Open Ads</a></li>
+<li><a href="../ad-formats/banner-ads/">Banner Ads</a></li>
+<li><a href="../ad-formats/interstitial-ads/">Interstitial Ads</a></li>
+<li><a href="../ad-formats/rewarded-ads/">Rewarded Ads</a></li>
+<li><a href="../ad-formats/rewarded-interstitial-ads/">Rewarded Interstitial Ads</a></li>
+</ul>
+<p>New to mediation? Read <a href="https://support.google.com/admob/answer/3063564">Overview of AdMob Mediation</a>.</p>
+<h2 id="initialize-google-mobile-ads-sdk">Initialize Google Mobile Ads SDK</h2>
+<p>You can either rely on <a href="../#enable-automatic-sdk-initialization">Automatic SDK initialization</a> or <a href="user-messaging-platform.md#prevent-redundant-ad-request-work">implement it manually</a>. During that initialization call, mediation adapters also get initialized. It is important to wait for initialization to complete before you load ads in order to verify full participation from every ad network on the first ad request.</p>
+<h2 id="check-which-ad-network-adapter-class-loaded-the-ad">Check which ad network adapter class loaded the ad</h2>
+<p>Here is an example that logs the ad network class name for an ad:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobResponseInfo.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">UYourClass::OnLoaded</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">)</span>
+<span class="p">{</span><span class="w">  </span>
+<span class="w">    </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;Adapter class name: %s&quot;</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="n">ResponseInfo</span><span class="p">.</span><span class="n">MediationAdapterClassName</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="assets/CheckAdapterClassName.png" /></p>
+</div>
+</div>
+</div>
+<p>Refer to the <a href="">Response info</a> documentation on MediationAdapterClassName for details about this property.</p>
+<h2 id="us-states-privacy-laws-and-gdpr">US states privacy laws and GDPR</h2>
+<p>If you need to comply with the <a href="https://support.google.com/admob/answer/9561022">U.S. states privacy laws</a> or <a href="https://support.google.com/admob/answer/7666366">General Data Protection Regulation (GDPR)</a>, follow the steps in <a href="https://support.google.com/admob/answer/10860309">US state regulations settings</a> or <a href="https://support.google.com/admob/answer/10113004#adding_ad_partners_to_published_gdpr_messages">GDPR settings</a> to add your mediation partners in AdMob Privacy &amp; messaging's US states or GDPR ad partners list. Failure to do so can lead to partners failing to serve ads on your app.</p>
+<p>Learn more about enabling <a href="">restricted data processing (RDP)</a> and obtaining GDPR consent with the <a href="https://fab.com/s/b1cdf3b0e8c8">Google User Messaging Platform (UMP) SDK</a>.</p>
+<h2 id="choose-networks">Choose networks</h2>
+<p>AdMob Mediation supports several ad sources, with a mix of bidding and waterfall mediation integrations. To add one of the networks, you need to choose an appropriate guide from Google from the table below and complete <strong>first 2 steps</strong> from it, and then enable this mediation network in <strong>Project Settings</strong>. Select an ad source for integration instructions specific to that ad source:</p>
+<table>
+<thead>
+<tr>
+<th>Ad Source</th>
+<th style="text-align: center;">App Open</th>
+<th style="text-align: center;">Banner</th>
+<th style="text-align: center;">Interstitial</th>
+<th style="text-align: center;">Rewarded</th>
+<th style="text-align: center;">Rewarded Interstitial</th>
+<th style="text-align: center;">Bidding</th>
+<th style="text-align: left;">Ad source optimization support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AppLovin (<a href="https://developers.google.com/admob/android/mediation/applovin">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/applovin">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+<tr>
+<td>Chartboost (<a href="https://developers.google.com/admob/android/mediation/chartboost">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/chartboost">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+<tr>
+<td>DT Exchange (<a href="https://developers.google.com/admob/android/mediation/dt-exchange">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/dt-exchange">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+<tr>
+<td>i-mobile (<a href="https://developers.google.com/admob/android/mediation/imobile">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/imobile">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Japan only</td>
+</tr>
+<tr>
+<td>InMobi (<a href="https://developers.google.com/admob/android/mediation/inmobi">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/inmobi">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+<tr>
+<td>ironSource (<a href="https://developers.google.com/admob/android/mediation/ironsource">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/ironsource">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+<tr>
+<td>Liftoff&nbsp;Monetize (<a href="https://developers.google.com/admob/android/mediation/liftoff-monetize">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/liftoff-monetize">iOS</a>)</td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+<tr>
+<td>LINE Ads Network (<a href="https://developers.google.com/admob/android/mediation/line">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/line">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+<tr>
+<td>maio (<a href="https://developers.google.com/admob/android/mediation/maio">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/maio">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Japan only</td>
+</tr>
+<tr>
+<td>Meta Audience Network (<a href="https://developers.google.com/admob/android/mediation/meta">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/meta">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: left;">Bidding only</td>
+</tr>
+<tr>
+<td>Mintegral (<a href="https://developers.google.com/admob/android/mediation/mintegral">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/mintegral">iOS</a>)</td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+<tr>
+<td>Moloco (<a href="https://developers.google.com/admob/android/mediation/moloco">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/moloco">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+<tr>
+<td>Pangle (<a href="https://developers.google.com/admob/android/mediation/pangle">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/pangle">iOS</a>)</td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+<tr>
+<td>Unity Ads (<a href="https://developers.google.com/admob/android/mediation/unity">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/unity">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+<tr>
+<td>VK Ads (<a href="https://developers.google.com/admob/android/mediation/mytarget">Android</a> | <a href="https://developers.google.com/admob/ios/mediation/mytarget">iOS</a>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Country-specific</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network-specific-optional-steps">Network-specific optional steps</h3>
+<p>Some mediation networks support additional request parameters which can improve targeting and ad serving performance. The following functions are available:</p>
+<ul>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersAppLovin()</code></strong></li>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersDTExchange()</code></strong></li>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersInMobi()</code></strong></li>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersLiftoffMonetize()</code></strong></li>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersLineAdsNetwork()</code></strong></li>
+<li><strong><code>UGoogleAdMob::SetAdditionalRequestParametersVKAds()</code></strong></li>
+</ul>
+<p>To reset previously set request parameters call the following functions:</p>
+<ul>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersAppLovin()</code></strong></li>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersDTExchange()</code></strong></li>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersInMobi()</code></strong></li>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersLiftoffMonetize()</code></strong></li>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersLineAdsNetwork()</code></strong></li>
+<li><strong><code>UGoogleAdMob::ClearAdditionalRequestParametersVKAds()</code></strong></li>
+</ul>
+<p>Chartboost and InMobi networks recommend adding additional optional permissions on Android to improve ad performance:</p>
+<p><img alt="" src="assets/OptionalPermissions.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some of this permissions are not recommended to be added if they are not required by your app to function.</p>
+</div>
+<h3 id="ad-source-optimization">Ad source optimization</h3>
+<p>When you configure multiple ad networks for mediation, you have to specify what order to request these networks by setting their respective <abbr title="cost per thousand impressions">CPM</abbr>. This can be difficult to manage, since ad network performance changes over time.</p>
+<p><a href="https://support.google.com/admob/answer/3379794">Ad source optimization</a> is a feature that lets you to generate the highest <abbr title="cost per thousand impressions">CPM</abbr> from the ad networks in your mediation chain by automating the process of ordering the mediation chain to maximize revenue.</p>
+<p>The mediation networks table earlier uses the following values for ad source optimization support:</p>
+<table>
+<thead>
+<tr>
+<th>Ad source optimization support</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bidding only</strong></td>
+<td>The ad network only participates in bidding. Ad source optimization is not applicable.</td>
+</tr>
+<tr>
+<td><strong>Country-specific</strong></td>
+<td>eCPM values are automatically updated on your behalf on a per-country basis. This is the optimal type of optimization.</td>
+</tr>
+<tr>
+<td><strong>None</strong></td>
+<td>You must manually configure an eCPM value for that ad network.</td>
+</tr>
+</tbody>
+</table>
+<p>Click a specific ad network's guide for details on how to configure ad source optimization for that network.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is also a number of <a href="https://developers.google.com/admob/android/choose-networks#network_details">"No third-party SDKs required" ad networks</a> that only require signing a partnership through the AdMob UI.</p>
+</div>
+<h2 id="troubleshoot-admob-bidding">Troubleshoot AdMob bidding</h2>
+<p>When integrating a bidding partner that requires their SDK, the following symptoms indicate an improper integration:</p>
+<ul>
+<li>The <a href="https://support.google.com/admob/answer/10979428">Ads Activity report</a> shows significantly fewer ad requests to that partner than you expect.</li>
+<li>
+<p>The <strong><code>a3p</code></strong> parameter in any request after the first ad request is missing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first ad request may contain the <strong><code>a3p</code></strong> parameter even if you did not configure bidding.</p>
+</div>
+</li>
+</ul>
+<p>Follow this checklist to make sure your setup is correct:</p>
+<ul>
+<li>
+<p>In the AdMob UI:</p>
+<ul>
+<li>Confirm that you have followed the specific partner's integration guide to configure third-party bidding demand.</li>
+<li>Confirm that you have an ad unit mapping for each creative format.</li>
+</ul>
+</li>
+<li>
+<p>In your project:</p>
+<ul>
+<li>Ensure that the app ID in <strong>Project Settings</strong> is the same app ID that your ad unit mapping targets.</li>
+<li>Make sure your ad unit IDs match those in the AdMob UI as they must match exactly.</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 10, 2025 18:57:24 UTC">October 10, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

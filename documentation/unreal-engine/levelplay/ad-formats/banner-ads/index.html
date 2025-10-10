@@ -1,0 +1,1685 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/levelplay/ad-formats/banner-ads/">
+      
+      
+        <link rel="prev" href="../app-open-ads/">
+      
+      
+        <link rel="next" href="../interstitial-ads/">
+      
+      
+      <link rel="icon" href="../../assets/ironsource-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Banner ads - Unity LevelPlay: Unreal Engine Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#banner-ads" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Unity LevelPlay: Unreal Engine Plugin Documentation" class="md-header__button md-logo" aria-label="Unity LevelPlay: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/ironsource-icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Unity LevelPlay: Unreal Engine Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Banner ads
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Unity LevelPlay: Unreal Engine Plugin Documentation" class="md-nav__button md-logo" aria-label="Unity LevelPlay: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/ironsource-icon.png" alt="logo">
+
+    </a>
+    Unity LevelPlay: Unreal Engine Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enable-test-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable test ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ad formats
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ad formats
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app-open-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    App open ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Banner ads
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Banner ads
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#anchored-adaptive-banner" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anchored adaptive banner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collapsible-banner-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collapsible banner ads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixed-size-banner-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed size banner ads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#always-test-with-test-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always test with test ads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-and-show-an-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load and show an ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refresh-an-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refresh an ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-the-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hide the ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-an-ad-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release an ad resource
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ad events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample projects
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interstitial-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interstitial ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rewarded-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rewarded ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rewarded-interstitial-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rewarded interstitial ads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mediation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools and debugging
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tools and debugging
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ad inspector
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ad inspector
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ad-inspector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ad inspector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ad-inspector/launch-ad-inspector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Launch ad inspector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/ad-inspector/verify-adapter-integrations" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Verify adapter integrations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/ad-inspector/test-ad-units" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test ad units
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/ad-inspector/troubleshoot-ad-units" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot ad units
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/ad-inspector/troubleshoot-privacy-settings" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot privacy settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/ad-inspector/copy-troubleshooting-output" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Copy troubleshooting output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ad-load-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ad load errors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../response-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Response info
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/network-tracing" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network tracing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://support.google.com/admob/answer/9469204" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot ads not showing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Privacy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Privacy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../privacy/strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/privacy/ad-serving-modes" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ad serving modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/unity/privacy/play-data-disclosure" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Play data disclosure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/unity/privacy/data-disclosure" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apple App Store data disclosure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advanced topics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/android/app-ads" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authorized Sellers for Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/global-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Global settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/impression-level-ad-revenue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Impression level ad revenue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/api/v1/getting-started" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reporting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.google.com/admob/unity/ssv" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Server-side verification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/targeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Targeting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#anchored-adaptive-banner" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anchored adaptive banner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collapsible-banner-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collapsible banner ads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixed-size-banner-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed size banner ads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#always-test-with-test-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always test with test ads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-and-show-an-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load and show an ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refresh-an-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refresh an ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-the-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hide the ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-an-ad-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release an ad resource
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ad-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ad events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample projects
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a class="md-button md-button--primary full-width" href="https://fab.com/s/804df971aef3">If you like this plugin, please, rate it on Fab. Thank you!</a></p>
+<h1 id="banner-ads">Banner ads</h1>
+<p><img align="left" alt="" src="../../assets/format-banner.png" /></p>
+<p><a href="https://support.google.com/admob/answer/9993556">Banner ads</a> are rectangular ads that occupy a portion of an app's layout. Anchored adaptive banners are fixed aspect ratio ads that stay on screen while users are interacting with the app, either anchored at the top or bottom of the screen.</p>
+<h2 id="anchored-adaptive-banner">Anchored adaptive banner</h2>
+<p>Anchored adaptive banner ads are fixed aspect ratio ads rather than the regular fixed size ads. The aspect ratio is similar to 320x50 industry standard. Once you specify the full width available, it returns an ad with optimal height for that width. The optimal height doesn't change across requests from the same device, and the surrounding views don't need to move when the ad refreshes.</p>
+<h2 id="collapsible-banner-ads">Collapsible banner ads</h2>
+<p>Collapsible banner ads are banner ads that are initially presented as a larger overlay, with a button to collapse them to the originally requested banner size. Collapsible banner ads are intended to improve performance of anchored ads that are otherwise a smaller size. This guide shows how to turn on collapsible banner ads for existing banner placements.</p>
+<p><img alt="" src="https://developers.google.com/static/admob/images/collapsible-banner.png" /></p>
+<h2 id="fixed-size-banner-ads">Fixed size banner ads</h2>
+<p>The Google Mobile Ads SDK supports fixed ad sizes for situations where adaptive banners ads don't meet your needs.</p>
+<p>The following table lists the standard banner sizes.</p>
+<table>
+<thead>
+<tr>
+<th>Size in dp (WxH)</th>
+<th>Description</th>
+<th>Availability</th>
+<th>AdSize constant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>320x50</td>
+<td>Banner</td>
+<td>Phones and tablets</td>
+<td>BANNER</td>
+</tr>
+<tr>
+<td>320x100</td>
+<td>Large banner</td>
+<td>Phones and tablets</td>
+<td>LARGE_BANNER</td>
+</tr>
+<tr>
+<td>320x250</td>
+<td>IAB medium rectangle</td>
+<td>Phones and tablets</td>
+<td>MEDIUM_RECTANGLE</td>
+</tr>
+<tr>
+<td>468x60</td>
+<td>IAB full-size banner</td>
+<td>Tablets</td>
+<td>FULL_BANNER</td>
+</tr>
+<tr>
+<td>728x90</td>
+<td>IAB leaderboard</td>
+<td>Tablets</td>
+<td>LEADERBOARD</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Complete the <a href="../../">Get Started guide</a>.</p>
+<h2 id="always-test-with-test-ads">Always test with test ads</h2>
+<p>When building and testing your apps, make sure you use test ads rather than live, production ads. Failure to do so can lead to suspension of your account.</p>
+<p>The easiest way to load test ads is to use dedicated test ad unit IDs for banners:</p>
+<table>
+<thead>
+<tr>
+<th>Ad format</th>
+<th>Android demo ad unit ID</th>
+<th>iOS demo ad unit ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adaptive Banner</td>
+<td>ca-app-pub-3940256099942544/9214589741</td>
+<td>ca-app-pub-3940256099942544/2435281174</td>
+</tr>
+<tr>
+<td>Fixed Size Banner</td>
+<td>ca-app-pub-3940256099942544/6300978111</td>
+<td>ca-app-pub-3940256099942544/2934735716</td>
+</tr>
+</tbody>
+</table>
+<p>It's been specially configured to return test ads for every request, and you can use it in your own apps while coding, testing, and debugging. Just make sure you replace it with your own ad unit ID before publishing your app.</p>
+<p>For more information about how Google Mobile Ads SDK test ads work, see <a href="../../enable-test-ads/">Enable test ads</a>.</p>
+<h2 id="load-and-show-an-ad">Load and show an ad</h2>
+<p>Create a <strong><code>UGoogleAdMobBannerAd</code></strong> object and then call <strong><code>Load()</code></strong> method on it. Choose a preferred banner size and if it's a collapsible banner ad. Bind a function to show the ad to the <strong><code>OnLoaded</code></strong> delegate to show it right after it's loaded.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Collapsible banner ads are only supported for adaptive banner sizes.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Header:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">UGoogleAdMobBannerAd</span><span class="p">;</span>
+<span class="c1">// ...</span>
+<span class="n">UPROPERTY</span><span class="p">()</span>
+<span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">UGoogleAdMobBannerAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">BannerAd</span><span class="p">;</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">bIsShown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</code></pre></div>
+<p>Source:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMob.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobBannerAd.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobResponseInfo.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">BannerAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewObject</span><span class="o">&lt;</span><span class="n">UGoogleAdMobBannerAd</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">OnLoaded</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([</span><span class="k">this</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">FGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bIsShown</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">Show</span><span class="p">(</span><span class="n">BannerPosition</span><span class="p">);</span>
+<span class="w">    </span><span class="n">bIsShown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="cp">#if PLATFORM_ANDROID</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">BannerSize</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">EGoogleAdMobBannerSize</span><span class="o">::</span><span class="n">Adaptive</span><span class="p">)</span>
+<span class="w">    </span><span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/9214589741&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">BannerSize</span><span class="p">,</span><span class="w"> </span><span class="n">CollapsibleBannerPlacement</span><span class="p">);</span>
+<span class="k">else</span><span class="w"> </span>
+<span class="w">    </span><span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/6300978111&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">BannerSize</span><span class="p">);</span>
+<span class="cp">#elif PLATFORM_IOS</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">BannerSize</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">EGoogleAdMobBannerSize</span><span class="o">::</span><span class="n">Adaptive</span><span class="p">)</span>
+<span class="w">    </span><span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/2435281174&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">BannerSize</span><span class="p">,</span><span class="w"> </span><span class="n">CollapsibleBannerPlacement</span><span class="p">);</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;ca-app-pub-3940256099942544/2934735716&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">BannerSize</span><span class="p">);</span>
+<span class="cp">#endif</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../assets/LoadAndShowBannerAd.png" /></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong><code>OnLoaded</code></strong> delegate is broadcast not only when the banner ad is first loaded, but also each time it's refreshed.</p>
+</div>
+<h2 id="refresh-an-ad">Refresh an ad</h2>
+<p>If you configured your ad unit to refresh, you don't need to request another ad when the ad fails to load. Google Mobile Ads SDK respects any refresh rate you specified in the AdMob UI. If you haven't enabled refresh, issue a new request. For more details on ad unit refresh, such as setting a refresh rate, see <a href="https://support.google.com/admob/answer/3245199">Use automatic refresh for Banner ads</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When setting a refresh rate in the AdMob UI, the automatic refresh occurs only if the banner is visible on screen.</p>
+</div>
+<h2 id="hide-the-ad">Hide the ad</h2>
+<p>You can hide an ad and show it later without having to reaload it. It doesn't release any resources and just removes the banner ad from the view.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">Hide</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../assets/HideBannerAd.png" /></p>
+</div>
+</div>
+</div>
+<h2 id="release-an-ad-resource">Release an ad resource</h2>
+<p>When you are finished using a banner ad, you can release the banner ad's resources. To do it, just call <strong><code>Destroy()</code></strong> method on the banner ad.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// ...</span>
+<span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">Destroy</span><span class="p">();</span>
+<span class="n">bIsShown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="c1">// ...</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../assets/RemoveBannerAd.png" /></p>
+</div>
+</div>
+</div>
+<h2 id="ad-events">Ad events</h2>
+<p>You can listen for a number of events in the ad's lifecycle, including loading, ad impression and click, as well as ad open and close events. It is recommended to bind to the delegates before loading the banner. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">C++</label><label for="__tabbed_4_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobBannerAd.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobResponseInfo.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAdError.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GoogleAdMobAdValue.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">OnLoaded</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">){});</span>
+<span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">OnFailedToLoad</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdError</span><span class="o">&amp;</span><span class="w"> </span><span class="n">LoadAdError</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobResponseInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ResponseInfo</span><span class="p">){});</span>
+<span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">OnClicked</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](){});</span>
+<span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">OnImpression</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](){});</span>
+<span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">OnOpened</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](){});</span>
+<span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">OnClosed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](){});</span>
+<span class="n">BannerAd</span><span class="o">-&gt;</span><span class="n">OnPaidEvent</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">UGoogleAdMobAdValue</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdValue</span><span class="p">){});</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../assets/BannerAdDelegates.png" /></p>
+</div>
+</div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Delegate</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OnLoaded</td>
+<td>The OnLoaded delegate is broadcast when an ad has finished loading. If you want to delay showing the ad until you're sure it will be loaded, for example, you can do so here.</td>
+</tr>
+<tr>
+<td>OnFailedToLoad</td>
+<td>The OnFailedToLoad delegate includes the LoadAdError parameter that describes what error occurred. For more information, refer to the <a href="https://developers.google.com/admob/android/ad-load-errors">Debugging Ad Load Errors documentation</a>.</td>
+</tr>
+<tr>
+<td>OnClicked</td>
+<td>The OnClicked delegate is broadcast when a click is recorded for an ad.</td>
+</tr>
+<tr>
+<td>OnImpression</td>
+<td>The OnImpression delegate is broadcast when an impression is recorded for an ad.</td>
+</tr>
+<tr>
+<td>OnOpened</td>
+<td>The OnOpened delegate is broadcast when an ad opens an overlay that covers the screen.</td>
+</tr>
+<tr>
+<td>OnClosed</td>
+<td>The OnClosed delegate is broadcast when a user returns to the app after viewing an ad's destination URL. Your app can use it to resume suspended activities or perform any other work necessary to make itself ready for interaction.</td>
+</tr>
+<tr>
+<td>OnPaidEvent</td>
+<td>When an impression occurs, Google Mobile Ads SDK provides ad revenue data associated with that impression. You can use the data to calculate a user's lifetime value, or forward the data downstream to other relevant systems.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sample-projects">Sample projects</h2>
+<ul>
+<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-bp.zip">Blueprint</a></li>
+<li><a href="https://deepinnothing.github.io/sample-projects/unreal-engine/google-admob/google-admob-cpp.zip">C++</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 10, 2025 18:57:24 UTC">October 10, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
