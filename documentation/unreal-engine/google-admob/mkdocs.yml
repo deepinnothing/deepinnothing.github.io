@@ -51,13 +51,16 @@ nav:
     - Network tracing: https://developers.google.com/admob/android/network-tracing
     - Troubleshoot ads not showing: https://support.google.com/admob/answer/9469204
   - Privacy:
+    - Strategies: privacy/strategies.md
     - Ad serving modes: https://developers.google.com/admob/android/privacy/ad-serving-modes
-    - Google Play data disclosure: https://developers.google.com/admob/android/privacy/play-data-disclosure
+    - Google Play data disclosure: https://developers.google.com/admob/unity/privacy/play-data-disclosure
+    - Apple App Store data disclosure: https://developers.google.com/admob/unity/privacy/data-disclosure
   - Advanced topics:
     - Authorized Sellers for Apps: https://developers.google.com/admob/android/app-ads
     - advanced/global-settings.md
     - advanced/impression-level-ad-revenue.md
     - Reporting: https://developers.google.com/admob/api/v1/getting-started
+    - Server-side verification: https://developers.google.com/admob/unity/ssv
     - advanced/targeting.md
 plugins: 
   - search
