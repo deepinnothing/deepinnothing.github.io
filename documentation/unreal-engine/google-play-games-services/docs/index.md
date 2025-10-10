@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/b1cdf3b0e8c8){ .md-button .md-button--primary .full-width }
+
 # Overview
 
 __Google Play Games Services__ provides popular gaming features for Android, ChromeOS, and Windows games. With Google Play Games Services, you can add social features to your game, view gameplay stats, and provide cross-platform gameplay across multiple devices.

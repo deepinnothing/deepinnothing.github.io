@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/b1cdf3b0e8c8){ .md-button .md-button--primary .full-width }
+
 # Friends
 
 Use the Friends APIs to complement and enhance your existing in-game friends system and other social systems your game may access. This lets you enable players to:

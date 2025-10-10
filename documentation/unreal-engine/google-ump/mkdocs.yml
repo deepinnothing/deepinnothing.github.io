@@ -27,9 +27,9 @@ markdown_extensions:
 nav:
   - Get started: index.md
   - IAB support:
-    - iab-support/gdpr-iab-support.md
-    - iab-support/us-iab-support.md
-  - idfa-support.md
+    - GDPR IAB support: iab-support/gdpr-iab-support.md
+    - US IAB support: iab-support/us-iab-support.md
+  - IDFA support: idfa-support.md
 plugins: 
   - search
   - git-revision-date-localized

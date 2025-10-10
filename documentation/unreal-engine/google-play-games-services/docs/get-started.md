@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/b1cdf3b0e8c8){ .md-button .md-button--primary .full-width }
+
 # Get started
 
 This page outlines how to set up [Google Play Games Services](index.md) and then add features to an Android game. The tasks include setting up the service in Google Play Console and adding features to your game, such as sign-in and achievements.

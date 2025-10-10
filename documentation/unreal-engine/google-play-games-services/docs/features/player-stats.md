@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/b1cdf3b0e8c8){ .md-button .md-button--primary .full-width }
+
 # Player stats
 
 The player stats API let you tailor game experiences to specific segments of players and different stages of the player lifecycle. You can build tailored experiences for each player segment based on how players are progressing, spending, and engaging. For example, you can use this API to take proactive actions to encourage a less active player to re-engage with your game, such as by displaying and promoting new in-game items when the player signs in.

@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/b1cdf3b0e8c8){ .md-button .md-button--primary .full-width }
+
 # Set up Unreal Engine project
 
 This page describes how to set up Google Play Games Services for your Unreal Engine project.

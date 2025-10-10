@@ -1,3 +1,5 @@
+[If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/b1cdf3b0e8c8){ .md-button .md-button--primary .full-width }
+
 # Set up Google Play Games Services
 This page describes how to set up Google Play Games Services for your Android game using Google Play Console. The Play Console provides a centralized place for you to manage game services and configure the metadata used to authorize and authenticate your game.
 
