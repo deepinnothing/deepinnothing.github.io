@@ -12,3 +12,8 @@
 [data-md-color-primary=black] .md-header {
     background-color: hsla(var(--md-hue), 0%, 0%, 1)
 }
+
+.md-button.full-width {
+    width: 100%;
+    text-align: center;
+}
