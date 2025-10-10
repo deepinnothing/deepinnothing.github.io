@@ -57,7 +57,7 @@ Learn more about enabling [restricted data processing (RDP)]() and obtaining GDP
 AdMob Mediation supports several ad sources, with a mix of bidding and waterfall mediation integrations. To add one of the networks, you need to choose an appropriate guide from Google from the table below and complete __first 2 steps__ from it, and then enable this mediation network in __Project Settings__. Select an ad source for integration instructions specific to that ad source:
 
 | Ad Source | App Open | Banner | Interstitial | Rewarded | Rewarded Interstitial | Bidding | Ad source optimization support |
-| --------- | :------: | :----: | :----------: | :------: | :-------------------: | :-----: | :----------------------------- | :------------- |
+| --------- | :------: | :----: | :----------: | :------: | :-------------------: | :-----: | :----------------------------- |
 | AppLovin ([Android](https://developers.google.com/admob/android/mediation/applovin) \| [iOS](https://developers.google.com/admob/ios/mediation/applovin)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific |
 | Chartboost ([Android](https://developers.google.com/admob/android/mediation/chartboost) \| [iOS](https://developers.google.com/admob/ios/mediation/chartboost)) | | :material-check: | :material-check: | :material-check: | | | Country-specific |
 | DT Exchange ([Android](https://developers.google.com/admob/android/mediation/dt-exchange) \| [iOS](https://developers.google.com/admob/ios/mediation/dt-exchange)) | | :material-check: | :material-check: | :material-check: | | :material-check: | Country-specific |
