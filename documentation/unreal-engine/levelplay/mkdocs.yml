@@ -28,8 +28,12 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - abbr
 nav:
-  - Get started: index.md
-  - Enable test ads: enable-test-ads.md
+  - Get started: 
+    - Getting started: index.md
+    - Integration: integration.md
+    - LevelPlay SDK Changelog: https://developers.is.com/ironsource-mobile/unity/sdk-change-log/
+  - Regulations and settings:
+    - regulations-and-settings/regulation-advanced-settings.md
   - Ad formats:
     - ad-formats/app-open-ads.md
     - ad-formats/banner-ads.md

@@ -1,6 +1,6 @@
 [If you like this plugin, please, rate it on Fab. Thank you!](https://fab.com/s/804df971aef3){ .md-button .md-button--primary .full-width }
 
-# Get started
+# Getting started
 
 This guide will walk you through the steps you need to take to start monetizing with Unity LevelPlay. Begin by learning how to integrate LevelPlay into your app and then move on to setting up your app and mediated networks on the LevelPlay platform.
 
