@@ -1,0 +1,1105 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/levelplay/ad-formats/rewarded/">
+      
+      
+        <link rel="prev" href="../../regulations-and-settings/adinfo-data/">
+      
+      
+        <link rel="next" href="../interstitial/">
+      
+      
+      <link rel="icon" href="../../assets/ironsource-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Rewarded ads - Unity LevelPlay: Unreal Engine Plugin Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rewarded-ads" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Unity LevelPlay: Unreal Engine Plugin Documentation" class="md-header__button md-logo" aria-label="Unity LevelPlay: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/ironsource-icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Unity LevelPlay: Unreal Engine Plugin Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Rewarded ads
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Unity LevelPlay: Unreal Engine Plugin Documentation" class="md-nav__button md-logo" aria-label="Unity LevelPlay: Unreal Engine Plugin Documentation" data-md-component="logo">
+      
+  <img src="../../assets/ironsource-icon.png" alt="logo">
+
+    </a>
+    Unity LevelPlay: Unreal Engine Plugin Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Get started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Get started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.is.com/ironsource-mobile/unity/sdk-change-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LevelPlay SDK Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Regulations and settings
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Regulations and settings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../regulations-and-settings/regulation-advanced-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Regulation advanced settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../regulations-and-settings/advanced-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../regulations-and-settings/impression-level-revenue-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Impression level revenue integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../regulations-and-settings/adinfo-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adinfo data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.is.com/ironsource-mobile/general/googles-data-safety-questionnaire-full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google's data safety questionnaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://developers.is.com/ironsource-mobile/apples-privacy-questionnaire-answers-ironsource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apple's app privacy questionnaire
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ad formats
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ad formats
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Rewarded ads
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rewarded ads
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-rewarded-ad-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Rewarded Ad Object
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-to-rewarded-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register to Rewarded Events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-rewarded-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Rewarded Ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-rewarded-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show Rewarded Ad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Show Rewarded Ad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-ad-is-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Ad is Ready
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Placements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reward-the-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reward the User
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-implementation-example-of-rewarded-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Full Implementation Example of Rewarded Ads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#done" class="md-nav__link">
+    <span class="md-ellipsis">
+      Done!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interstitial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interstitial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../banner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Banner/MREC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-rewarded-ad-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Rewarded Ad Object
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-to-rewarded-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register to Rewarded Events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-rewarded-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Rewarded Ad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-rewarded-ad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show Rewarded Ad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Show Rewarded Ad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-ad-is-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Ad is Ready
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Placements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reward-the-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reward the User
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-implementation-example-of-rewarded-ads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Full Implementation Example of Rewarded Ads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#done" class="md-nav__link">
+    <span class="md-ellipsis">
+      Done!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a class="md-button md-button--primary full-width" href="https://fab.com/s/804df971aef3">If you like this plugin, please, rate it on Fab. Thank you!</a></p>
+<h1 id="rewarded-ads">Rewarded Ads</h1>
+<p>The Unity LevelPlay Rewarded Ad is a user-initiated ad unit that offers users the opportunity to engage with full-screen ads in exchange for in-app rewards, enhancing engagement while maintaining a positive user experience.</p>
+<div class="admonition note">
+<p class="admonition-title">Before you start</p>
+<ul>
+<li>Make sure that you have correctly integrated the LevelPlay plugin into your project. Integration is outlined <a href="../../integration/">here</a>.</li>
+<li>Make sure to initialize the SDK using LevelPlay Initialization API.</li>
+<li>You can find the AdUnitID in LevelPlay dashboard. Learn more <a href="https://developers.is.com/ironsource-mobile/general/how-to-manage-your-ad-units-1/#step-1">here</a>.</li>
+</ul>
+</div>
+<h2 id="create-rewarded-ad-object">Create Rewarded Ad Object</h2>
+<p>The creation of the rewarded ad object must be performed after receiving the <strong>OnInitSuccess</strong> callback.</p>
+<p>The object is a reusable instance that can handle multiple loads and shows throughout the session. Once created, it should be used to load and show ads for the same ad unit.</p>
+<p>For more advanced implementations, you may create multiple rewarded ad objects if necessary.</p>
+<p>You can create the ad object by calling:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Header:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ULevelPlayRewardedAd</span><span class="p">;</span>
+<span class="c1">// ...</span>
+<span class="n">UPROPERTY</span><span class="p">()</span>
+<span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">ULevelPlayRewardedAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">RewardedAd</span><span class="p">;</span>
+</code></pre></div>
+<p>Source:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;LevelPlayRewardedAd.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">RewardedAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ULevelPlay</span><span class="o">::</span><span class="n">CreateRewardedAd</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;AdUnitId&quot;</span><span class="p">));</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/CreateRewardedAd.png" /></p>
+</div>
+</div>
+</div>
+<p>You can pass an optional Price Floor for your ad requests as a second parameter. If you do not require it, simply ignore it or pass 0 as a value.</p>
+<div class="highlight"><pre><span></span><code><span class="n">RewardedAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ULevelPlay</span><span class="o">::</span><span class="n">CreateRewardedAd</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;AdUnitId&quot;</span><span class="p">),</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="register-to-rewarded-events">Register to Rewarded Events</h2>
+<p>Get informed of ad delivery by binding functions or assigning events to the rewarded ad delegates. It's recommended to do this before loading the ad.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdLoaded</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdLoadFailed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">int32</span><span class="w"> </span><span class="n">ErrorCode</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdDisplayed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdDisplayFailed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">int32</span><span class="w"> </span><span class="n">ErrorCode</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdRewarded</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">int32</span><span class="w"> </span><span class="n">RewardAmount</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">RewardName</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdClosed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdClicked</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdInfoChanged</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/RewardedAdEvents.png" /></p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Ad Info</p>
+<p>The <strong>FLevelPlayAdInfo</strong> parameter includes information about the loaded ad.</p>
+<p>Learn more about its implementation and available fields <a href="../../regulations-and-settings/adinfo-data/">here</a>.</p>
+</div>
+<h2 id="load-rewarded-ad">Load Rewarded Ad</h2>
+<p>To load a rewarded ad use <strong>LoadAd</strong>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">LoadAd</span><span class="p">();</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/LoadRewardedAd.png" /></p>
+</div>
+</div>
+</div>
+<h2 id="show-rewarded-ad">Show Rewarded Ad</h2>
+<p>Show a rewarded ad after you receive the <strong>OnAdLoaded</strong> callback.</p>
+<ul>
+<li>If using placements, pass the placement name in the <strong>ShowAd</strong> API as shown in the Placements section below.</li>
+<li>Once the ad has been successfully displayed to the user, you can load another ad by repeating the loading step.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">C++</label><label for="__tabbed_4_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Show ad without placement </span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">ShowAd</span><span class="p">();</span>
+<span class="c1">// Show ad with placement </span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">ShowAd</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;PlacementName&quot;</span><span class="p">));</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/ShowRewardedAd.png" /></p>
+</div>
+</div>
+</div>
+<h3 id="check-ad-is-ready">Check Ad is Ready</h3>
+<p>To avoid show failures, and to make sure the ad could be displayed correctly, it's recommend using the following API before calling the <strong>ShowAd</strong> API.</p>
+<p><strong>IsAdReady</strong> – returns true if ad was loaded successfully and ad unit is not capped, or false otherwise.</p>
+<p><strong>IsPlacementCapped</strong> – returns true when a valid placement is capped. If the placement is not valid, or not capped, this API will return false.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">C++</label><label for="__tabbed_5_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="c1">// Check that ad is ready and that the placement is not capped</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">IsAdReady</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">ULevelPlayRewardedAd</span><span class="o">::</span><span class="n">IsPlacementCapped</span><span class="p">(</span><span class="n">PlacementName</span><span class="p">))</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">ShowAd</span><span class="p">(</span><span class="n">PlacementName</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/CheckRewardedAdIsReady.png" /></p>
+</div>
+</div>
+</div>
+<h3 id="placements">Placements</h3>
+<p>LevelPlay supports <a href="https://developers.is.com/general/app-monetization/monetization-configurations/ad-placements-setting/">placements</a> pacing and capping for rewarded ad on the LevelPlay dashboard. </p>
+<p>If placements are set up for rewarded ads, call the <strong>ShowAd</strong> method to serve the ad for a specific placement.</p>
+<h2 id="reward-the-user">Reward the User</h2>
+<p>The LevelPlay SDK will fire the <strong>OnAdRewarded</strong> each time the user successfully completes a video.</p>
+<p>The <strong>OnAdRewarded</strong> and <strong>OnAdClosed</strong> are asynchronous. Make sure to set up your listener to grant rewards even in cases where <strong>OnAdRewarded</strong> is fired after the <strong>OnAdClosed</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdRewarded</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">int32</span><span class="w"> </span><span class="n">RewardAmount</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">RewardName</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">UE_LOG</span><span class="p">(</span><span class="n">LogTemp</span><span class="p">,</span><span class="w"> </span><span class="n">Display</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;Ad Completed: %s, Reward: %s - %d&quot;</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="n">AdInfo</span><span class="p">.</span><span class="n">PlacementName</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">RewardName</span><span class="p">,</span><span class="w"> </span><span class="n">RewardAmount</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<h2 id="full-implementation-example-of-rewarded-ads">Full Implementation Example of Rewarded Ads</h2>
+<p>Header:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ULevelPlayRewardedAd</span><span class="p">;</span>
+<span class="c1">// ...</span>
+<span class="n">UPROPERTY</span><span class="p">()</span>
+<span class="n">TObjectPtr</span><span class="o">&lt;</span><span class="n">ULevelPlayRewardedAd</span><span class="o">&gt;</span><span class="w"> </span><span class="n">RewardedAd</span><span class="p">;</span>
+</code></pre></div>
+<p>Source:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;LevelPlayRewardedAd.h&quot;</span>
+<span class="c1">// ...</span>
+<span class="n">RewardedAd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ULevelPlay</span><span class="o">::</span><span class="n">CreateRewardedAd</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;AdUnitId&quot;</span><span class="p">));</span>
+
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdLoaded</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">IsAdReady</span><span class="p">())</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">ShowAd</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdLoadFailed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">int32</span><span class="w"> </span><span class="n">ErrorCode</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdDisplayed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdDisplayFailed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">int32</span><span class="w"> </span><span class="n">ErrorCode</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ErrorMessage</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdRewarded</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="n">int32</span><span class="w"> </span><span class="n">RewardAmount</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FString</span><span class="o">&amp;</span><span class="w"> </span><span class="n">RewardName</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdClosed</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdClicked</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">OnAdInfoChanged</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayAdInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">AdInfo</span><span class="p">){});</span>
+
+<span class="n">RewardedAd</span><span class="o">-&gt;</span><span class="n">LoadAd</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="done">Done!</h2>
+<p>You are now all set up to serve rewarded ads in your application. Verify your integration with <a href="https://developers.is.com/ironsource-mobile/unity/unity-levelplay-test-suite/">Integration Test Suite</a>.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 12, 2025 20:45:48 UTC">October 12, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
