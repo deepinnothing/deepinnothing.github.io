@@ -34,6 +34,11 @@ nav:
     - LevelPlay SDK Changelog: https://developers.is.com/ironsource-mobile/unity/sdk-change-log/
   - Regulations and settings:
     - regulations-and-settings/regulation-advanced-settings.md
+    - regulations-and-settings/advanced-setting.md
+    - regulations-and-settings/impression-level-revenue-integration.md
+    - regulations-and-settings/adinfo-data.md
+    - Google's Data Safety Questionnaire: https://developers.is.com/ironsource-mobile/general/googles-data-safety-questionnaire-full/
+    - Apple's App Privacy Questionnaire: https://developers.is.com/ironsource-mobile/apples-privacy-questionnaire-answers-ironsource/
   - Ad formats:
     - ad-formats/app-open-ads.md
     - ad-formats/banner-ads.md

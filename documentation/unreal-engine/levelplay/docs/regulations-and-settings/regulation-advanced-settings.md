@@ -18,7 +18,7 @@ To use ironSource’s API to update a user’s consent status, use this function
 
 === "Blueprints"
 
-    ![](assets/SetConsent.png)
+    ![](../assets/SetConsent.png)
 
 If the user provided consent, please set the __`bHasUserConsent`__ flag to true. If user did not consent, set it to false.
 
@@ -42,7 +42,7 @@ If the user has opted out of “sale” or “sharing” of personal information
 
 === "Blueprints"
 
-    ![](assets/SetDoNotSell.png)
+    ![](../assets/SetDoNotSell.png)
 
 A detailed article regarding ironSource’s approach to U.S state privacy laws can be found [here](https://developers.is.com/ironsource-mobile/general/ironsource-ccpa-compliance/).
 
@@ -64,7 +64,7 @@ If the end-user is a child (as defined by applicable regulations), set __`bIsChi
 
 === "Blueprints"
 
-    ![](assets/SetIsChildDirected.png)
+    ![](../assets/SetIsChildDirected.png)
 
 A detailed article regarding ironSource’s approach to child-directed apps can be found [here](https://developers.is.com/ironsource-mobile/general/ironsource-mobile-child-directed-apps/).
 
@@ -95,7 +95,7 @@ If your apps are primarily directed at children, follow these steps:
 
     === "Blueprints"
 
-        ![](assets/GooglePlayFamilies1.png)
+        ![](../assets/GooglePlayFamilies1.png)
 
 ### Guidance for apps directed at a mixed audience
 
@@ -111,8 +111,8 @@ For children or users of unknown age, use the ironSource Metadata API to prevent
 
 === "Blueprints"
 
-    ![](assets/GooglePlayFamilies2.png)
+    ![](../assets/GooglePlayFamilies2.png)
 
-!!! warning
+!!! note
 
     Preventing access to the GAID (Android Advertising ID) might impact your monetization performance. Make sure these integration changes are made for required apps and users only. 
