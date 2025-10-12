@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/levelplay/advanced/targeting/">
+        <link rel="canonical" href="https://deepinnothing.github.io/documentation/unreal-engine/levelplay/regulations-and-settings/impression-level-revenue-integration/">
       
       
-        <link rel="prev" href="../impression-level-ad-revenue/">
+        <link rel="prev" href="../regulation-advanced-settings/">
       
+      
+        <link rel="next" href="../adinfo-data/">
       
       
       <link rel="icon" href="../../assets/ironsource-icon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Targeting - Unity LevelPlay: Unreal Engine Plugin Documentation</title>
+        <title>Impression level revenue integration - Unity LevelPlay: Unreal Engine Plugin Documentation</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#targeting" class="md-skip">
+        <a href="#impression-level-revenue-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Targeting
+              Impression level revenue integration
             
           </span>
         </div>
@@ -313,18 +315,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -340,7 +344,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Regulations and settings
@@ -354,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regulations-and-settings/regulation-advanced-settings/" class="md-nav__link">
+      <a href="../regulation-advanced-settings/" class="md-nav__link">
         
   
   
@@ -377,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regulations-and-settings/advanced-setting.md" class="md-nav__link">
+      <a href="../advanced-setting.md" class="md-nav__link">
         
   
   
@@ -397,10 +401,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../regulations-and-settings/impression-level-revenue-integration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Impression level revenue integration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -411,6 +437,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implement-the-impressiondata-listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement the ImpressionData Listener
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrate-the-ilr-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integrate the ILR data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -423,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regulations-and-settings/adinfo-data/" class="md-nav__link">
+      <a href="../adinfo-data/" class="md-nav__link">
         
   
   
@@ -1159,20 +1223,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1188,7 +1250,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Advanced topics
@@ -1225,7 +1287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../global-settings/" class="md-nav__link">
+      <a href="../../advanced/global-settings/" class="md-nav__link">
         
   
   
@@ -1248,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../impression-level-ad-revenue/" class="md-nav__link">
+      <a href="../../advanced/impression-level-ad-revenue/" class="md-nav__link">
         
   
   
@@ -1314,32 +1376,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Targeting
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../advanced/targeting/" class="md-nav__link">
         
   
   
@@ -1350,80 +1390,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisite" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisite
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#child-directed-setting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Child-directed setting
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#users-under-the-age-of-consent" class="md-nav__link">
-    <span class="md-ellipsis">
-      Users under the age of consent
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ad-content-filtering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ad content filtering
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#publisher-privacy-treatment-beta" class="md-nav__link">
-    <span class="md-ellipsis">
-      Publisher Privacy Treatment (Beta)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#content-url" class="md-nav__link">
-    <span class="md-ellipsis">
-      Content URL
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1463,54 +1429,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisite" class="md-nav__link">
+  <a href="#implement-the-impressiondata-listener" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisite
+      Implement the ImpressionData Listener
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#child-directed-setting" class="md-nav__link">
+  <a href="#integrate-the-ilr-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Child-directed setting
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#users-under-the-age-of-consent" class="md-nav__link">
-    <span class="md-ellipsis">
-      Users under the age of consent
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ad-content-filtering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ad content filtering
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#publisher-privacy-treatment-beta" class="md-nav__link">
-    <span class="md-ellipsis">
-      Publisher Privacy Treatment (Beta)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#content-url" class="md-nav__link">
-    <span class="md-ellipsis">
-      Content URL
+      Integrate the ILR data
     </span>
   </a>
   
@@ -1533,83 +1463,61 @@
 
 
 <p><a class="md-button md-button--primary full-width" href="https://fab.com/s/804df971aef3">If you like this plugin, please, rate it on Fab. Thank you!</a></p>
-<h1 id="targeting">Targeting</h1>
-<p>This guide explains how to provide targeting information to the Google Mobile Ads SDK.</p>
-<h2 id="prerequisite">Prerequisite</h2>
-<ul>
-<li>Complete the <a href="../../">Get Started guide</a>.</li>
-</ul>
-<h2 id="child-directed-setting">Child-directed setting</h2>
-<p>For purposes of the <a href="https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy">Children's Online Privacy Protection Act (COPPA)</a>, there is a setting called "tag for child-directed treatment". By setting this tag, you certify that this notification is accurate and you are authorized to act on behalf of the owner of the app. You understand that abuse of this setting may result in termination of your Google account.</p>
-<p>As an app developer, you can indicate whether you want Google to treat your content as child-directed when you make an ad request. If you indicate that you want Google to treat your content as child-directed, we take steps to disable IBA and remarketing ads on that ad request.</p>
-<p><img alt="" src="../assets/ChildDirectedSetting.png" /></p>
-<ul>
-<li>Choose <strong><code>TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE</code></strong> to indicate that you want your content treated as child-directed for purposes of COPPA. This prevents the transmission of the <a href="https://support.google.com/googleplay/android-developer/answer/6048248">Android advertising identifier (AAID)</a> and Advertising Identifier, IDFA on iOS.</li>
-<li>Choose <strong><code>TAG_FOR_CHILD_DIRECTED_TREATMENT_FALSE</code></strong> to indicate that you don't want your content treated as child-directed for purposes of COPPA.</li>
-<li>Choose <strong><code>TAG_FOR_CHILD_DIRECTED_TREATMENT_UNSPECIFIED</code></strong> if you don't want to indicate how you would like your content treated with respect to COPPA in ad requests.</li>
-</ul>
-<p>You can also change the default value set in Project Setting at runtime by calling <strong><code>UGoogleAdMob::SetTagForChildDirectedTreatment()</code></strong> function.</p>
-<div class="admonition note">
+<h1 id="impression-level-revenue-integration">Impression level revenue integration</h1>
+<div class="admonition note before you start">
 <p class="admonition-title">Note</p>
-<p>Apps in the <a href="https://developer.android.com/distribute/google-play/families">Designed For Families Program</a> as <a href="https://support.google.com/admob/answer/6223431">Primarily child-directed apps</a> and users signed into Google accounts managed with <a href="https://families.google.com/familylink/">Family Link</a> automatically have all content treated as child-directed for all ad requests.</p>
+<p>Make sure you have correctly integrated the plugin into your project, as outlined <a href="../../">here</a>.
+Learn <a href="https://developers.is.com/ironsource-mobile/general/ad-revenue-measurement-postbacks/">more</a> about the impression level revenue (ILR) via SDK feature and pre-requisites.</p>
 </div>
-<h2 id="users-under-the-age-of-consent">Users under the age of consent</h2>
-<p>You can mark your ad requests to receive treatment for users in the European Economic Area (EEA) under the age of consent. This feature is designed to help facilitate compliance with the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679">General Data Protection Regulation (GDPR)</a>. Note that you may have other legal obligations under GDPR. Review European Union guidance and consult with your own legal counsel. Note that Google's tools are designed to facilitate compliance and don't relieve any particular publisher of its obligations under the law. <a href="https://support.google.com/admob/answer/7666366">Learn more about how the GDPR affects publishers</a>.</p>
-<p>When using this feature, a Tag For Users under the Age of Consent in Europe (TFUA) parameter is included in the ad request. This parameter disables personalized advertising, including remarketing, for all ad requests. It also disables requests to third-party ad vendors, such as ad measurement pixels and third-party ad servers.</p>
-<p><img alt="" src="../assets/UnderAgeOfConsent.png" /></p>
-<ul>
-<li>Choose <strong><code>TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE</code></strong> to indicate that you want the ad request to receive treatment for users in the European Economic Area (EEA) under the age of consent. This also prevents the transmission of the Android advertising identifier (AAID) and Advertising Identifier, IDFA on iOS.</li>
-<li>Choose <strong><code>TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE</code></strong> to indicate that you want the ad request to not receive treatment for users in the European Economic Area (EEA) under the age of consent.</li>
-<li>Choose <strong><code>TAG_FOR_UNDER_AGE_OF_CONSENT_UNSPECIFIED</code></strong> to indicate that you have not specified whether the ad request should receive treatment for users in the European Economic Area (EEA) under the age of consent.</li>
-</ul>
-<p>You can also change the default value set in Project Setting at runtime by calling <strong><code>UGoogleAdMob::SetTagForUnderAgeOfConsent()</code></strong> function.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The tags to enable the <a href="#child-directed-setting">Child-directed setting</a> and <strong><code>TagForUnderAgeOfConsent</code></strong> should not both simultaneously be set to <strong><code>true</code></strong>. If they are, the child-directed setting takes precedence.</p>
-</div>
-<h2 id="ad-content-filtering">Ad content filtering</h2>
-<p>To comply with Google Play's <a href="https://support.google.com/googleplay/android-developer/answer/9857753#zippy=%2Cexamples-of-common-violations">Inappropriate Ads Policy</a> that includes associated offers within an ad, all ads and their associated offers shown within your app must be appropriate for the <a href="https://support.google.com/googleplay/android-developer/answer/9898843">content rating</a> of your app, even if the content by itself is otherwise compliant with Google Play's policies.</p>
-<p>Tools like maximum ad content rating can help you have more control over the content of the ads shown to your users. You can set a maximum content rating to help compliance with platform policies.</p>
-<p>AdMob ads returned when this is configured have a content rating at or below that level. The possible values for this network extra are based on <a href="https://support.google.com/admob/answer/7562142">digital content label classifications</a>, and must be one of the following strings:</p>
-<ul>
-<li><strong><code>MAX_AD_CONTENT_RATING_G</code></strong></li>
-<li><strong><code>MAX_AD_CONTENT_RATING_PG</code></strong></li>
-<li><strong><code>MAX_AD_CONTENT_RATING_T</code></strong></li>
-<li><strong><code>MAX_AD_CONTENT_RATING_MA</code></strong></li>
-</ul>
-<p><img alt="" src="../assets/MaxAdContentRating.png" /></p>
-<p>You can also change the default value set in Project Setting at runtime by calling <strong><code>UGoogleAdMob::SetMaxAdContentRating()</code></strong> function.</p>
-<p>Learn more about <a href="https://support.google.com/admob/answer/7562142">setting the maximum ad content rating for an app or account</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Content rating filter settings specified through Google Mobile Ads SDK override any settings configured using the AdMob UI.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>It's recommended to leave this setting with the <strong><code>MAX_AD_CONTENT_RATING_UNSPECIFIED</code></strong> value, because it will be possible to change it anytime later using the AdMob UI, and the setting in <strong><code>Project Settings</code></strong>, on the opposite, is hardcoded and cannot be changed after the project is packaged.</p>
-</div>
-<h2 id="publisher-privacy-treatment-beta">Publisher Privacy Treatment (Beta)</h2>
-<p>The <a href="https://support.google.com/admob/answer/14323214">Publisher Privacy Treatment (PPT) API</a> is an optional tool that lets apps indicate whether to turn off ads personalization for all ad requests. When using this feature, a publisher privacy treatment (PPT) parameter is included in all future ad requests for the remainder of the session.</p>
-<p><img alt="" src="../assets/PPTState.png" /></p>
-<p>You can also change the default value set in Project Setting at runtime by calling <strong><code>UGoogleAdMob::SetPublisherPrivacyPersonalizationState()</code></strong> function.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For ad requests with multiple user privacy signals, the most restrictive signal will take precedence. See the <a href="https://support.google.com/admob/answer/14323214">Publisher Privacy Treatment API</a> documentation for specific examples.</p>
-</div>
-<h2 id="content-url">Content URL</h2>
-<p>When requesting an ad, apps can pass the URL of the content they are serving. This enables keyword targeting to match the ad with the content.</p>
-<p>For example, if your app is requesting an ad while showing content from https://www.example.com, you can pass this URL to target relevant keywords:</p>
+<h2 id="implement-the-impressiondata-listener">Implement the ImpressionData Listener</h2>
+<p>The ironSource SDK fires postbacks to inform you about the displayed ad. The ImpressionData listener is an optional listener that you can implement to receive impression data. This listener will provide you with information about all ad units, and you’ll be able to identify the different ads using the impression level revenue.</p>
+<p>If you want to add the ImpressionData listener to your application, make sure you declare the listener before initializing the ironSource SDK, to avoid any loss of information.</p>
+<p>The ironSource SDK will trigger a callback on a background thread to notify your listener of successful impression data post-backs:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Blueprints</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">InterstitialAd</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="n">InterstitialAdUnitId</span><span class="p">,</span><span class="w"> </span><span class="n">TEXT</span><span class="p">(</span><span class="s">&quot;https://www.example.com&quot;</span><span class="p">));</span>
+<div class="highlight"><pre><span></span><code><span class="n">ULevelPlay</span><span class="o">::</span><span class="n">OnImpressionSuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayImpressionData</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">){});</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="../assets/LoadAdWithContentUrl.png" /></p>
+<p><img alt="" src="../../assets/OnImpressionSuccess.png" /></p>
 </div>
 </div>
 </div>
+<h2 id="integrate-the-ilr-data">Integrate the ILR data</h2>
+<p>Once you implement the ImpressionDataListener, you’ll be able to use the impression data and to send it to your own proprietary BI tools and DWH, or to integrate it with 3rd party tools.</p>
+<p>To make it easy to use, you can refer to each field separately, or get all information using the AllData property:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Blueprints</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">ULevelPlay</span><span class="o">::</span><span class="n">OnImpressionSuccess</span><span class="p">.</span><span class="n">AddLambda</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">FLevelPlayImpressionData</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">AuctionId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">AuctionId</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">MediationAdUnitName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">MediationAdUnitName</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">MediationAdUnitId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">MediationAdUnitId</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">AdFormat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">AdFormat</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">Country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">Country</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">AB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">AB</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">SegmentName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">SegmentName</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">AdNetwork</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">AdNetwork</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">InstanceName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">InstanceName</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">InstanceId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">InstanceId</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">Revenue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">Revenue</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">Precision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">Precision</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">EncryptedCpm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">EncryptedCpm</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ConversionValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">ConversionValue</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">CreativeId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">CreativeId</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">FString</span><span class="w"> </span><span class="n">AllDataJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImpressionData</span><span class="p">.</span><span class="n">AllData</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../../assets/ImpressionData.png" /></p>
+</div>
+</div>
+</div>
+<p>Check out the full list of available ILR data, including field description and types, <a href="https://developers.is.com/ironsource-mobile/general/ad-revenue-measurement-postbacks/#step-2">here</a>.</p>
 
 
 
