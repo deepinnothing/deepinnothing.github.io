@@ -20,13 +20,13 @@ Install the LevelPlay plugn, complete a basic integration and go over some platf
 
 Register listeners and integrate the relevant APIs in your apps’ code for the type of ads you want to show in your app.
 
-[Learn how]()
+[Learn how](ad-formats/rewarded.md)
 
 ### 3. Set user IDs
 
 If you’re using server-to-server callbacks to reward your users, you’re required to define a unique identifier for each user.
 
-[Learn how]()
+[Learn how](regulations-and-settings/advanced-settings.md)
 
 ### 4. Add mediation network adapters and SDKs
 

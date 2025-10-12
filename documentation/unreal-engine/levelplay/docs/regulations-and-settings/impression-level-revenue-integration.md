@@ -2,10 +2,10 @@
 
 # Impression level revenue integration
 
-!!! note Before you start
+!!! note "Before you start"
 
-    Make sure you have correctly integrated the plugin into your project, as outlined [here](../index.md).
-    Learn [more](https://developers.is.com/ironsource-mobile/general/ad-revenue-measurement-postbacks/) about the impression level revenue (ILR) via SDK feature and pre-requisites.
+    - Make sure you have correctly integrated the plugin into your project, as outlined [here](../integration.md).
+    - Learn [more](https://developers.is.com/ironsource-mobile/general/ad-revenue-measurement-postbacks/) about the impression level revenue (ILR) via SDK feature and pre-requisites.
 
 ## Implement the ImpressionData Listener
 
