@@ -36,13 +36,23 @@ nav:
     - regulations-and-settings/regulation-advanced-settings.md
     - regulations-and-settings/advanced-settings.md
     - regulations-and-settings/impression-level-revenue-integration.md
-    - regulations-and-settings/adinfo-data.md
+    - AdInfo data: regulations-and-settings/adinfo-data.md
     - Google's data safety questionnaire: https://developers.is.com/ironsource-mobile/general/googles-data-safety-questionnaire-full/
     - Apple's app privacy questionnaire: https://developers.is.com/ironsource-mobile/apples-privacy-questionnaire-answers-ironsource/
   - Ad formats:
     - Rewarded ads: ad-formats/rewarded.md
     - Interstitial: ad-formats/interstitial.md
     - Banner/MREC: ad-formats/banner.md
+  - Mediated networks:
+    - Add mediation networks: mediation-networks/mediation.md
+    - Ad Quality supported ad sources: https://developers.is.com/ironsource-mobile/unity/supported-ad-sources/
+  - Test your integration:
+    - LevelPlay integration test suite: https://developers.is.com/ironsource-mobile/unity/unity-levelplay-test-suite/
+    - Integration Helper: test-your-integration/integration-helper.md
+    - Testing module: https://developers.is.com/ironsource-mobile/unity/integration-testing/
+    - "Troubleshooting: I don't see ads in my app": https://developers.is.com/ironsource-mobile/unity/troubleshooting-dont-see-ads-app/
+    - "Troubleshooting: TCF Consent Log": https://developers.is.com/ironsource-mobile/unity/troubleshooting-tcf-consent-log/
+    - Test Ad Quality SDK: https://developers.is.com/ironsource-mobile/unity/test-ad-quality-sdk-integration/
 plugins: 
   - search
   - git-revision-date-localized
