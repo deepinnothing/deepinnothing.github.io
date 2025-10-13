@@ -2,78 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/</loc>
-         <lastmod>2025-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/ad-inspector/</loc>
-         <lastmod>2025-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/ad-load-errors/</loc>
-         <lastmod>2025-10-12</lastmod>
+         <lastmod>2025-10-13</lastmod>
     </url>
     <url>
          <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/integration/</loc>
-         <lastmod>2025-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/mediation/</loc>
-         <lastmod>2025-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/response-info/</loc>
-         <lastmod>2025-10-12</lastmod>
+         <lastmod>2025-10-13</lastmod>
     </url>
     <url>
          <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/ad-formats/banner/</loc>
-         <lastmod>2025-10-12</lastmod>
+         <lastmod>2025-10-13</lastmod>
     </url>
     <url>
          <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/ad-formats/interstitial/</loc>
-         <lastmod>2025-10-12</lastmod>
+         <lastmod>2025-10-13</lastmod>
     </url>
     <url>
          <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/ad-formats/rewarded/</loc>
-         <lastmod>2025-10-12</lastmod>
+         <lastmod>2025-10-13</lastmod>
     </url>
     <url>
-         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/ad-inspector/launch-ad-inspector/</loc>
-         <lastmod>2025-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/advanced/global-settings/</loc>
-         <lastmod>2025-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/advanced/impression-level-ad-revenue/</loc>
-         <lastmod>2025-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/advanced/targeting/</loc>
-         <lastmod>2025-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/privacy/strategies/</loc>
-         <lastmod>2025-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/privacy/us-states/</loc>
-         <lastmod>2025-10-12</lastmod>
+         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/mediation-networks/mediation/</loc>
+         <lastmod>2025-10-13</lastmod>
     </url>
     <url>
          <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/regulations-and-settings/adinfo-data/</loc>
-         <lastmod>2025-10-12</lastmod>
+         <lastmod>2025-10-13</lastmod>
     </url>
     <url>
          <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/regulations-and-settings/advanced-settings/</loc>
-         <lastmod>2025-10-12</lastmod>
+         <lastmod>2025-10-13</lastmod>
     </url>
     <url>
          <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/regulations-and-settings/impression-level-revenue-integration/</loc>
-         <lastmod>2025-10-12</lastmod>
+         <lastmod>2025-10-13</lastmod>
     </url>
     <url>
          <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/regulations-and-settings/regulation-advanced-settings/</loc>
-         <lastmod>2025-10-12</lastmod>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://deepinnothing.github.io/documentation/unreal-engine/levelplay/test-your-integration/integration-helper/</loc>
+         <lastmod>2025-10-13</lastmod>
     </url>
 </urlset>
