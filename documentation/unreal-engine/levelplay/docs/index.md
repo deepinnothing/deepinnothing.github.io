@@ -12,7 +12,7 @@ This guide will walk you through the steps you need to take to start monetizing 
 
 ### 1. Install & configure LevelPlay in your app
 
-Install the LevelPlay plugn, complete a basic integration and go over some platform-specific configuration.
+Install the LevelPlay plugin, complete a basic integration and go over some platform-specific configuration.
 
 [Learn how](integration.md)
 
@@ -32,7 +32,7 @@ If you’re using server-to-server callbacks to reward your users, you’re requ
 
 Integrate the network adapters and SDKs for the mediated networks you want to use on LevelPlay.
 
-[Learn how]()
+[Learn how](mediation-networks/mediation.md)
 
 
 ## Platform

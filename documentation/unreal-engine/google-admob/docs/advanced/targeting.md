@@ -8,7 +8,49 @@ This guide explains how to provide targeting information to the Google Mobile Ad
 
 -   Complete the [Get Started guide](../index.md).
 
+## Set the age treatment
+
+To help you manage your compliance with applicable privacy regulations related to children and teens, an age treatment setting is provided, which lets you indicate whether the AdMob SDK should apply specific ad serving protections for children, teens, or an unspecified age. You can set age treatment with the __`UGoogleAdMob::SetAgeRestrictedTreatment()`__ function.
+
+When using the setting, AdMob SDK includes a __`tfat`__ parameter in ad requests. Consult your legal counsel to determine the applicable age treatment for your users based on your legal and regulatory obligations. For more information, see [Tag an ad request from an app for age restricted treatment](https://support.google.com/admob/answer/6219315). 
+
+### Migrate to age treatment from TFCD and TFUA
+
+The age treatment setting replaces the deprecated __`UGoogleAdMob::SetTagForChildDirectedTreatment()`__ (TFCD) and __`UGoogleAdMob::SetTagForUnderAgeOfConsent()`__ (TFUA) settings.
+
+![](../assets/AgeRestrictedTreatment.png)
+
+The following table shows the TFCD and TFUA settings and their age treatment equivalents:
+
+=== "TFCD"
+
+    | TFCD | Age treatment |
+    |------|---------------|
+    | __`TAG_FOR_CHILD_DIRECTED_TREATMENT_TRUE`__        | __`CHILD`__       |
+    | __`TAG_FOR_CHILD_DIRECTED_TREATMENT_FALSE`__       | __`UNSPECIFIED`__ |
+    | __`TAG_FOR_CHILD_DIRECTED_TREATMENT_UNSPECIFIED`__ | __`UNSPECIFIED`__ |
+    | No value assigned                                  | __`UNSPECIFIED`__ |
+    | No equivalent                                      | __`TEEN`__        |
+
+=== "TFUA"
+
+    | TFUA | Age treatment |
+    |------|---------------|
+    | __`TAG_FOR_UNDER_AGE_OF_CONSENT_TRUE`__        | __`CHILD`__       |
+    | __`TAG_FOR_UNDER_AGE_OF_CONSENT_FALSE`__       | __`UNSPECIFIED`__ |
+    | __`TAG_FOR_UNDER_AGE_OF_CONSENT_UNSPECIFIED`__ | __`UNSPECIFIED`__ |
+    | No value assigned                              | __`UNSPECIFIED`__ |
+    | No equivalent                                  | __`TEEN`__        |
+
+!!! note
+
+    Apps in the [Designed For Families Program](https://developer.android.com/distribute/google-play/families) as [Primarily child-directed apps](https://support.google.com/admob/answer/6223431) and users signed into Google Accounts managed with [Family Link](https://families.google.com/familylink/) automatically have all content treated as child-directed for all ad requests.
+
 ## Child-directed setting
+
+!!! warning
+
+    The __`UGoogleAdMob::SetTagForChildDirectedTreatment()`__ function is deprecated and was removed from the plugin. Instead, use the __`UGoogleAdMob::SetAgeRestrictedTreatment()`__ function.
 
 For purposes of the [Children's Online Privacy Protection Act (COPPA)](https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy), there is a setting called "tag for child-directed treatment". By setting this tag, you certify that this notification is accurate and you are authorized to act on behalf of the owner of the app. You understand that abuse of this setting may result in termination of your Google account.
 
@@ -27,6 +69,10 @@ You can also change the default value set in Project Setting at runtime by calli
     Apps in the [Designed For Families Program](https://developer.android.com/distribute/google-play/families) as [Primarily child-directed apps](https://support.google.com/admob/answer/6223431) and users signed into Google accounts managed with [Family Link](https://families.google.com/familylink/) automatically have all content treated as child-directed for all ad requests.
 
 ## Users under the age of consent
+
+!!! warning
+
+    The __`UGoogleAdMob::SetTagForUnderAgeOfConsent()`__ function is deprecated and was removed from the plugin. Instead, use the __`UGoogleAdMob::SetAgeRestrictedTreatment()`__ function.
 
 You can mark your ad requests to receive treatment for users in the European Economic Area (EEA) under the age of consent. This feature is designed to help facilitate compliance with the [General Data Protection Regulation (GDPR)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679). Note that you may have other legal obligations under GDPR. Review European Union guidance and consult with your own legal counsel. Note that Google's tools are designed to facilitate compliance and don't relieve any particular publisher of its obligations under the law. [Learn more about how the GDPR affects publishers](https://support.google.com/admob/answer/7666366).
 

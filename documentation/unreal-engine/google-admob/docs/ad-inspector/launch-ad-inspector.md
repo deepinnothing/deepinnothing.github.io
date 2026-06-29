@@ -34,7 +34,7 @@ Launch ad inspector by running the following:
     #include "GoogleAdMobAdError.h"
     // ...
     UGoogleAdMob::OnAdInspectorClosed.AddLambda([](){});
-    UGoogleAdMob::OnAdInspectorFailure.AddLambda([](const FGoogleAdMobAdError& AdInspectorFailure){});
+    UGoogleAdMob::OnAdInspectorFailure.AddLambda([](const FGoogleAdMobAdInspectorError& AdInspectorFailure){});
     UGoogleAdMob::OpenAdInspector();
     ```
 

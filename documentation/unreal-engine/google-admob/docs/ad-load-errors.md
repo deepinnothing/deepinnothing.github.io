@@ -11,15 +11,10 @@ The following example shows the information available when an ad fails to load:
     ``` c++
     #include "GoogleAdMobAdError.h"
     // ...
-    void UYourClass::OnFailedToLoad(const FGoogleAdMobAdError& LoadAdError, const FGoogleAdMobResponseInfo& ResponseInfo)
+    void UYourClass::OnFailedToLoad(const FGoogleAdMobLoadAdError& LoadAdError, const FGoogleAdMobResponseInfo& ResponseInfo)
     {
         LoadAdError.Code;
         LoadAdError.Message;
-        LoadAdError.Domain;
-        LoadAdError.Cause.Code;
-        LoadAdError.Cause.Message;
-        LoadAdError.Cause.Domain;
-        LoadAdError.FullError;
     }
     ```
 

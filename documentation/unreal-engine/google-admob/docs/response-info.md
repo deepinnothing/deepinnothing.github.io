@@ -12,9 +12,9 @@ For debugging and logging purposes, successfully loaded ads (as well as those th
     void UYourClass::OnLoaded(const FGoogleAdMobResponseInfo& ResponseInfo)
     {
         ResponseInfo.ResponseID;
-        ResponseInfo.MediationAdapterClassName;
-        ResponseInfo.AdapterResponses;
-        ResponseInfo.LoadedAdapterResponseInfo;
+        ResponseInfo.AdapterClassName;
+        ResponseInfo.AdSourceResponses;
+        ResponseInfo.LoadedAdSourceResponseInfo;
         ResponseInfo.ResponseExtras;
         ResponseInfo.FullResponse;
         // ...
