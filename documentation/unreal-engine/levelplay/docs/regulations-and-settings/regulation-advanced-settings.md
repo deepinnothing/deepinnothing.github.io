@@ -13,7 +13,7 @@ To use ironSource’s API to update a user’s consent status, use this function
 === "C++"
 
     ``` c++
-    ULevelPlay::SetConsent(true);
+    ULevelPlay::SetGDPRConsent(true);
     ```
 
 === "Blueprints"
@@ -37,7 +37,7 @@ If the user has opted out of “sale” or “sharing” of personal information
 === "C++"
 
     ``` c++
-    ULevelPlay::SetDoNotSell(false);
+    ULevelPlay::SetCCPA(false);
     ```
 
 === "Blueprints"
@@ -59,7 +59,7 @@ If the end-user is a child (as defined by applicable regulations), set __`bIsChi
 === "C++"
 
     ``` c++
-    ULevelPlay::SetIsChildDirected(false);
+    ULevelPlay::SetCOPPA(false);
     ```
 
 === "Blueprints"
@@ -90,7 +90,7 @@ If your apps are primarily directed at children, follow these steps:
 
         ``` c++
         ULevelPlay::SetMetaData("is_deviceid_optout", "true");
-        ULevelPlay::SetIsChildDirected(true);
+        ULevelPlay::SetCOPPA(true);
         ```
 
     === "Blueprints"
@@ -105,7 +105,7 @@ For children or users of unknown age, use the ironSource Metadata API to prevent
 
     ``` c++
     ULevelPlay::SetMetaData("is_deviceid_optout", "true");
-    ULevelPlay::SetIsChildDirected(true);
+    ULevelPlay::SetCOPPA(true);
     ULevelPlay::SetMetaData("Google_Family_Self_Certified_SDKS", "true");
     ```
 
